@@ -1,0 +1,19 @@
+---
+interface Props {
+  icon: string;
+  value: string;
+  metric: string;
+}
+
+const { icon, value, metric } = Astro.props;
+---
+
+<img
+  class="rounded-full w-32 h-32 mx-auto"
+  src={icon}
+  alt="Image Description"
+/>
+<div class="mt-2 sm:mt-4">
+  <h3 class="font-extrabold text-6xl text-red-800">{value}</h3>
+  <p class="text-md">{metric}</p>
+</div>
