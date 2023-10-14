@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro'
+import Navigation2 from '../components/Navigation2.astro'
 interface Props {
   title: string
 }
@@ -22,7 +23,7 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body class="bg-slate-200 dark:bg-slate-800 dark:text-white font-rubik">
-    <Navigation />
-    <slot />
+    <Navigation2/>
+    <slot/>
   </body>
 </html>

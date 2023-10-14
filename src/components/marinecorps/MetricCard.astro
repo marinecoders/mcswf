@@ -9,11 +9,11 @@ const { icon, value, metric } = Astro.props
 ---
 
 <img
-  class="rounded-full w-32 h-32 mx-auto"
+  class="w-32 h-32 mx-auto rounded-full"
   src={icon}
   alt="Image Description"
 />
 <div class="mt-2 sm:mt-4">
-  <h3 class="font-extrabold text-6xl text-red-800">{value}</h3>
+  <h3 class="text-6xl font-extrabold text-red-800">{value}</h3>
   <p class="text-md">{metric}</p>
 </div>

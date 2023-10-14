@@ -13,14 +13,14 @@ const { title, content, link } = Astro.props
 
 <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
   <!-- Title -->
-  <div class="mt-5 max-w-5xl text-center mx-auto">
-    <h1 class="block font-bold text-4xl md:text-5xl lg:text-6xl">
+  <div class="max-w-5xl mx-auto mt-5 text-center">
+    <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl">
       {title}
     </h1>
   </div>
   <!-- End Title -->
 
-  <div class="mt-5 max-w-3xl text-center mx-auto">
+  <div class="max-w-3xl mx-auto mt-5 text-center">
     <p class="text-lg text-slate-600 dark:text-slate-400">
       {content}
     </p>
@@ -28,7 +28,7 @@ const { title, content, link } = Astro.props
 
   <Timer />
   <!-- Buttons -->
-  <div class="mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
+  <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
     <Button href={link} text="APPLY NOW" />
   </div>
   <!-- End Buttons -->

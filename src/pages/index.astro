@@ -5,41 +5,31 @@ import Hero from '../components/marinecorps/Hero.astro'
 import Mission from '../components/marinecorps/Mission.astro'
 import Impact from '../components/marinecorps/Impact.astro'
 import Countdown from '../components/marinecorps/Countdown.astro'
+
+import "../styles/global.css"
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="snap-start max-h-screen snap-y overflow-y-scroll snap-mandatory">
-    <div class="snap-start h-screen">
+  <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
+    <div class="h-screen snap-start">
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
         link="#"
       />
     </div>
-    <div class="snap-start h-screen">
+    <div class="h-screen snap-start">
       <Mission />
     </div>
-    <div class="snap-start h-screen">
+    <div class="h-screen snap-start">
       <Impact />
     </div>
-    <div class="snap-start h-screen">
+    <div class="h-screen snap-start">
       <Countdown
         title="COHORT COUNTDOWN"
         content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
         link="#"
       />
     </div>
-    <div class="fixed top-0 right-0 h-full flex flex-col items-center justify-center space-y-4">
-      <a href="#" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300 transform hover:scale-110">
-          <!-- Your first icon goes here -->
-      </a>
-      <a href="#" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300 transform hover:scale-110">
-          <!-- Your second icon goes here -->
-      </a>
-      <!-- Add more icon links as needed -->
-  </div>
-  
   </div>
 </Layout>
-
-<style></style>
