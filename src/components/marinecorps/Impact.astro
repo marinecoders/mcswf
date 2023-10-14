@@ -1,33 +1,37 @@
 ---
-import Button from "./Button.astro";
+import Button from './Button.astro'
+import Hero from './Hero.astro'
 ---
 
 <body>
   <div class="flex h-1/2">
     <!-- Left Column -->
     <div class="w-1/2 p-4">
-      <!-- Content for the left column -->
-      <h1 class="text-2xl font-semibold">Left Column</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <Hero
+        title="WHAT WE DO"
+        content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        link="#"
+      />
     </div>
 
     <!-- Right Column -->
     <div
-      class="w-1/2 p-4 bg-contain bg-gray-200 bg-[url('https://dummyimage.com/1920x1080/ddd/aaa')]"
+      class="w-1/2 p-4 bg-contain bg-slate-200 bg-[url('https://dummyimage.com/1920x1080/fff/aaa')]"
     >
     </div>
   </div>
   <div class="flex h-1/2">
     <!-- Left Column -->
     <div
-      class="w-1/2 p-4 bg-contain bg-gray-200 bg-[url('https://dummyimage.com/1920x1080/ddd/aaa')]"
-    ></div>
-      <div class="w-1/2 p-4">
-        <!-- Content for the left column -->
-        <h1 class="text-2xl font-semibold">Left Column</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-
-      <!-- Right Column -->
+      class="w-1/2 p-4 bg-contain bg-slate-200 bg-[url('https://dummyimage.com/1920x1080/fff/aaa')]"
+    >
+    </div>
+    <div class="w-1/2 p-4">
+      <Hero
+        title="THE IMPACT"
+        content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        link="#"
+      />
+    </div>
   </div>
 </body>

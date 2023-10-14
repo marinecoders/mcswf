@@ -1,0 +1,72 @@
+---
+
+---
+
+<div class="space-x-10 mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
+  <div class="text-center">
+    <div class="mt-2 sm:mt-4">
+      <h3 id="countdown-days" class="font-extrabold text-6xl text-red-800">
+        41
+      </h3>
+      <p class="text-md">Days</p>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="mt-2 sm:mt-4">
+      <h3 id="countdown-hours" class="font-extrabold text-6xl text-red-800">
+        14
+      </h3>
+      <p class="text-md">HOURS</p>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="mt-2 sm:mt-4">
+      <h3 id="countdown-minutes" class="font-extrabold text-6xl text-red-800">
+        54
+      </h3>
+      <p class="text-md">MINUTES</p>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="mt-2 sm:mt-4">
+      <h3 id="countdown-seconds" class="font-extrabold text-6xl text-red-800">
+        19
+      </h3>
+      <p class="text-md">SECONDS</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var countDownDate = new Date('Oct 14, 2023 00:50:25').getTime()
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime()
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24))
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    )
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+    document.getElementById('countdown-days').innerHTML = String(days)
+    document.getElementById('countdown-hours').innerHTML = String(hours)
+    document.getElementById('countdown-minutes').innerHTML = String(minutes)
+    document.getElementById('countdown-seconds').innerHTML = String(seconds)
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      document.getElementById('countdown-days').innerHTML = '0'
+      document.getElementById('countdown-hours').innerHTML = '0'
+      document.getElementById('countdown-minutes').innerHTML = '0'
+      document.getElementById('countdown-seconds').innerHTML = '0'
+    }
+  }, 1000)
+</script>

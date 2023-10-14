@@ -1,24 +1,35 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Hero  from "../components/marinecorps/Hero.astro";
-import Mission  from "../components/marinecorps/Mission.astro";
-import Impact  from "../components/marinecorps/Impact.astro";
-
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import Hero from '../components/marinecorps/Hero.astro'
+import Mission from '../components/marinecorps/Mission.astro'
+import Impact from '../components/marinecorps/Impact.astro'
+import Countdown from '../components/marinecorps/Countdown.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="snap-start max-h-screen snap-y overflow-y-scroll snap-mandatory">
-		<div class="snap-start h-[80vh]">
-			<Hero/>
-		</div>
-		<div class="snap-start h-screen">
-			<Mission/>
-		</div>
-		<div class="snap-start h-screen">
-			<Impact/>
-		</div>
-	</div>
+  <div class="snap-start max-h-screen snap-y overflow-y-scroll snap-mandatory">
+    <div class="snap-start h-[80vh]">
+      <Hero
+        title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+        content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        link="#"
+      />
+    </div>
+    <div class="snap-start h-screen">
+      <Mission />
+    </div>
+    <div class="snap-start h-screen">
+      <Impact />
+    </div>
+    <div class="snap-start h-screen">
+      <Countdown
+        title="COHORT COUNTDOWN"
+        content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        link="#"
+      />
+    </div>
+  </div>
 </Layout>
 
 <style></style>
