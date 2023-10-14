@@ -1,0 +1,10 @@
+---
+import BaseLayout from './Layout.astro'
+const { frontmatter } = Astro.props
+---
+
+<BaseLayout url={frontmatter.url}>
+    <div class="prose dark:prose-invert max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+        <slot />
+    </div>
+</BaseLayout>
