@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import Hero from '../components/marinecorps/Hero.astro'
+import Countdown from '../components/marinecorps/Countdown.astro'
+
+import Mission from '../story/about/Mission.astro'
+import Vision from '../story/about/Vision.astro'
+import Impact from '../story/about/Impact.astro'
+import "../styles/global.css"
+import { imageConfig } from 'astro:assets'
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
+    <div class="h-screen snap-start py-20">
+      <Hero
+        padding='pt-24'
+        title="WHO WE ARE"
+        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+      />
+    </div>
+    <div class="h-screen snap-start py-20">
+      <Vision />
+    </div>
+    <div class="h-screen snap-start py-20">
+      <Mission />
+    </div>
+    <div class="h-screen snap-start py-20">
+      <Impact />
+    </div>
+  </div>
+</Layout>

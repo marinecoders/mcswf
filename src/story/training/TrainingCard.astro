@@ -9,11 +9,12 @@ const { icon, value, metric } = Astro.props
 ---
 
 <img
-  class="mx-auto "
+  class="w-72 h-72 mx-auto"
   src={icon}
   alt="Image Description"
 />
 <div class="mt-2 sm:mt-4">
-  <h3 class="text-6xl font-extrabold text-red-800">{value}</h3>
+  <h3 class="text-4xl font-extrabold">{value}</h3>
   <p class="text-md">{metric}</p>
 </div>
+ 

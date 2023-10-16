@@ -1,24 +1,12 @@
 ---
 import Button from './Button.astro'
+import Hero from './Hero.astro';
 import MetricCard from './MetricCard.astro'
 ---
 
-<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
   <!-- Title -->
-  <div class="max-w-5xl mx-auto mt-5 text-center">
-    <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl">
-      OUR MISSION
-    </h1>
-  </div>
-  <!-- End Title -->
-
-  <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p class="text-lg">
-      Et quae quibusdam sed consequatur iste nam asperiores facilis qui error
-      iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit
-      officiis est odit asperiores.
-    </p>
-  </div>
+  <Hero linkText='LEARN MORE' padding="pt-24 pb-12" title='OUR MISSION' content='Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.'></Hero>
 
   <div
     class="grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"

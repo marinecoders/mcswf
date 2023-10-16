@@ -1,6 +1,7 @@
 ---
 import Button from './Button.astro'
 import Timer from '../Timer.astro'
+import Hero from '../marinecorps/Hero.astro'
 
 interface Props {
   title: string
@@ -12,19 +13,8 @@ const { title, content, link } = Astro.props
 ---
 
 <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-  <!-- Title -->
-  <div class="max-w-5xl mx-auto mt-5 text-center">
-    <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl">
-      {title}
-    </h1>
-  </div>
-  <!-- End Title -->
 
-  <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p class="text-lg text-slate-600 dark:text-slate-400">
-      {content}
-    </p>
-  </div>
+  <Hero padding="pt-24" title="COUNTDOWN" content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."></Hero>
 
   <Timer />
   <!-- Buttons -->

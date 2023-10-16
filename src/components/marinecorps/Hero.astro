@@ -5,12 +5,14 @@ interface Props {
   title: string
   content: string
   link: string
+  linkText: string
+  padding: string
 }
 
-const { title, content, link } = Astro.props
+const { title, content, link, linkText, padding } = Astro.props
 ---
 
-<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+<div class:list={["max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-inherit", padding]}>
   <!-- Title -->
   <div class="max-w-5xl mx-auto mt-5 text-center">
     <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl">
@@ -26,8 +28,11 @@ const { title, content, link } = Astro.props
   </div>
 
   <!-- Buttons -->
+  {
+  link ?
   <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-    <Button href={link} text="LEARN MORE" />
+    <Button href={link} text={linkText} />
   </div>
+  : ""} 
   <!-- End Buttons -->
 </div>

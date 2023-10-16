@@ -1,0 +1,16 @@
+---
+import Hero from '../components/marinecorps/Hero.astro';
+import Layout from '../layouts/Layout.astro'
+import TrainingFlow from '../story/training/TrainingFlow.astro'
+
+import "../styles/global.css"
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
+    <div class="h-screen snap-start pt-20">
+      <Hero padding='p-24' title='NEXT STEPS'/>
+      <TrainingFlow />
+    </div>
+  </div>
+</Layout>
