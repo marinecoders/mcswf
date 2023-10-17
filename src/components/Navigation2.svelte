@@ -1,22 +1,20 @@
 <script>
   import LightButton from './buttons/LightButton.svelte'
   import Icon from '@iconify/svelte';
-  
+
+  let isMenuHidden = true;
+
+  function toggleMenu() {
+    isMenuHidden = !isMenuHidden;
+  }
 </script>
 <nav
   class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 dark:bg-slate-900 md:px-24"
 >
   <a class="text-3xl font-bold leading-none" href="/">MCSWF</a>
-  <div class="lg:hidden">
+  <div class="lg:hidden" on:click={toggleMenu}>
     <button class="flex items-center p-3 navbar-burger">
-      <svg
-        class="block w-4 h-4 fill-current"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <title>MOBILE MENU</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
+      <Icon class="text-2xl" icon="mdi:menu"/>
     </button>
   </div>
   <ul
@@ -66,27 +64,17 @@
   >
 </nav>
 
-<div class="relative z-50 hidden navbar-menu">
+{#if !isMenuHidden}
+<div class="relative z-50 navbar-menu">
   <div class="fixed inset-0 bg-gray-800 opacity-0 navbar-backdrop"></div>
   <nav
     class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
   >
     <div class="flex items-center mb-8">
       <a class="mr-auto text-3xl font-bold leading-none" href="#">MCSWF</a>
-      <button class="navbar-close">
-        <svg
-          class="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+      <button class="navbar-close" on:click={toggleMenu}>
+
+        <Icon class="text-2xl" icon="mdi:window-close"/>
       </button>
     </div>
     <div>
@@ -132,7 +120,7 @@
     </div>
   </nav>
 </div>
-
+{/if}
 <style>
   .dropdown:hover .dropdown-menu {
   display: block;
