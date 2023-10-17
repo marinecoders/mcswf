@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro'
+import Navigation2 from '../components/Navigation2.svelte'
 interface Props {
   title: string
 }
@@ -23,8 +23,9 @@ const { title } = Astro.props
   </head>
   <body class="bg-slate-200 dark:bg-slate-800 dark:text-white font-rubik">
     <header class="fixed top-0 w-full max-h-20">
-      <Navigation />
+      <Navigation2 client:load />
     </header>
     <slot />
   </body>
 </html>
+../components/Navigation2.jsx

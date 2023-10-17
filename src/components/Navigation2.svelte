@@ -1,12 +1,12 @@
----
-import LightButton from './buttons/LightButton.astro'
-import RedButton from './buttons/RedButton.astro';
----
-
+<script>
+  import LightButton from './buttons/LightButton.svelte'
+  import Icon from '@iconify/svelte';
+  
+</script>
 <nav
   class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 dark:bg-slate-900 md:px-24"
 >
-  <a class="text-3xl font-bold leading-none" href="/"> MCSWF</a>
+  <a class="text-3xl font-bold leading-none" href="/">MCSWF</a>
   <div class="lg:hidden">
     <button class="flex items-center p-3 navbar-burger">
       <svg
@@ -14,7 +14,7 @@ import RedButton from './buttons/RedButton.astro';
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <title>Mobile menu</title>
+        <title>MOBILE MENU</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
       </svg>
     </button>
@@ -24,8 +24,18 @@ import RedButton from './buttons/RedButton.astro';
   >
     <li>
       <a href="/about">
-        <LightButton text="ABOUT" />
-        
+          <div class="relative inline-block dropdown">
+            <button class="inline-flex items-center justify-center gap-2 px-4 py-4 mb-2 text-sm font-semibold transition-all border border-transparent rounded-md hover:outline hover:outline-red-800 focused:outline-red-800 hover:dark:outliune-red-500 text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:text-slate-500 dark:hover:bg-slate-700 dark:hover:text-slate-300 dark:focus:ring-offset-slate-800">
+              <span class="mr-1">ABOUT</span>
+              <Icon class="text-xl" icon="mdi:chevron-down" />
+            </button>
+            <ul class="absolute hidden text-gray-700 rounded w-80 dropdown-menu outline outline-slate-900">
+              <li class=""><a class="block px-4 py-2 whitespace-no-wrap rounded-t bg-slate-200 hover:bg-white hover:outline hover:outline-red-800" href="#">ONE</a></li>
+              <li class=""><a class="block px-4 py-2 whitespace-no-wrap bg-slate-200 hover:bg-gray-400 hover:outline hover:outline-red-800" href="#">TWO</a></li>
+              <li class=""><a class="block px-4 py-2 whitespace-no-wrap rounded-b bg-slate-200 hover:bg-gray-400 hover:outline hover:outline-red-800" href="#">THREE</a></li>
+            </ul>
+          </div>
+      </a>
     </li>
     <li>
       <a href="/products">
@@ -62,7 +72,7 @@ import RedButton from './buttons/RedButton.astro';
     class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
   >
     <div class="flex items-center mb-8">
-      <a class="mr-auto text-3xl font-bold leading-none" href="#"> MCSWF</a>
+      <a class="mr-auto text-3xl font-bold leading-none" href="#">MCSWF</a>
       <button class="navbar-close">
         <svg
           class="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500"
@@ -123,45 +133,8 @@ import RedButton from './buttons/RedButton.astro';
   </nav>
 </div>
 
-<script>
-  // Burger menus
-  document.addEventListener('DOMContentLoaded', function () {
-    // open
-    const burger = document.querySelectorAll('.navbar-burger')
-    const menu = document.querySelectorAll('.navbar-menu')
-
-    if (burger.length && menu.length) {
-      for (var i = 0; i < burger.length; i++) {
-        burger[i].addEventListener('click', function () {
-          for (var j = 0; j < menu.length; j++) {
-            menu[j].classList.toggle('hidden')
-          }
-        })
-      }
-    }
-
-    // close
-    const close = document.querySelectorAll('.navbar-close')
-    const backdrop = document.querySelectorAll('.navbar-backdrop')
-
-    if (close.length) {
-      for (var i = 0; i < close.length; i++) {
-        close[i].addEventListener('click', function () {
-          for (var j = 0; j < menu.length; j++) {
-            menu[j].classList.toggle('hidden')
-          }
-        })
-      }
-    }
-
-    if (backdrop.length) {
-      for (var i = 0; i < backdrop.length; i++) {
-        backdrop[i].addEventListener('click', function () {
-          for (var j = 0; j < menu.length; j++) {
-            menu[j].classList.toggle('hidden')
-          }
-        })
-      }
-    }
-  })
-</script>
+<style>
+  .dropdown:hover .dropdown-menu {
+  display: block;
+}
+</style>
