@@ -2,6 +2,7 @@
   import LightButton from './buttons/LightButton.svelte'
   import Icon from '@iconify/svelte'
   import VerticalDropdown from '../components/dropdown/Vertical.svelte'
+  import HorizontalDropdown from '../components/dropdown/Horizontal.svelte'
 
   let isMenuHidden = true
 
@@ -30,10 +31,10 @@
         title="PRODUCTS"
         href="/products"
         dropdown={[
-          { link: '/products/sparta', linkTitle: 'SPARTA' },
-          { link: '/products/my-career', linkTitle: 'MyCareer' },
-          { link: '/products/SnapDB', linkTitle: 'SnapDB' },
-          { link: '/products/ViaSat', linkTitle: 'ViaSat' },
+          { href: '/products/sparta', text: 'SPARTA' },
+          { href: '/products/my-career', text: 'MyCareer' },
+          { href: '/products/SnapDB', text: 'SnapDB' },
+          { href: '/products/ViaSat', text: 'ViaSat' },
         ]}
       />
     </li>
@@ -42,9 +43,9 @@
         title="TRAINING & CAREER"
         href="/products"
         dropdown={[
-          { link: '/roles', linkTitle: 'ROLES' },
-          { link: '/jobs', linkTitle: 'JOB LISTINGS' },
-          { link: '/process', linkTitle: 'THE PROCESS' },
+          { href: '/roles', text: 'ROLES' },
+          { href: '/jobs', text: 'JOB LISTINGS' },
+          { href: '/process', text: 'THE PROCESS' },
         ]}
       />
     </li>
@@ -53,8 +54,8 @@
         title="CONTACT"
         href="/contact"
         dropdown={[
-          { link: '/requestdemo', linkTitle: 'REQUEST A DEMO' },
-          { link: '/suggest', linkTitle: 'SUGGEST AN APP' },
+          { href: '/requestdemo', text: 'REQUEST A DEMO' },
+          { href: '/suggest', text: 'SUGGEST AN APP' },
         ]}
       />
     </li>
@@ -89,55 +90,41 @@
           <li class="mb-1">
             <a
               class="block p-4 text-sm font-semibold text-gray-400 rounded hover:bg-blue-50 hover:text-red-600"
-              href="#"
-            >
-              <div class="dropdown">
-                <button class="flex items-cente">
-                  <span class="mr-1">ABOUT</span>
-                  <Icon class="text-xl" icon="mdi:chevron-down" />
-                </button>
-                <ul
-                  class="hidden mt-5 text-gray-700 rounded w-60 dropdown-menu"
-                >
-                  <li class="">
-                    <a
-                      class="block px-4 py-2 whitespace-no-wrap hover:text-black hover:outline rounded hover:outline-red-800"
-                      href="#">- ONE</a
-                    >
-                  </li>
-                  <li class="">
-                    <a
-                      class="block px-4 py-2 whitespace-no-wrap hover:text-black hover:outline rounded hover:outline-red-800"
-                      href="#">TWO</a
-                    >
-                  </li>
-                  <li class="">
-                    <a
-                      class="block px-4 py-2 whitespace-no-wrap hover:text-black hover:outline rounded hover:outline-red-800"
-                      href="#">THREE</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </a>
-          </li>
-          <li class="mb-1">
-            <a
-              class="block p-4 text-sm font-semibold text-gray-400 rounded hover:bg-blue-50 hover:text-red-600"
               href="/about">ABOUT</a
             >
           </li>
           <li class="mb-1">
-            <a
-              class="block p-4 text-sm font-semibold text-gray-400 rounded hover:bg-blue-50 hover:text-red-600"
-              href="/roles">TRAINING & CAREER</a
-            >
+            <HorizontalDropdown
+              title="PRODUCTS"
+              href="/products"
+              dropdown={[
+                { href: '/products/sparta', text: 'SPARTA' },
+                { href: '/products/my-career', text: 'MyCareer' },
+                { href: '/products/SnapDB', text: 'SnapDB' },
+                { href: '/products/ViaSat', text: 'ViaSat' },
+              ]}
+            />
           </li>
           <li class="mb-1">
-            <a
-              class="block p-4 text-sm font-semibold text-gray-400 rounded hover:bg-blue-50 hover:text-red-600"
-              href="/contact">CONTACT</a
-            >
+            <HorizontalDropdown
+              title="TRAINING & CAREER"
+              href="/products"
+              dropdown={[
+                { href: '/roles', text: 'ROLES' },
+                { href: '/jobs', text: 'JOB LISTINGS' },
+                { href: '/process', text: 'THE PROCESS' },
+              ]}
+            />
+          </li>
+          <li class="mb-1">
+            <HorizontalDropdown
+              title="CONTACT"
+              href="/contact"
+              dropdown={[
+                { href: '/requestdemo', text: 'REQUEST A DEMO' },
+                { href: '/suggest', text: 'SUGGEST AN APP' },
+              ]}
+            />
           </li>
         </ul>
       </div>
