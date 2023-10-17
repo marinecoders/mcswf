@@ -1,0 +1,49 @@
+---
+import Button from '../buttons/RedButton.astro'
+import Hero from './Hero.astro'
+import { Icon } from 'astro-icon'
+import Card from './Card.astro'
+import DarkButton from '../buttons/DarkButton.astro'
+import RedButton from '../buttons/RedButton.astro'
+---
+
+<div class="flex items-center justify-center h-2/5">
+  <div class="flex w-3/4">
+    <!-- Left Column -->
+    <div class="w-1/2 p-4">
+      <div class="flex justify-center">
+        <Card />
+      </div>
+    </div>
+    <div class="w-1/2 p-4">
+      <div class="flex justify-center">
+        <Card />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex items-center justify-center h-2/5">
+  <div class="flex w-3/4">
+    <!-- Left Column -->
+    <div class="w-1/2 p-4">
+      <div class="flex justify-center">
+        <Card />
+      </div>
+    </div>
+    <div class="w-1/2 p-4">
+      <div class="flex justify-center">
+        <Card />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex items-center justify-center h-1/5">
+  <div class="flex space-x-24 h-1/5">
+    <div>
+      <RedButton href="#" text="REQUEST AN APP"/>
+    </div>
+    <div>
+      <DarkButton href="#" text="SHARE APP IDEA"/>
+    </div>
+  </div>
+</div>
