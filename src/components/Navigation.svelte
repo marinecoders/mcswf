@@ -41,7 +41,7 @@
     <li>
       <VerticalDropdown
         title="TRAINING & CAREER"
-        href="/products"
+        href="/career"
         dropdown={[
           { href: '/roles', text: 'ROLES' },
           { href: '/jobs', text: 'JOB LISTINGS' },
@@ -89,7 +89,7 @@
         <ul>
           <li class="mb-1">
             <a
-              class="block p-4 text-sm font-semibold text-gray-400 rounded hover:bg-blue-50 hover:text-red-600"
+              class="block p-4 text-sm font-semibold text-slate-600 rounded hover:bg-blue-50 hover:text-red-600"
               href="/about">ABOUT</a
             >
           </li>
@@ -108,7 +108,7 @@
           <li class="mb-1">
             <HorizontalDropdown
               title="TRAINING & CAREER"
-              href="/products"
+              href="/roles"
               dropdown={[
                 { href: '/roles', text: 'ROLES' },
                 { href: '/jobs', text: 'JOB LISTINGS' },
