@@ -14,7 +14,7 @@
       <a href={href}><span class="mr-1">{title}</span></a>
       <Icon class="text-xl" icon="mdi:chevron-down" />
     </button>
-    <ul class="hidden mt-5 text-slate-700 rounded w-60 dropdown-menu">
+    <ul class="hidden mt-5 text-slate-700 rounded w-auto dropdown-menu">
       {#each dropdown as item}
         <li>
           <a
