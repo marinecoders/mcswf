@@ -1,0 +1,44 @@
+---
+import Hero from './Hero.astro';
+import PrereqCard from './PrereqCard.astro';
+
+---
+
+<div class="h-screen snap-start pt-20">
+    <!-- Heading -->
+    <Hero 
+      padding='p-8'
+      title='READY TO JOIN?'
+      content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+      />
+    <hr style="width:50%; margin-left:25%;color:gray">
+    <Hero
+      padding='pt-2 pb-4'
+      title="PREREQUISITES"
+    />
+
+    <!-- Grid of Prerequisites -->
+    <div class="grid grid-cols-2">
+        <!-- <div> {entry1} </div> -->
+        <PrereqCard 
+            title="PRE-REQ 1" 
+            content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        />
+        <PrereqCard 
+            title="PRE-REQ 2" 
+            content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        />
+        <PrereqCard 
+            title="PRE-REQ 3" 
+            content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        />
+        <PrereqCard 
+            title="PRE-REQ 4" 
+            content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        />
+        <PrereqCard 
+        title="PRE-REQ 5" 
+        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+    />
+    </div>
+</div>
