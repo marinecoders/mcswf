@@ -4,12 +4,12 @@ import RedButton from '../buttons/RedButton.astro'
 interface Props {
   title: string
   content: string
-  link: string
-  linkText: string
+  link?: string
+  linkText?: string
   padding: string
 }
 
-const { title, content, link, linkText, padding } = Astro.props
+const { title, content, link = null, linkText = null, padding } = Astro.props
 ---
 
 <div class:list={["max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-inherit", padding]}>
