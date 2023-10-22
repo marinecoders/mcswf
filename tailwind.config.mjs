@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
-      },
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')],
