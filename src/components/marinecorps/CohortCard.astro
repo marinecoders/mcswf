@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import RedButton from '../buttons/RedButton.astro'
 
 interface Props {
   title: string
@@ -11,14 +12,17 @@ interface Props {
 const { title, content, startDate, endDate } = Astro.props
 ---
 
-<div class="ps-10 pt-5">
-  <h3 class="text-4xl font-extrabold text-red-800 text-center">{title}:</h3>
+<div class="w-1/2 p-4 bg-slate-200">
+  <h3 class="text-4xl text-black font-extrabold text-center">{title}</h3>
   <div class="max-w-3xl mx-auto mt-5 text-center">
     <p class="text-lg text-slate-600 dark:text-slate-400">
-      {content}
-    </p>
-    <p>
       {startDate} - {endDate}
     </p>
+    <p>
+      {content}
+    </p>
+    <div>
+      <RedButton href="#" text="APPLY NOW" />
+    </div>
   </div>
 </div>
