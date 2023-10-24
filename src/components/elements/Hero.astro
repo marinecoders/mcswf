@@ -9,10 +9,21 @@ interface Props {
   padding?: string
 }
 
-const { title, content, link = null, linkText = null, padding } = Astro.props
+const {
+  title,
+  content = null,
+  link = null,
+  linkText = null,
+  padding,
+} = Astro.props
 ---
 
-<div class:list={["max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-inherit", padding]}>
+<div
+  class:list={[
+    'max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-inherit',
+    padding,
+  ]}
+>
   <!-- Title -->
   <div class="max-w-6xl mx-auto mt-5 text-center">
     <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl">
@@ -29,10 +40,13 @@ const { title, content, link = null, linkText = null, padding } = Astro.props
 
   <!-- Buttons -->
   {
-  link ?
-  <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-    <RedButton href={link} text={linkText} />
-  </div>
-  : ""} 
+    link ? (
+      <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
+        <RedButton href={link} text={linkText} />
+      </div>
+    ) : (
+      ''
+    )
+  }
   <!-- End Buttons -->
 </div>
