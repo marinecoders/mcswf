@@ -1,6 +1,6 @@
 ---
-import Hero from './Hero.astro';
-import PrereqCard from './PrereqCard.astro';
+import Hero from '../elements/Hero.astro';
+import PrereqCard from '../cards/PrereqCard.astro';
 import {getCollection, getEntry, getEntries} from 'astro:content'
 
 const entry = await getEntry('prereqs', '1');
