@@ -12,8 +12,10 @@ interface Props {
 const { title, content, startDate, endDate } = Astro.props
 ---
 
-<div class="w-1/2 p-4 bg-slate-200">
-  <h3 class="text-4xl text-black font-extrabold text-center">{title}</h3>
+<div class="w-10/12 h-full p-10 bg-slate-300 dark:bg-slate-900">
+  <h3 class="text-4xl text-black dark:text-white font-extrabold text-center">
+    {title}
+  </h3>
   <div class="max-w-3xl mx-auto mt-5 text-center">
     <p class="text-lg text-slate-600 dark:text-slate-400">
       {startDate} - {endDate}
@@ -21,7 +23,7 @@ const { title, content, startDate, endDate } = Astro.props
     <p>
       {content}
     </p>
-    <div>
+    <div class="pt-20">
       <RedButton href="#" text="APPLY NOW" />
     </div>
   </div>
