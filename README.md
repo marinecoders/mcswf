@@ -34,6 +34,8 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
+The components are organized into buttons, cards, dropdown, elements (other basic code blocks reused across the site), sections (used for sections of pages), and utils.
+
 Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
