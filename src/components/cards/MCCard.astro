@@ -1,18 +1,22 @@
 ---
 import Icon from "astro-icon";
 
+const { circularIcon = false, title="Shoes!", darkFontColor="white", fontColor="black" } = Astro.props
 ---
 
 <div class="card bg-base-100 w-8/12">
   <figure class="px-10 pt-10">
     <img
-      src="https://dummyimage.com/1920x1080/fff/aaa"
+      src= {
+        circularIcon ? "https://dummyimage.com/1920x1920/fff/aaa"
+        : "https://dummyimage.com/1920x1080/fff/aaa"
+      }
       alt="Shoes"
-      class="rounded-xl"
+      class={circularIcon ? "rounded-full" : "rounded-xl"}
     />
   </figure>
   <div class="card-body items-center text-center">
-    <h2 class="card-title pt-3 text-4xl">Shoes!</h2>
+    <h2 class={"card-title font-medium pt-3 text-4xl " + fontColor + " dark:" + darkFontColor}>{title}</h2>
     <div class="card-actions">
       <button class="btn btn-primary">
         <div class="pt-2 flex justify-center items-center ms-3">

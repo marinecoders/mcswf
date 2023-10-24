@@ -6,9 +6,27 @@
 
   let isMenuHidden = true
 
-  function toggleMenu() {
+  function toggleMenu(event) {
     isMenuHidden = !isMenuHidden
+    event.stopPropagation()
   }
+
+	function onClickOutside(element) {
+		function onClick(event) {
+			if (!element.contains(event.target)) {
+				isMenuHidden = true;
+			}
+		}
+		
+		document.body.addEventListener('click', onClick);
+		
+		return {
+			destroy() {
+				document.body.removeEventListener('click', onClick);
+			}
+		}
+	}
+
 </script>
 
 <nav
@@ -78,6 +96,7 @@
     <div class="fixed inset-0 bg-gray-800 opacity-0 navbar-backdrop" />
     <nav
       class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
+      use:onClickOutside
     >
       <div class="flex items-center mb-8">
         <a class="mr-auto text-3xl font-bold leading-none" href="/">MCSWF</a>
