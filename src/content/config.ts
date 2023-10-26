@@ -25,9 +25,9 @@ const roleDescriptions = defineCollection({
     title1: z.string(),
     title2: z.string(),
     title3: z.string(),
-    aboutJobList: z.string(),
-    responsibilitiesList: z.string(),
-    whatsInItForMeList: z.string(),
+    aboutJobList: z.array(z.string()),
+    responsibilitiesList: z.array(z.string()),
+    whatsInItForMeList: z.array(z.string()),
   })
 })
 
@@ -37,5 +37,5 @@ const roleDescriptions = defineCollection({
 export const collections = {
   'prereqs': prereqCollection,
   'cohorts': cohortCollection,
-  'roles' : roleDescriptions
+  'roles': roleDescriptions
 };
