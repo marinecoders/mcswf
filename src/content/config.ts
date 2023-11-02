@@ -23,6 +23,7 @@ const roleDescriptions = defineCollection({
   type: 'data',
   schema: z.object({
     role_title: z.string(),
+    url: z.string(),
     title1: z.string(),
     title2: z.string(),
     title3: z.string(),

@@ -1,7 +1,8 @@
 ---
 import Icon from "astro-icon";
 
-const { circularIcon = false, title="Shoes!", darkFontColor="white", fontColor="black" } = Astro.props
+const { href = "", circularIcon = false, title="Shoes!", darkFontColor="white", fontColor="black" } = Astro.props
+
 ---
 
 <div class="card bg-base-100 w-8/12">
@@ -19,10 +20,12 @@ const { circularIcon = false, title="Shoes!", darkFontColor="white", fontColor="
     <h2 class={"card-title font-medium pt-3 text-4xl " + fontColor + " dark:" + darkFontColor}>{title}</h2>
     <div class="card-actions">
       <button class="btn btn-primary">
-        <div class="pt-2 flex justify-center items-center ms-3">
-          <p>LEARN MORE</p>
-          <Icon width="24" pack="mdi" name="chevron-right"/></Icon>
-        </div>
+        <a href={href}>
+          <div class="pt-2 flex justify-center items-center ms-3">
+            <p>LEARN MORE</p>
+            <Icon width="24" pack="mdi" name="chevron-right"/></Icon>
+          </div>
+        </a>
       </button>
     </div>
   </div>
