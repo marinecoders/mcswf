@@ -15,12 +15,16 @@ const {
   link = null,
   linkText = null,
   padding,
+  contentClasses
 } = Astro.props
 ---
+<script is:inline define:vars={{content}}>
+
+</script>
 
 <div
   class:list={[
-    'max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-inherit',
+    'max-w-[85rem] mx-auto px-4 pt-inherit',
     padding,
   ]}
 >
@@ -33,7 +37,10 @@ const {
   <!-- End Title -->
 
   <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p class="text-lg text-slate-600 dark:text-slate-400">
+    <p id='content' class:list={[
+      "text-lg text-slate-600 dark:text-slate-400",
+      contentClasses,
+    ]}>
       {content}
     </p>
   </div>
