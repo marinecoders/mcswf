@@ -4,8 +4,8 @@ import Icon from "astro-icon";
 const { circularIcon = false, title="Shoes!", darkFontColor="white", fontColor="black" } = Astro.props
 ---
 
-<div class="card bg-base-100 w-8/12">
-  <figure class="px-10 pt-10">
+<div class="card bg-base-100 md:w-8/12 w-screen">
+  <figure class="items-center md:px-10 md:pt-10">
     <img
       src= {
         circularIcon ? "https://dummyimage.com/1920x1920/fff/aaa"
