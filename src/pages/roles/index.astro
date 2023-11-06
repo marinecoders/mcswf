@@ -1,16 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import Card from '../../components/cards/MCCard.astro'
-import MerticCard from '../../components/cards/MetricCard.astro'
 import Hero from '../../components/elements/Hero.astro'
 import RedButton from '../../components/buttons/RedButton.astro'
 
 import '../../styles/global.css'
-import { imageConfig } from 'astro:assets'
-import { getCollection, getEntry, getEntries } from 'astro:content'
 
-const entry = await getEntry('roles', '1')
-const entries = await getCollection('roles')
+const posts = await Astro.glob('../../content/roles/*.md')
 ---
 
 <Layout title="ROLES">
@@ -23,14 +19,14 @@ const entries = await getCollection('roles')
         class="md:grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"
       >
         {
-          entries.map((roleEntry) => (
+          posts.map((post) => (
             <div class="flex justify-center">
               <Card
                 fontColor="text-red-600"
                 darkFontColor="text-red-600"
-                title={roleEntry.data.role_title}
+                title={post.frontmatter.role}
                 circularIcon
-                href={"/roles/" + roleEntry.data.url}
+                href={"/roles/" + post.frontmatter.url}
               />
             </div>
           ))

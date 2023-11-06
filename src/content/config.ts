@@ -19,25 +19,10 @@ const cohortCollection = defineCollection({
   })
 });
 
-const roleDescriptions = defineCollection({
-  type: 'data',
-  schema: z.object({
-    role_title: z.string(),
-    url: z.string(),
-    title1: z.string(),
-    title2: z.string(),
-    title3: z.string(),
-    aboutJobList: z.array(z.string()),
-    responsibilitiesList: z.array(z.string()),
-    whatsInItForMeList: z.array(z.string()),
-  })
-})
-
 
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'prereqs': prereqCollection,
   'cohorts': cohortCollection,
-  'roles': roleDescriptions
 };
