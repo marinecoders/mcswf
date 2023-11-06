@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Card from '../../components/cards/MCCard.astro'
+import Hero from '../../components/elements/Hero.astro'
+import RedButton from '../../components/buttons/RedButton.astro'
+
+import '../../styles/global.css'
+
+const posts = await Astro.glob('../../content/roles/*.md')
+---
+
+<Layout title="ROLES">
+  <div
+    class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
+  >
+    <div class="h-screen snap-start py-20">
+      <Hero padding="md:pt-24" title="FIND THE ROLE THAT'S RIGHT FOR YOU" />
+      <div
+        class="md:grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"
+      >
+        {
+          posts.map((post) => (
+            <div class="flex justify-center">
+              <Card
+                fontColor="text-red-600"
+                darkFontColor="text-red-600"
+                title={post.frontmatter.role}
+                circularIcon
+                href={"/roles/" + post.frontmatter.url}
+              />
+            </div>
+          ))
+        }
+
+      </div>
+      <div class="flex items-center justify-center h-1/5">
+        <div class="flex space-x-24 mt-8">
+          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

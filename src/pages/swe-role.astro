@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/elements/Hero.astro";
+import RedButton from "../components/buttons/RedButton.astro";
+import AboutRole from "../components/sections/AboutRole.astro";
+
+import '../styles/global.css'
+---
+
+<Layout title="SOFTWARE ENGINEER">
+    <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
+        <div class="h-screen snap-start py-20">
+            <Hero
+                padding="md:pt-24"
+                title="SOFTWARE ENGINEER"
+            />
+            <AboutRole />
+        </div>
+    </div>
+</Layout>

@@ -24,5 +24,5 @@ const cohortCollection = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'prereqs': prereqCollection,
-  'cohorts': cohortCollection
+  'cohorts': cohortCollection,
 };
