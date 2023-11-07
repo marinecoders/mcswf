@@ -1,14 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Card from '../../components/cards/MCCard.astro'
-import MerticCard from '../../components/cards/MetricCard.astro'
 import Hero from '../../components/elements/Hero.astro'
-import RedButton from '../../components/buttons/RedButton.astro'
-import AboutRole from '../../components/sections/AboutRole.astro'
+import Card from './RoleCard.astro'
 
 import '../../styles/global.css'
-import { imageConfig } from 'astro:assets'
-import { getCollection, getEntry, getEntries } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../content/roles/*.md')
@@ -28,10 +23,33 @@ const content = compiledContent()
     class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div class="h-screen snap-start py-20">
-      <Hero padding="md:pt-24" title={frontmatter.title} link="#" linkText="APPLY NOW"/>
+      <Hero
+        padding="md:pt-24"
+        title={frontmatter.title}
+        link="#"
+        linkText="APPLY NOW"
+      />
     </div>
     <div class="flex h-fill snap-start py-24 place-content-center">
-        <article set:html={content} class="prose dark:prose-invert" />
+      <article set:html={content} class="prose dark:prose-invert" />
+    </div>
+    <div class="h-screen snap-start py-36">
+      <div class="flex flex-row">
+        <div class="basis-1/2 flex justify-center">
+          <div class="w-1/2 flex flex-col">
+            <h1 class="font-semibold text-3xl">READY TO APPLY?</h1>
+            <h1 class="font-semibold text-7xl pt-5">
+              JOIN THE COHORT THAT'S RIGHT FOR YOU.
+            </h1>
+          </div>
+        </div>
+        <div class="basis-1/4">
+          <Card/>
+        </div>
+        <div class="basis-1/4">
+          <Card/>
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
