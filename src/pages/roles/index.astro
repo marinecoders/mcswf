@@ -1,43 +1,64 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Card from '../../components/cards/MCCard.astro'
 import Hero from '../../components/elements/Hero.astro'
-import RedButton from '../../components/buttons/RedButton.astro'
 
+import Mission from '../../components/sections/AboutMission.astro'
+import Vision from '../../components/sections/Vision.astro'
+import Impact from '../../components/sections/AboutImpact.astro'
 import '../../styles/global.css'
-
+import { imageConfig } from 'astro:assets'
 const posts = await Astro.glob('../../content/roles/*.md')
+let side = 'left'
 ---
 
-<Layout title="ROLES">
+<Layout title="ABOUT">
   <div
     class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
   >
-    <div class="h-screen snap-start py-20">
-      <Hero padding="md:pt-24" title="FIND THE ROLE THAT'S RIGHT FOR YOU" />
-      <div
-        class="md:grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"
-      >
-        {
-          posts.map((post) => (
-            <div class="flex justify-center">
-              <Card
-                fontColor="text-red-600"
-                darkFontColor="text-red-600"
-                title={post.frontmatter.role}
-                circularIcon
-                href={"/roles/" + post.frontmatter.url}
-              />
-            </div>
-          ))
+    {
+      posts.map((post) => {
+        if (side == 'left') {
+          side = 'right'
+          return (
+            <>
+              <div class="h-screen snap-start py-20">
+                <div class="flex h-screen">
+                  <div class="w-1/2 p-4">
+                    <Hero
+                      title={post.frontmatter.role}
+                      content={post.frontmatter.about}
+                      link={"/roles/" + post.frontmatter.url}
+                      padding="pt-48"
+                      linkText="LEARN MORE"
+                    />
+                  </div>
+                  <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
+                </div>
+              </div>
+            </>
+          )
+        } else {
+          side = 'left'
+          return (
+            <>
+              <div class="h-screen snap-start py-20">
+                <div class="flex h-screen">
+                  <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
+                  <div class="w-1/2 p-4">
+                    <Hero
+                      title={post.frontmatter.role}
+                      content={post.frontmatter.about}
+                      link={"/roles/" + post.frontmatter.url}
+                      padding="pt-48"
+                      linkText="LEARN MORE"
+                    />
+                  </div>
+                </div>
+              </div>
+            </>
+          )
         }
-
-      </div>
-      <div class="flex items-center justify-center h-1/5">
-        <div class="flex space-x-24 mt-8">
-          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
-        </div>
-      </div>
-    </div>
+      })
+    }
   </div>
 </Layout>

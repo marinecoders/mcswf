@@ -59,7 +59,7 @@
     <li>
       <VerticalDropdown
         title="TRAINING & CAREER"
-        href="/training"
+        href="/career"
         dropdown={[
           { href: '/roles', text: 'ROLES' },
           { href: '/jobs', text: 'JOB LISTINGS' },
