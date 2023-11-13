@@ -11,7 +11,7 @@ about: Et quae quibusdam sed consequatur iste nam asperiores facilis qui error i
   - Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat
   - cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis 
   - qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.
-# PLATFOROM ENGINEER RESPONSIBILITIES
+# PLATFORM ENGINEER RESPONSIBILITIES
   - Lorem ipsum dolor sit amet. 
   - Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat
   - cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis 
