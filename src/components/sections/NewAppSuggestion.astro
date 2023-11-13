@@ -1,47 +1,52 @@
 ---
-import Button from '../buttons/RedButton.astro'
 import RedButton from '../buttons/RedButton.astro'
 ---
 
-<div class="pt-20 flex items-center flex-col">
-  <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-    <legend class="text-sm text-blue-600">First Name</legend>
-    <input
-      type="text"
-      name="first_name"
-      class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
-    />
-  </fieldset>
-  <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-    <legend class="text-sm text-blue-600">Last Name</legend>
-    <input
-      type="text"
-      name="last_name"
-      class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
-    />
-  </fieldset>
-
-  <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-    <legend class="text-sm text-blue-600">Email</legend>
-    <input
-      type="text"
-      name="email"
-      class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
-    />
-  </fieldset>
-  <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-    <legend class="text-sm text-blue-600">Organization</legend>
-    <input
-      type="text"
-      name="organization"
-      class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
-    />
-  </fieldset>
-  <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-    <legend class="text-sm text-blue-600">Brief Summary</legend>
-    <textarea
-      name="summary"
-      class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
-    ></textarea>
-  </fieldset>
+<div
+  class="flex items-center flex-col border border-black border-2 w-2/5 pt-10 mt-28 mx-auto"
+>
+  <form>
+    <h1 class="font-bold">FUTURE APP SUGGESTIONS FORM</h1>
+    <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
+      <legend class="text-sm text-blue-600">First Name</legend>
+      <input
+        type="text"
+        name="first_name"
+        class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
+      />
+    </fieldset>
+    <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
+      <legend class="text-sm text-blue-600">Last Name</legend>
+      <input
+        type="text"
+        name="last_name"
+        class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
+      />
+    </fieldset>
+    <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
+      <legend class="text-sm text-blue-600">Email</legend>
+      <input
+        type="text"
+        name="email"
+        class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
+      />
+    </fieldset>
+    <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
+      <legend class="text-sm text-blue-600">Organization</legend>
+      <input
+        type="text"
+        name="organization"
+        class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
+      />
+    </fieldset>
+    <h1 class="mt-12 font-bold">TELL US MORE</h1>
+    <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
+      <legend class="text-sm text-blue-600">Brief Summary</legend>
+      <textarea
+        name="summary"
+        class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
+      ></textarea>
+    </fieldset>
+    <RedButton href="" text="SUBMIT" extras="mt-5 w-40" />
+  </form>
 </div>
