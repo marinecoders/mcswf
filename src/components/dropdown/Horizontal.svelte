@@ -19,7 +19,7 @@
         <li>
           <a
             class="block px-4 py-2 whitespace-no-wrap hover:text-black hover:outline rounded hover:outline-red-800"
-            href="item.href">
+            href={item.href}>
         {item.text}</a>
         </li>
       {/each}

@@ -127,7 +127,7 @@
           <li class="mb-1">
             <HorizontalDropdown
               title="TRAINING & CAREER"
-              href="/roles"
+              href="/training"
               dropdown={[
                 { href: '/roles', text: 'ROLES' },
                 { href: '/jobs', text: 'JOB LISTINGS' },
