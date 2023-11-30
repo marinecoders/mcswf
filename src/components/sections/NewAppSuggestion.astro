@@ -3,12 +3,12 @@ import RedButton from '../buttons/RedButton.astro'
 ---
 
 <div
-  class="flex items-center flex-col border border-black border-2 w-2/5 pt-10 mt-28 mx-auto"
+  class="flex items-center flex-col w-2/5 mt-28 pb-10 mb-10 mx-auto dark:border-white"
 >
-  <form>
+  <form class="lg:border lg:border-black lg:border-2 pt-8 pb-4 pl-20 pr-20">
     <h1 class="font-bold">FUTURE APP SUGGESTIONS FORM</h1>
     <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-      <legend class="text-sm text-blue-600">First Name</legend>
+      <legend class="text-sm text-black-600">First Name</legend>
       <input
         type="text"
         name="first_name"
@@ -16,7 +16,7 @@ import RedButton from '../buttons/RedButton.astro'
       />
     </fieldset>
     <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-      <legend class="text-sm text-blue-600">Last Name</legend>
+      <legend class="text-sm text-black-600">Last Name</legend>
       <input
         type="text"
         name="last_name"
@@ -24,7 +24,7 @@ import RedButton from '../buttons/RedButton.astro'
       />
     </fieldset>
     <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-      <legend class="text-sm text-blue-600">Email</legend>
+      <legend class="text-sm text-black-600">Email</legend>
       <input
         type="text"
         name="email"
@@ -32,7 +32,7 @@ import RedButton from '../buttons/RedButton.astro'
       />
     </fieldset>
     <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-      <legend class="text-sm text-blue-600">Organization</legend>
+      <legend class="text-sm text-black-600">Organization</legend>
       <input
         type="text"
         name="organization"
@@ -41,12 +41,14 @@ import RedButton from '../buttons/RedButton.astro'
     </fieldset>
     <h1 class="mt-12 font-bold">TELL US MORE</h1>
     <fieldset class="w-80 border border-solid border-blue-600 p-2 mt-5 rounded">
-      <legend class="text-sm text-blue-600">Brief Summary</legend>
+      <legend class="text-sm text-black-600">Brief Summary</legend>
       <textarea
         name="summary"
         class="w-full h-full p-0 border-none focus:outline-none bg-transparent"
       ></textarea>
     </fieldset>
-    <RedButton href="" text="SUBMIT" extras="mt-5 w-40" />
+    <div class="flex justify-center">
+      <RedButton href="" text="SUBMIT" extras="mt-5 w-40" />
+    </div>
   </form>
 </div>
