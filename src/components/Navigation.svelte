@@ -1,9 +1,4 @@
 <script>
-  import LightButton from './buttons/LightButton.svelte'
-  import Icon from '@iconify/svelte'
-  import VerticalDropdown from '../components/dropdown/Vertical.svelte'
-  import HorizontalDropdown from '../components/dropdown/Horizontal.svelte'
-
   let isMenuHidden = true
 
   function toggleMenu(event) {
@@ -11,161 +6,211 @@
     event.stopPropagation()
   }
 
-	function onClickOutside(element) {
-		function onClick(event) {
-			if (!element.contains(event.target)) {
-				isMenuHidden = true;
-			}
-		}
-		
-		document.body.addEventListener('click', onClick);
-		
-		return {
-			destroy() {
-				document.body.removeEventListener('click', onClick);
-			}
-		}
-	}
+  function onClickOutside(element) {
+    function onClick(event) {
+      if (!element.contains(event.target)) {
+        isMenuHidden = true
+      }
+    }
 
+    document.body.addEventListener('click', onClick)
+
+    return {
+      destroy() {
+        document.body.removeEventListener('click', onClick)
+      },
+    }
+  }
+
+  let dropdowns = {
+    products: false,
+    about: false,
+    trainingAndCareer: false,
+    contact: false,
+  }
+
+  function toggleDropdown(dropdown) {
+    dropdowns[dropdown] = !dropdowns[dropdown]
+  }
 </script>
 
-<nav
-  class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 dark:bg-slate-900 md:px-24"
->
-  <a class="text-3xl font-bold leading-none" href="/">MCSWF</a>
-  <div class="lg:hidden" on:click={toggleMenu}>
-    <button class="flex items-center p-3 navbar-burger">
-      <Icon class="text-2xl" icon="mdi:menu" />
-    </button>
-  </div>
-  <ul
-    class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+<header class="antialiased blue-radial-gradient h-20">
+  <nav
+    class="bg-white blue-radial-gradient border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800"
   >
-    <li>
-      <LightButton text="ABOUT" href="/about" />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="PRODUCTS"
-        href="/products"
-        dropdown={[
-          { href: '/products/sparta', text: 'SPARTA' },
-          { href: '/products/my-career', text: 'MyCareer' },
-          { href: '/products/SnapDB', text: 'SnapDB' },
-          { href: '/products/ViaSat', text: 'ViaSat' },
-        ]}
-      />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="TRAINING & CAREER"
-        href="/career"
-        dropdown={[
-          { href: '/roles', text: 'ROLES' },
-          { href: '/jobs', text: 'JOB LISTINGS' },
-          { href: '/process', text: 'THE PROCESS' },
-        ]}
-      />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="CONTACT"
-        href="/contact"
-        dropdown={[
-          { href: '/requestdemo', text: 'REQUEST A DEMO' },
-          { href: '/suggest', text: 'SUGGEST AN APP' },
-        ]}
-      />
-    </li>
-  </ul>
-  <a
-    class="hidden px-6 transition duration-200 lg:inline-block rounded-xl"
-    href="#"
-  >
-    <button
-      type="button"
-      class="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
-    >
-      GET IN TOUCH
-    </button></a
-  >
-</nav>
-
-{#if !isMenuHidden}
-  <div class="relative z-50 navbar-menu">
-    <div class="fixed inset-0 bg-gray-800 opacity-0 navbar-backdrop" />
-    <nav
-      class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
-      use:onClickOutside
-    >
-      <div class="flex items-center mb-8">
-        <a class="mr-auto text-3xl font-bold leading-none" href="/">MCSWF</a>
-        <button class="navbar-close" on:click={toggleMenu}>
-          <Icon class="text-2xl" icon="mdi:window-close" />
+    <div class="flex flex-wrap justify-between items-center">
+      <div class="flex justify-start items-center">
+        <a href="https://flowbite.com" class="flex mr-4">
+          <span
+            class="self-center text-lg font-semibold whitespace-nowrap dark:text-white"
+            >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span
+          >
+        </a>
+      </div>
+      <div class="flex items-center lg:order-2">
+        <button
+          on:click={toggleMenu}
+          id="toggleSidebar"
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 16 12"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h14M1 6h14M1 11h7"
+            />
+          </svg>
+        </button>
+        <button
+          on:click={toggleMenu}
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        >
+          <svg
+            class="w-[18px] h-[18px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+            ><path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            /></svg
+          >
+          <span class="sr-only">Toggle sidebar</span>
         </button>
       </div>
-      <div>
-        <ul>
-          <li class="mb-1">
-            <a
-              class="block p-4 text-sm font-semibold text-slate-600 rounded hover:bg-blue-50 hover:text-red-600"
-              href="/about">ABOUT</a
-            >
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="PRODUCTS"
-              href="/products"
-              dropdown={[
-                { href: '/products/sparta', text: 'SPARTA' },
-                { href: '/products/my-career', text: 'MyCareer' },
-                { href: '/products/SnapDB', text: 'SnapDB' },
-                { href: '/products/ViaSat', text: 'ViaSat' },
-              ]}
+    </div>
+    {#if !isMenuHidden}
+      <hr class=" h-px my-4 border-0" />
+      <div class="hidden lg:block xl:block 2xl:block text-white p-4 mx-24">
+        <div class="flex justify-between">
+          <div class="p-2 hover:text-mcswf-gold">
+            <!-- Products Section -->
+            <h2 class="font-bold">PRODUCTS</h2>
+            <img
+              class="rounded"
+              src="http://via.placeholder.com/240x200"
+              alt="Products"
             />
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="TRAINING & CAREER"
-              href="/roles"
-              dropdown={[
-                { href: '/roles', text: 'ROLES' },
-                { href: '/jobs', text: 'JOB LISTINGS' },
-                { href: '/process', text: 'THE PROCESS' },
-              ]}
+          </div>
+          <div class="p-2 hover:text-mcswf-gold">
+            <!-- About Section -->
+            <h2 class="font-bold">ABOUT</h2>
+            <img
+              class="rounded"
+              src="http://via.placeholder.com/240x200"
+              alt="About"
             />
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="CONTACT"
-              href="/contact"
-              dropdown={[
-                { href: '/requestdemo', text: 'REQUEST A DEMO' },
-                { href: '/suggest', text: 'SUGGEST AN APP' },
-              ]}
+          </div>
+          <div class="p-2 hover:text-mcswf-gold">
+            <!-- Training & Career Section -->
+            <h2 class="font-bold">TRAINING & CAREER</h2>
+            <img
+              class="rounded"
+              src="http://via.placeholder.com/240x200"
+              alt="Training & Career"
             />
-          </li>
-        </ul>
-      </div>
-      <div class="mt-auto">
-        <div class="pt-6">
-          <a
-            class="block px-4 py-3 mb-2 text-xs font-semibold leading-loose text-center text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
-            href="#"
-          >
-            <button>GET IN TOUCH</button>
-          </a>
+          </div>
+          <div class="p-2 hover:text-mcswf-gold">
+            <!-- Contact Section -->
+            <h2 class="font-bold">CONTACT</h2>
+            <img
+              class="rounded"
+              src="http://via.placeholder.com/240x200"
+              alt="Contact"
+            />
+          </div>
         </div>
-        <p class="my-4 text-xs text-center text-gray-400">
-          <span>UNITED STATES MARINE CORPS</span>
-        </p>
       </div>
-    </nav>
-  </div>
-{/if}
+
+
+      <div class="visible lg:hidden xl:hidden 2xl:hidden grid grid-cols-1 gap-2">
+        <div>
+          <h1 class="text-center underline font-bold text-mcswf-gold">APPLY NOW</h1>
+        </div>
+        <div>
+          <h1 class="flex font-bold justify-between hover:text-mcswf-gold">
+            <span class="menu-item" on:click={() => toggleDropdown('products')}
+              >PRODUCTS</span
+            >
+            <span class="text-right text-xl">{dropdowns.products ? '-' : '+'}</span>
+          </h1>
+
+          <div class={dropdowns.products ? 'submenu' : 'hidden'}>
+            <div class="submenu-item">SPARTA</div>
+            <div class="submenu-item">MyCAREER</div>
+            <div class="submenu-item">Snap DB</div>
+            <div class="submenu-item">ViaSat</div>
+          </div>
+        </div>
+
+        <div>
+          <h1 class="flex font-bold justify-between hover:text-mcswf-gold">
+            <span class="menu-item" on:click={() => toggleDropdown('about')}
+              >ABOUT</span
+            >
+          </h1>
+        </div>
+
+        <div>
+          <h1 class="flex font-bold justify-between hover:text-mcswf-gold">
+            <span class="menu-item" on:click={() => toggleDropdown('trainingAndCareer')}
+              >TRAINING AND CAREER</span
+            >
+            <span class="text-right text-xl">{dropdowns.trainingAndCareer ? '-' : '+'}</span>
+          </h1>
+
+          <div class={dropdowns.trainingAndCareer ? 'submenu' : 'hidden'}>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+          </div>
+        </div>
+
+        <div>
+          <h1 class="flex font-bold justify-between hover:text-mcswf-gold">
+            <span class="menu-item" on:click={() => toggleDropdown('contact')}
+              >CONTACT</span
+            >
+            <span class="text-right text-xl">{dropdowns.contact ? '-' : '+'}</span>
+          </h1>
+
+          <div class={dropdowns.contact ? 'submenu' : 'hidden'}>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+            <div class="submenu-item">Lorem Ipsum</div>
+          </div>
+        </div>
+      </div>
+      <div class="pb-4"></div>
+    {/if}
+  </nav>
+</header>
+
 
 <style>
-  .dropdown:hover .dropdown-menu {
-    display: block;
+  .submenu-item {
+    padding-left: 1em;
+  }
+
+  .submenu-item:hover {
+    color: rgb(233 202 134)
   }
 </style>

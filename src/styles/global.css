@@ -15,3 +15,10 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.blue-radial-gradient {
+    background-image: linear-gradient(
+        80deg, #101728 0%,#101728 0%, #07405B 70%, #101728 100%
+    );
+  }
+  

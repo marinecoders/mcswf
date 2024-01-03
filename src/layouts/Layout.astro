@@ -1,5 +1,8 @@
 ---
 import Navigation2 from '../components/Navigation.svelte'
+
+import FooterSmall from '../components/FooterSmall.svelte'
+import Banner from '../components/Banner.svelte';
 interface Props {
   title?: string
 }
@@ -21,8 +24,9 @@ const { title = null } = Astro.props
     />
     <title>MCSWF {title && "-"} {title}</title>
   </head>
-  <body class="bg-slate-200 dark:bg-slate-800 dark:text-white font-rubik">
+  <body class="bg-black dark:text-white font-rubik">
     <header class="fixed top-0 w-full max-h-20">
+      <Banner client:load/>
       <Navigation2 client:load />
     </header>
     <slot />

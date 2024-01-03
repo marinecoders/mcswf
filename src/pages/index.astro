@@ -9,6 +9,8 @@ import Padding from '../components/utils/Padding.astro'
 import Products from '../components/sections/Products.astro'
 
 import "../styles/global.css"
+import FooterSmall from '../components/FooterSmall.svelte'
+import FooterFull from '../components/FooterFull.svelte'
 ---
 
 <Layout title="">
@@ -37,6 +39,9 @@ import "../styles/global.css"
     </div>
     <div class="h-screen snap-start pt-20">
       <Products/>
+    </div>
+    <div class="snap-end pt-20">
+      <FooterFull client:load/>
     </div>
   </div>
 </Layout>
