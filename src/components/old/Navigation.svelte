@@ -30,7 +30,7 @@
 </script>
 
 <nav
-  class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 dark:bg-black md:px-24"
+  class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 bg-black md:px-24"
 >
   <a class="text-3xl font-bold leading-none" href="/">MCSWF</a>
   <div class="lg:hidden" on:click={toggleMenu}>
@@ -84,7 +84,7 @@
   >
     <button
       type="button"
-      class="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
+      class="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 bg-slate-700 hover:bg-slate-950 text-white"
     >
       GET IN TOUCH
     </button></a
@@ -95,7 +95,7 @@
   <div class="relative z-50 navbar-menu">
     <div class="fixed inset-0 bg-gray-800 opacity-0 navbar-backdrop" />
     <nav
-      class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
+      class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black border-white bg-slate-300 bg-slate-900"
       use:onClickOutside
     >
       <div class="flex items-center mb-8">
@@ -150,7 +150,7 @@
       <div class="mt-auto">
         <div class="pt-6">
           <a
-            class="block px-4 py-3 mb-2 text-xs font-semibold leading-loose text-center text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
+            class="block px-4 py-3 mb-2 text-xs font-semibold leading-loose text-center text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 bg-slate-700 hover:bg-slate-950 text-white"
             href="#"
           >
             <button>GET IN TOUCH</button>

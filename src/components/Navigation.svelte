@@ -36,13 +36,13 @@
 
 <header class="antialiased blue-radial-gradient h-20">
   <nav
-    class="bg-white blue-radial-gradient border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800"
+    class="bg-white blue-radial-gradient border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800"
   >
     <div class="flex flex-wrap justify-between items-center">
       <div class="flex justify-start items-center">
         <a href="https://flowbite.com" class="flex mr-4">
           <span
-            class="self-center text-lg font-semibold whitespace-nowrap dark:text-white"
+            class="self-center text-lg font-semibold whitespace-nowrap text-white"
             >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span
           >
         </a>
@@ -53,7 +53,7 @@
           id="toggleSidebar"
           aria-expanded="true"
           aria-controls="sidebar"
-          class="hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700"
+          class="hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 text-gray-400 hover:text-white hover:bg-gray-700"
         >
           <svg
             class="w-5 h-5"
@@ -75,7 +75,7 @@
           on:click={toggleMenu}
           aria-expanded="true"
           aria-controls="sidebar"
-          class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 focus:ring-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
         >
           <svg
             class="w-[18px] h-[18px]"

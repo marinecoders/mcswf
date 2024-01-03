@@ -15,7 +15,7 @@
       {#each dropdown as item}
         <li>
           <a
-            class="block dark:text-slate-500 bg-white hover:text-black dark:bg-black dark:hover:bg-battle-red dark:hover:text-white font-bold px-4 py-2 whitespace-no-wrap hover:bg-white hover:outline hover:rounded hover:outline-red-800"
+            class="block text-slate-500 bg-white hover:text-black bg-black hover:bg-battle-red hover:text-white font-bold px-4 py-2 whitespace-no-wrap hover:bg-white hover:outline hover:rounded hover:outline-red-800"
             href={item.href}>{item.text}</a
           >
         </li>

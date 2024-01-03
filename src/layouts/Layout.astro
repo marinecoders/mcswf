@@ -24,7 +24,7 @@ const { title = null } = Astro.props
     />
     <title>MCSWF {title && "-"} {title}</title>
   </head>
-  <body class="bg-black dark:text-white font-rubik">
+  <body class="bg-black text-white font-rubik">
     <header class="fixed top-0 w-full max-h-20">
       <Banner client:load/>
       <Navigation2 client:load />

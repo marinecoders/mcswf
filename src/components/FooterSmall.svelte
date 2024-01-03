@@ -1,11 +1,11 @@
 <footer class="p-4 bg-black md:p-8 lg:p-10">
   <div class="mx-auto max-w-screen-xl text-center">
-    <p class="my-6 dark:text-gray-400">
+    <p class="my-6 text-gray-400">
         Product of The Marine Corps Software Factory. Which proudly sits within <span class="underline text-mcswf-gold">Deputy Commandant of Information</span>.
     </p>
     <a
       href="#"
-      class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
+      class="flex justify-center items-center text-2xl font-semibold text-gray-900 text-white"
     >
       <svg
         class="mr-2 h-8"
