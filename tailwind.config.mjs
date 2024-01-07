@@ -5,17 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 140, 40, 38 - red
-        // 8, 29, 44 - blue
-        // 233, 202, 134 - gold
-        'mcswf-gold': `#e9ca86`,
-        'battle-red': '#671c1d',
-        'pinstripe': '#922a26',
+        'mcswf-gold': `#FFC755`,
+        'mcswf-battle-red': '#671c1d',
+        'mcswf-pinstripe': '#922a26',
         'mcswf-dark-blue': '#101728',
         'mcswf-blue': '#07405B',
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
+        colossalis: ['Colossalis'],
+        expressway: ['Expressway']
       }
     },
   },

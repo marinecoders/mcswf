@@ -1,0 +1,79 @@
+/* Colossalis */
+
+@font-face {
+  font-family: 'Colossalis';
+  src: url('/fonts/Colossalis/Colossalis Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colossalis';
+  src: url('/fonts/Colossalis/Colossalis Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colossalis';
+  src: url('/fonts/Colossalis/Colossalis Medium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colossalis';
+  src: url('/fonts/Colossalis/Colossalis Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Colossalis';
+  src: url('/fonts/Colossalis/Colossalis Black.otf') format('opentype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+/* Expressway */
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayRg-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayRg-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayRg-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayLt-Regular.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayLt-Italic.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswayRg-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
