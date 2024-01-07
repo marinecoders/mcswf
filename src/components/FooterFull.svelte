@@ -2,105 +2,51 @@
   import Icon from '@iconify/svelte'
 </script>
 
-<footer class="blue-radial-gradient bg-black">
-  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
-        <a href="https://flowbite.com/" class="flex items-center">
-          <i class=" w-16 h-16 mcswf-icon me-8"></i>
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap text-white"
-            >U.S. MARINE CORPS <br />SOFTWARE FACTORY
-          </span>
+<footer class="blue-radial-gradient bg-black pb-32">
+  <div class="container mx-auto w-3/5 max-w-screen-xl pb-32 lg:py-8">
+    <div class="flex justify-around border-b p-4">
+      <div class="w-2/5 flex align-middle">
+        <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <img style="fill: white;" src="/mcswf-badge.svg" class="text-white h-16" alt="Flowbite Logo" />
+            <span class="self-center text-2xl whitespace-nowrap dark:text-white font-colossalis">U.S. MARINE CORPS<br>SOFTWARE FACTORY</span>
         </a>
-      </div>
-      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
-        <div>
-          <h2
-            class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white"
-          >
-            Resources
-          </h2>
-          <ul class="text-gray-500 text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="https://flowbite.com/" class="hover:underline"
-                >Flowbite</a
-              >
-            </li>
-            <li>
-              <a href="https://tailwindcss.com/" class="hover:underline"
-                >Tailwind CSS</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2
-            class="mb-6 text-sm font-semibold text-gray-900 uppercase text-white"
-          >
-            Legal
-          </h2>
-          <ul class="text-gray-500 text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="#" class="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-            </li>
-          </ul>
-        </div>
+    </div>
+      <div class="w-3/5">
+        <h1 class="font-bold text-lg">VISION</h1>
+        <p>
+          Create a world class Marine-led software development capability
+          enabling Marine Corps modernization efforts by developing applications
+          for commanders at the speed of operations, increasing lethality and
+          readiness.
+        </p>
       </div>
     </div>
-    <p class="my-6 text-gray-400">
-      Product of The Marine Corps Software Factory. Which proudly sits within <span
-        class="underline text-mcswf-gold">Deputy Commandant of Information</span
-      >.
-    </p>
-    <hr
-      class="my-6 border-gray-200 sm:mx-auto border-mcswf-gold lg:my-8"
-    />
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center text-gray-400"
-        >Interested in partnering with the Marine Corps Software Factory? Email
-        us at <a
-          href="mailto:mcswf@usmc.mil"
-          class="hover:underline text-mcswf-gold">mcswf@usmc.mil</a
-        >.
-      </span>
-      <div class="flex mt-4 sm:justify-center sm:mt-0">
-        <a
-          href="#"
-          class="text-gray-500 hover:text-gray-900 hover:text-white"
-        >
-        <Icon class=" text-xl" icon="mdi:linkedin" />
-          <span class="sr-only">Linkedin page</span>
-        </a>
-        <a
-          href="#"
-          class="text-gray-500 hover:text-gray-900 hover:text-white ms-5"
-        >
-          <Icon class=" text-xl" icon="mdi:twitter" />
-          <span class="sr-only">GitHub account</span>
-        </a>
-        <a
-        href="#"
-        class="text-gray-500 hover:text-gray-900 hover:text-white ms-5"
-      >
-        <Icon class=" text-xl" icon="mdi:github" />
-        <span class="sr-only">GitHub account</span>
-      </a>
+    <div class="flex justify-around border-b p-4">
+      <div class="w-2/5">01</div>
+      <div class="w-3/5">
+        <p>
+          Product of The Marine Corps Software Factory, which proudly sits
+          within the Deputy Commandant for Information.
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-around border-b p-4">
+      <div class="w-2/5">
+        <h1 class="mb-2">GET IN TOUCH</h1>
+        <!-- Social Icons -->
+        <div class="flex justify-start mb-4">
+          <a href="https://linkedin.com" class="mr-4">
+            <Icon class=" text-4xl" icon="mdi:linkedin" />
+          </a>
+          <a href="https://example.com">
+            <Icon class=" text-4xl" icon="akar-icons:x-fill" />
+          </a>
+        </div>
+      </div>
+      <div class="w-3/5 align-middle">
+        <p>Interested in partnering with the Marine Corps Software Factory?</p>
+        <p>Email us at mcswf@usmc.mil</p>
       </div>
     </div>
   </div>
 </footer>
-
-<style>
-  .mcswf-icon {
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-image: url(/public/mcswf-logo.svg);
-    mask-image: url(/public/mcswf-logo.svg);
-    background-color: white;
-  }
-</style>
