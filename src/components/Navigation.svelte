@@ -1,5 +1,6 @@
 <script>
   import Icon from "@iconify/svelte"
+  import RedButton from "./buttons/RedButton.svelte"
 
   let isMenuHidden = true
 
@@ -32,13 +33,20 @@
       text: 'TRAINING & CAREER',
       image: 'http://via.placeholder.com/240x200',
       url: 'https://www.example.com/services',
-      subLinks: [],
+      subLinks: [
+        { url: '/roles', text: 'ROLES' },
+        { url: '/roles/job-listings', text: 'JOB LISTINGS' },
+        { url: '/roles/the-progress', text: 'THE PROGRESS' },
+      ],
     },
     {
       text: 'CONTACT',
       image: 'http://via.placeholder.com/240x200',
       url: 'https://www.example.com/contact',
-      subLinks: [],
+      subLinks: [
+        { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
+        { url: '/contact/request-a-demo', text: 'SUGGEST AN APP' },
+      ],
     },
   ]
 
@@ -63,28 +71,37 @@
   }
 </script>
 
-<header class="antialiased blue-radial-gradient relative">
+<header class="relative antialiased blue-radial-gradient">
   <nav
-    class="w-full w h-full blue-radial-gradient border-gray-200 bg-gray-800"
+    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient"
   >
-    <div class="flex w-3/4 justify-between mx-28 flex-wrap items-center h-20 px-4">
-      <div class="flex justify-start items-center">
-        <a href="https://flowbite.com" class="flex mr-4">
+    <div class="flex flex-wrap items-center justify-between w-3/4 h-20 px-4 mx-28">
+      <div class="flex items-center justify-start">
+        <a href="/" class="flex mr-4">
           <span
-            class="self-center text-lg font-colossalis font-semibold whitespace-nowrap text-white"
+            class="self-center text-lg font-semibold text-white font-colossalis whitespace-nowrap"
             >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span
           >
         </a>
       </div>
       <div class="flex items-center lg:order-2">
+        {#if !isMenuHidden}
+        <div class="mx-4">
+          <RedButton text="GET IN TOUCH"/>
+        </div>
+        {/if}
         <button
           on:click={toggleMenu}
           id="toggleSidebar"
           aria-expanded="true"
           aria-controls="sidebar"
-          class="hidden p-2 mr-3 rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold text-white hover:text-whit"
+          class="hidden p-2 mr-3 text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit"
         >
+        {#if isMenuHidden}
         <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+        {:else}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
+        {/if}
         </button>
         <button
           on:click={toggleMenu}
@@ -92,20 +109,23 @@
           aria-controls="sidebar"
           class="p-2 mr-2 text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold"
         >
-          <Icon icon="mdi:ah" />
-          <Icon icon="mdi:close-thick"/>
+        {#if isMenuHidden}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+        {:else}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
+        {/if}
           <span class="sr-only">Toggle sidebar</span>
         </button>
       </div>
     </div>
     {#if !isMenuHidden}
-      <hr class=" border-mcswf-pinstripe border-1 w-full" />
+      <hr class="w-full border-mcswf-pinstripe border-1" />
       <!-- STANDARD NAVBAR -->
-      <div class="hidden lg:block xl:block 2xl:block text-white mx-24 h-96 my-4">
+      <div class="hidden mx-24 my-4 text-white lg:block xl:block 2xl:block h-96">
         <div class="flex justify-between">
           {#each dropdownLinks as dropdown}
           <div
-            class="hover:text-mcswf-gold hover:scale-110 transform transition mt-4"
+            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
             on:mouseleave={() => closeDropdown(dropdown.text)}
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
@@ -117,7 +137,9 @@
             />
             <div class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
               {#each dropdown.subLinks as subLinks}
-              <div class="text-white hover:text-mcswf-gold hover:underline decoration-2 my-1">{subLinks.text}</div>
+              <div class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+                <a href={subLinks.url}>{subLinks.text}</a>
+              </div>
               {/each}
             </div>
           </div>
@@ -126,38 +148,35 @@
       </div>
       <!-- MOBILE NAVBAR -->
       <div
-        class="visible h-screen lg:hidden xl:hidden 2xl:hidden grid grid-cols-1 gap-2"
+        class="grid visible h-screen grid-cols-1 gap-2 lg:hidden xl:hidden 2xl:hidden"
       >
-        <div class="h-1/2 pt-8">
+        <div class="pt-8 h-1/2">
           <div>
-            <h1 class="text-center text-xl underline font-bold text-mcswf-gold">
+            <h1 class="text-xl font-bold text-center underline text-mcswf-gold">
               APPLY NOW
             </h1>
           </div>
           {#each dropdownLinks as dropdown}
-          <div class="mx-8 pt-4">
-            <h1 class="flex font-bold justify-between hover:text-mcswf-gold">
-              <span class="menu-item" on:click={() => toggleDropdown(dropdown.text)}
+          <div class="pt-4 mx-8">
+            <h1 class="flex justify-between font-bold hover:text-mcswf-gold" on:click={() => toggleDropdown(dropdown.text)}>
+              <span class="menu-item"
                 >{dropdown.text}</span
               >
               {#if dropdown.subLinks.length > 0}
-              <span class="text-right text-xl"
+              <span class="text-xl text-right"
                 >{dropdowns[dropdown.text] ? '-' : '+'}</span
               >
               {/if}
             </h1>
             <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
               {#each dropdown.subLinks as subLinks}
-              <div class="text-white hover:text-mcswf-gold hover:underline decoration-2">
+              <div class="font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
                 <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
               </div>
               {/each}
             </div>
           </div>
           {/each}
-        </div>
-        <div class="flex">
-          <span class="self-end pb-8">TEST</span>
         </div>
       </div>
       <div class="h-1"></div>

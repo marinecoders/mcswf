@@ -1,14 +1,14 @@
 <footer class="p-4 bg-black md:p-8 lg:p-10">
-  <div class="mx-auto max-w-screen-xl text-center">
+  <div class="max-w-screen-xl mx-auto text-center">
     <p class="my-6 text-gray-400">
         Product of The Marine Corps Software Factory. Which proudly sits within <span class="underline text-mcswf-gold">Deputy Commandant of Information</span>.
     </p>
     <a
       href="#"
-      class="flex justify-center items-center text-2xl font-semibold text-gray-900 text-white"
+      class="flex items-center justify-center text-2xl font-semibold text-white text-gray-900"
     >
       <svg
-        class="mr-2 h-8"
+        class="h-8 mr-2"
         viewBox="0 0 33 33"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +152,7 @@
           >
         </defs>
       </svg>
-      Flowbite
+      
     </a>
   </div>
 </footer>

@@ -1,40 +1,46 @@
-<div class="grid grid-cols-2 md:grid-cols-4 w-full gap-3 mt-8 md:space-x-10 sm:inline-flex sm:justify-center">
+<div class="grid w-full grid-cols-2 gap-3 mt-8 md:grid-cols-4 md:space-x-10 sm:inline-flex sm:justify-center">
+  <div class="hidden my-auto bg-red-600 w-60 md:block">
+    <hr class="h-[1px] bg-white border-none">
+  </div>
   <div class="items-center text-center">
     <div class="mt-2 sm:mt-4">
-      <h3 id="countdown-days" class="text-6xl font-extrabold ">
+      <h3 id="countdown-days" class="text-6xl font-extrabold font-menobanner ">
         41
       </h3>
-      <p class="text-md text-mcswf-gold">Days</p>
+      <p class="font-bold text-md text-mcswf-gold">DAYS</p>
     </div>
   </div>
   <div class="items-center text-center">
     <div class="mt-2 sm:mt-4">
-      <h3 id="countdown-hours" class="text-6xl font-extrabold ">
+      <h3 id="countdown-hours" class="text-6xl font-extrabold font-menobanner ">
         14
       </h3>
-      <p class="text-md text-mcswf-gold">HOURS</p>
+      <p class="font-bold text-md text-mcswf-gold">HOURS</p>
     </div>
   </div>
   <div class="items-center text-center">
     <div class="mt-2 sm:mt-4">
-      <h3 id="countdown-minutes" class="text-6xl font-extrabold ">
+      <h3 id="countdown-minutes" class="text-6xl font-extrabold font-menobanner ">
         54
       </h3>
-      <p class="text-md text-mcswf-gold">MINUTES</p>
+      <p class="font-bold text-md text-mcswf-gold">MINUTES</p>
     </div>
   </div>
   <div class="items-center text-center">
     <div class="mt-2 sm:mt-4">
-      <h3 id="countdown-seconds" class="text-6xl font-extrabold ">
+      <h3 id="countdown-seconds" class="text-6xl font-extrabold font-menobanner ">
         19
       </h3>
-      <p class="text-md text-mcswf-gold">SECONDS</p>
+      <p class="font-bold text-md text-mcswf-gold">SECONDS</p>
     </div>
+  </div>
+  <div class="my-auto w-60 md:block">
+    <hr>
   </div>
 </div>
 
 <script>
-  var countDownDate = new Date('Oct 14, 2024 00:50:25').getTime()
+  var countDownDate = new Date('Mar 4, 2024 00:50:25').getTime()
 
   // Update the count down every 1 second
   var x = setInterval(function () {
