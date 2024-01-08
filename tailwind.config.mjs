@@ -14,8 +14,12 @@ export default {
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
         colossalis: ['Colossalis'],
-        expressway: ['Expressway']
-      }
+        expressway: ['Expressway'],
+        menobanner: ['MenoBanner']
+      },
+      transitionProperty: {
+        'grid': 'grid-template-columns',
+      },
     },
   },
   

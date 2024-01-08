@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro'
 
 import "../styles/global.css"
 import "../styles/fonts.css"
+import Accordion from '../components/Accordion.svelte';
 ---
 
 <Layout title="">
-
-    <div class="bg-black h-screen">
-        <img class="h-80" src="/icons/calendar.svg"/>
+    <div class="bg-black h-screen py-20">
+        <Accordion client:load/>
     </div>
 </Layout>

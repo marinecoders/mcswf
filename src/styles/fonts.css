@@ -77,3 +77,48 @@
   font-weight: bold;
   font-style: italic;
 }
+
+
+/* MenoBanner */
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-Light.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-LightItalic.otf') format('opentype');
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MenoBanner';
+  src: url('/fonts/MenoBanner/MenoBanner-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
