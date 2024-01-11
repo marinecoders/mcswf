@@ -8,11 +8,15 @@
 
 </script>
 
-<div class="grid flex-col grid-cols-1 h-full md:grid lg:grid-cols-6 xl:grid-cols-6" >
-  <div role="button" tabindex="0" class="{active==0 ? 'col-span-3': 'col-span-2'} h-64 bg-pink-400 lg:h-full" on:mouseenter={() => (active=0)}>
+
+<div class="grid grid-cols-1 md:grid-cols-6 md:h-max-content" >
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div role="button" tabindex="0" class="col-span-1  {active==0 ? 'h-96': 'h-72'} lg:{active==0 ? 'col-span-3': 'col-span-2'} bg-pink-400 lg:h-full" on:click={() => (active=0)}>
     Our Product Portfolio
   </div>
-  <div role="button" tabindex="0" class="h-64 col-span-2 lg:h-full lg:{active==1 ? 'col-span-2': 'col-span-1'} xl:{active==1 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:mouseenter={() => (active=1)} >
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  {#key active}
+  <div role="button" tabindex="0" class="{active==1 ? 'h-96': 'h-32'} col-span-1 lg:row-span-1 md:h-full lg:{active==1 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:click={() => (active=1)} >
     <div class="relative h-full lg:border-x lg:border-y-0 border-y">
       {#if active == 1}
       <AccordionSectionOpen 
@@ -28,7 +32,9 @@
       {/if}
     </div>
   </div>
-  <div role="button" tabindex=0 class="h-full col-span-2 lg:{active==2 ? 'col-span-2': 'col-span-1'} xl:{active==2 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:mouseenter={() => (active=2)}>
+  {/key}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div role="button" tabindex=0 class="{active==2 ? 'h-96': 'h-32'} col-span-1 lg:{active==2 ? 'col-span-2': 'col-span-1'} xl:{active==2 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:click={() => (active=2)}>
     <div class="relative h-full lg:border-x lg:border-y-0 border-y">
     {#if active ==2}
     <AccordionSectionOpen 
@@ -44,7 +50,8 @@
     {/if}
     </div>
   </div>
-  <div role="button" tabindex=0 class="col-span-2 lg:{active==3 ? 'col-span-2': 'col-span-1'} xl:{active==3 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:mouseenter={() => (active=3)}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div role="button" tabindex=0 class="{active==3 ? 'h-96': 'h-32'} col-span-1 lg:{active==3 ? 'col-span-2': 'col-span-1'} xl:{active==3 ? 'col-span-2': 'col-span-1'} red-radial-gradient" on:click={() => (active=3)}>
     <div class="relative h-full lg:border-x lg:border-y-0 border-y">
       {#if active ==3}
       <AccordionSectionOpen 
@@ -61,6 +68,7 @@
     </div>
   </div>
 </div>
+
 
 <style>
 </style>
