@@ -2,8 +2,13 @@
   import AccordionSectionOpen from './elements/AccordionSectionOpen.svelte'
   import AccordionSectionClosed from  './elements/AccordionSectionClosed.svelte'
   let active = 0;
+  let width = 0;
+  $: mobile = width > 640;
 </script>
 
+
+
+<svelte:window bind:innerWidth={width} />
 
 <div class="grid grid-cols-1 md:grid-cols-6 md:h-max-content" >
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -18,8 +23,9 @@
       <AccordionSectionOpen 
       text="The Sensor Processor & Analysis Radar Translation Application (SPARTA) utilizes commercial off-the-shelf radars and provides the ability to visualize maritime vessels, process the sensor data, and disseminate to a common operating picture. The application also includes an Android version, UAS integration, and the ability to correlate and fuse multiple sensors."
       title="SPARTA"
-      sequence=1
-      href='sparta' />
+      sequence=01
+      href='sparta'
+      mobile = mobile />
       {:else}
       <AccordionSectionClosed 
       title="SPARTA"
@@ -37,7 +43,8 @@
     text="Sponsored by Manpower Management Enlisted Assignments to optimize the roadshow process. Marines are able to reserve their spot in line and push key information to monitors prior to sitting down for a discussion. This saves Marines time and optimizes the discussion."
     title="my CAREER"
     sequence=2
-    href='career' />
+    href='career'
+    mobile = mobile />
     {:else}
     <AccordionSectionClosed 
     title="my Career"
@@ -54,7 +61,8 @@
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       title="Snap DB"
       sequence=3
-      href='/snapdb' />
+      href='/snapdb'
+      mobile=mobile />
       {:else}
       <AccordionSectionClosed 
       title="Snap DB"
