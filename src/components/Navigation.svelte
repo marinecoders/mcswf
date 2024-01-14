@@ -73,9 +73,11 @@
 
 <header class="relative antialiased blue-radial-gradient">
   <nav
-    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient"
+    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center"
   >
-    <div class="flex flex-wrap items-center justify-between w-3/4 h-20 px-4 mx-28">
+  <div class="flex w-full justify-center">
+
+    <div class="flex flex-wrap items-center justify-between w-3/4 h-20 px-4">
       <div class="flex items-center justify-start">
         <a href="/" class="flex mr-4">
           <span
@@ -118,6 +120,7 @@
         </button>
       </div>
     </div>
+  </div>
     {#if !isMenuHidden}
       <hr class="w-full border-mcswf-pinstripe border-1" />
       <!-- STANDARD NAVBAR -->
