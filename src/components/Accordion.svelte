@@ -2,7 +2,6 @@
   import { mobile,active } from './stores.js';
   import AccordionSection from './elements/AccordionSection.svelte'
   import FooterFull from '../components/FooterFull.svelte'
-  import FooterSmall from '../components/FooterSmall.svelte'
 
   let width = 0;
 
@@ -59,9 +58,7 @@
   </div>
 </div>
 
-{#if $mobile}
-  <FooterSmall></FooterSmall>
-{:else}
-  <FooterFull></FooterFull>
-{/if}
+<FooterFull></FooterFull>
+
+
 
