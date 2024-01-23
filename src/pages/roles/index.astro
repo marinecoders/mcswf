@@ -14,7 +14,7 @@ let side = 'left'
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div
-      class="relative z-20 h-screen snap-start pt-20 bg-[url('/images/group_of_marines.png')] bg-no-repeat"
+      class="relative z-20 h-screen snap-start pt-20 pb-0 bg-[url('/images/group_of_marines.png')] bg-no-repeat"
     >
       <Hero
         title="PICK THE PERFECT ROLE FOR YOU"
@@ -24,9 +24,7 @@ let side = 'left'
         padding="pt-24"
       />
     </div>
-    <div
-      class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
-    >
+    <div class="max-h-screen scrollbar-hide snap-start snap-y snap-mandatory">
       {
         posts.map((post) => {
           if (side == 'left') {
@@ -40,11 +38,16 @@ let side = 'left'
                         title={post.frontmatter.role}
                         content={post.frontmatter.about}
                         link={'/roles/' + post.frontmatter.url}
-                        padding="pt-48"
-                        linkText="LEARN MORE"
+                        padding="pt-24"
+                        linkText="APPLY NOW"
                       />
                     </div>
-                    <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
+                    <div
+                      class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200"
+                      style={{
+                        backgroundImage: `url('/images/${post.frontmatter.image}')`,
+                      }}
+                    />
                   </div>
                 </div>
               </>
@@ -55,14 +58,19 @@ let side = 'left'
               <>
                 <div class="h-screen snap-start py-20">
                   <div class="flex h-screen">
-                    <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
+                    <div
+                      class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200"
+                      style={{
+                        backgroundImage: `url('/images/${post.frontmatter.image}')`,
+                      }}
+                    />
                     <div class="w-1/2 p-4">
                       <Hero
                         title={post.frontmatter.role}
                         content={post.frontmatter.about}
                         link={'/roles/' + post.frontmatter.url}
-                        padding="pt-48"
-                        linkText="LEARN MORE"
+                        padding="pt-24"
+                        linkText="APPLY NOW"
                       />
                     </div>
                   </div>
@@ -72,9 +80,9 @@ let side = 'left'
           }
         })
       }
-    </div>
-    <div class="pt-20 snap-end">
-      <FooterFull client:load />
+      <div class="pt-20 snap-end">
+        <FooterFull client:load />
+      </div>
     </div>
   </div>
 </Layout>
