@@ -6,6 +6,7 @@ image: marine_designer.png
 about: >
   Product Designers, specializing in UI/UX, play a vital role in guiding application teams to develop products that meet user needs. They serve as the primary link between the user and the team, utilizing a wide range of skills, including user research, experience and interaction design, and visual design.
 
+
   Designers skillfully filter user feedback, focusing their teams on the most pressing user concerns. Working within a balanced team alongside Product Managers and Engineers, UI/UX Designers engage in a collaborative process. They help set design priorities, refine project backlogs and roadmaps, and assess the technical feasibility of their design proposals.
 ---
 # ABOUT THE JOB
