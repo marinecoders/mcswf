@@ -10,6 +10,7 @@ export default {
         'mcswf-pinstripe': '#922a26',
         'mcswf-dark-blue': '#101728',
         'mcswf-blue': '#07405B',
+        'mcswf-gray': '#eeeeee'
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
@@ -22,6 +23,6 @@ export default {
       },
     },
   },
-  
+
   plugins: [require('@tailwindcss/typography')],
 }
