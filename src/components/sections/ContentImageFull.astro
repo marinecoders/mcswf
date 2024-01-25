@@ -1,14 +1,13 @@
 ---
-import Hero from '../elements/Hero.astro'
-import RedButton from '../buttons/RedButton.astro'
+import WhiteButton from '../buttons/WhiteButton.astro'
 
 interface Props {
-  title: string,
-  content?: string | Array<string>,
-  link?: string,
-  linkText?: string,
-  padding?: string,
-  flipped?: boolean,
+  title: string
+  content?: string | Array<string>
+  link?: string
+  linkText?: string
+  padding?: string
+  flipped?: boolean
 }
 
 const {
@@ -20,7 +19,7 @@ const {
   padding,
 } = Astro.props
 
-console.log("link - ", link)
+console.log('link - ', link)
 ---
 
 <section class="">
@@ -45,21 +44,22 @@ console.log("link - ", link)
         {title}
       </h2>
       {
-        content instanceof Array ?     
+        content instanceof Array ? (
           <ul class="m-4 ml-12 list-disc">
-            {content.map(b => (
+            {content.map((b) => (
               <li>{b}</li>
             ))}
-          </ul> 
-        : 
+          </ul>
+        ) : (
           <p class="mb-4 text-center">{content}</p>
+        )
       }
       {
         link && (
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <RedButton href={link} text={linkText} />
+            <WhiteButton href={link} text={linkText} />
           </div>
-          )
+        )
       }
     </div>
     {

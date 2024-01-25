@@ -5,6 +5,7 @@ import Card from './RoleCard.astro'
 
 import '../../styles/global.css'
 import FooterFull from '../../components/FooterFull.svelte'
+import CohortGroup from '../../components/cards/CohortGroup.astro'
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../content/roles/*.md')
@@ -24,7 +25,7 @@ const content = compiledContent()
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div
-      class="relative z-20 h-screen snap-start pt-20 pb-0 bg-[url('/images/group_of_marines.png')] bg-no-repeat"
+      class="relative z-20 h-screen snap-start pt-20 pb-0 bg-no-repeat"
       style={{
         backgroundImage: `url('/images/${frontmatter.image_wide}')`,
       }}
@@ -39,23 +40,10 @@ const content = compiledContent()
     <div class="flex h-fill snap-start py-24 place-content-center">
       <article set:html={content} class="prose prose-invert" />
     </div>
-    <div class="h-screen snap-start py-36">
-      <div class="flex flex-row">
-        <div class="basis-1/2 flex justify-center">
-          <div class="w-1/2 flex flex-col">
-            <h1 class="font-semibold text-3xl">READY TO APPLY?</h1>
-            <h1 class="font-semibold text-7xl pt-5">
-              JOIN THE COHORT THAT'S RIGHT FOR YOU.
-            </h1>
-          </div>
-        </div>
-        <div class="basis-1/4">
-          <Card />
-        </div>
-        <div class="basis-1/4">
-          <Card />
-        </div>
-      </div>
+    <div
+      class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
+    >
+      <CohortGroup />
     </div>
     <div class="pt-20 snap-end">
       <FooterFull client:load />
