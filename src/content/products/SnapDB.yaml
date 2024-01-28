@@ -1,0 +1,19 @@
+product: 'Snap DB'
+description: "Transmit messages while under RF Emission Control"
+image: 
+  src: ' '
+  alt: ' '
+order: 3
+heading: "Snap DB does cool things"
+bullets:
+  - 'Bullet 1'
+metrics:
+  - icon: '/icons/clock.svg'
+    value: '55%'
+    metric: 'Reduction in wait time'
+  - metric: "Increase in meeting efficiency"
+    value: '29'
+    icon: '/icons/graph.svg'
+  - metric: 'Days to MVP'
+    value: '91'
+    icon: '/icons/calendar.svg'

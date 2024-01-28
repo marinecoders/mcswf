@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Hero from '../../components/elements/Hero.astro'
+import FooterFull from '../../components/FooterFull.svelte'
+import ListContentImageFull from '../../components/sections/ListContentImageFull.astro'
+import MetricCard from '../../components/cards/MetricCard.astro'
+import { getCollection, CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'products'>}
+
+
+import '../../styles/global.css'
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map( entry => ({
+      params: { product: entry.id }, props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const metricLength = entry.data.metrics.length;
+
+
+console.log(entry.data.bullets)
+---
+
+<Layout title={entry.data.product}>
+  <div class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6 ">
+    <img src="/ega.svg">
+  </div>
+ 
+  <div class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory">
+    <div class="relative z-20 h-fit py-20 snap-start bg-pink-400 bg-cover bg-no-repeat">
+      <Hero
+        padding="pt-24"
+        title={entry.data.product}
+        content={entry.data.description}
+        link='#'
+        linkText='REQUEST APP DEMO'
+      />
+    </div>
+  
+    <div class="relative z-20 snap-start">
+      <ListContentImageFull
+        flipped
+        title={entry.data.heading}
+        content={entry.data.bullets}
+      />
+
+      <div class:list={["relative z-20 grid grid-cols-1 snap-start", {'sm:grid-cols-2': metricLength == 2}, {'sm:grid-cols-3': metricLength == 3}]}>
+        {entry.data.metrics.map(p => (
+          <div class="text-center m-12">
+            <MetricCard
+              icon={p.icon}
+              value={p.value}
+              metric={p.metric}
+            />
+          </div>
+        ))
+        }
+      </div>
+      <div class="snap-end">
+        <FooterFull client:load/>
+      </div>
+    </div>  
+  </div>  
+</Layout>
