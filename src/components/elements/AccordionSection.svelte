@@ -35,14 +35,14 @@
     </div>
     {#if !mobileValue}
         <div class="grid grid-cols-2 self-end p-4">
-            <div class="col-span-1 text-3xl text-left font-menobanner text-mcswf-gold left-10 bottom-10"> {sequence}</div>
+            <div class="col-span-1 text-3xl text-left font-menobanner text-mcswf-gold left-10 bottom-10"> 0{sequence}</div>
             <div class="col-span-1 text-3xl font-bold text-end whitespace-nowrap text-mcswf-gold right-10 bottom-10"> - </div>
         </div>
     {/if}
 </div>
 {:else}
     <div class="grid grid-cols-5 items-center justify-start  p-4 sm:p-8 sm:grid-cols-2 text-white align-bottom bg-black border-y sm:h-full sm:items-end sm:border-x sm:border-y-0">
-        <p class="text-6xl text-left font-menobanner me-6 text-mcswf-gold">{sequence}</p>
+        <p class="text-6xl text-left font-menobanner me-6 text-mcswf-gold">0{sequence}</p>
         {#if mobileValue}
             <div class="tracking-widest text-left text-xl font-bold col-span-3">{title}</div>
             <div class="text-xl font-bold text-center">+</div>

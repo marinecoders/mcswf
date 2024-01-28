@@ -14,7 +14,7 @@
   let dropdownLinks = [
     {
       text: 'PRODUCTS',
-      url: 'https://www.example.com/home',
+      url: '/products',
       image: 'http://via.placeholder.com/240x200',
       subLinks: [
         { url: '/products/sparta', text: 'SPARTA' },
@@ -26,13 +26,13 @@
     {
       text: 'ABOUT',
       image: 'http://via.placeholder.com/240x200',
-      url: 'https://www.example.com/about',
+      url: '/about',
       subLinks: [],
     },
     {
       text: 'TRAINING & CAREER',
       image: 'http://via.placeholder.com/240x200',
-      url: 'https://www.example.com/services',
+      url: '/career',
       subLinks: [
         { url: '/roles', text: 'ROLES' },
         { url: '/roles/job-listings', text: 'JOB LISTINGS' },
@@ -132,12 +132,14 @@
             on:mouseleave={() => closeDropdown(dropdown.text)}
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
-            <h2 class="font-bold">{dropdown.text}</h2>
-            <img
-              class="rounded shadow-lg"
-              src={dropdown.image}
-              alt={dropdown.text}
-            />
+            <a href={dropdown.url}>
+              <h2 class="font-bold">{dropdown.text}</h2>
+              <img
+                class="rounded shadow-lg"
+                src={dropdown.image}
+                alt={dropdown.text}
+              />
+            </a>
             <div class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
               {#each dropdown.subLinks as subLinks}
               <div class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
