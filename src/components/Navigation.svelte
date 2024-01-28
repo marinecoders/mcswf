@@ -165,7 +165,7 @@
           <div class="pt-4 mx-8">
             <h1 class="flex justify-between font-bold hover:text-mcswf-gold" on:click={() => toggleDropdown(dropdown.text)}>
               <span class="menu-item"
-                >{dropdown.text}</span
+                ><a href={dropdown.url}>{dropdown.text}</a></span
               >
               {#if dropdown.subLinks.length > 0}
               <span class="text-xl text-right"
