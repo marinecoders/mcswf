@@ -7,6 +7,7 @@ interface Props {
   link?: string
   linkText?: string
   padding?: string
+  titleClasses?: string
   contentClasses?: string
 }
 
@@ -16,6 +17,7 @@ const {
   link = null,
   linkText = null,
   padding,
+  titleClasses,
   contentClasses,
 } = Astro.props
 ---
@@ -26,7 +28,10 @@ const {
   <!-- Title -->
   <div class="max-w-6xl mx-auto mt-5 text-center">
     <h1
-      class="block text-4xl font-bold md:text-5xl lg:text-6xl text-mcswf-gold"
+      class:list={[
+        'block text-4xl font-bold md:text-5xl lg:text-6xl text-mcswf-gold',
+        titleClasses,
+      ]}
     >
       {title}
     </h1>
