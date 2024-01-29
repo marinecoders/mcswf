@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 import Hero from '../../components/elements/Hero.astro'
 import FooterFull from '../../components/FooterFull.svelte'
-import ListContentImageFull from '../../components/sections/ListContentImageFull.astro'
+import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 import MetricCard from '../../components/cards/MetricCard.astro'
 import { getCollection, CollectionEntry } from 'astro:content';
 interface Props { entry: CollectionEntry<'products'>}
@@ -38,7 +38,7 @@ const metricLength = entry.data.metrics.length;
     </div>
   
     <div class="relative z-20 snap-start">
-      <ListContentImageFull
+      <ContentImageFull
         flipped
         title={entry.data.heading}
         content={entry.data.bullets}

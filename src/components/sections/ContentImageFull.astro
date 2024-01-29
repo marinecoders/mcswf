@@ -3,12 +3,12 @@ import Hero from '../elements/Hero.astro'
 import RedButton from '../buttons/RedButton.astro'
 
 interface Props {
-  title: string
-  content?: string
-  link?: string
-  linkText?: string
-  padding?: string
-  flipped?: boolean
+  title: string,
+  content?: string | Array<string>,
+  link?: string,
+  linkText?: string,
+  padding?: string,
+  flipped?: boolean,
 }
 
 const {
@@ -19,6 +19,8 @@ const {
   flipped = false,
   padding,
 } = Astro.props
+
+console.log("link - ", link)
 ---
 
 <section class="">
@@ -42,10 +44,23 @@ const {
       >
         {title}
       </h2>
-      <p class="mb-4 text-center">{content}</p>
-      <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-        <RedButton href={link} text={linkText} />
-      </div>
+      {
+        content instanceof Array ?     
+          <ul class="m-4 ml-12 list-disc">
+            {content.map(b => (
+              <li>{b}</li>
+            ))}
+          </ul> 
+        : 
+          <p class="mb-4 text-center">{content}</p>
+      }
+      {
+        link && (
+          <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
+            <RedButton href={link} text={linkText} />
+          </div>
+          )
+      }
     </div>
     {
       !flipped && (
