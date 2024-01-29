@@ -20,7 +20,7 @@ const { frontmatter, compiledContent } = Astro.props
 const content = compiledContent()
 ---
 
-<Layout title="">
+<Layout title={frontmatter.role}>
   <div
     class="relative max-h-fit overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
   >
