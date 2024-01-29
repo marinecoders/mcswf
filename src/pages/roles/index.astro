@@ -33,7 +33,7 @@ let side = 'left'
             return (
               <>
                 <div class="h-screen snap-start py-20 px-10">
-                  <div class="flex h-screen">
+                  <div class="flex h-screen items-center">
                     <div class="w-1/2 p-4">
                       <Hero
                         title={post.frontmatter.role}
@@ -43,12 +43,12 @@ let side = 'left'
                         titleClasses="text-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       />
                     </div>
-                    <div
-                      class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200"
-                      style={{
-                        backgroundImage: `url('/images/${post.frontmatter.image}')`,
-                      }}
-                    />
+                    <div class="w-1/2 p-4">
+                      <img
+                        src={`/images/${post.frontmatter.image}`}
+                        class="w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </>
@@ -58,13 +58,13 @@ let side = 'left'
             return (
               <>
                 <div class="h-screen snap-start py-20 px-10">
-                  <div class="flex h-screen">
-                    <div
-                      class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200"
-                      style={{
-                        backgroundImage: `url('/images/${post.frontmatter.image}')`,
-                      }}
-                    />
+                  <div class="flex h-screen items-center">
+                    <div class="w-1/2 p-4">
+                      <img
+                        src={`/images/${post.frontmatter.image}`}
+                        class="w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
                     <div class="w-1/2 p-4">
                       <Hero
                         title={post.frontmatter.role}
