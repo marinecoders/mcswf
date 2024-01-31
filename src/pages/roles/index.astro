@@ -11,10 +11,15 @@ let side = 'left'
 
 <Layout title="Roles">
   <div
-    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
+  >
+    <img src="/ega.svg" />
+  </div>
+  <div
+    class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div
-      class="relative z-20 h-fit snap-start pt-20 pb-20 bg-[url('/images/group_of_marines.png')] bg-no-repeat"
+      class="relative z-20 h-fit snap-start pt-20 pb-20 bg-[url('/images/group_of_marines.png')] bg-no-repeat bg-cover"
     >
       <Hero
         title="PICK THE PERFECT ROLE FOR YOU"
@@ -25,14 +30,16 @@ let side = 'left'
         titleClasses="text-white"
       />
     </div>
-    <div class="max-h-screen scrollbar-hide snap-start snap-y snap-mandatory">
+    <div
+      class="relative z-20 max-h-screen scrollbar-hide snap-start snap-y snap-mandatory"
+    >
       {
         posts.map((post) => {
           if (side == 'left') {
             side = 'right'
             return (
               <>
-                <div class="h-screen snap-start py-20 px-10">
+                <div class="h-screen snap-start py-10 px-10">
                   <div class="flex h-screen items-center">
                     <div class="w-1/2 p-4">
                       <Hero
@@ -57,7 +64,7 @@ let side = 'left'
             side = 'left'
             return (
               <>
-                <div class="h-screen snap-start py-20 px-10">
+                <div class="h-screen snap-start py-10 px-10">
                   <div class="flex h-screen items-center">
                     <div class="w-1/2 p-4">
                       <img
