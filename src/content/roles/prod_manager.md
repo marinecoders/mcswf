@@ -1,5 +1,4 @@
 ---
-title: 'ABOUT THE JOB'
 role: PRODUCT MANAGER
 url: product_manager
 image: marine_pm.png

@@ -1,5 +1,4 @@
 ---
-title: 'ABOUT THE JOB'
 role: SOFTWARE ENGINEER
 url: swe
 image: marine_swe.png

@@ -1,5 +1,4 @@
 ---
-title: 'ABOUT THE JOB'
 role: PRODUCT DESIGNER
 url: product_designer
 image: marine_designer.png
