@@ -14,7 +14,12 @@
   $: mobile.set(width < 640);
 
   function setActive(section){
-    active.set(section);
+    if ($active == parseInt(section)){
+      active.set(0);
+    }
+    else{
+      active.set(section);
+    }
   }
 
 
@@ -28,7 +33,7 @@
 
 <div class="grid grid-cols-1 sm:h-5/6" class:sm:grid-cols-6={products.length == 3} class:sm:grid-cols-7={products.length == 4}>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div role="button" tabindex="0" class="flex flex-col col-span-1 justify-end sm:justify-normal h-96 px-16 sm:px-32 {($active==0 && !$mobile) ? 'col-span-3': ''} {($active!=0 && !$mobile) ? 'col-span-2': ''} bg-pink-400 sm:h-full" on:click={() => setActive(0)}>
+  <div role="button" tabindex="0" class="flex flex-col col-span-1 justify-end sm:justify-normal h-96 px-16 sm:px-32 {($active==0 && !$mobile) ? 'col-span-3': ''} {($active!=0 && !$mobile) ? 'col-span-2': ''} bg-[url('/images/shaking_hands.png')] bg-auto bg-no-repeat bg-center sm:h-full" on:click={() => setActive(0)}>
     <div class="h-1/4"></div>
       <div class="py-8 text-mcswf-gold font-bold text-center font-expressway text-xl sm:text-4xl">
         OUR PRODUCT PORTFOLIO

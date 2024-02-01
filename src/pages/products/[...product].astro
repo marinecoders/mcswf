@@ -16,8 +16,10 @@ export async function getStaticPaths() {
       params: { product: entry.id }, props: { entry },
   }));
 }
+
 const { entry } = Astro.props;
 const metricLength = entry.data.metrics.length;
+const bgString = "background-image:url(" + entry.data.image.src + ")"
 
 ---
 
@@ -27,7 +29,7 @@ const metricLength = entry.data.metrics.length;
   </div>
  
   <div class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory">
-    <div class="relative z-20 h-fit py-20 snap-start bg-pink-400 bg-cover bg-no-repeat">
+    <div class:list={["relative z-20 h-fit py-20 snap-start bg-cover bg-no-repeat bg-center"]} style={bgString}>
       <Hero
         padding="pt-24"
         title={entry.data.product}

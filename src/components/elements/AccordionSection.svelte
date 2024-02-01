@@ -17,12 +17,12 @@
 
 <div class="h-fit sm:h-full grid grid-cols-1">
     <div class="grid grid-cols-5 p-4 content-center items-center">
-        {#if mobileValue}
-            <div class="col-span-1 text-6xl me-6 text-center font-menobanner text-mcswf-gold py"> {sequence}</div>
-        {/if}
-        <div class="col-span-3 text-left pt-2 tracking-widest sm:text-center font-bold block text-xl md:text-2xl lg:text-4xl"> {title} </div>
+        <div class="col-span-1 text-6xl md:text-2xl lg:text-4xl me-6 text-center font-menobanner text-mcswf-gold py pt-2"> 0{sequence}</div>
+        <div class="col-span-3 sm:text-left pt-2 tracking-widest font-bold block text-xl md:text-2xl lg:text-4xl"> {title} </div>
         {#if mobileValue}
             <div class="col-span-1 text-3xl text-center font-menobanner text-mcswf-gold"> - </div>
+        {:else}
+            <img class="col-span-1 justify-self-end" src="/icons/window-close.svg" alt='close'>
         {/if}
     </div>
     <div class="text-lg px-4 pb-6">
