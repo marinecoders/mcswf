@@ -5,8 +5,11 @@ import Mission from '../components/sections/Mission.astro'
 import Impact from '../components/sections/CareerImpact.astro'
 import TrainingFlow from '../components/sections/TrainingFlow.astro'
 import TrainingImpact from '../components/sections/TrainingImpact.astro'
-
+import Card from '../components/cards/MCCard.astro'
+import RedButton from '../components/buttons/RedButton.astro'
+import PrereqGroup from '../components/sections/PrereqGroup.astro'
 import '../styles/global.css'
+const posts = await Astro.glob('../content/roles/*.md')
 ---
 
 <Layout title="Welcome to Astro.">
@@ -24,10 +27,37 @@ import '../styles/global.css'
     <div class="h-screen snap-start pt-20">
       <TrainingImpact />
     </div>
+    <div class="h-screen snap-start py-20">
+      <Hero padding="md:pt-24" title="FIND THE ROLE THAT'S RIGHT FOR YOU" />
+      <div
+        class="md:grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"
+      >
+        {
+          posts.map((post) => (
+            <div class="flex justify-center">
+              <Card
+                fontColor="text-red-600"
+                darkFontColor="text-red-600"
+                title={post.frontmatter.role}
+                circularIcon
+                href={"/roles/" + post.frontmatter.url}
+              />
+            </div>
+          ))
+        }
+
+      </div>
+      <div class="flex items-center justify-center h-1/5">
+        <div class="flex space-x-24 mt-8">
+          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
+        </div>
+      </div>
+    </div>
     <div class="h-screen snap-start py-12">
       <Mission />
     </div>
-
+    <PrereqGroup
+    />
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
       <TrainingFlow />

@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props
 ---
 
 <BaseLayout url={frontmatter.url}>
-    <div class="max-w-screen-lg px-4 pt-24 pb-10 mx-auto prose dark:prose-invert sm:px-6 lg:px-8">
+    <div class="max-w-screen-lg px-4 pt-24 pb-10 mx-auto prose prose-invert sm:px-6 lg:px-8">
         <slot />
     </div>
 </BaseLayout>

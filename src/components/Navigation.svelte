@@ -1,8 +1,6 @@
 <script>
-  import LightButton from './buttons/LightButton.svelte'
-  import Icon from '@iconify/svelte'
-  import VerticalDropdown from '../components/dropdown/Vertical.svelte'
-  import HorizontalDropdown from '../components/dropdown/Horizontal.svelte'
+  import Icon from "@iconify/svelte"
+  import RedButton from "./buttons/RedButton.svelte"
 
   let isMenuHidden = true
 
@@ -11,161 +9,182 @@
     event.stopPropagation()
   }
 
-	function onClickOutside(element) {
-		function onClick(event) {
-			if (!element.contains(event.target)) {
-				isMenuHidden = true;
-			}
-		}
-		
-		document.body.addEventListener('click', onClick);
-		
-		return {
-			destroy() {
-				document.body.removeEventListener('click', onClick);
-			}
-		}
-	}
+  let dropdowns = {}
 
+  let dropdownLinks = [
+    {
+      text: 'PRODUCTS',
+      url: '/products',
+      image: 'http://via.placeholder.com/240x200',
+      subLinks: [
+        { url: '/products/sparta', text: 'SPARTA' },
+        { url: '/products/my-career', text: 'MyCareer' },
+        { url: '/products/SnapDB', text: 'SnapDB' },
+        { url: '/products/ViaSat', text: 'ViaSat' },
+      ],
+    },
+    {
+      text: 'ABOUT',
+      image: 'http://via.placeholder.com/240x200',
+      url: '/about',
+      subLinks: [],
+    },
+    {
+      text: 'TRAINING & CAREER',
+      image: 'http://via.placeholder.com/240x200',
+      url: '/career',
+      subLinks: [
+        { url: '/roles', text: 'ROLES' },
+        { url: '/roles/job-listings', text: 'JOB LISTINGS' },
+        { url: '/roles/the-progress', text: 'THE PROGRESS' },
+      ],
+    },
+    {
+      text: 'CONTACT',
+      image: 'http://via.placeholder.com/240x200',
+      url: 'https://www.example.com/contact',
+      subLinks: [
+        { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
+        { url: '/contact/request-a-demo', text: 'SUGGEST AN APP' },
+      ],
+    },
+  ]
+
+  for (const link in dropdownLinks) {
+    dropdowns[dropdownLinks[link].text] = false 
+  }
+
+  console.log(dropdownLinks)
+
+  function toggleDropdown(dropdown) {
+    dropdowns[dropdown] = !dropdowns[dropdown]
+  }
+
+  function openDropdown(dropdown) {
+    dropdowns[dropdown] = true
+    console.log(dropdowns)
+  }
+
+  function closeDropdown(dropdown) {
+    dropdowns[dropdown] = false
+    console.log(dropdowns)
+  }
 </script>
 
-<nav
-  class="top-0 flex items-center justify-between h-20 px-12 py-4 shadow-md bg-slate-300 dark:bg-slate-900 md:px-24"
->
-  <a class="text-3xl font-bold leading-none" href="/">MCSWF</a>
-  <div class="lg:hidden" on:click={toggleMenu}>
-    <button class="flex items-center p-3 navbar-burger">
-      <Icon class="text-2xl" icon="mdi:menu" />
-    </button>
-  </div>
-  <ul
-    class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+<header class="relative antialiased blue-radial-gradient">
+  <nav
+    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center"
   >
-    <li>
-      <LightButton text="ABOUT" href="/about" />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="PRODUCTS"
-        href="/products"
-        dropdown={[
-          { href: '/products/sparta', text: 'SPARTA' },
-          { href: '/products/my-career', text: 'MyCareer' },
-          { href: '/products/SnapDB', text: 'SnapDB' },
-          { href: '/products/ViaSat', text: 'ViaSat' },
-        ]}
-      />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="TRAINING & CAREER"
-        href="/training"
-        dropdown={[
-          { href: '/roles', text: 'ROLES' },
-          { href: '/jobs', text: 'JOB LISTINGS' },
-          { href: '/process', text: 'THE PROCESS' },
-        ]}
-      />
-    </li>
-    <li>
-      <VerticalDropdown
-        title="CONTACT"
-        href="/contact"
-        dropdown={[
-          { href: '/requestdemo', text: 'REQUEST A DEMO' },
-          { href: '/suggest', text: 'SUGGEST AN APP' },
-        ]}
-      />
-    </li>
-  </ul>
-  <a
-    class="hidden px-6 transition duration-200 lg:inline-block rounded-xl"
-    href="#"
-  >
-    <button
-      type="button"
-      class="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
-    >
-      GET IN TOUCH
-    </button></a
-  >
-</nav>
+  <div class="flex w-full justify-center">
 
-{#if !isMenuHidden}
-  <div class="relative z-50 navbar-menu">
-    <div class="fixed inset-0 bg-gray-800 opacity-0 navbar-backdrop" />
-    <nav
-      class="fixed top-0 bottom-0 left-0 flex flex-col w-5/6 max-w-sm px-6 py-6 overflow-y-auto border-r-2 border-black dark:border-white bg-slate-300 dark:bg-slate-900"
-      use:onClickOutside
-    >
-      <div class="flex items-center mb-8">
-        <a class="mr-auto text-3xl font-bold leading-none" href="/">MCSWF</a>
-        <button class="navbar-close" on:click={toggleMenu}>
-          <Icon class="text-2xl" icon="mdi:window-close" />
+    <div class="flex flex-wrap items-center justify-between w-3/4 h-20 px-4">
+      <div class="flex items-center justify-start">
+        <a href="/" class="flex mr-4">
+          <span
+            class="self-center text-lg font-semibold text-white font-colossalis whitespace-nowrap"
+            >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span
+          >
+        </a>
+      </div>
+      <div class="flex items-center lg:order-2">
+        {#if !isMenuHidden}
+        <div class="mx-4">
+          <RedButton text="GET IN TOUCH"/>
+        </div>
+        {/if}
+        <button
+          on:click={toggleMenu}
+          id="toggleSidebar"
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="hidden p-2 mr-3 text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit"
+        >
+        {#if isMenuHidden}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+        {:else}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
+        {/if}
+        </button>
+        <button
+          on:click={toggleMenu}
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="p-2 mr-2 text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold"
+        >
+        {#if isMenuHidden}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+        {:else}
+        <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
+        {/if}
+          <span class="sr-only">Toggle sidebar</span>
         </button>
       </div>
-      <div>
-        <ul>
-          <li class="mb-1">
-            <a
-              class="block p-4 text-sm font-semibold text-slate-600 rounded hover:bg-blue-50 hover:text-red-600"
-              href="/about">ABOUT</a
-            >
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="PRODUCTS"
-              href="/products"
-              dropdown={[
-                { href: '/products/sparta', text: 'SPARTA' },
-                { href: '/products/my-career', text: 'MyCareer' },
-                { href: '/products/SnapDB', text: 'SnapDB' },
-                { href: '/products/ViaSat', text: 'ViaSat' },
-              ]}
-            />
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="TRAINING & CAREER"
-              href="/roles"
-              dropdown={[
-                { href: '/roles', text: 'ROLES' },
-                { href: '/jobs', text: 'JOB LISTINGS' },
-                { href: '/process', text: 'THE PROCESS' },
-              ]}
-            />
-          </li>
-          <li class="mb-1">
-            <HorizontalDropdown
-              title="CONTACT"
-              href="/contact"
-              dropdown={[
-                { href: '/requestdemo', text: 'REQUEST A DEMO' },
-                { href: '/suggest', text: 'SUGGEST AN APP' },
-              ]}
-            />
-          </li>
-        </ul>
-      </div>
-      <div class="mt-auto">
-        <div class="pt-6">
-          <a
-            class="block px-4 py-3 mb-2 text-xs font-semibold leading-loose text-center text-white transition-all bg-red-800 border border-transparent rounded-md hover:ring-2 ring-red-800 hover:bg-red-950 hover:text-white focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-300 focus:ring-offset-2 dark:bg-slate-700 dark:hover:bg-slate-950 dark:text-white"
-            href="#"
-          >
-            <button>GET IN TOUCH</button>
-          </a>
-        </div>
-        <p class="my-4 text-xs text-center text-gray-400">
-          <span>UNITED STATES MARINE CORPS</span>
-        </p>
-      </div>
-    </nav>
+    </div>
   </div>
-{/if}
-
-<style>
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-</style>
+    {#if !isMenuHidden}
+      <hr class="w-full border-mcswf-pinstripe border-1" />
+      <!-- STANDARD NAVBAR -->
+      <div class="hidden mx-24 my-4 text-white lg:block xl:block 2xl:block h-96">
+        <div class="flex justify-between">
+          {#each dropdownLinks as dropdown}
+          <div
+            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
+            on:mouseleave={() => closeDropdown(dropdown.text)}
+            on:mouseenter={() => openDropdown(dropdown.text)}
+          >
+            <a href={dropdown.url}>
+              <h2 class="font-bold">{dropdown.text}</h2>
+              <img
+                class="rounded shadow-lg"
+                src={dropdown.image}
+                alt={dropdown.text}
+              />
+            </a>
+            <div class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
+              {#each dropdown.subLinks as subLinks}
+              <div class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+                <a href={subLinks.url}>{subLinks.text}</a>
+              </div>
+              {/each}
+            </div>
+          </div>
+          {/each}
+        </div>
+      </div>
+      <!-- MOBILE NAVBAR -->
+      <div
+        class="grid visible h-screen grid-cols-1 gap-2 lg:hidden xl:hidden 2xl:hidden"
+      >
+        <div class="pt-8 h-1/2">
+          <div>
+            <h1 class="text-xl font-bold text-center underline text-mcswf-gold">
+              APPLY NOW
+            </h1>
+          </div>
+          {#each dropdownLinks as dropdown}
+          <div class="pt-4 mx-8">
+            <h1 class="flex justify-between font-bold hover:text-mcswf-gold" on:click={() => toggleDropdown(dropdown.text)}>
+              <span class="menu-item"
+                ><a href={dropdown.url}>{dropdown.text}</a></span
+              >
+              {#if dropdown.subLinks.length > 0}
+              <span class="text-xl text-right"
+                >{dropdowns[dropdown.text] ? '-' : '+'}</span
+              >
+              {/if}
+            </h1>
+            <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
+              {#each dropdown.subLinks as subLinks}
+              <div class="font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+                <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
+              </div>
+              {/each}
+            </div>
+          </div>
+          {/each}
+        </div>
+      </div>
+      <div class="h-1"></div>
+    {/if}
+  </nav>
+</header>

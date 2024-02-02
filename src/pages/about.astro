@@ -2,30 +2,54 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.astro'
 
-import Mission from '../components/sections/AboutMission.astro'
-import Vision from '../components/sections/Vision.astro'
-import Impact from '../components/sections/AboutImpact.astro'
-import "../styles/global.css"
+import '../styles/global.css'
 import { imageConfig } from 'astro:assets'
+import ContentImageFull from '../components/sections/ContentImageFull.astro'
+
+import FooterFull from '../components/FooterFull.svelte'
 ---
 
 <Layout title="ABOUT">
-  <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
-    <div class="h-screen snap-start py-20">
+  <div class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
+    <img src="/ega.svg">
+  </div>
+  <div
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+  >
+    <div class="relative z-20 h-screen py-20 snap-start bg-[url('/images/marine.png')] bg-cover bg-no-repeat">
       <Hero
-        padding='pt-24'
+        padding="pt-24"
         title="WHO WE ARE"
-        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
+        content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
       />
     </div>
-    <div class="h-screen snap-start py-20">
-      <Vision />
+    <div class="relative z-20 h-screen py-20 snap-start">
+      <ContentImageFull
+        link="#"
+        linkText="LEARN MORE"
+        title="OUR VISION"
+        content="Upon arrival at the Marine Corps Software Factory, Marines are trained to fill the roles of a product team: product manager, software developer, and UI/UX designer. Over the course of their three-year assignment at MCSWF in Austin, Texas, they develop applications to support warfighters at the tactical edge. After their three-year tour in Austin, the teams are reassigned together to continue supporting MIG commanders throughout the fleet."
+      />
     </div>
-    <div class="h-screen snap-start py-20">
-      <Mission />
+    <div class="relative z-20 h-screen py-20 snap-start">
+      <ContentImageFull
+        flipped
+        link="#"
+        linkText="LEARN MORE"
+        title="OUR MISSION"
+        content="We provide software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to help them close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders' decision advantage across the full spectrum of military operations."
+      />
     </div>
-    <div class="h-screen snap-start py-20">
-      <Impact />
+    <div class="relative z-20 h-screen py-20 snap-start">
+      <ContentImageFull
+        link="#"
+        linkText="LEARN MORE"
+        title="OUR IMPACT"
+        content="By providing Marines with the skills to develop software and implement artificial intelligence, we are giving commanders the ability to quickly produce software and AI solutions at the tactical edge."
+      />
+    </div>
+    <div class="relative z-20 pt-20 snap-end">
+      <FooterFull client:load/>
     </div>
   </div>
 </Layout>
