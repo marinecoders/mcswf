@@ -11,12 +11,14 @@ interface Props {
 const { title, content, startDate, endDate } = Astro.props
 ---
 
-<div class="mx-10 p-7 bg-white rounded-lg shadow-md">
-  <h3 class="text-4xl pt-10 text-black font-extrabold text-center">
+<div class="mx-10 sm:mb-0 mb-10 bg-white rounded-lg shadow-md sm:p-7 p-2">
+  <h3
+    class="sm:text-4xl text-2xl sm:pt-10 pt-5 text-black font-extrabold text-center"
+  >
     {title}
   </h3>
   <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p class="text-lg">
+    <p class="sm:text-lg text-base">
       {startDate} - {endDate}
     </p>
     <p>

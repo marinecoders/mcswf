@@ -7,13 +7,15 @@ const entries = await getCollection('cohorts')
 ---
 
 <div
-  class="h-screen flex flex-col justify-center snap-start space-y-10 pt-0 bg-mcswf-gray text-black"
+  class="overflow-y-scroll scrollbar-hide h-screen snap-start snap-y snap-mandatory flex flex-col justify-center space-y-10 pt-72 lg:pt-5 bg-mcswf-gray text-black"
 >
   <div class="space-y-10 font-bold text-center">
-    <h1 class="text-4xl">READY TO APPLY?</h1>
-    <h1 class="text-2xl">JOIN THE COHORT THAT'S RIGHT FOR YOU.</h1>
+    <h1 class="sm:text-4xl text-3xl">READY TO APPLY?</h1>
+    <h1 class="sm:text-2xl text-xl mx-10">
+      JOIN THE COHORT THAT'S RIGHT FOR YOU.
+    </h1>
   </div>
-  <div class="flex flex-row justify-center">
+  <div class="flex flex-col justify-center sm:flex-row sm:justify-center">
     {
       entries.map((cohortEntry) => (
         <CohortCard
