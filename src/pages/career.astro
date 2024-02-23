@@ -6,7 +6,7 @@ import Impact from '../components/sections/CareerImpact.astro'
 import TrainingFlow from '../components/sections/TrainingFlow.astro'
 import TrainingImpact from '../components/sections/TrainingImpact.astro'
 import Card from '../components/cards/MCCard.astro'
-import RedButton from '../components/buttons/RedButton.astro'
+import WhiteButton from '../components/buttons/WhiteButton.astro'
 import PrereqGroup from '../components/sections/PrereqGroup.astro'
 import '../styles/global.css'
 const posts = await Astro.glob('../content/roles/*.md')
@@ -40,24 +40,22 @@ const posts = await Astro.glob('../content/roles/*.md')
                 darkFontColor="text-red-600"
                 title={post.frontmatter.role}
                 circularIcon
-                href={"/roles/" + post.frontmatter.url}
+                href={'/roles/' + post.frontmatter.url}
               />
             </div>
           ))
         }
-
       </div>
       <div class="flex items-center justify-center h-1/5">
         <div class="flex space-x-24 mt-8">
-          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
+          {(<WhiteButton href="" text="SEE JOB LISTINGS" />)}
         </div>
       </div>
     </div>
     <div class="h-screen snap-start py-12">
       <Mission />
     </div>
-    <PrereqGroup
-    />
+    <PrereqGroup />
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
       <TrainingFlow />
