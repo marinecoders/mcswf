@@ -10,6 +10,7 @@ interface Props {
   flipped?: boolean
   imgSrc?: string
   imgAltText?: string
+  titleClasses?: string
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   padding,
   imgSrc = 'https://dummyimage.com/1080/fff/aaa',
   imgAltText = 'dummy alt text',
+  titleClasses,
 } = Astro.props
 
 console.log('link - ', link)
@@ -39,7 +41,10 @@ console.log('link - ', link)
     }
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold"
+        class:list={[
+          'mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold',
+          titleClasses,
+        ]}
       >
         {title}
       </h2>
