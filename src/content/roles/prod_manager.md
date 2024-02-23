@@ -3,6 +3,7 @@ role: PRODUCT MANAGER
 url: product_manager
 image: marine_pm.png
 image_wide: marine_pm_wide.png
+image_alt_text: Marine Product Manager
 about: >
   Product Managers play a key role in balancing user requirements, organizational goals, and technical feasibility.
   They aim to create value quickly, while taking a strategic and comprehensive approach. In our collaborative environment, Developers, Designers, Product Managers, and Platform Engineers work together as a cohesive, flat team structure to create software solutions that meet the needs of FMF Marines.
