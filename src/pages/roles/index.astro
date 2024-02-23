@@ -5,6 +5,7 @@ import Hero from '../../components/elements/Hero.astro'
 import '../../styles/global.css'
 import '../../styles/fonts.css'
 import FooterFull from '../../components/FooterFull.svelte'
+import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 const posts = await Astro.glob('../../content/roles/*.md')
 let side = 'left'
 ---
@@ -39,24 +40,15 @@ let side = 'left'
             side = 'right'
             return (
               <>
-                <div class="h-screen snap-start py-10 px-10">
-                  <div class="flex h-screen items-center">
-                    <div class="w-1/2 p-4">
-                      <Hero
-                        title={post.frontmatter.role}
-                        content={post.frontmatter.about}
-                        link={'/roles/' + post.frontmatter.url}
-                        linkText="APPLY NOW"
-                        titleClasses="text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-                      />
-                    </div>
-                    <div class="w-1/2 p-4">
-                      <img
-                        src={`/images/${post.frontmatter.image}`}
-                        class="rounded-lg"
-                      />
-                    </div>
-                  </div>
+                <div class="relative z-20 snap-start">
+                  <ContentImageFull
+                    title={post.frontmatter.role}
+                    content={post.frontmatter.about}
+                    link={'/roles/' + post.frontmatter.url}
+                    linkText="APPLY NOW"
+                    titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                    imgSrc={`/images/${post.frontmatter.image}`}
+                  />
                 </div>
               </>
             )
@@ -64,24 +56,16 @@ let side = 'left'
             side = 'left'
             return (
               <>
-                <div class="h-screen snap-start py-10 px-10">
-                  <div class="flex h-screen items-center">
-                    <div class="w-1/2 p-4">
-                      <img
-                        src={`/images/${post.frontmatter.image}`}
-                        class="rounded-lg"
-                      />
-                    </div>
-                    <div class="w-1/2 p-4">
-                      <Hero
-                        title={post.frontmatter.role}
-                        content={post.frontmatter.about}
-                        link={'/roles/' + post.frontmatter.url}
-                        linkText="APPLY NOW"
-                        titleClasses="text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-                      />
-                    </div>
-                  </div>
+                <div class="relative z-20 snap-start">
+                  <ContentImageFull
+                    flipped
+                    title={post.frontmatter.role}
+                    content={post.frontmatter.about}
+                    link={'/roles/' + post.frontmatter.url}
+                    linkText="APPLY NOW"
+                    titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                    imgSrc={`/images/${post.frontmatter.image}`}
+                  />
                 </div>
               </>
             )
