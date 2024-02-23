@@ -8,6 +8,8 @@ interface Props {
   linkText?: string
   padding?: string
   flipped?: boolean
+  imgSrc?: string
+  imgAltText?: string
 }
 
 const {
@@ -17,6 +19,8 @@ const {
   linkText = null,
   flipped = false,
   padding,
+  imgSrc = 'https://dummyimage.com/1080/fff/aaa',
+  imgAltText = 'dummy alt text',
 } = Astro.props
 
 console.log('link - ', link)
@@ -29,11 +33,7 @@ console.log('link - ', link)
     {
       flipped && (
         <div class="grid gap-4 mt-8 gird-cols-1">
-          <img
-            class="w-full rounded-lg"
-            src="https://dummyimage.com/1080/fff/aaa"
-            alt="office content 1"
-          />
+          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
         </div>
       )
     }
@@ -65,11 +65,7 @@ console.log('link - ', link)
     {
       !flipped && (
         <div class="grid gap-4 mt-8 gird-cols-1">
-          <img
-            class="w-full rounded-lg"
-            src="https://dummyimage.com/1080/fff/aaa"
-            alt="office content 1"
-          />
+          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
         </div>
       )
     }
