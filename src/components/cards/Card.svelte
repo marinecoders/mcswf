@@ -1,12 +1,8 @@
----
-interface Props {
-  title: string
-  body: string
-  href: string
-}
-
-const { href, title, body } = Astro.props
----
+<script>
+  export let title;
+  export let body;
+  export let href;
+</script>
 
 <li class="link-card">
   <a href={href}>
@@ -19,6 +15,7 @@ const { href, title, body } = Astro.props
     </p>
   </a>
 </li>
+
 <style>
   .link-card {
     list-style: none;
@@ -32,6 +29,7 @@ const { href, title, body } = Astro.props
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
+
   .link-card > a {
     width: 100%;
     text-decoration: none;
@@ -42,20 +40,24 @@ const { href, title, body } = Astro.props
     background-color: #23262d;
     opacity: 0.8;
   }
+
   h2 {
     margin: 0;
     font-size: 1.25rem;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
+
   p {
     margin-top: 0.5rem;
     margin-bottom: 0;
   }
-  .link-card:is(:hover, :focus-within) {
+
+  .link-card:hover, .link-card:focus-within {
     background-position: 0;
     background-image: var(--accent-gradient);
   }
-  .link-card:is(:hover, :focus-within) h2 {
+
+  .link-card:hover h2, .link-card:focus-within h2 {
     color: rgb(var(--accent-light));
   }
 </style>

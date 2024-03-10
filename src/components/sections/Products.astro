@@ -1,10 +1,9 @@
 ---
-import Button from '../buttons/RedButton.astro'
-import Hero from '../elements/Hero.astro'
+import Button from '../buttons/RedButton.svelte'
 import { Icon } from 'astro-icon'
-import Card from '../cards/MCCard.astro'
+import Card from '../cards/MCCard.svelte'
 import DarkButton from '../buttons/DarkButton.svelte'
-import RedButton from '../buttons/RedButton.astro'
+import RedButton from '../buttons/RedButton.svelte'
 import { getCollection } from 'astro:content';
 const products = await getCollection('products');
 products.sort((a,b) => a.data.order - b.data.order)

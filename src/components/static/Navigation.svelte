@@ -1,6 +1,6 @@
 <script>
   import Icon from "@iconify/svelte"
-  import RedButton from "./buttons/RedButton.svelte"
+  import RedButton from "../buttons/RedButton.svelte"
 
   let isMenuHidden = true
 
