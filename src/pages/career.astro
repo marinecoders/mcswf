@@ -6,9 +6,12 @@ import TrainingFlow from '../components/sections/TrainingFlow.svelte'
 import TrainingImpact from '../components/sections/TrainingImpact.svelte'
 import Card from '../components/cards/MCCard.svelte'
 import RedButton from '../components/buttons/RedButton.svelte'
-import PrereqGroup from '../components/sections/PrereqGroup.astro'
+import PrereqGroup from '../components/sections/PrereqGroup.svelte'
+import {getCollection} from 'astro:content'
 import '../styles/global.css'
 const posts = await Astro.glob('../content/roles/*.md')
+
+const entries = await getCollection('prereqs');
 ---
 
 <Layout title="Welcome to Astro.">
@@ -55,8 +58,7 @@ const posts = await Astro.glob('../content/roles/*.md')
     <div class="h-screen snap-start py-12">
       <Mission />
     </div>
-    <PrereqGroup
-    />
+    <PrereqGroup entries={entries}/>
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
       <TrainingFlow />

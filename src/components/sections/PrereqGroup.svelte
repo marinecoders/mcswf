@@ -1,12 +1,13 @@
----
-import Hero from '../elements/Hero.svelte';
-import PrereqCard from '../cards/PrereqCard.svelte';
-import {getCollection, getEntry, getEntries} from 'astro:content'
+<!-- ParentComponent.svelte -->
+<script>
+    import Hero from './elements/Hero.svelte';
+    import PrereqCard from './cards/PrereqCard.svelte';
 
-const entry = await getEntry('prereqs', '1');
-const entries = await getCollection('prereqs');
+    export let entries = [];
 
----
+    // Since 'entries' is a prop, it will be passed from the parent component
+    // where this component is used.
+</script>
 
 <div class="h-screen snap-start pt-20">
     <!-- Heading -->
@@ -23,11 +24,11 @@ const entries = await getCollection('prereqs');
 
     <!-- Grid of Prerequisites -->
     <div class="grid grid-cols-2">
-        {entries.map(prereqEntry => (
+        {#each entries as prereqEntry}
             <PrereqCard
                 title={prereqEntry.data.title}
                 content={prereqEntry.data.content}
             />
-        ))} 
+        {/each} 
     </div>
 </div>

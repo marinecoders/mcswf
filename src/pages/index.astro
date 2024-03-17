@@ -3,13 +3,18 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
 import Mission from '../components/sections/Mission.svelte'
 import Countdown from '../components/elements/Countdown.svelte'
-import Products from '../components/sections/Products.astro'
+import Products from '../components/sections/Products.svelte'
 
 import "../styles/global.css"
 import "../styles/fonts.css"
 import FooterFull from '../components/footer/FooterFull.svelte'
 
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+
+// Get products
+import { getCollection } from 'astro:content';
+const products = await getCollection('products');
+products.sort((a,b) => a.data.order - b.data.order)
 ---
 
 <Layout title="">
@@ -55,7 +60,7 @@ import ContentImageFull from '../components/sections/ContentImageFull.svelte'
         />
       </div>
       <div class="h-screen pt-20 snap-start">
-        <Products/>
+        <Products {products}/>
       </div>
       <div class="pt-20 snap-end">
         <FooterFull client:load/>
