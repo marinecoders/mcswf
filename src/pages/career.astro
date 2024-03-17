@@ -61,7 +61,7 @@ const entries = await getCollection('prereqs');
     <PrereqGroup entries={entries}/>
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
-      <TrainingFlow />
+      <TrainingFlow client:only="svelte"/>
     </div>
   </div>
 </Layout>

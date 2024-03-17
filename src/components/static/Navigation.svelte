@@ -54,7 +54,7 @@
     dropdowns[dropdownLinks[link].text] = false 
   }
 
-  console.log(dropdownLinks)
+  //console.log(dropdownLinks)
 
   function toggleDropdown(dropdown) {
     dropdowns[dropdown] = !dropdowns[dropdown]
@@ -62,12 +62,12 @@
 
   function openDropdown(dropdown) {
     dropdowns[dropdown] = true
-    console.log(dropdowns)
+    //console.log(dropdowns)
   }
 
   function closeDropdown(dropdown) {
     dropdowns[dropdown] = false
-    console.log(dropdowns)
+    //console.log(dropdowns)
   }
 </script>
 

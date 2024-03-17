@@ -8,7 +8,7 @@
     export let padding;
     export let flipped = false;
   
-    console.log("link - ", link);
+    //console.log("link - ", link);
   </script>
   
   <section class="">

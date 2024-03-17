@@ -1,7 +1,7 @@
 <!-- ParentComponent.svelte -->
 <script>
-    import Hero from './elements/Hero.svelte';
-    import PrereqCard from './cards/PrereqCard.svelte';
+    import Hero from '../elements/Hero.svelte';
+    import PrereqCard from '../cards/PrereqCard.svelte';
 
     export let entries = [];
 
