@@ -1,16 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.astro'
-import Mission from '../components/sections/Mission.astro'
-import Impact from '../components/sections/CareerImpact.astro'
-import Countdown from '../components/elements/Countdown.astro'
-import Products from '../components/sections/Products.astro'
+import Hero from '../components/elements/Hero.svelte'
+import Mission from '../components/sections/Mission.svelte'
+import Countdown from '../components/elements/Countdown.svelte'
+import Products from '../components/sections/Products.svelte'
 
 import "../styles/global.css"
 import "../styles/fonts.css"
-import FooterFull from '../components/FooterFull.svelte'
+import FooterFull from '../components/footer/FooterFull.svelte'
 
-import ContentImageFull from '../components/sections/ContentImageFull.astro'
+import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+
+// Get products
+import { getCollection } from 'astro:content';
+const products = await getCollection('products');
+products.sort((a,b) => a.data.order - b.data.order)
 ---
 
 <Layout title="">
@@ -50,13 +54,14 @@ import ContentImageFull from '../components/sections/ContentImageFull.astro'
       </div>
       <div class="h-fit md:h-screen snap-start md:pt-20">
         <Countdown
+          client:only="svelte" 
           title="COHORT COUNTDOWN"
           content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
           link="#"
         />
       </div>
       <div class="h-screen pt-20 snap-start">
-        <Products/>
+        <Products {products}/>
       </div>
       <div class="pt-20 snap-end">
         <FooterFull client:load/>

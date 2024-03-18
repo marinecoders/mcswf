@@ -1,15 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.astro'
-import Mission from '../components/sections/Mission.astro'
-import Impact from '../components/sections/CareerImpact.astro'
-import TrainingFlow from '../components/sections/TrainingFlow.astro'
-import TrainingImpact from '../components/sections/TrainingImpact.astro'
-import Card from '../components/cards/MCCard.astro'
-import RedButton from '../components/buttons/RedButton.astro'
-import PrereqGroup from '../components/sections/PrereqGroup.astro'
+import Hero from '../components/elements/Hero.svelte'
+import Mission from '../components/sections/Mission.svelte'
+import TrainingFlow from '../components/sections/TrainingFlow.svelte'
+import TrainingImpact from '../components/sections/TrainingImpact.svelte'
+import Card from '../components/cards/MCCard.svelte'
+import RedButton from '../components/buttons/RedButton.svelte'
+import PrereqGroup from '../components/sections/PrereqGroup.svelte'
+import {getCollection} from 'astro:content'
 import '../styles/global.css'
 const posts = await Astro.glob('../content/roles/*.md')
+
+const entries = await getCollection('prereqs');
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,7 +19,7 @@ const posts = await Astro.glob('../content/roles/*.md')
     class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div class="h-screen snap-start py-20">
-      <Hero
+      <Hero 
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         link="#"
         linkText="LEARN MORE"
@@ -56,11 +58,10 @@ const posts = await Astro.glob('../content/roles/*.md')
     <div class="h-screen snap-start py-12">
       <Mission />
     </div>
-    <PrereqGroup
-    />
+    <PrereqGroup entries={entries}/>
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
-      <TrainingFlow />
+      <TrainingFlow/>
     </div>
   </div>
 </Layout>
