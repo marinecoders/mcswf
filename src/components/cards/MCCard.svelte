@@ -6,9 +6,7 @@
   
   <div class="rounded-lg w-full max-w-sm bg-slate-300 border border-gray-200 shadow-lg bg-slate-900 border-slate-700">
     <div class="flex flex-col items-center pb-10 text-center">
-      {#if imageSrc}
-        <img class="m-4 w-24 h-24 mb-3 rounded-full shadow-lg" src={imageSrc} alt={title} />
-      {/if}
+      <img class="m-4 w-24 h-24 mb-3 rounded-full shadow-lg" src={imageSrc}/>
       <h5 class="mb-1 font-extrabold text-4xl text-gray-900 text-white">
         {title}
       </h5>

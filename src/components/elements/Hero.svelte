@@ -2,7 +2,7 @@
     import RedButton from '../buttons/RedButton.svelte';
   
     export let title;
-    export let content;
+    export let content = "";
     export let link;
     export let linkText;
     export let padding;
