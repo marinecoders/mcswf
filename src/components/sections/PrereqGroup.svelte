@@ -18,7 +18,7 @@
     />
     <hr style="width:50%; margin-left:25%;color:gray">
     <Hero
-        padding='pt-2 pb-4'
+        padding='pt-8 pb-4'
         title="PREREQUISITES"
     />
 
