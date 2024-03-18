@@ -5,14 +5,13 @@
     export let content = "";
     export let link;
     export let linkText;
-    export let padding;
+    export let padding = "";
     export let contentClasses;
   </script>
   
-  <div class:list={[
-      'max-w-[85rem] mx-auto px-4 pt-inherit',
-      padding,
-    ]}
+  <div class=
+      {'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}
+    
   >
     <!-- Title -->
     <div class="max-w-6xl mx-auto mt-5 text-center">

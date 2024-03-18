@@ -19,7 +19,7 @@ const entries = await getCollection('prereqs');
     class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
   >
     <div class="h-screen snap-start py-20">
-      <Hero
+      <Hero 
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         link="#"
         linkText="LEARN MORE"
@@ -55,11 +55,11 @@ const entries = await getCollection('prereqs');
         </div>
       </div>
     </div>
-    <div class="h-screen snap-start py-20">
+    <div class="h-screen snap-start py-12">
       <Mission />
     </div>
     <PrereqGroup entries={entries}/>
-    <div class="h-screen snap-start py-20">
+    <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
       <TrainingFlow/>
     </div>
