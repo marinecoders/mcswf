@@ -31,30 +31,55 @@ let side = 'left'
         titleClasses="text-white"
       />
     </div>
+
     <div
       class="relative z-20 max-h-screen scrollbar-hide snap-start snap-y snap-mandatory"
     >
-      {
-        posts.map((post) => {
-          if (side == 'left') {
-            side = 'right'
-            return (
-              <>
-                <div class="relative z-20 snap-start">
-                  <ContentImageFull
-                    title={post.frontmatter.role}
-                    content={post.frontmatter.about}
-                    link={'/roles/' + post.frontmatter.url}
-                    linkText="APPLY NOW"
-                    titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-                    imgSrc={`/images/${post.frontmatter.image}`}
-                    imgAltText={post.frontmatter.image_alt_text}
-                  />
-                </div>
-              </>
-            )
-          } else {
-            side = 'left'
+      <div class="hidden lg:block">
+        {
+          posts.map((post) => {
+            if (side == 'left') {
+              side = 'right'
+              return (
+                <>
+                  <div class="relative z-20 snap-start">
+                    <ContentImageFull
+                      title={post.frontmatter.role}
+                      content={post.frontmatter.about}
+                      link={'/roles/' + post.frontmatter.url}
+                      linkText="APPLY NOW"
+                      titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      imgSrc={`/images/${post.frontmatter.image}`}
+                      imgAltText={post.frontmatter.image_alt_text}
+                    />
+                  </div>
+                </>
+              )
+            } else {
+              side = 'left'
+              return (
+                <>
+                  <div class="relative z-20 snap-start">
+                    <ContentImageFull
+                      flipped
+                      title={post.frontmatter.role}
+                      content={post.frontmatter.about}
+                      link={'/roles/' + post.frontmatter.url}
+                      linkText="APPLY NOW"
+                      titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      imgSrc={`/images/${post.frontmatter.image}`}
+                      imgAltText={post.frontmatter.image_alt_text}
+                    />
+                  </div>
+                </>
+              )
+            }
+          })
+        }
+      </div>
+      <div class="lg:hidden">
+        {
+          posts.map((post) => {
             return (
               <>
                 <div class="relative z-20 snap-start">
@@ -71,9 +96,9 @@ let side = 'left'
                 </div>
               </>
             )
-          }
-        })
-      }
+          })
+        }
+      </div>
       <div class="pt-20 snap-end">
         <FooterFull client:load />
       </div>
