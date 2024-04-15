@@ -1,18 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 
-import "../../styles/global.css"
-import "../../styles/fonts.css"
-import Accordion from '../../components/Accordion.svelte';
+import '../../styles/global.css'
+import '../../styles/fonts.css'
+import Accordion from '../../components/accordion/Accordion.svelte'
 
-const products = await getCollection('products');
+const products = await getCollection('products')
 ---
 
 <Layout title="">
-    <div class="bg-black h-screen py-20">
-        <Accordion 
-        products={products}
-        client:load/>
-    </div>
+  <div class="bg-black h-screen py-20">
+    <Accordion products={products} client:load />
+  </div>
 </Layout>

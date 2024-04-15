@@ -1,30 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.astro'
-import Mission from '../components/sections/Mission.astro'
-import Impact from '../components/sections/CareerImpact.astro'
-import Countdown from '../components/elements/Countdown.astro'
-import Products from '../components/sections/Products.astro'
+import Hero from '../components/elements/Hero.svelte'
+import Mission from '../components/sections/Mission.svelte'
+import Countdown from '../components/elements/Countdown.svelte'
+import Products from '../components/sections/Products.svelte'
 
-import "../styles/global.css"
-import "../styles/fonts.css"
-import FooterFull from '../components/FooterFull.svelte'
+import '../styles/global.css'
+import '../styles/fonts.css'
+import FooterFull from '../components/footer/FooterFull.svelte'
 
-import ContentImageFull from '../components/sections/ContentImageFull.astro'
+import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+
+// Get products
+import { getCollection } from 'astro:content'
+const products = await getCollection('products')
+products.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout title="">
-  <div class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
-    <img src="/ega.svg">
+  <div
+    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
+  >
+    <img src="/ega.svg" />
   </div>
-  <div class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory">
-    <div class="relative z-20 h-screen snap-start py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat">
+  <div
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+  >
+    <div
+      class="relative z-20 h-screen snap-start py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat"
+    >
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         content="Train Marines. Build Applications. Deploy to the Edge"
         link="#"
-        linkText='LEARN MORE'
-        padding='pt-24'
+        linkText="LEARN MORE"
+        padding="pt-24"
       />
     </div>
     <div class="relative z-20">
@@ -50,16 +60,17 @@ import ContentImageFull from '../components/sections/ContentImageFull.astro'
       </div>
       <div class="h-fit md:h-screen snap-start md:pt-20">
         <Countdown
+          client:only="svelte"
           title="COHORT COUNTDOWN"
           content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
           link="#"
         />
       </div>
       <div class="h-screen pt-20 snap-start">
-        <Products/>
+        <Products {products} />
       </div>
       <div class="pt-20 snap-end">
-        <FooterFull client:load/>
+        <FooterFull client:load />
       </div>
     </div>
   </div>

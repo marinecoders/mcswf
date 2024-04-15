@@ -11,19 +11,18 @@ export default {
         'mcswf-dark-blue': '#101728',
         'mcswf-blue': '#07405B',
         'mcswf-gray': '#eeeeee',
-        'mcswf-off-white': '#FDFDFD'
+        'mcswf-off-white': '#FDFDFD',
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
         colossalis: ['Colossalis'],
         expressway: ['Expressway'],
-        menobanner: ['MenoBanner']
+        menobanner: ['MenoBanner'],
       },
       transitionProperty: {
-        'grid': 'grid-template-columns',
+        grid: 'grid-template-columns',
       },
     },
   },
-
   plugins: [require('@tailwindcss/typography')],
 }

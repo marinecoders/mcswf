@@ -1,15 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.astro'
-import Mission from '../components/sections/Mission.astro'
-import Impact from '../components/sections/CareerImpact.astro'
-import TrainingFlow from '../components/sections/TrainingFlow.astro'
-import TrainingImpact from '../components/sections/TrainingImpact.astro'
-import Card from '../components/cards/MCCard.astro'
-import WhiteButton from '../components/buttons/WhiteButton.astro'
-import PrereqGroup from '../components/sections/PrereqGroup.astro'
+import Hero from '../components/elements/Hero.svelte'
+import Mission from '../components/sections/Mission.svelte'
+import TrainingFlow from '../components/sections/TrainingFlow.svelte'
+import TrainingImpact from '../components/sections/TrainingImpact.svelte'
+import Card from '../components/cards/MCCard.svelte'
+import RedButton from '../components/buttons/RedButton.svelte'
+import PrereqGroup from '../components/sections/PrereqGroup.svelte'
+import { getCollection } from 'astro:content'
 import '../styles/global.css'
 const posts = await Astro.glob('../content/roles/*.md')
+
+const entries = await getCollection('prereqs')
 ---
 
 <Layout title="Welcome to Astro.">
@@ -48,14 +50,14 @@ const posts = await Astro.glob('../content/roles/*.md')
       </div>
       <div class="flex items-center justify-center h-1/5">
         <div class="flex space-x-24 mt-8">
-          {(<WhiteButton href="" text="SEE JOB LISTINGS" />)}
+          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
         </div>
       </div>
     </div>
     <div class="h-screen snap-start py-12">
       <Mission />
     </div>
-    <PrereqGroup />
+    <PrereqGroup entries={entries} />
     <div class="h-screen snap-start">
       <Hero padding="p-24" title="NEXT STEPS" />
       <TrainingFlow />

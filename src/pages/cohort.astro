@@ -1,13 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import CohortGroup from '../components/cards/CohortGroup.astro'
+import CohortGroup from '../components/cards/CohortGroup.svelte'
 import '../styles/global.css'
+
+import { getCollection } from 'astro:content'
+
+const entries = await getCollection('cohorts')
 ---
 
 <Layout title="Cohort">
-  <div class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory">
-    <CohortGroup />
-
-
+  <div
+    class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
+  >
+    <CohortGroup {entries} />
   </div>
 </Layout>
