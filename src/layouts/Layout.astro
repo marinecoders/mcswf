@@ -1,5 +1,5 @@
 ---
-import Navigation2 from '../components/static/Navigation.svelte'
+import Navigation from '../components/static/Navigation.svelte'
 
 import FooterSmall from '../components/footer/FooterSmall.svelte'
 import Banner from '../components/static/Banner.svelte'
@@ -31,7 +31,7 @@ const { title = null } = Astro.props
   <body class="bg-black font-expressway bg-opacity-40 text-white">
     <header class="fixed z-30 top-0 w-full max-h-20">
       <Banner client:load />
-      <Navigation2 client:load />
+      <Navigation client:load />
     </header>
     <slot />
   </body>

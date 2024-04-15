@@ -1,5 +1,5 @@
 ---
-import Hero from './Hero.astro'
+import Hero from './Hero.svelte'
 
 interface Props {
   title: string
@@ -9,7 +9,7 @@ interface Props {
   padding?: string
   location?: string
 }
-const { link, padding, content, title, location = "left" } = Astro.props;
+const { link, padding, content, title, location = 'left' } = Astro.props
 ---
 
 <div class="flex h-screen">
