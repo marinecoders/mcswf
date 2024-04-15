@@ -2,62 +2,107 @@
 import Layout from '../../layouts/Layout.astro'
 import Hero from '../../components/elements/Hero.svelte'
 
-import Mission from '../../components/sections/AboutMission.astro'
-import Impact from '../../components/sections/AboutImpact.astro'
 import '../../styles/global.css'
-import { imageConfig } from 'astro:assets'
+import '../../styles/fonts.css'
+import FooterFull from '../../components/FooterFull.svelte'
+import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 const posts = await Astro.glob('../../content/roles/*.md')
 let side = 'left'
 ---
 
-<Layout title="ABOUT">
+<Layout title="Roles">
   <div
-    class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
+    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
   >
-    {
-      posts.map((post) => {
-        if (side == 'left') {
-          side = 'right'
-          return (
-            <>
-              <div class="h-screen snap-start py-20">
-                <div class="flex h-screen">
-                  <div class="w-1/2 p-4">
-                    <Hero
+    <img src="/ega.svg" />
+  </div>
+  <div
+    class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+  >
+    <div
+      class="relative z-20 h-fit snap-start pt-20 pb-20 bg-[url('/images/group_of_marines.png')] bg-center lg:bg-no-repeat lg:bg-cover"
+    >
+      <Hero
+        title="PICK THE PERFECT ROLE FOR YOU"
+        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae qui"
+        link="#"
+        linkText="APPLY NOW"
+        padding="pt-24"
+        titleClasses="text-white"
+        contentClasses="hidden lg:block"
+      />
+    </div>
+
+    <div
+      class="relative z-20 max-h-screen scrollbar-hide snap-start snap-y snap-mandatory"
+    >
+      <div class="hidden lg:block">
+        {
+          posts.map((post) => {
+            if (side == 'left') {
+              side = 'right'
+              return (
+                <>
+                  <div class="relative z-20 snap-start">
+                    <ContentImageFull
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={"/roles/" + post.frontmatter.url}
-                      padding="pt-48"
-                      linkText="LEARN MORE"
+                      link={'/roles/' + post.frontmatter.url}
+                      linkText="APPLY NOW"
+                      titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      imgSrc={`/images/${post.frontmatter.image}`}
+                      imgAltText={post.frontmatter.image_alt_text}
                     />
                   </div>
-                  <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
-                </div>
-              </div>
-            </>
-          )
-        } else {
-          side = 'left'
-          return (
-            <>
-              <div class="h-screen snap-start py-20">
-                <div class="flex h-screen">
-                  <div class="w-1/2 p-4 bg-cover bg-no-repeat bg-slate-200 bg-[url('https://dummyimage.com/1080/fff/aaa')]" />
-                  <div class="w-1/2 p-4">
-                    <Hero
+                </>
+              )
+            } else {
+              side = 'left'
+              return (
+                <>
+                  <div class="relative z-20 snap-start">
+                    <ContentImageFull
+                      flipped
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={"/roles/" + post.frontmatter.url}
-                      padding="pt-48"
-                      linkText="LEARN MORE"
+                      link={'/roles/' + post.frontmatter.url}
+                      linkText="APPLY NOW"
+                      titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      imgSrc={`/images/${post.frontmatter.image}`}
+                      imgAltText={post.frontmatter.image_alt_text}
                     />
                   </div>
-                </div>
-              </div>
-            </>
-          )
+                </>
+              )
+            }
+          })
         }
-      })
-    }
+      </div>
+      <div class="lg:hidden">
+        {
+          posts.map((post) => {
+            return (
+              <>
+                <div class="relative z-20 snap-start">
+                  <ContentImageFull
+                    flipped
+                    title={post.frontmatter.role}
+                    content={post.frontmatter.about}
+                    link={'/roles/' + post.frontmatter.url}
+                    linkText="APPLY NOW"
+                    titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                    imgSrc={`/images/${post.frontmatter.image}`}
+                    imgAltText={post.frontmatter.image_alt_text}
+                  />
+                </div>
+              </>
+            )
+          })
+        }
+      </div>
+      <div class="pt-20 snap-end">
+        <FooterFull client:load />
+      </div>
+    </div>
   </div>
 </Layout>
