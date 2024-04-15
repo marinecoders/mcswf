@@ -1,7 +1,7 @@
 <script>
   import { mobile,active } from './stores.js';
-  import AccordionSection from './elements/AccordionSection.svelte'
-  import FooterFull from '../components/FooterFull.svelte'
+  import AccordionSection from './AccordionSection.svelte'
+  import FooterFull from '../footer/FooterFull.svelte'
 
   export let products;
   products.sort((a,b) => a.data.order - b.data.order)
