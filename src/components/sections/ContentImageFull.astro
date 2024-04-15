@@ -1,14 +1,16 @@
 ---
-import Hero from '../elements/Hero.astro'
-import RedButton from '../buttons/RedButton.astro'
+import WhiteButton from '../buttons/WhiteButton.astro'
 
 interface Props {
-  title: string,
-  content?: string | Array<string>,
-  link?: string,
-  linkText?: string,
-  padding?: string,
-  flipped?: boolean,
+  title: string
+  content?: string | Array<string>
+  link?: string
+  linkText?: string
+  padding?: string
+  flipped?: boolean
+  imgSrc?: string
+  imgAltText?: string
+  titleClasses?: string
 }
 
 const {
@@ -18,9 +20,12 @@ const {
   linkText = null,
   flipped = false,
   padding,
+  imgSrc = 'https://dummyimage.com/1080/fff/aaa',
+  imgAltText = 'dummy alt text',
+  titleClasses,
 } = Astro.props
 
-console.log("link - ", link)
+console.log('link - ', link)
 ---
 
 <section class="">
@@ -29,47 +34,43 @@ console.log("link - ", link)
   >
     {
       flipped && (
-        <div class="grid gap-4 mt-8 gird-cols-1">
-          <img
-            class="w-full rounded-lg"
-            src="https://dummyimage.com/1080/fff/aaa"
-            alt="office content 1"
-          />
+        <div class="grid gap-4 mt-8 grid-cols-1">
+          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
         </div>
       )
     }
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold"
+        class:list={[
+          'mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold',
+          titleClasses,
+        ]}
       >
         {title}
       </h2>
       {
-        content instanceof Array ?     
+        content instanceof Array ? (
           <ul class="m-4 ml-12 list-disc">
-            {content.map(b => (
+            {content.map((b) => (
               <li>{b}</li>
             ))}
-          </ul> 
-        : 
-          <p class="mb-4 text-center">{content}</p>
+          </ul>
+        ) : (
+          <p class="mb-4 text-center whitespace-pre-line">{content}</p>
+        )
       }
       {
         link && (
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <RedButton href={link} text={linkText} />
+            <WhiteButton href={link} text={linkText} />
           </div>
-          )
+        )
       }
     </div>
     {
       !flipped && (
-        <div class="grid gap-4 mt-8 gird-cols-1">
-          <img
-            class="w-full rounded-lg"
-            src="https://dummyimage.com/1080/fff/aaa"
-            alt="office content 1"
-          />
+        <div class="grid gap-4 mt-8 grid-cols-1">
+          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
         </div>
       )
     }
