@@ -40,7 +40,7 @@
     {/if}
 </div>
 {:else}
-    <div class="grid grid-cols-5 items-center justify-start  p-4 sm:p-8 sm:grid-cols-2 text-white align-bottom bg-black border-y sm:h-full sm:items-end sm:border-x sm:border-y-0">
+    <div class="grid grid-cols-5 items-center justify-start  p-4 sm:p-8 sm:grid-cols-2 text-white align-bottom bg-black border-y sm:h-full sm:items-end sm:border-y-0">
         <p class="text-[64px] text-left font-menobanner me-6 text-mcswf-gold">0{sequence}</p>
         {#if mobileValue}
             <div class="tracking-widest text-left text-2xl font-bold col-span-3">{title}</div>
