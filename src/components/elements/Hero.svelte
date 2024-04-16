@@ -8,6 +8,8 @@
   export let padding = ''
   export let contentClasses
   export let titleClasses = 'text-mcswf-gold'
+  export let mobileFontSize = 'base' 
+  export let desktopFontSize = '2xl'
 </script>
 
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
@@ -19,7 +21,7 @@
   </div>
   <!-- End Title -->
 
-  <div class="max-w-3xl mx-auto mt-5 text-center">
+  <div class="max-w-3xl mx-auto mt-5 text-center text-{mobileFontSize} md:text-{desktopFontSize}">
     <p id="content" class:list={['text-lg text-white', contentClasses]}>
       {content}
     </p>

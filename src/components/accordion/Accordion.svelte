@@ -7,7 +7,7 @@
   products.sort((a,b) => a.data.order - b.data.order)
 
   // Uncomment below to limit accordion to only the top three products
-  //products = products.slice(0,3);
+  products = products.slice(0,3);
 
   let width = 0;
 

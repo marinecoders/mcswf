@@ -31,7 +31,8 @@ const { title = null } = Astro.props
   <body class="bg-black font-expressway bg-opacity-40 text-white">
     <header class="fixed z-30 top-0 w-full max-h-20">
       <Banner client:load />
-      <Navigation client:load />
+      <div><Navigation client:load /></div>
+      
     </header>
     <slot />
   </body>

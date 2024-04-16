@@ -11,7 +11,7 @@ bullets:
   - 'Disseminate'
 metrics:
   - icon: '/icons/person.svg'
-    value: '100'
+    value: '10'
     metric: 'Unit Users'
   - metric: "Days to MVP"
     value: '71'

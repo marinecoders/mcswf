@@ -1,12 +1,13 @@
 product: 'Snap DB'
-description: "Transmit messages while under RF Emission Control"
+description: "The Strategic Capabilities Office commissioned Snap Data Base to address the issue of transmitting information via a signal. SnapDB creates a local QR code that can display a message when viewed by an unmanned aerial system (UAS)."
 image: 
   src: ' '
   alt: ' '
 order: 3
-heading: "Snap DB does cool things"
+heading: "Snap Data Base"
 bullets:
-  - 'Bullet 1'
+  - 'Proprietary QR code generation'
+  - 'Computer vision to read multiple QR codes simultaneously'
 metrics:
   - icon: '/icons/clock.svg'
     value: '55%'

@@ -19,7 +19,7 @@
         <div class="grid gap-4 mt-8 grid-cols-1">
           <img
             class="w-full rounded-lg"
-            src="https://dummyimage.com/1080/fff/aaa"
+            src="https://dummyimage.com/550/fff/aaa"
             alt="office content 1"
           />
         </div>
@@ -31,13 +31,13 @@
           {title}
         </h2>
         {#if content instanceof Array}
-          <ul class="m-4 ml-12 list-disc">
+          <ul class="m-4 ml-12 list-disc text-base md:text-[21px]">
             {#each content as b, index}
               <li key={index}>{b}</li>
             {/each}
           </ul>
         {:else}
-          <p class="mb-4 text-center">{content}</p>
+          <p class="mb-4 text-center text-base md:text-[21px]">{content}</p>
         {/if}
         {#if link}
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
@@ -49,7 +49,7 @@
           <div class="grid gap-4 mt-8 grid-cols-1">
               <img
                   class="w-full rounded-lg"
-                  src="https://dummyimage.com/1080/fff/aaa"
+                  src="https://dummyimage.com/550/fff/aaa"
                   alt="office content 1"
               />
           </div>

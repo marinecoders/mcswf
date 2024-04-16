@@ -24,10 +24,10 @@ products.sort((a, b) => a.data.order - b.data.order)
     <img src="/ega.svg" />
   </div>
   <div
-    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
     <div
-      class="relative z-20 h-screen snap-start py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat"
+      class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat"
     >
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
@@ -38,10 +38,10 @@ products.sort((a, b) => a.data.order - b.data.order)
       />
     </div>
     <div class="relative z-20">
-      <div class="pt-12 pb-24 h-fit md:h-screen snap-start">
+      <div class="pt-12 pb-24 h-fit">
         <Mission />
       </div>
-      <div class="h-screen py-20 snap-start">
+      <div class="h-fit py-20">
         <ContentImageFull
           link="#"
           linkText="LEARN MORE"
@@ -49,7 +49,7 @@ products.sort((a, b) => a.data.order - b.data.order)
           content="Marines are taught to develop mission-specific software for operational units to use in weeks or months, not years. Marines at the Marine Corps Software Factory (MCSWF) are trained by working with industry experts to build the software Marines need."
         />
       </div>
-      <div class="h-screen py-20 snap-start">
+      <div class="h-fit py-20">
         <ContentImageFull
           flipped
           link="#"
@@ -58,7 +58,10 @@ products.sort((a, b) => a.data.order - b.data.order)
           content="By combining traditional military training and modern technology skills, it enables tactical advantage for Marines across the service. The MCSWF pilot will evaluate the demand signal from Fleet Marine Forces, develop a way forward on career paths for technical experts, and evaluate the proper blend of civilian-Marine teaming."
         />
       </div>
-      <div class="h-fit md:h-screen snap-start md:pt-20">
+      <div class="h-fit pt-20 ">
+        <Products {products} />
+      </div>
+      <div class="h-fit md:h-screen md:pt-20">
         <Countdown
           client:only="svelte"
           title="COHORT COUNTDOWN"
@@ -66,10 +69,7 @@ products.sort((a, b) => a.data.order - b.data.order)
           link="#"
         />
       </div>
-      <div class="h-screen pt-20 snap-start">
-        <Products {products} />
-      </div>
-      <div class="pt-20 snap-end">
+      <div class="pt-20">
         <FooterFull client:load />
       </div>
     </div>
