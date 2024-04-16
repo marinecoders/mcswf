@@ -22,7 +22,7 @@
         {#if mobileValue}
             <div class="col-span-1 text-3xl text-center font-menobanner text-mcswf-gold"> - </div>
         {:else}
-            <img class="col-span-1 justify-self-end" src="/icons/window-close.svg" alt='close'>
+            <div class="col-span-1 grid grid-cols-2 items-center justify-self-end "><div class = "text-xl align-text-bottom font-menobanner text-mcswf-gold mr-2"> CLOSE </div> <img src="/icons/window-close.svg" alt='close'></div>
         {/if}
     </div>
     <div class="text-base md:text-[21px] px-4 pb-6">
