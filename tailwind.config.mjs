@@ -6,12 +6,14 @@ export default {
     extend: {
       colors: {
         'mcswf-gold': `#FFC755`,
+        'mcswf-gold-dark':'#FFB622',
         'mcswf-battle-red': '#671c1d',
         'mcswf-pinstripe': '#922a26',
         'mcswf-dark-blue': '#101728',
         'mcswf-blue': '#07405B',
         'mcswf-gray': '#eeeeee',
         'mcswf-off-white': '#FDFDFD',
+        'mcswf-pressed-button': '#E0E0E0'
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name

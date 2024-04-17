@@ -1,4 +1,4 @@
-<footer class="p-4 bg-black md:p-8 lg:p-10">
+<footer class="p-4 bg-black md:p-8 lg:p-10 rounded-t-3xl">
   <div class="max-w-screen-xl mx-auto text-center">
     <p class="my-6 text-gray-400">
         Product of The Marine Corps Software Factory. Which proudly sits within <span class="underline text-mcswf-gold">Deputy Commandant of Information</span>.

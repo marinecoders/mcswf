@@ -9,10 +9,10 @@
   
     <div class="grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12">
       {#each [
-        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '100', metric: 'METRIC' },
-        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '15%', metric: 'METRIC' },
-        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '25k', metric: 'METRIC' },
-        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '260+', metric: 'METRIC' }
+        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '4', metric: 'Marines Trained' },
+        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '4', metric: 'Applications Deployed' },
+        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '16', metric: 'Units Using MCSWF Applications' },
+        { icon: 'https://dummyimage.com/256x256/fff/aaa', value: '81', metric: 'Average Days 0-1 MVP' }
       ] as { icon, value, metric }, index}
         <div class="text-center" key={index}>
           <MetricCard icon={icon} value={value} metric={metric} />

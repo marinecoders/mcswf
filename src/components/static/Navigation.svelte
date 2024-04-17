@@ -71,9 +71,9 @@
   }
 </script>
 
-<header class="relative antialiased blue-radial-gradient">
+<header class="relative antialiased blue-radial-gradient rounded-b-3xl">
   <nav
-    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center"
+    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center" class:rounded-b-3xl={!isMenuHidden}
   >
   <div class="flex w-full justify-center">
 
@@ -122,13 +122,12 @@
     </div>
   </div>
     {#if !isMenuHidden}
-      <hr class="w-full border-mcswf-pinstripe border-1" />
       <!-- STANDARD NAVBAR -->
       <div class="hidden mx-24 my-4 text-white lg:block xl:block 2xl:block h-96">
-        <div class="flex justify-between">
+        <div class="flex justify-center">
           {#each dropdownLinks as dropdown}
           <div
-            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
+            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110 px-14"
             on:mouseleave={() => closeDropdown(dropdown.text)}
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
