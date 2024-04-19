@@ -15,7 +15,7 @@
     {
       text: 'PRODUCTS',
       url: '/products',
-      image: 'http://via.placeholder.com/240x200',
+      image: '/images/products_card.png',
       subLinks: [
         { url: '/products/sparta', text: 'SPARTA' },
         { url: '/products/my-career', text: 'MyCareer' },
@@ -25,13 +25,13 @@
     },
     {
       text: 'ABOUT',
-      image: 'http://via.placeholder.com/240x200',
+      image: '/images/about_card.png',
       url: '/about',
       subLinks: [],
     },
     {
       text: 'TRAINING & CAREER',
-      image: 'http://via.placeholder.com/240x200',
+      image: '/images/training_career_card.png',
       url: '/career',
       subLinks: [
         { url: '/roles', text: 'ROLES' },
@@ -41,7 +41,7 @@
     },
     {
       text: 'CONTACT',
-      image: 'http://via.placeholder.com/240x200',
+      image: '/images/contact_card.png',
       url: 'https://www.example.com/contact',
       subLinks: [
         { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
