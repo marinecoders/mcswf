@@ -1,5 +1,5 @@
 <script>
-    import RedButton from '../buttons/RedButton.svelte';
+    import RedButton from '../buttons/WhiteButton.svelte';
     import { mobile, active } from './stores.js';
     export let title;
     export let sequence;
