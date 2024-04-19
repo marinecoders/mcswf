@@ -1,5 +1,5 @@
 <script>
-    import RedButton from '../buttons/RedButton.svelte';
+    import RedButton from '../buttons/WhiteButton.svelte';
     import Timer from './Timer.svelte';
     import Hero from './Hero.svelte';
   

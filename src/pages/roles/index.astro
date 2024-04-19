@@ -4,10 +4,12 @@ import Hero from '../../components/elements/Hero.svelte'
 
 import '../../styles/global.css'
 import '../../styles/fonts.css'
-import FooterFull from '../../components/FooterFull.svelte'
+import FooterFull from '../../components/footer/FooterFull.svelte'
 import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 const posts = await Astro.glob('../../content/roles/*.md')
 let side = 'left'
+
+const { frontmatter, compiledContent } = Astro.props
 ---
 
 <Layout title="Roles">
@@ -17,10 +19,13 @@ let side = 'left'
     <img src="/ega.svg" />
   </div>
   <div
-    class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
     <div
-      class="relative z-20 h-fit pt-20 pb-20 bg-[url('/images/group_of_marines.png')] bg-center lg:bg-no-repeat lg:bg-cover"
+      class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
+      style={{
+        backgroundImage: `url('/images/group_of_marines.png')`,
+      }}
     >
       <Hero
         title="PICK THE PERFECT ROLE FOR YOU"

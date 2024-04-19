@@ -1,5 +1,5 @@
 <script>
-  import RedButton from '../buttons/RedButton.svelte'
+  import RedButton from '../buttons/WhiteButton.svelte'
 
   export let title
   export let content = ''
