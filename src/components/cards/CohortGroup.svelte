@@ -27,25 +27,15 @@
   </div>
   <div class="flex py-20">
     <div class="flex flex-col lg:flex-row w-full items-center justify-center gap-16">
-      <CohortCard />
-      <CohortCard />
+      {#each entries as cohortEntry}
+      <CohortCard 
+      title={cohortEntry.data.title}
+      content={cohortEntry.data.content}
+      startDate={cohortEntry.data.startDate}
+      endDate={cohortEntry.data.endDate}
+      link={cohortEntry.data.link}
+      />
+      {/each}
     </div>
   </div>
-  <!-- Right Column -->
-  <!--
-
-    <div class="w-1/2 pt-5">
-      Grid of Cohorts
-      <div class="grid grid-cols-2">
-        {#each entries as cohortEntry}
-        <CohortCard
-        title={cohortEntry.data.title}
-        content={cohortEntry.data.content}
-        startDate={cohortEntry.data.startDate}
-        endDate={cohortEntry.data.endDate}
-        />
-        {/each}
-      </div>
-    </div>
-  -->
 </div>
