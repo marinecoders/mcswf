@@ -27,7 +27,7 @@
     {/if}
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold"
+        class="mb-4 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold"
       >
         {title}
       </h2>
