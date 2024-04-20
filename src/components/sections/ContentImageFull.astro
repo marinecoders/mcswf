@@ -34,7 +34,7 @@ console.log('link - ', link)
   >
     {
       flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1">
+        <div class="flex justify-center">
           <img class="w-3/4 rounded-lg aspect-square object-cover" src={imgSrc} alt={imgAltText} />
         </div>
       )
@@ -69,7 +69,7 @@ console.log('link - ', link)
     </div>
     {
       !flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1 justify-center">
+        <div class="flex justify-center">
           <img class="w-3/4 rounded-lg object-cover aspect-square" src={imgSrc} alt={imgAltText} />
         </div>
       )

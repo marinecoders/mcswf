@@ -3,6 +3,7 @@ role: SOFTWARE ENGINEER
 url: swe
 image: marine_swe.png
 image_wide: marine_swe_wide.png
+icon: software_engineer.svg
 image_alt_text: Marine Software Engineer
 about: >
   Software Development Engineers are responsible for creating, refining, and launching applications. They prioritize high availability, minimal latency, and scalability. Their approach is to first implement user stories from the backlog and adopt a test-first methodology. This strategy helps them to ensure that the software is free of bugs or security vulnerabilities.
