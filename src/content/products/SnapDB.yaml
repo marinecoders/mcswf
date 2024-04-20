@@ -1,8 +1,11 @@
 product: 'Snap DB'
 description: "The Strategic Capabilities Office commissioned Snap Data Base to address the issue of transmitting information via a signal. SnapDB creates a local QR code that can display a message when viewed by an unmanned aerial system (UAS)."
-image: 
+background: 
   src: ' '
   alt: ' '
+image:
+  src: '/images/snapDB.png'
+  alt: ''
 order: 3
 heading: "Snap Data Base"
 bullets:

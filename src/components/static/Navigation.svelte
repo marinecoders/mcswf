@@ -20,7 +20,6 @@
         { url: '/products/sparta', text: 'SPARTA' },
         { url: '/products/my-career', text: 'MyCareer' },
         { url: '/products/SnapDB', text: 'SnapDB' },
-        { url: '/products/ViaSat', text: 'ViaSat' },
       ],
     },
     {
