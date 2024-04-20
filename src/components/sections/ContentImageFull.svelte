@@ -8,6 +8,7 @@
   export let padding = null
   export let flipped = false
   export let image = 'https://dummyimage.com/550/fff/aaa'
+  export let imageClasses = null
 
   //console.log("link - ", link);
 </script>
@@ -19,7 +20,7 @@
     {#if flipped}
       <div class="grid gap-4 mt-8 grid-cols-1">
         <img
-          class="w-full rounded-lg aspect-square object-cover"
+          class="w-full rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
           alt="office content 1"
         />
@@ -49,7 +50,7 @@
     {#if !flipped}
       <div class="grid gap-4 mt-8 grid-cols-1">
         <img
-          class="w-full rounded-lg aspect-square object-cover"
+          class="w-full rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
           alt="office content 1"
         />
