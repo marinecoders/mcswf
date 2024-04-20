@@ -1,12 +1,12 @@
 <script>
   import RedButton from '../buttons/WhiteButton.svelte'
 
-  export let title
+  export let title = ''
   export let content = ''
-  export let link
-  export let linkText
+  export let link = ''
+  export let linkText = ''
   export let padding = ''
-  export let contentClasses
+  export let contentClasses = ''
   export let titleClasses = 'text-mcswf-gold'
 </script>
 
