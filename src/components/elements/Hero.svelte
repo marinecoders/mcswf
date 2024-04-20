@@ -13,14 +13,14 @@
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
   <!-- Title -->
   <div class="max-w-6xl mx-auto mt-5 text-center">
-    <h1 class="block text-4xl font-bold md:text-5xl lg:text-6xl {titleClasses}">
+    <h1 class="block font-bold text-xl md:text-[40px] {titleClasses}">
       {title}
     </h1>
   </div>
   <!-- End Title -->
 
   <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p id="content" class="text-white {contentClasses}">
+    <p id="content" class="text-white {contentClasses} md:text-[24px]">
       {content}
     </p>
   </div>
