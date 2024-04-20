@@ -6,6 +6,9 @@ background:
 image: 
   src: '/images/myCareerScreen.png'
   alt: ' '
+secondImage:
+  src: ''
+  alt: ''
 order: 2
 heading: "Manpower Management Enlisted Assignments"
 bullets:

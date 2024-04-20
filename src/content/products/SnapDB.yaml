@@ -6,6 +6,9 @@ background:
 image:
   src: '/images/snapDB.png'
   alt: ''
+secondImage:
+  src: ''
+  alt: ''
 order: 3
 heading: "Snap Data Base"
 bullets:

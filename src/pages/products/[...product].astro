@@ -53,11 +53,18 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
 
     <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6">
       <div class="grid gap-4 mt-8 grid-cols-1 hidden sm:block" >
-        <img
-          class="w-full rounded-lg object-cover"
-          src={entry.data.image.src}
-          alt={entry.data.image.alt}
+        <div class="w-full">
+          <img
+          class="absolute w-[40rem] top-[16%] left-0 rounded-lg object-cover"
+          src={entry.data.secondImage.src}
+          alt={entry.data.secondImage.alt}
         />
+          <img
+            class="absolute w-[15.5rem] left-[12.5em] top-[24%] rounded-lg object-cover"
+            src={entry.data.image.src}
+            alt={entry.data.image.alt}
+          />
+        </div>
       </div>
       <div class="grid gap-4 mt-8 grid-cols-1">
         <h2
