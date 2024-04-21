@@ -22,9 +22,13 @@ const { frontmatter, compiledContent } = Astro.props
   <div
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
-
+  <div
+  class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
+  style={{
+    backgroundImage: `url('/images/soldier_whiteboard.png')`,
+  }}
+>
     <Hero
-      backgroundImage="/images/soldier_whiteboard.png"
       title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
       content=""
       link="#"
@@ -33,6 +37,7 @@ const { frontmatter, compiledContent } = Astro.props
       titleClasses="text-white"
       contentClasses="hidden lg:block"
     />
+    </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
       <div class="">
