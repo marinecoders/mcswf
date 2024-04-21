@@ -14,13 +14,4 @@ heading: "Snap Data Base"
 bullets:
   - 'Proprietary QR code generation'
   - 'Computer vision to read multiple QR codes simultaneously'
-metrics:
-  - icon: '/icons/clock.svg'
-    value: '55%'
-    metric: 'Reduction in wait time'
-  - metric: "Increase in meeting efficiency"
-    value: '29'
-    icon: '/icons/graph.svg'
-  - metric: 'Days to MVP'
-    value: '91'
-    icon: '/icons/calendar.svg'
+metrics: []
