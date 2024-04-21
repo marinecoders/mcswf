@@ -15,7 +15,7 @@
 
 <section class="">
   <div
-    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6"
+    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-8 md:px-6"
   >
     {#if flipped}
       <div class="flex justify-center">
