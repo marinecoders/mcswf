@@ -1,5 +1,5 @@
 ---
-import WhiteButton from '../buttons/WhiteButton.astro'
+import WhiteButton from '../buttons/WhiteButton.svelte'
 
 interface Props {
   title: string
@@ -72,7 +72,7 @@ console.log('link - ', link)
             ))}
           </ul>
         ) : (
-          <p class="mb-4 text-center whitespace-pre-line">{content}</p>
+          <p class="mb-4 text-left lg:text-center whitespace-pre-line">{content}</p>
         )
       }
       {
