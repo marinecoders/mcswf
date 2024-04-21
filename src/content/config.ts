@@ -25,7 +25,15 @@ const productCollection = defineCollection({
   schema: z.object({
     product: z.string(),
     description: z.string(),
+    background: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
     image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    secondImage: z.object({
       src: z.string(),
       alt: z.string(),
     }),
