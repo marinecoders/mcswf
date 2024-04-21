@@ -20,7 +20,7 @@
   <!-- End Title -->
 
   <div class="max-w-3xl mx-auto mt-5 text-center">
-    <p id="content" class="text-white {contentClasses} md:text-[24px]">
+    <p id="content" class="text-white md:text-2xl {contentClasses}">
       {content}
     </p>
   </div>
