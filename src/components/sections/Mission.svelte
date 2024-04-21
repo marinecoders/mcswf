@@ -14,7 +14,7 @@
         { icon: '/icons/icon homepage units using.svg', value: '16', metric: 'Units Using MCSWF Applications' },
         { icon: '/icons/icon homepage average days.svg', value: '81', metric: 'Average Days 0-1 MVP' }
       ] as { icon, value, metric }, index}
-        <div class="text-center border-white border-2 rounded-lg p-4" key={index}>
+        <div class="text-center p-4" key={index}>
           <MetricCard icon={icon} value={value} metric={metric} />
         </div>
       {/each}
