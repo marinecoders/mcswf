@@ -22,25 +22,20 @@ const { frontmatter, compiledContent } = Astro.props
   <div
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
-    <div
-      class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
-      style={{
-        backgroundImage: `url('/images/soldier_whiteboard.png')`,
-      }}
-    >
-      <Hero
-        title="PICK THE PERFECT ROLE FOR YOU"
-        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae qui"
-        link="#"
-        linkText="APPLY NOW"
-        padding="pt-24"
-        titleClasses="text-white"
-        contentClasses="hidden lg:block"
-      />
-    </div>
+
+    <Hero
+      backgroundImage="/images/soldier_whiteboard.png"
+      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+      content=""
+      link="#"
+      linkText="APPLY NOW"
+      padding="pt-24"
+      titleClasses="text-white"
+      contentClasses="hidden lg:block"
+    />
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
-      <div class="hidden lg:block">
+      <div class="">
         <div class="relative z-20">
           <ContentImageFull
             title="BUILD SOFTWARE"
@@ -67,17 +62,17 @@ const { frontmatter, compiledContent } = Astro.props
       </div>
       <div class="relative z-20">
         <div class="w-full flex justify-center">
-          <h2 class="text-2xl font-bold md:text-3xl lg:text-4xl">
+          <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
             FIND THE ROLE THAT'S RIGHT FOR YOU
           </h2>
         </div>
         <div class="w-full flex justify-center pt-10">
-          <div class="w-1/2 grid grid-cols-1 lg:grid-cols-3 align-middle text-center justify-center">
+          <div class="w-3/4 grid grid-cols-1 lg:grid-cols-3 align-middle text-center justify-center">
             {
               posts.map((post) => {
                 return (
                   <>
-                  <div class="flex flex-col gap-5 text-center">
+                  <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
                     <img class="w-24 mx-auto" src={`/icons/${post.frontmatter.icon}`}></img>
                     <p style="word-spacing:99999px" class="font-bold text-2xl">{post.frontmatter.role}</p>
                     <a href={`/roles/${post.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
