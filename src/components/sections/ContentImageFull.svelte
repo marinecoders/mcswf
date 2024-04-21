@@ -18,9 +18,9 @@
     class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6"
   >
     {#if flipped}
-      <div class="grid gap-4 mt-8 grid-cols-1">
+      <div class="flex justify-center">
         <img
-          class="w-full rounded-lg aspect-square object-cover {imageClasses}"
+          class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
           alt="office content 1"
         />
@@ -48,9 +48,9 @@
       {/if}
     </div>
     {#if !flipped}
-      <div class="grid gap-4 mt-8 grid-cols-1">
+      <div class="flex justify-center">
         <img
-          class="w-full rounded-lg aspect-square object-cover {imageClasses}"
+          class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
           alt="office content 1"
         />
