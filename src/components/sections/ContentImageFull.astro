@@ -1,5 +1,5 @@
 ---
-import WhiteButton from '../buttons/WhiteButton.astro'
+import WhiteButton from '../buttons/WhiteButton.svelte'
 
 interface Props {
   title: string
@@ -34,16 +34,32 @@ console.log('link - ', link)
   >
     {
       flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1">
-          <img class="w-3/4 rounded-lg aspect-square object-cover" src={imgSrc} alt={imgAltText} />
+        <div class="flex justify-center">
+          <img
+            class="w-3/4 rounded-lg aspect-square object-cover"
+            src={imgSrc}
+            alt={imgAltText}
+          />
         </div>
       )
     }
     <div class="font-light text-white sm:text-lg">
+      {
+        !flipped && (
+          <div class="justify-center flex lg:hidden">
+            <img
+              class="w-3/4 rounded-lg object-cover aspect-square"
+              src={imgSrc}
+              alt={imgAltText}
+            />
+          </div>
+        )
+      }
       <h2
         class:list={[
           'mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold',
           titleClasses,
+          'pt-5 lg:pt-0'
         ]}
       >
         {title}
@@ -56,7 +72,7 @@ console.log('link - ', link)
             ))}
           </ul>
         ) : (
-          <p class="mb-4 text-center whitespace-pre-line">{content}</p>
+          <p class="mb-4 text-left lg:text-center whitespace-pre-line">{content}</p>
         )
       }
       {
@@ -69,8 +85,12 @@ console.log('link - ', link)
     </div>
     {
       !flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1 justify-center">
-          <img class="w-3/4 rounded-lg object-cover aspect-square" src={imgSrc} alt={imgAltText} />
+        <div class="justify-center hidden lg:flex">
+          <img
+            class="w-3/4 rounded-lg object-cover aspect-square"
+            src={imgSrc}
+            alt={imgAltText}
+          />
         </div>
       )
     }

@@ -2,6 +2,7 @@
 role: PRODUCT DESIGNER
 url: product_designer
 image: marine_designer.png
+icon: product_designer.svg
 image_wide: marine_designer_wide.png
 image_alt_text: Marine Product Designer
 about: >

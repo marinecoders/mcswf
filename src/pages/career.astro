@@ -1,66 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
-import Mission from '../components/sections/Mission.svelte'
-import TrainingFlow from '../components/sections/TrainingFlow.svelte'
-import TrainingImpact from '../components/sections/TrainingImpact.svelte'
-import Card from '../components/cards/MCCard.svelte'
-import RedButton from '../components/buttons/WhiteButton.svelte'
-import PrereqGroup from '../components/sections/PrereqGroup.svelte'
-import { getCollection } from 'astro:content'
+
 import '../styles/global.css'
+import '../styles/fonts.css'
+import FooterFull from '../components/footer/FooterFull.svelte'
+import ContentImageFull from '../components/sections/ContentImageFull.astro'
+let side = 'left'
+
 const posts = await Astro.glob('../content/roles/*.md')
 
-const entries = await getCollection('prereqs')
+const { frontmatter, compiledContent } = Astro.props
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Roles">
   <div
-    class="max-h-screen overflow-y-scroll scrollbar-hide snap-start snap-y snap-mandatory"
+    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
   >
-    <div class="h-screen snap-start py-20">
-      <Hero
-        title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
-        link="#"
-        linkText="LEARN MORE"
-        padding="pt-24"
-      />
+    <img src="/ega.svg" />
+  </div>
+  <div
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
+  >
+  <div
+  class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
+  style={{
+    backgroundImage: `url('/images/soldier_whiteboard.png')`,
+  }}
+>
+    <Hero
+      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+      content=""
+      link="#"
+      linkText="APPLY NOW"
+      padding="pt-24"
+      titleClasses="text-white"
+      contentClasses="hidden lg:block"
+    />
     </div>
-    <div class="h-screen snap-start pt-20">
-      <TrainingImpact />
-    </div>
-    <div class="h-screen snap-start py-20">
-      <Hero padding="md:pt-24" title="FIND THE ROLE THAT'S RIGHT FOR YOU" />
-      <div
-        class="md:grid grid-cols-2 gap-8 p-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 md:gap-12"
-      >
-        {
-          posts.map((post) => (
-            <div class="flex justify-center">
-              <Card
-                fontColor="text-red-600"
-                darkFontColor="text-red-600"
-                title={post.frontmatter.role}
-                circularIcon
-                href={'/roles/' + post.frontmatter.url}
-              />
-            </div>
-          ))
-        }
-      </div>
-      <div class="flex items-center justify-center h-1/5">
-        <div class="flex space-x-24 mt-8">
-          {(<RedButton href="" text="SEE JOB LISTINGS" />)}
+
+    <div class="relative z-20 max-h-screen scrollbar-hide">
+      <div class="">
+        <div class="relative z-20">
+          <ContentImageFull
+            title="BUILD SOFTWARE"
+            content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
+            link=""
+            linkText=""
+            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+            imgSrc="/images/charlie-1.png"
+            imgAltText="as"
+          />
+        </div>
+        <div class="relative z-20">
+          <ContentImageFull
+            flipped
+            title="HOW TO MAKE AN IMPACT?"
+            content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
+            link=""
+            linkText=""
+            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
+            imgSrc="/images/6414552 1.png"
+            imgAltText="as"
+          />
         </div>
       </div>
-    </div>
-    <div class="h-screen snap-start py-12">
-      <Mission />
-    </div>
-    <PrereqGroup entries={entries} />
-    <div class="h-screen snap-start">
-      <Hero padding="p-24" title="NEXT STEPS" />
-      <TrainingFlow />
+      <div class="relative z-20">
+        <div class="w-full flex justify-center">
+          <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
+            FIND THE ROLE THAT'S RIGHT FOR YOU
+          </h2>
+        </div>
+        <div class="w-full flex justify-center pt-10">
+          <div class="w-3/4 grid grid-cols-1 lg:grid-cols-3 align-middle text-center justify-center">
+            {
+              posts.map((post) => {
+                return (
+                  <>
+                  <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
+                    <img class="w-24 mx-auto" src={`/icons/${post.frontmatter.icon}`}></img>
+                    <p style="word-spacing:99999px" class="font-bold text-2xl">{post.frontmatter.role}</p>
+                    <a href={`/roles/${post.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
+                  </div>
+                  </>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
+      <div class="pt-20">
+        <FooterFull client:load />
+      </div>
     </div>
   </div>
 </Layout>
