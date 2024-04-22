@@ -11,6 +11,7 @@ import MissionMetrics from '../components/elements/MissionMetrics.svelte'
 import WhiteButton from '../components/buttons/WhiteButton.svelte'
 
 import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
+import RedButton from '../components/buttons/RedButton.svelte'
 let side = 'left'
 
 const roles = await Astro.glob('../content/roles/*.md')
@@ -142,6 +143,11 @@ const steps = await getCollection('steps')
               <CareerAccordion client:load steps={steps}/>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-white">
+        <div class="w-full flex justify-center">
+          <RedButton text="APPLY NOW"/>
         </div>
       </div>
       <div>
