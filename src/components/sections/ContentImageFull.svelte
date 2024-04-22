@@ -8,6 +8,7 @@
   export let padding = null
   export let flipped = false
   export let image = 'https://dummyimage.com/550/fff/aaa'
+  export let imageAltText = ''
   export let imageClasses = null
 
   //console.log("link - ", link);
@@ -15,14 +16,23 @@
 
 <section class="">
   <div
-    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-8 md:px-6"
+    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 md:py-8 md:px-6"
   >
     {#if flipped}
       <div class="flex justify-center">
         <img
           class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
-          alt="office content 1"
+          alt={imageAltText}
+        />
+      </div>
+    {/if}
+    {#if !flipped}
+      <div class="justify-center flex lg:hidden">
+        <img
+          class="w-3/4 rounded-lg object-cover aspect-square {imageClasses}"
+          src={image}
+          alt={imageAltText}
         />
       </div>
     {/if}
@@ -32,15 +42,18 @@
       >
         {title}
       </h2>
-      {#if content instanceof Array}
+      <div class="flex justify-center">
+
+        {#if content instanceof Array}
         <ul class="m-4 ml-12 list-disc text-base md:text-[21px]">
           {#each content as b, index}
-            <li key={index}>{b}</li>
+          <li key={index}>{b}</li>
           {/each}
         </ul>
-      {:else}
-        <p class="mb-4 text-center text-base md:text-[21px]">{content}</p>
-      {/if}
+        {:else}
+        <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">{content}</p>
+        {/if}
+      </div>
       {#if link}
         <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
           <RedButton href={link} text={linkText} />
@@ -48,11 +61,11 @@
       {/if}
     </div>
     {#if !flipped}
-      <div class="flex justify-center">
+      <div class="justify-center hidden lg:flex">
         <img
           class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
-          alt="office content 1"
+          alt={imageAltText}
         />
       </div>
     {/if}
