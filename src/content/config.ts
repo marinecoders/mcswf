@@ -48,6 +48,17 @@ const productCollection = defineCollection({
   })
 })
 
+const aboutMetricsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    metrics: z.array(z.object({
+      icon: z.string(),
+      value: z.string(),
+      metric: z.string(),
+    }))
+  })
+})
+
 
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
@@ -55,4 +66,5 @@ export const collections = {
   'prereqs': prereqCollection,
   'cohorts': cohortCollection,
   'products': productCollection,
+  'aboutMetrics': aboutMetricsCollection,
 };
