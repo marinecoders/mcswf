@@ -3,13 +3,27 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
 
 import '../styles/global.css'
-import { imageConfig } from 'astro:assets'
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
 
+import MetricCard from '../components/cards/MetricCard.svelte'
+import { getCollection, type CollectionEntry } from 'astro:content'
+interface Props {
+  entry: CollectionEntry<'aboutMetrics'>
+}
 import FooterFull from '../components/footer/FooterFull.svelte'
+
+export async function getStaticPaths() {
+  const aboutMetrics = await getCollection('aboutMetrics')
+  return aboutMetrics.map((entry) => ({
+    params: { product: entry.id },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
 ---
 
-<Layout title="ABOUT">
+<Layout title="About">
   <div
     class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
   >
@@ -95,6 +109,15 @@ import FooterFull from '../components/footer/FooterFull.svelte'
             imageClasses="md:h-[550px] md:w-[550px] md:min-w-[550px]"
           />
         </div>
+      </div>
+      <div class="relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20">
+        {
+          entry.data.metrics.map((p) => (
+            <div class="text-center m-12">
+              <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
+            </div>
+          ))
+        }
       </div>
       <div class="pt-20">
         <FooterFull client:load />
