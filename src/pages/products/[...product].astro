@@ -79,11 +79,11 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
 
         </ul>
         <div
-        class='relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20'
+        class='relative grid lg:grid-cols-2 w-full z-20'
         >
           {
             entry.data.metrics.map((p) => (
-              <div class="text-center m-12">
+              <div class="text-center m-2">
                 <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
               </div>
             ))
