@@ -1,21 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
-
-import '../styles/global.css'
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
-
+import FooterFull from '../components/footer/FooterFull.svelte'
+import RedButton from '../components/buttons/WhiteButton.svelte'
 import MetricCard from '../components/cards/MetricCard.svelte'
 import { getCollection, type CollectionEntry } from 'astro:content'
 interface Props {
   entry: CollectionEntry<'aboutMetrics'>
 }
-import FooterFull from '../components/footer/FooterFull.svelte'
+
+import '../styles/global.css'
 
 export async function getStaticPaths() {
   const aboutMetrics = await getCollection('aboutMetrics')
   return aboutMetrics.map((entry) => ({
-    params: { product: entry.id },
     props: { entry },
   }))
 }
@@ -110,7 +109,7 @@ const { entry } = Astro.props
           />
         </div>
       </div>
-      <div class="relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20">
+      <!-- <div class="relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20">
         {
           entry.data.metrics.map((p) => (
             <div class="text-center m-12">
@@ -118,6 +117,27 @@ const { entry } = Astro.props
             </div>
           ))
         }
+      </div> -->
+      <!-- last section of the page, can't use ContentImageFull because of the CTA icon... -->
+      <div
+        class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 md:py-8 md:px-6"
+      >
+        <div class="flex justify-center">
+          <img
+            class="w-3/4 rounded-lg aspect-square object-cover md:h-[550px] md:w-[550px] md:min-w-[550px]"
+            src="images/mcswf_marine_sgt.png"
+          />
+        </div>
+        <div class="font-light text-white sm:text-lg">
+          <h2
+            class="mb-4 pt-6 leading-normal lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold"
+          >
+            INTERESTED IN BEING A <br />PART OF THE MCSWF?
+          </h2>
+          <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
+            <RedButton href="#" text="LEARN MORE" />
+          </div>
+        </div>
       </div>
       <div class="pt-20">
         <FooterFull client:load />
