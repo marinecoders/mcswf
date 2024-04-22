@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
 
@@ -15,6 +16,8 @@ let side = 'left'
 const roles = await Astro.glob('../content/roles/*.md')
 
 const { frontmatter, compiledContent } = Astro.props
+
+const steps = await getCollection('steps')
 ---
 
 <Layout title="Roles">
@@ -135,8 +138,8 @@ const { frontmatter, compiledContent } = Astro.props
         <div class="w-full flex flex-col justify-center text-center align-center text-black">
           <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
           <div class="w-full flex justify-center">
-            <div class="w-full lg:w-1/2">
-              <CareerAccordion client:load/>
+            <div class="w-full mx-2 lg:w-1/2 shadow-lg">
+              <CareerAccordion client:load steps={steps}/>
             </div>
           </div>
         </div>
