@@ -46,7 +46,7 @@ const productCollection = defineCollection({
       metric: z.string(),
     }))
   })
-})
+});
 
 const aboutMetricsCollection = defineCollection({
   type: 'data',
@@ -57,7 +57,7 @@ const aboutMetricsCollection = defineCollection({
       metric: z.string(),
     }))
   })
-})
+});
 
 
 // 3. Export a single `collections` object to register your collection(s)
