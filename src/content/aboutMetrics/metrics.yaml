@@ -1,7 +1,7 @@
 metrics:
-  - icon: '/icons/clock.svg'
+  - metric: 'Marines Registers via myCareer'
+    icon: '/icons/clock.svg'
     value: '11K'
-    metric: 'Marines Registers via myCareer'
   - metric: "Attendance increase at West Coast Roadshow 2023 v 2024"
     value: '75'
     icon: '/icons/graph.svg'
