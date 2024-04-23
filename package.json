@@ -2,7 +2,7 @@
   "name": "mcswf",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "10.5.2",
+  "packageManager": "pnpm:latest",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
