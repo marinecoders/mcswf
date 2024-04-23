@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
 
@@ -6,11 +7,19 @@ import '../styles/global.css'
 import '../styles/fonts.css'
 import FooterFull from '../components/footer/FooterFull.svelte'
 import ContentImageFull from '../components/sections/ContentImageFull.astro'
+import MissionMetrics from '../components/elements/MissionMetrics.svelte'
+import WhiteButton from '../components/buttons/WhiteButton.svelte'
+
+import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
+import RedButton from '../components/buttons/RedButton.svelte'
 let side = 'left'
 
-const posts = await Astro.glob('../content/roles/*.md')
+const roles = await Astro.glob('../content/roles/*.md')
 
 const { frontmatter, compiledContent } = Astro.props
+
+const steps = await getCollection('steps')
+const prereqs = await getCollection('prereqs')
 ---
 
 <Layout title="Roles">
@@ -74,13 +83,13 @@ const { frontmatter, compiledContent } = Astro.props
         <div class="w-full flex justify-center pt-10">
           <div class="w-3/4 grid grid-cols-1 lg:grid-cols-3 align-middle text-center justify-center">
             {
-              posts.map((post) => {
+              roles.map((role) => {
                 return (
                   <>
                   <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
-                    <img class="w-24 mx-auto" src={`/icons/${post.frontmatter.icon}`}></img>
-                    <p style="word-spacing:99999px" class="font-bold text-2xl">{post.frontmatter.role}</p>
-                    <a href={`/roles/${post.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
+                    <img class="w-24 mx-auto" src={`/icons/${role.frontmatter.icon}`}></img>
+                    <p style="word-spacing:99999px" class="font-bold text-2xl">{role.frontmatter.role}</p>
+                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
                   </div>
                   </>
                 )
@@ -88,9 +97,62 @@ const { frontmatter, compiledContent } = Astro.props
             }
           </div>
         </div>
+        <div class="w-full flex justify-center">
+          <WhiteButton
+            text="SEE JOB LISTINGS"
+          />
+        </div>
+        <div class="w-full flex justify-center">
+          <div class="w-3/4">
+            <MissionMetrics/>
+          </div>
+        </div>
       </div>
-      <div class="pt-20">
-        <FooterFull client:load />
+      <div class="relative pt-10 z-20 bg-white">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">READY TO JOIN?</h1>
+          <p class="pb-8">Apply before 1. September 2025. (Placeholder)</p>
+        </div>
+        <div class="w-full pb-8">
+          <div class="w-10/12 lg:w-8/12 mx-auto">
+            <hr class="h-[1px] bg-mcswf-pinstripe border-none" />
+          </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-white">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">PREREQUISITES</h1>
+          <div class="flex justify-center">
+            <div class="w-3/4 grid lg:grid-cols-2 gap-12">
+              {prereqs.map((prereq) =>
+                <div>
+                  <h2 class="text-center lg:text-left text-mcswf-pinstripe font-bold">{prereq.data.title}</h2>
+                <p class="text-left"><Fragment set:html={prereq.data.content}></Fragment> </p>
+              </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-white">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
+          <div class="w-full flex justify-center">
+            <div class="w-full mx-2 lg:w-1/2 shadow-lg">
+              <CareerAccordion client:load steps={steps}/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-white">
+        <div class="w-full flex justify-center">
+          <RedButton text="APPLY NOW"/>
+        </div>
+      </div>
+      <div>
+        <FooterFull 
+          background='bg-white'
+          client:load />
       </div>
     </div>
   </div>

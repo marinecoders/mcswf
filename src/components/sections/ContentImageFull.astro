@@ -64,6 +64,8 @@ console.log('link - ', link)
       >
         {title}
       </h2>
+      <div class="flex justify-center">
+
       {
         content instanceof Array ? (
           <ul class="m-4 ml-12 list-disc">
@@ -72,11 +74,12 @@ console.log('link - ', link)
             ))}
           </ul>
         ) : (
-          <p class="mb-4 text-left lg:text-center whitespace-pre-line">
+          <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">
             {content}
           </p>
         )
       }
+      </div>
       {
         link && (
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
