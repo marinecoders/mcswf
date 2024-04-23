@@ -122,7 +122,7 @@
   </div>
     {#if !isMenuHidden}
       <!-- STANDARD NAVBAR -->
-      <div class="hidden flex w-full text-white lg:flex xl:flex 2xl:flex h-96 justify-center ">
+      <div class="hidden flex w-full text-white lg:flex h-96 justify-center ">
         <div class="flex w-3/4 justify-left">
           {#each dropdownLinks as dropdown}
           <div
@@ -131,7 +131,7 @@
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
             <a href={dropdown.url}>
-              <h2 class="text-xl pb-1 font-bold">{dropdown.text}</h2>
+              <h2 class="text-xl pl-2 pb-1 font-bold">{dropdown.text}</h2>
               <img
                 class="rounded shadow-lg"
                 src={dropdown.image}
