@@ -76,7 +76,7 @@
   >
   <div class="flex w-full justify-center">
 
-    <div class="flex flex-wrap items-center justify-between w-3/4 h-20 px-4">
+    <div class="flex flex-wrap items-center justify-between w-full mx-8 lg:w-3/4 h-20">
       <div class="flex items-center justify-start">
         <a href="/" class="flex mr-4">
           <span
@@ -87,7 +87,7 @@
       </div>
       <div class="flex items-center lg:order-2">
         {#if !isMenuHidden}
-        <div class="mx-4">
+        <div class="hidden lg:block mx-4">
           <RedButton text="GET IN TOUCH"/>
         </div>
         {/if}
@@ -96,7 +96,7 @@
           id="toggleSidebar"
           aria-expanded="true"
           aria-controls="sidebar"
-          class="hidden p-2 mr-3 text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit"
+          class="p-2 mr-3 hidden text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit"
         >
         {#if isMenuHidden}
         <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
@@ -108,12 +108,12 @@
           on:click={toggleMenu}
           aria-expanded="true"
           aria-controls="sidebar"
-          class="p-2 mr-2 text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold"
+          class="text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold"
         >
         {#if isMenuHidden}
         <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
         {:else}
-        <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
+        <Icon height="20" width="20" class="hover:text-mcswf-gold" icon="mdi:close" />
         {/if}
           <span class="sr-only">Toggle sidebar</span>
         </button>
@@ -122,16 +122,16 @@
   </div>
     {#if !isMenuHidden}
       <!-- STANDARD NAVBAR -->
-      <div class="hidden mx-24 my-4 text-white lg:block xl:block 2xl:block h-96">
-        <div class="flex justify-center">
+      <div class="hidden text-white lg:block xl:block 2xl:block h-96" style="margin-left: 12.5%; margin-right: 12.5%;">
+        <div class="flex">
           {#each dropdownLinks as dropdown}
           <div
-            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110 px-14"
+            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110 pr-10"
             on:mouseleave={() => closeDropdown(dropdown.text)}
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
             <a href={dropdown.url}>
-              <h2 class="font-bold">{dropdown.text}</h2>
+              <h2 style="font-size:20px" class="pb-1 font-bold">{dropdown.text}</h2>
               <img
                 class="rounded shadow-lg"
                 src={dropdown.image}
@@ -140,7 +140,7 @@
             </a>
             <div class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
               {#each dropdown.subLinks as subLinks}
-              <div class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+              <div class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline underline-offset-4 decoration-2">
                 <a href={subLinks.url}>{subLinks.text}</a>
               </div>
               {/each}
@@ -173,7 +173,7 @@
             </h1>
             <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
               {#each dropdown.subLinks as subLinks}
-              <div class="font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+              <div class="py-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
                 <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
               </div>
               {/each}
