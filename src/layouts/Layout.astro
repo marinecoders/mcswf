@@ -1,4 +1,7 @@
 ---
+// import { Banner } from 'flowbite-svelte'
+import ButtonCustom from '../components/buttons/ButtonCustom.svelte'
+
 import Navigation from '../components/static/Navigation.svelte'
 
 import FooterSmall from '../components/footer/FooterSmall.svelte'
@@ -28,11 +31,13 @@ const { title = null } = Astro.props
     />
     <title>MCSWF {title && '-'} {title}</title>
   </head>
-  <body class="bg-black font-expressway bg-opacity-40 text-white">
-    <header class="fixed z-30 top-0 w-full max-h-20">
+  <body class="font-expressway bg-opacity-40 text-white bg-custom-gradient-red">
+    <header class="w-full sticky top-0 z-30">
       <Banner client:load />
-      <div><Navigation client:load /></div>
+      <Navigation client:load />
     </header>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
