@@ -6,20 +6,8 @@ import FooterFull from '../components/footer/FooterFull.svelte'
 import RedButton from '../components/buttons/WhiteButton.svelte'
 import MetricCard from '../components/cards/MetricCard.svelte'
 import { getCollection, type CollectionEntry } from 'astro:content'
-// interface Props {
-//   entry: CollectionEntry<'aboutMetrics'>
-// }
 
 import '../styles/global.css'
-
-// export async function getStaticPaths() {
-//   const aboutMetrics = await getCollection('aboutMetrics')
-//   return aboutMetrics.map((entry) => ({
-//     props: { entry },
-//   }))
-// }
-
-// const { entry } = Astro.props
 
 const metrics = await getCollection('aboutMetrics')
 ---
