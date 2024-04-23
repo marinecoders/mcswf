@@ -1,8 +1,12 @@
 <script>
   import Icon from '@iconify/svelte'
+  export let background = ""
+  export let rounded = true
 </script>
 
-<footer class="pb-0 pt-10 lg:pb-20 bg-black blue-radial-gradient">
+<div class="{background}">
+
+  <footer class="pb-0 pt-10 lg:pb-2 blue-radial-gradient" class:rounded-t-3xl={rounded}>
   <!-- STANDARD FOOTER -->
   <div
     class="hidden lg:block container w-4/5 max-w-screen-xl pb-32 mx-auto lg:py-8"
@@ -170,3 +174,5 @@
     </div>
   </div>
 </footer>
+
+</div>

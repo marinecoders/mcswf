@@ -1,6 +1,6 @@
 <script>
     import Hero from '../elements/Hero.svelte';
-    import RedButton from '../buttons/RedButton.svelte';
+    import RedButton from '../buttons/WhiteButton.svelte';
   </script>
   
   <section class="">

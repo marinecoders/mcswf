@@ -1,24 +1,51 @@
 <script>
-    let isVisible = true
-    import Icon from '@iconify/svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte'
+  import Icon from '@iconify/svelte'
+
+  let isVisible = true
 </script>
 
-
 {#if isVisible}
-
-<div id="sticky-banner" tabindex="-1" class="absolute top-0 z-50 flex justify-between w-full h-20 p-4 start-0 bg-mcswf-battle-red">
-    <div class="flex items-center mx-auto">
-        <p class="flex items-center text-sm font-normal text-white">
-            <img class="h-20 m-4" src="/images/marine_blues.png"/>
-            <span>MARINE-LED SOFTWARE DEVELOPMENT: Lorem ipsum dolor sit amet. Et quae quibusdam <a href="/" class="inline font-medium text-blue-500 text-blue-600 underline underline-offset-2 decoration-600 decoration-500 decoration-solid hover:no-underline">MCSWF</a></span>
-        </p>
+  <div
+    id="banner"
+    class="font-expressway grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-6 w-full bg-custom-gradient-banner md:h-20 place-content-stretch place-items-stretch py-4 px-8 md:py-0 md:px-6"
+  >
+    <div
+      class="hidden md:block lg:col-start-2 col-span-1 overflow-hidden justify-self-end place-self-stretch w-full"
+    >
+      <img
+        class="object-cover md:scale-200 md:-translate-y-6 xl:scale-150 xl:-translate-y-8"
+        alt="Marines in Dress Blue Uniform"
+        src="/images/marine_blues_banner.png"
+      />
     </div>
-    <div class="flex items-center">
-        <button on:click={() => isVisible = false} data-dismiss-target="#sticky-banner" type="button" class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-white hover:text-mcswf-gold rounded-lg text-sm p-1.5">
-            <Icon class="text-2xl" icon="mdi:close"/>
-            <span class="sr-only">Close banner</span>
-        </button>
+    <h3
+      class="col-span-2 lg:col-span-3 xl:col-span-4 place-self-center text-center"
+    >
+      <span class="font-bold">MARINE-LED SOFTWARE DEVELOPMENT:</span>
+      <span class="hidden md:inline"
+        >Lorem ipsum dolor sit amet. Et quae quibusdam</span
+      >
+    </h3>
+    <div class="col-span-1 place-self-center md:w-full">
+      <ButtonCustom
+        color="yellow"
+        size="md"
+        href="application"
+        customClasses="md:w-full">Apply Now</ButtonCustom
+      >
     </div>
-</div>
 
+    <!-- If you want to add a close button to the banner, you can add the following code: -->
+    <!-- <div class="flex items-center">
+      <button
+        on:click={() => (isVisible = false)}
+        type="button"
+        class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-white hover:text-mcswf-gold rounded-lg text-sm p-1.5"
+      >
+        <Icon class="text-2xl" icon="mdi:close" />
+        <span class="sr-only">Close banner</span>
+      </button>
+    </div> -->
+  </div>
 {/if}

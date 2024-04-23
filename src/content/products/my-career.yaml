@@ -1,10 +1,16 @@
 product: 'myCAREER'
 description: "Sponsored by Manpower Management Enlisted Assignments to optimize the roadshow process. Marines are able to reserve their spot in line and push key information to monitors prior to sitting down for a discussion. This saves Marines time and optimizes the discussion."
-image: 
+background: 
   src: '/images/shaking_hands.png'
   alt: ' '
+image: 
+  src: '/images/myCareerScreen.png'
+  alt: ' '
+secondImage:
+  src: ''
+  alt: ''
 order: 2
-heading: "myCAREER is XYZ"
+heading: "Manpower Management Enlisted Assignments"
 bullets:
   - 'Waitlist Management'
   - 'Text Message Updates'
@@ -12,10 +18,10 @@ bullets:
   - 'Event metrics gathering'
 metrics:
   - icon: '/icons/clock.svg'
-    value: '55%'
-    metric: 'Reduction in wait time'
-  - metric: "Increase in meeting efficiency"
-    value: '29'
+    value: '11K'
+    metric: 'Marines Registers via myCareer'
+  - metric: "Attendance increase at West Coast Roadshow 2023 v 2024"
+    value: '75'
     icon: '/icons/graph.svg'
   - metric: 'Days to MVP'
     value: '91'

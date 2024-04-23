@@ -16,6 +16,7 @@ const cohortCollection = defineCollection({
     content: z.string(),
     startDate: z.string(),
     endDate: z.string(),
+    link: z.string(),
   })
 });
 
@@ -24,7 +25,15 @@ const productCollection = defineCollection({
   schema: z.object({
     product: z.string(),
     description: z.string(),
+    background: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
     image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    secondImage: z.object({
       src: z.string(),
       alt: z.string(),
     }),
@@ -37,6 +46,27 @@ const productCollection = defineCollection({
       metric: z.string(),
     }))
   })
+});
+
+const aboutMetricsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    metrics: z.array(z.object({
+      icon: z.string(),
+      value: z.string(),
+      metric: z.string(),
+    }))
+  })
+});
+
+const stepsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    step: z.number(),
+    title: z.string(),
+    contentTitle: z.string(),
+    content: z.string()
+  })
 })
 
 
@@ -46,4 +76,6 @@ export const collections = {
   'prereqs': prereqCollection,
   'cohorts': cohortCollection,
   'products': productCollection,
+  'aboutMetrics': aboutMetricsCollection,
+  'steps': stepsCollection,
 };

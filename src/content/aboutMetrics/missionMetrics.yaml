@@ -1,0 +1,14 @@
+metrics:
+  - metric: 'Marines Trained'
+    icon: '/icons/icon homepage marines trained.svg'
+    value: '4'
+  - metric: "Applications Deployed"
+    icon: '/icons/icon homepage applications deployed.svg'
+    value: '4'
+  - metric: 'Units Using MCSWF Applications'
+    icon: '/icons/icon homepage units using.svg'
+    value: '16'
+  - metric: 'Average Days 0-1 MVP'
+    icon: '/icons/icon homepage average days.svg'
+    value: '81'
+    

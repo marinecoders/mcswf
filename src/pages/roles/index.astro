@@ -4,10 +4,12 @@ import Hero from '../../components/elements/Hero.svelte'
 
 import '../../styles/global.css'
 import '../../styles/fonts.css'
-import FooterFull from '../../components/FooterFull.svelte'
+import FooterFull from '../../components/footer/FooterFull.svelte'
 import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 const posts = await Astro.glob('../../content/roles/*.md')
 let side = 'left'
+
+const { frontmatter, compiledContent } = Astro.props
 ---
 
 <Layout title="Roles">
@@ -17,10 +19,13 @@ let side = 'left'
     <img src="/ega.svg" />
   </div>
   <div
-    class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide snap-start snap-y snap-mandatory"
+    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide"
   >
     <div
-      class="relative z-20 h-fit snap-start pt-20 pb-20 bg-[url('/images/group_of_marines.png')] bg-center lg:bg-no-repeat lg:bg-cover"
+      class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
+      style={{
+        backgroundImage: `url('/images/group_of_marines.png')`,
+      }}
     >
       <Hero
         title="PICK THE PERFECT ROLE FOR YOU"
@@ -33,9 +38,7 @@ let side = 'left'
       />
     </div>
 
-    <div
-      class="relative z-20 max-h-screen scrollbar-hide snap-start snap-y snap-mandatory"
-    >
+    <div class="relative z-20 max-h-screen scrollbar-hide">
       <div class="hidden lg:block">
         {
           posts.map((post) => {
@@ -43,7 +46,7 @@ let side = 'left'
               side = 'right'
               return (
                 <>
-                  <div class="relative z-20 snap-start">
+                  <div class="relative z-20 ">
                     <ContentImageFull
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
@@ -60,7 +63,7 @@ let side = 'left'
               side = 'left'
               return (
                 <>
-                  <div class="relative z-20 snap-start">
+                  <div class="relative z-20 ">
                     <ContentImageFull
                       flipped
                       title={post.frontmatter.role}
@@ -83,7 +86,7 @@ let side = 'left'
           posts.map((post) => {
             return (
               <>
-                <div class="relative z-20 snap-start">
+                <div class="relative z-20 ">
                   <ContentImageFull
                     flipped
                     title={post.frontmatter.role}
@@ -100,7 +103,7 @@ let side = 'left'
           })
         }
       </div>
-      <div class="pt-20 snap-end">
+      <div class="pt-20">
         <FooterFull client:load />
       </div>
     </div>
