@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'mcswf-gold': '#EFC97B',
+        'mcswf-gold': '#FFC755', // Pulled from wireframes instead of color palette
         'mcswf-gold-dark': '#FFB622', // Not in color palette
         'mcswf-battle-red': '#7A131B',
         'mcswf-pinstripe': '#AD1F24',
@@ -25,6 +25,10 @@ export default {
       transitionProperty: {
         grid: 'grid-template-columns',
       },
+      backgroundImage: (theme) => ({
+        'custom-gradient':
+          'radial-gradient(73.99% 331.82% at 15.43% 50%, #6F1319 0%, #89181D 38.02%, #9F1C1F 65.1%, #711319 100%)', // Dictated by wireframes
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],

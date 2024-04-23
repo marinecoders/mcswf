@@ -8,7 +8,7 @@
   <div
     id="sticky-banner"
     tabindex="-1"
-    class="absolute top-0 z-50 flex justify-between w-full h-20 p-4 start-0 bg-mcswf-battle-red"
+    class="absolute top-0 z-50 flex justify-between w-full h-20 p-4 start-0 bg-custom-gradient"
   >
     <div class="flex items-center mx-auto">
       <p
