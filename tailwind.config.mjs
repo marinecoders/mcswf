@@ -5,15 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'mcswf-gold': `#FFC755`,
-        'mcswf-gold-dark':'#FFB622',
-        'mcswf-battle-red': '#671c1d',
-        'mcswf-pinstripe': '#922a26',
-        'mcswf-dark-blue': '#101728',
-        'mcswf-blue': '#07405B',
-        'mcswf-gray': '#eeeeee',
-        'mcswf-off-white': '#FDFDFD',
-        'mcswf-pressed-button': '#E0E0E0'
+        'mcswf-gold': '#EFC97B',
+        'mcswf-gold-dark': '#FFB622', // Not in color palette
+        'mcswf-battle-red': '#7A131B',
+        'mcswf-pinstripe': '#AD1F24',
+        'mcswf-dark-blue': '#101728', // Not in color palette
+        'mcswf-blue': '#07405B', // Not in color palette
+        'mcswf-gray': '#eeeeee', // Not in color palette
+        'mcswf-grey': '#F5F5F5',
+        'mcswf-off-white': '#FDFDFD', // Not in color palette
+        'mcswf-button-focused': '#E0E0E0', // Not in color palette, but showed up in wireframes
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
