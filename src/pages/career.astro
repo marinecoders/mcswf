@@ -19,6 +19,7 @@ const roles = await Astro.glob('../content/roles/*.md')
 const { frontmatter, compiledContent } = Astro.props
 
 const steps = await getCollection('steps')
+const prereqs = await getCollection('prereqs')
 ---
 
 <Layout title="Roles">
@@ -123,14 +124,12 @@ const steps = await getCollection('steps')
           <h1 class="text-4xl font-bold pb-8">PREREQUISITES</h1>
           <div class="flex justify-center">
             <div class="w-3/4 grid lg:grid-cols-2 gap-12">
-              <div>
-                <h2 class="text-center lg:text-left text-mcswf-pinstripe font-bold">PRE-REQ 1</h2>
-                <p class="text-left">Marines with Primary Military Occupational Specialty 0671 and ranks LCpl through Sgt may apply. <br> *Note: LCpls who are not eligible for promotion to the rank of Cpl on or before 1 July 2024 will not be screened or interviewed for the FY24 cohort.</p>
+              {prereqs.map((prereq) =>
+                <div>
+                  <h2 class="text-center lg:text-left text-mcswf-pinstripe font-bold">{prereq.data.title}</h2>
+                <p class="text-left"><Fragment set:html={prereq.data.content}></Fragment> </p>
               </div>
-              <div>
-                <h2 class="text-center lg:text-left text-mcswf-pinstripe font-bold">PRE-REQ 1</h2>
-                <p class="text-left">No applications will be accepted after 1 February 2024.</p>
-              </div>
+              )}
             </div>
           </div>
         </div>
