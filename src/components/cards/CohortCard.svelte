@@ -1,23 +1,30 @@
 <script>
-    import RedButton from '../buttons/RedButton.svelte';
-  
-    export let title;
-    export let content;
-    export let startDate;
-    export let endDate;
-  </script>
-  
-  <div class="w-10/12 h-full p-10 bg-slate-300 bg-slate-900">
-    <h3 class="text-4xl pt-10 text-black text-white font-extrabold text-center">
-      {title}
-    </h3>
-    <div class="max-w-3xl mx-auto mt-5 text-center">
-      <p class="text-lg text-slate-600 text-slate-400">
-        {startDate} - {endDate}
-      </p>
-      <p>{content}</p>
-      <div class="pt-20">
-        <RedButton href="#" text="APPLY NOW" />
-      </div>
-    </div>
+  import RedButton from '../buttons/RedButton.svelte'
+  import Icon from '@iconify/svelte'
+
+  export let title
+  export let content
+  export let startDate
+  export let endDate
+  export let link
+</script>
+
+<div class=" w-64 p-4 border rounded-lg shadow-md bg-white">
+  <div class="flex justify-end">
+    <a href={link}>
+      <Icon class="text-black text-2xl" icon="mdi:share-variant-outline"></Icon>
+    </a>
   </div>
+  <div class="text-center pb-4">
+    <h2 class="text-3xl font-bold text-black">{title}</h2>
+  </div>
+  <div class="text-center">
+    <h2 class="text-lg font-bold text-black">{startDate}-{endDate}</h2>
+  </div>
+  <p class="text-gray-700 text-base pb-4 text-center">{content}</p>
+  <div class="flex justify-center" href={link}>
+    <a href={link}>
+      <RedButton text="APPLY NOW" />
+    </a>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 ---
-import WhiteButton from '../buttons/WhiteButton.astro'
+import WhiteButton from '../buttons/WhiteButton.svelte'
 
 interface Props {
   title: string
@@ -30,12 +30,27 @@ console.log('link - ', link)
 
 <section class="">
   <div
-    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6"
+    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto grid lg:grid-cols-2 md:py-16 md:px-6"
   >
     {
       flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1">
-          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
+        <div class="flex justify-center">
+          <img
+            class="w-3/4 rounded-lg aspect-square object-cover"
+            src={imgSrc}
+            alt={imgAltText}
+          />
+        </div>
+      )
+    }
+    {
+      !flipped && (
+        <div class="justify-center flex lg:hidden">
+          <img
+            class="w-3/4 rounded-lg object-cover aspect-square"
+            src={imgSrc}
+            alt={imgAltText}
+          />
         </div>
       )
     }
@@ -44,10 +59,13 @@ console.log('link - ', link)
         class:list={[
           'mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold',
           titleClasses,
+          'pt-5 lg:pt-0',
         ]}
       >
         {title}
       </h2>
+      <div class="flex justify-center">
+
       {
         content instanceof Array ? (
           <ul class="m-4 ml-12 list-disc">
@@ -56,9 +74,12 @@ console.log('link - ', link)
             ))}
           </ul>
         ) : (
-          <p class="mb-4 text-center whitespace-pre-line">{content}</p>
+          <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">
+            {content}
+          </p>
         )
       }
+      </div>
       {
         link && (
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
@@ -69,8 +90,12 @@ console.log('link - ', link)
     </div>
     {
       !flipped && (
-        <div class="grid gap-4 mt-8 grid-cols-1">
-          <img class="w-full rounded-lg" src={imgSrc} alt={imgAltText} />
+        <div class="justify-center hidden lg:flex">
+          <img
+            class="w-3/4 rounded-lg object-cover aspect-square"
+            src={imgSrc}
+            alt={imgAltText}
+          />
         </div>
       )
     }

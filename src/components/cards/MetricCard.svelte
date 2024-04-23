@@ -1,11 +1,13 @@
 <script>
-    export let icon;
-    export let value;
-    export let metric;
-  </script>
+  export let icon;
+  export let value;
+  export let metric;
+</script>
   
-  <img class="mx-auto rounded-xl" src={icon} alt="Image Description" />
-  <div class="mt-2 sm:mt-4">
-    <h3 class="text-6xl font-extrabold text-white">{value}</h3>
-    <p class="text-md text-mcswf-gold">{metric}</p>
+<div class="rounded-lg flex h-72 w-56 border-2 p-4 border-white">
+  <div class="w-7/8 m-auto align-middle grid gap-4">
+    <img class="mx-auto max-h-24" src={icon} alt="Description" />
+    <h3 class="text-6xl h-12 text-white font-menobanner">{value}</h3>
+    <p class="content-center font-semibold text-large text-mcswf-gold">{metric}</p>
   </div>
+</div>
