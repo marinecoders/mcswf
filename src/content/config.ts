@@ -46,7 +46,18 @@ const productCollection = defineCollection({
       metric: z.string(),
     }))
   })
-})
+});
+
+const aboutMetricsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    metrics: z.array(z.object({
+      icon: z.string(),
+      value: z.string(),
+      metric: z.string(),
+    }))
+  })
+});
 
 const stepsCollection = defineCollection({
   type: 'data',
@@ -65,5 +76,6 @@ export const collections = {
   'prereqs': prereqCollection,
   'cohorts': cohortCollection,
   'products': productCollection,
-  'steps': stepsCollection
+  'aboutMetrics': aboutMetricsCollection,
+  'steps': stepsCollection,
 };

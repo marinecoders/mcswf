@@ -2,12 +2,13 @@
   import Icon from '@iconify/svelte'
   export let text
   export let href
-  export let icon
-  export let extras
+  // these don't seem to be used for anything
+  // export let icon
+  // export let extras
 </script>
 
-<a href={href} class="flex w-full items-center justify-center">
 
+<a href={href} class="flex w-full items-center justify-center">
   <button
     href=""
     type="button"
