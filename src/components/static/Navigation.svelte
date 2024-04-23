@@ -113,7 +113,7 @@
         {#if isMenuHidden}
         <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
         {:else}
-        <Icon height="20" width="20" class="hover:text-mcswf-gold" icon="mdi:close" />
+        <Icon class="hover:text-mcswf-gold h-5 w-5" icon="mdi:close" />
         {/if}
           <span class="sr-only">Toggle sidebar</span>
         </button>
@@ -122,8 +122,8 @@
   </div>
     {#if !isMenuHidden}
       <!-- STANDARD NAVBAR -->
-      <div class="hidden text-white lg:block xl:block 2xl:block h-96" style="margin-left: 12.5%; margin-right: 12.5%;">
-        <div class="flex">
+      <div class="hidden flex w-full text-white lg:flex xl:flex 2xl:flex h-96 justify-center ">
+        <div class="flex w-3/4 justify-left">
           {#each dropdownLinks as dropdown}
           <div
             class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110 pr-10"
@@ -131,7 +131,7 @@
             on:mouseenter={() => openDropdown(dropdown.text)}
           >
             <a href={dropdown.url}>
-              <h2 style="font-size:20px" class="pb-1 font-bold">{dropdown.text}</h2>
+              <h2 class="text-xl pb-1 font-bold">{dropdown.text}</h2>
               <img
                 class="rounded shadow-lg"
                 src={dropdown.image}
