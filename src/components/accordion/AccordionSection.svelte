@@ -1,5 +1,5 @@
 <script>
-    import RedButton from '../buttons/WhiteButton.svelte';
+    import Button from '../buttons/ButtonCustom.svelte'
     import { mobile, active } from './stores.js';
     export let title;
     export let sequence;
@@ -33,7 +33,8 @@
     </div>
     <div class="col-span-1 flex h-fit py-8 px-6 {mobileValue ? 'justify-center' : 'justify-left'} ">
         <div>
-        <RedButton text="LEARN MORE" href={href} />
+
+        <Button white href={href}>LEARN MORE</Button>
         </div>
     </div>
     {#if !mobileValue}

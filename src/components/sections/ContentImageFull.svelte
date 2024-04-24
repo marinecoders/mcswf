@@ -1,5 +1,5 @@
 <script>
-  import RedButton from '../buttons/WhiteButton.svelte'
+  import Button from '../buttons/ButtonCustom.svelte'
 
   export let title
   export let content = null
@@ -56,7 +56,7 @@
       </div>
       {#if link}
         <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-          <RedButton href={link} text={linkText} />
+          <Button white href={link}>{linkText}</Button>
         </div>
       {/if}
     </div>

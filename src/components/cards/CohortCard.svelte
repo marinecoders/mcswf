@@ -1,5 +1,5 @@
 <script>
-  import RedButton from '../buttons/RedButton.svelte'
+  import Button from '../buttons/ButtonCustom.svelte'
   import Icon from '@iconify/svelte'
 
   export let title
@@ -23,8 +23,6 @@
   </div>
   <p class="text-gray-700 text-base pb-4 text-center">{content}</p>
   <div class="flex justify-center" href={link}>
-    <a href={link}>
-      <RedButton text="APPLY NOW" />
-    </a>
+    <Button red href={href}>LEARN MORE</Button>
   </div>
 </div>

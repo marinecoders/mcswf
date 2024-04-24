@@ -1,6 +1,6 @@
 <script>
   import Icon from '@iconify/svelte'
-  import RedButton from '../buttons/WhiteButton.svelte'
+  import Button from '../buttons/ButtonCustom.svelte'
 
   let isMenuHidden = true
 
@@ -91,7 +91,7 @@
         <div class="flex items-center lg:order-2">
           {#if !isMenuHidden}
             <div class="hidden lg:block mx-4">
-              <RedButton text="GET IN TOUCH" />
+              <Button white>GET IN TOUCH</Button>
             </div>
           {/if}
           <button

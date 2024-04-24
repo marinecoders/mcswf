@@ -1,5 +1,5 @@
 <script>
-    import RedButton from '../buttons/WhiteButton.svelte';
+    import Button from '../buttons/ButtonCustom.svelte';
     import Timer from './Timer.svelte';
     import Hero from './Hero.svelte';
   
@@ -15,7 +15,7 @@
   
     <!-- Buttons -->
     <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-      <RedButton href={link} text="APPLY NOW" />
+      <Button white href={link}>APPLY NOW</Button>
     </div>
     <!-- End Buttons -->
   </div>

@@ -1,5 +1,5 @@
 <script>
-  import ButtonCustom from '../buttons/ButtonCustom.svelte'
+  import Button from '../buttons/ButtonCustom.svelte'
   import Icon from '@iconify/svelte'
 
   let isVisible = true
@@ -28,11 +28,11 @@
       >
     </h3>
     <div class="col-span-1 place-self-center md:w-full">
-      <ButtonCustom
+      <Button
         color="yellow"
         size="md"
         href="application"
-        customClasses="md:w-full">Apply Now</ButtonCustom
+        customClasses="md:w-full">Apply Now</Button
       >
     </div>
 

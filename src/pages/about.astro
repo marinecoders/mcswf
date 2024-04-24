@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/elements/Hero.svelte'
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
 import FooterFull from '../components/footer/FooterFull.svelte'
-import RedButton from '../components/buttons/WhiteButton.svelte'
+import Button from '../components/buttons/ButtonCustom.svelte'
 import MetricCard from '../components/cards/MetricCard.svelte'
 import { getCollection, type CollectionEntry } from 'astro:content'
 
@@ -128,7 +128,7 @@ const metrics = await getCollection('aboutMetrics')
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <RedButton href="#" text="LEARN MORE" />
+            <Button white href="#">LEARN MORE</Button>
           </div>
         </div>
       </div>
