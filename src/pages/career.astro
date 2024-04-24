@@ -139,7 +139,7 @@ const prereqs = await getCollection('prereqs')
           <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
           <div class="w-full flex justify-center">
             <div class="w-full mx-2 lg:w-1/2 shadow-lg">
-              <CareerAccordion client:load steps={steps}/>
+              <CareerAccordion client:only steps={steps}/>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ const prereqs = await getCollection('prereqs')
       <div>
         <FooterFull 
           background='bg-white'
-          client:load />
+          client:only />
       </div>
     </div>
   </div>

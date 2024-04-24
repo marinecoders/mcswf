@@ -11,6 +11,6 @@ const products = await getCollection('products')
 
 <Layout title="">
   <div class="bg-black h-screen py-20">
-    <Accordion products={products} client:load />
+    <Accordion products={products} client:only />
   </div>
 </Layout>
