@@ -32,7 +32,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
   </div>
 
   <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide"
+    class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
     <div
       class:list={[
@@ -46,13 +46,13 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
         content={entry.data.description}
         link="#"
         linkText="REQUEST APP DEMO"
-        titleClasses='text-white text-xl md:text-[40px]'
-        contentClasses='text-base md:text-[21px]'
+        titleClasses='text-white text-xl lg:text-[40px]'
+        contentClasses='text-base lg:text-[21px]'
       />
     </div>
 
-    <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6">
-      <div class="grid gap-4 mt-8 grid-cols-1 hidden md:block min-h-[600px]" >
+    <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+      <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[600px]" >
         <div class="w-full">
           <img
             class="absolute w-[40rem] top-[16%] left-0 rounded-lg object-cover"
@@ -79,7 +79,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
 
         </ul>
         <div
-        class='relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20'
+        class='grid grid-cols-1 lg:grid-cols-2 w-fit m-auto z-20'
         >
           {
             entry.data.metrics.map((p) => (
@@ -89,17 +89,19 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
             ))
           }
         </div>
-        <div class="grid gap-4 mt-8 grid-cols-1 md:hidden relative min-h-[400px]" >
+        <div class="grid gap-4 my-8 grid-cols-1 lg:hidden relative h-fit" >
           <img
-            class="absolute w-full top-[1rem] left-0 rounded-lg object-cover"
+            class="absolute w-full top-[1rem] left-0 rounded-lg object-contain"
             src={entry.data.secondImage.src}
             alt={entry.data.secondImage.alt}
             />
+
           <img
-            class="absolute w-[38%] left-[31%] top-[12%] w-full rounded-lg object-cover"
+            class="relative w-[38%] left-[31%] top-[12%] rounded-lg object-contain"
             src={entry.data.image.src}
             alt={entry.data.image.alt}
           />
+
         </div>
       </div>
     </div>
