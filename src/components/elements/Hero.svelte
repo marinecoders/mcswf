@@ -1,5 +1,5 @@
 <script>
-  import WhiteButton from '../buttons/WhiteButton.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
   export let title = ''
   export let content = ''
@@ -28,7 +28,9 @@
   <!-- Buttons -->
   {#if link}
     <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-      <WhiteButton href={link} text={linkText} />
+      <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
+        {linkText}
+      </ButtonCustom>
     </div>
   {/if}
   <!-- End Buttons -->
