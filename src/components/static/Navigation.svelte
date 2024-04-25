@@ -165,22 +165,27 @@
           </div>
           {#each dropdownLinks as dropdown}
             <div class="pt-4 mx-8">
-              <a
-                class="flex justify-between font-bold hover:text-mcswf-gold"
-                href={dropdown.url}
-                role="button"
-                on:click={() => toggleDropdown(dropdown.text)}
-                on:keydown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    toggleDropdown(dropdown.text)
-                  }
-                }}>
-                <span class="menu-item">{dropdown.text}</span>
+              <div class="flex justify-between">
+                <a
+                  class="flex font-bold hover:text-mcswf-gold"
+                  href={dropdown.url}
+                  role="button"
+                >
+                  <span class="menu-item">{dropdown.text}</span>
+                </a>
                 {#if dropdown.subLinks.length > 0}
-                  <span class="text-xl text-right"
-                    >{dropdowns[dropdown.text] ? '-' : '+'}</span>
+                  <span
+                    on:click={() => toggleDropdown(dropdown.text)}
+                    on:keydown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        toggleDropdown(dropdown.text)
+                      }
+                    }} 
+                    class="text-xl text-right">
+                      {dropdowns[dropdown.text] ? '-' : '+'}
+                  </span>
                 {/if}
-              </a>
+              </div>
               <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
                 {#each dropdown.subLinks as subLinks}
                   <div
