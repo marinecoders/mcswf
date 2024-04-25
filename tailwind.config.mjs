@@ -36,13 +36,16 @@ export default {
         'custom-gradient-banner':
           'radial-gradient(73.99% 331.82% at 15.43% 50%, #6F1319 0%, #89181D 38.02%, #9F1C1F 65.1%, #711319 100%)', // Dictated by wireframes for banner
         'custom-gradient-red':
-          'radial-gradient(96.94% 109.71% at 0% 56.8%, #6F1319 0%, #89181D 53.13%, #9F1C1F 100%)',
+          'radial-gradient(circle, rgba(137,24,29,1) 0%, rgba(137,24,29,1) 76%, rgba(102,41,31,1) 100%);',
       }),
       scale: {
         200: '2',
         240: '2.4',
         220: '2.2',
         230: '2.3',
+      },
+      width: {
+        550: '550px',
       },
     },
   },
