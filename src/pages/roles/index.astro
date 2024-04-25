@@ -7,7 +7,10 @@ import '../../styles/fonts.css'
 import FooterFull from '../../components/footer/FooterFull.svelte'
 import ContentImageFull from '../../components/sections/ContentImageFull.astro'
 const posts = await Astro.glob('../../content/roles/*.md')
+import { displaySiteBanner } from '../../components/stores.js'
+
 let side = 'left'
+displaySiteBanner.set(false)
 
 const { frontmatter, compiledContent } = Astro.props
 ---
@@ -19,14 +22,12 @@ const { frontmatter, compiledContent } = Astro.props
     <img src="/ega.svg" />
   </div>
   <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide"
-  >
+    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
     <div
       class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
       style={{
         backgroundImage: `url('/images/group_of_marines.png')`,
-      }}
-    >
+      }}>
       <Hero
         title="PICK THE PERFECT ROLE FOR YOU"
         content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae qui"

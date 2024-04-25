@@ -1,39 +1,34 @@
 <script>
   import ButtonCustom from '../buttons/ButtonCustom.svelte'
   import Icon from '@iconify/svelte'
+  import { displaySiteBanner } from '../stores.js'
 
   let isVisible = true
 </script>
 
-{#if isVisible}
+{#if $displaySiteBanner}
   <div
     id="banner"
-    class="font-expressway grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-6 w-full bg-custom-gradient-banner md:h-20 place-content-stretch place-items-stretch py-4 px-8 md:py-0 md:px-6"
-  >
+    class="font-expressway grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-2 w-full bg-custom-gradient-banner md:h-20 place-content-stretch place-items-stretch py-4 px-8 md:py-0 lg:px-14">
     <div
-      class="hidden md:block lg:col-start-2 col-span-1 overflow-hidden justify-self-end place-self-stretch w-full"
-    >
+      class="hidden md:block 2xl:col-start-2 col-span-1 overflow-hidden justify-self-end place-self-stretch w-full">
       <img
         class="object-cover md:scale-200 md:-translate-y-6 xl:scale-150 xl:-translate-y-8"
         alt="Marines in Dress Blue Uniform"
-        src="/images/marine_blues_banner.png"
-      />
+        src="/images/marine_blues_banner.png" />
     </div>
     <h3
-      class="col-span-2 lg:col-span-3 xl:col-span-4 place-self-center text-center"
-    >
+      class="col-span-2 lg:col-span-3 2xl:col-span-4 place-self-center text-center">
       <span class="font-bold">MARINE-LED SOFTWARE DEVELOPMENT:</span>
       <span class="hidden md:inline"
-        >Lorem ipsum dolor sit amet. Et quae quibusdam</span
-      >
+        >Lorem ipsum dolor sit amet. Et quae quibusdam</span>
     </h3>
     <div class="col-span-1 place-self-center md:w-full">
       <ButtonCustom
         color="yellow"
         size="md"
         href="application"
-        customClasses="md:w-full">Apply Now</ButtonCustom
-      >
+        customClasses="md:w-full">Apply Now</ButtonCustom>
     </div>
 
     <!-- If you want to add a close button to the banner, you can add the following code: -->

@@ -4,12 +4,15 @@ import Hero from '../../components/elements/Hero.svelte'
 import FooterFull from '../../components/footer/FooterFull.svelte'
 import MetricCard from '../../components/cards/MetricCard.svelte'
 import { getCollection, type CollectionEntry } from 'astro:content'
+import { displaySiteBanner } from '../../components/stores.js'
+
 interface Props {
   entry: CollectionEntry<'products'>
 }
 
 import '../../styles/global.css'
 
+displaySiteBanner.set(false)
 
 export async function getStaticPaths() {
   const products = await getCollection('products')
@@ -32,27 +35,24 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
   </div>
 
   <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide"
-  >
+    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
     <div
-      class:list={[
-        'relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center',
-      ]}
-      style={bgString}
-    >
+      class:list={['relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center']}
+      style={bgString}>
       <Hero
         padding="pt-24"
         title={entry.data.product}
         content={entry.data.description}
         link="#"
         linkText="REQUEST APP DEMO"
-        titleClasses='text-white text-xl md:text-[40px]'
-        contentClasses='text-base md:text-[21px]'
+        titleClasses="text-white text-xl md:text-[40px]"
+        contentClasses="text-base md:text-[21px]"
       />
     </div>
 
-    <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6">
-      <div class="grid gap-4 mt-8 grid-cols-1 hidden md:block min-h-[600px]" >
+    <div
+      class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto md:grid md:grid-cols-2 md:py-16 md:px-6">
+      <div class="grid gap-4 mt-8 grid-cols-1 hidden md:block min-h-[600px]">
         <div class="w-full">
           <img
             class="absolute w-[40rem] top-[16%] left-0 rounded-lg object-cover"
@@ -68,19 +68,13 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
       </div>
       <div class="grid gap-4 mt-8 grid-cols-1">
         <h2
-          class="mb-4 text-2xl md:text-4xl font-extrabold tracking-tight text-center text-white"
-        >
+          class="mb-4 text-2xl md:text-4xl font-extrabold tracking-tight text-center text-white">
           {entry.data.heading}
         </h2>
         <ul class="m-4 ml-12 list-disc text-xl md:text-2xl">
-          {entry.data.bullets.map((b) =>(
-            <li>{b}</li>
-          ))}
-
+          {entry.data.bullets.map((b) => <li>{b}</li>)}
         </ul>
-        <div
-        class='relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20'
-        >
+        <div class="relative grid grid-cols-1 md:grid-cols-2 w-fit m-auto z-20">
           {
             entry.data.metrics.map((p) => (
               <div class="text-center m-12">
@@ -89,12 +83,13 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
             ))
           }
         </div>
-        <div class="grid gap-4 mt-8 grid-cols-1 md:hidden relative min-h-[400px]" >
+        <div
+          class="grid gap-4 mt-8 grid-cols-1 md:hidden relative min-h-[400px]">
           <img
             class="absolute w-full top-[1rem] left-0 rounded-lg object-cover"
             src={entry.data.secondImage.src}
             alt={entry.data.secondImage.alt}
-            />
+          />
           <img
             class="absolute w-[38%] left-[31%] top-[12%] w-full rounded-lg object-cover"
             src={entry.data.image.src}

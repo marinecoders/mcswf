@@ -1,5 +1,4 @@
 <script>
-    import Button from '../buttons/WhiteButton.svelte';
     import Hero from '../elements/Hero.svelte';
   </script>
   
