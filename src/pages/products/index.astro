@@ -1,12 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import { displaySiteBanner } from '../../components/stores.js'
 
 import '../../styles/global.css'
 import '../../styles/fonts.css'
 import Accordion from '../../components/accordion/Accordion.svelte'
 
 const products = await getCollection('products')
+displaySiteBanner.set(false)
 ---
 
 <Layout title="">
