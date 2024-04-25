@@ -1,9 +1,7 @@
 <script>
   import ButtonCustom from '../buttons/ButtonCustom.svelte'
-  import Icon from '@iconify/svelte'
+  // import Icon from '@iconify/svelte'
   import { displaySiteBanner } from '../stores.js'
-
-  let isVisible = true
 </script>
 
 {#if $displaySiteBanner}
@@ -27,7 +25,7 @@
       <ButtonCustom
         color="yellow"
         size="md"
-        href="application"
+        link="/application"
         customClasses="md:w-full">Apply Now</ButtonCustom>
     </div>
 
