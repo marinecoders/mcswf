@@ -18,8 +18,7 @@ const metrics = await getCollection('aboutMetrics')
     class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
-  <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
+  <div class="relative font-expressway red-radial-gradient scrollbar-hide">
     <div
       class="relative z-20 py-20 h-[70vh] bg-[url('/images/marine.png')] lg:bg-[99%_40%] lg:bg-auto bg-cover bg-center">
       <Hero
@@ -28,7 +27,7 @@ const metrics = await getCollection('aboutMetrics')
         content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
       />
     </div>
-    <div class="relative z-20 max-h-screen scrollbar-hide">
+    <div class="relative z-20 scrollbar-hide">
       <div class="hidden lg:block">
         <div class="relative z-20 pt-6">
           <ContentImageFull
@@ -124,7 +123,11 @@ const metrics = await getCollection('aboutMetrics')
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <ButtonCustom color="white" size="xl" customClasses="w-64" link="#">
+            <ButtonCustom
+              color="white"
+              size="xl"
+              customClasses="w-64"
+              link="/#">
               LEARN MORE
             </ButtonCustom>
           </div>

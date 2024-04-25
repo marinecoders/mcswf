@@ -4,14 +4,14 @@
 
   let isMenuHidden = true
 
-  function toggleMenu(event) {
+  function toggleMenu (event) {
     isMenuHidden = !isMenuHidden
     event.stopPropagation()
   }
 
-  let dropdowns = {}
+  const dropdowns = {}
 
-  let dropdownLinks = [
+  const dropdownLinks = [
     {
       text: 'PRODUCTS',
       url: '/products',
@@ -54,151 +54,150 @@
     dropdowns[dropdownLinks[link].text] = false
   }
 
-  //console.log(dropdownLinks)
+  // console.log(dropdownLinks)
 
-  function toggleDropdown(dropdown) {
+  function toggleDropdown (dropdown) {
     dropdowns[dropdown] = !dropdowns[dropdown]
   }
 
-  function openDropdown(dropdown) {
+  function openDropdown (dropdown) {
     dropdowns[dropdown] = true
-    //console.log(dropdowns)
+    // console.log(dropdowns)
   }
 
-  function closeDropdown(dropdown) {
+  function closeDropdown (dropdown) {
     dropdowns[dropdown] = false
-    //console.log(dropdowns)
+    // console.log(dropdowns)
   }
 </script>
 
-<header class="relative antialiased blue-radial-gradient rounded-b-3xl">
-  <nav
-    class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center"
-    class:rounded-b-3xl={!isMenuHidden}>
-    <div class="flex w-full justify-center">
-      <div
-        class="flex flex-wrap items-center justify-between w-full mx-8 lg:w-3/4 h-20">
-        <div class="flex items-center justify-start">
-          <a href="/" class="flex mr-4">
-            <span
-              class="self-center text-lg font-semibold text-white font-colossalis whitespace-nowrap"
-              >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
-          </a>
-        </div>
-        <div class="flex items-center lg:order-2">
-          {#if !isMenuHidden}
-            <div class="hidden lg:block mx-4">
-              <ButtonCustom color="white" size="lg" link="#"
-                >GET IN TOUCH</ButtonCustom>
-            </div>
+<nav
+  class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center sticky top-0 antialiased blue-radial-gradient rounded-b-3xl"
+  class:rounded-b-3xl={!isMenuHidden}>
+  <div class="flex w-full justify-center">
+    <div
+      class="flex flex-wrap items-center justify-between w-full mx-8 lg:w-3/4 h-20">
+      <div class="flex items-center justify-start">
+        <a href="/" class="flex mr-4">
+          <span
+            class="self-center text-base sm:text-xl text-white font-colossalis whitespace-nowrap"
+            >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
+        </a>
+      </div>
+      <div class="flex items-center lg:order-2">
+        {#if !isMenuHidden}
+          <div class="hidden lg:block mx-4">
+            <ButtonCustom color="white" size="lg" link="#"
+              >GET IN TOUCH</ButtonCustom>
+          </div>
+        {/if}
+        <button
+          on:click={toggleMenu}
+          id="toggleSidebar"
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="p-2 mr-3 hidden text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit">
+          {#if isMenuHidden}
+            <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+          {:else}
+            <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
           {/if}
-          <button
-            on:click={toggleMenu}
-            id="toggleSidebar"
-            aria-expanded="true"
-            aria-controls="sidebar"
-            class="p-2 mr-3 hidden text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit">
-            {#if isMenuHidden}
-              <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
-            {:else}
-              <Icon class="hover:text-mcswf-gold" icon="mdi:close" />
-            {/if}
-          </button>
-          <button
-            on:click={toggleMenu}
-            aria-expanded="true"
-            aria-controls="sidebar"
-            class="text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold">
-            {#if isMenuHidden}
-              <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
-            {:else}
-              <Icon class="hover:text-mcswf-gold h-5 w-5" icon="mdi:close" />
-            {/if}
-            <span class="sr-only">Toggle sidebar</span>
-          </button>
-        </div>
+        </button>
+        <button
+          on:click={toggleMenu}
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold">
+          {#if isMenuHidden}
+            <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
+          {:else}
+            <Icon class="hover:text-mcswf-gold h-5 w-5" icon="mdi:close" />
+          {/if}
+          <span class="sr-only">Toggle sidebar</span>
+        </button>
       </div>
     </div>
-    {#if !isMenuHidden}
-      <!-- STANDARD NAVBAR -->
-      <div class="hidden w-full text-white md:flex h-96 justify-center p-4">
-        <div class="grid grid-cols-4 lg:gap-14 gap-10">
-          {#each dropdownLinks as dropdown}
+  </div>
+  {#if !isMenuHidden}
+    <!-- STANDARD NAVBAR -->
+    <div class="hidden w-full text-white md:flex h-96 justify-center p-4">
+      <div class="grid grid-cols-4 lg:gap-14 gap-10">
+        {#each dropdownLinks as dropdown}
+          <div
+            role="button"
+            tabindex="0"
+            class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
+            on:mouseleave={() => closeDropdown(dropdown.text)}
+            on:mouseenter={() => openDropdown(dropdown.text)}>
+            <a href={dropdown.url}>
+              <h2
+                class="{dropdown.titleClasses
+                  ? dropdown.titleClasses
+                  : 'text-base lg:text-xl'} pb-1 pl-2 font-bold transition-all">
+                {dropdown.text}
+              </h2>
+              <img
+                class="object-scale-down rounded shadow-lg"
+                src={dropdown.image}
+                alt={dropdown.text} />
+            </a>
             <div
-              role="button"
-              tabindex="0"
-              class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
-              on:mouseleave={() => closeDropdown(dropdown.text)}
-              on:mouseenter={() => openDropdown(dropdown.text)}>
-              <a href={dropdown.url}>
-                <h2
-                  class="{dropdown.titleClasses
-                    ? dropdown.titleClasses
-                    : 'text-base lg:text-xl'} pb-1 pl-2 font-bold transition-all">
-                  {dropdown.text}
-                </h2>
-                <img
-                  class="object-scale-down rounded shadow-lg"
-                  src={dropdown.image}
-                  alt={dropdown.text} />
-              </a>
-              <div
-                class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
-                {#each dropdown.subLinks as subLinks}
-                  <div
-                    class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline underline-offset-4 decoration-2">
-                    <a href={subLinks.url}>{subLinks.text}</a>
-                  </div>
-                {/each}
-              </div>
+              class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
+              {#each dropdown.subLinks as subLinks}
+                <div
+                  class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline underline-offset-4 decoration-2">
+                  <a href={subLinks.url}>{subLinks.text}</a>
+                </div>
+              {/each}
             </div>
-          {/each}
-        </div>
-      </div>
-      <!-- MOBILE NAVBAR -->
-      <div class="grid visible h-screen grid-cols-1 gap-2 md:hidden">
-        <div class="pt-8 h-1/2">
-          <div>
-            <h1 class="text-xl font-bold text-center underline text-mcswf-gold">
-              APPLY NOW
-            </h1>
           </div>
-          {#each dropdownLinks as dropdown}
-            <div class="pt-4 mx-8">
-              <div class="flex justify-between">
-                <a
-                  class="flex font-bold hover:text-mcswf-gold"
-                  href={dropdown.url}
-                  role="button"
-                >
-                  <span class="menu-item">{dropdown.text}</span>
-                </a>
-                {#if dropdown.subLinks.length > 0}
-                  <span
-                    on:click={() => toggleDropdown(dropdown.text)}
-                    on:keydown={(event) => {
-                      if (event.key === 'Enter' || event.key === ' ') {
-                        toggleDropdown(dropdown.text)
-                      }
-                    }} 
-                    class="text-xl text-right">
-                      {dropdowns[dropdown.text] ? '-' : '+'}
-                  </span>
-                {/if}
-              </div>
-              <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
-                {#each dropdown.subLinks as subLinks}
-                  <div
-                    class="py-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
-                    <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
-                  </div>
-                {/each}
-              </div>
-            </div>
-          {/each}
-        </div>
+        {/each}
       </div>
-      <div class="h-1"></div>
-    {/if}
-  </nav>
-</header>
+    </div>
+    <!-- MOBILE NAVBAR -->
+    <div class="grid visible h-screen grid-cols-1 gap-2 md:hidden">
+      <div class="pt-8 h-1/2">
+        <div>
+          <h1 class="text-xl font-bold text-center underline text-mcswf-gold">
+            APPLY NOW
+          </h1>
+        </div>
+        {#each dropdownLinks as dropdown}
+          <div class="pt-4 mx-8">
+            <div class="flex justify-between">
+              <a
+                class="flex font-bold hover:text-mcswf-gold"
+                href={dropdown.url}
+                role="button">
+                <span class="menu-item">{dropdown.text}</span>
+              </a>
+              {#if dropdown.subLinks.length > 0}
+                <span
+                  on:click={() => toggleDropdown(dropdown.text)}
+                  on:keydown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      toggleDropdown(dropdown.text)
+                    }
+                  }}
+                  role="button"
+                  tabindex="0"
+                  class="text-xl text-right">
+                  {dropdowns[dropdown.text] ? '-' : '+'}
+                </span>
+              {/if}
+            </div>
+            <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
+              {#each dropdown.subLinks as subLinks}
+                <div
+                  class="py-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
+                  <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
+    <div class="h-1"></div>
+  {/if}
+</nav>
