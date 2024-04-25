@@ -3,8 +3,6 @@
   import Timer from './Timer.svelte'
   import Hero from './Hero.svelte'
 
-  export let title
-  export let content
   export let link
 </script>
 
@@ -12,8 +10,9 @@
   <Hero
     padding="pt-24"
     desktopFontSize="[21px]"
-    title="COHORT 8 APPLICATION DEADLINE"
-    content="Applications for Cohort 8 are due on March 15, 2024. Marines who are accepted to the program will PCS to Austin, TX during the summer of 2024 and begin the Technical Accelerator in August 2024." />
+    title="COHORT 9 APPLICATION DEADLINE"
+    content="Applications for Cohort 9 are due on August 1st, 2024. Marines who are accepted to the program will PCS to Austin, TX during the summer of 2024 and begin the
+    Technical Accelerator in August 2024." />
 
   <Timer />
 

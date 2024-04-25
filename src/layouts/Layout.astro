@@ -31,7 +31,8 @@ const { title = null } = Astro.props
     />
     <title>MCSWF {title && '-'} {title}</title>
   </head>
-  <body class="font-expressway bg-opacity-40 text-white bg-custom-gradient-red">
+  <body
+    class="font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
     <header class="w-full sticky top-0 z-30">
       <Banner />
       <Navigation client:only />

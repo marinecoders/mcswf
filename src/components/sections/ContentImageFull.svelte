@@ -5,13 +5,10 @@
   export let content = null
   export let link = null
   export let linkText = null
-  export let padding = null
   export let flipped = false
   export let image = 'https://dummyimage.com/550/fff/aaa'
   export let imageAltText = ''
   export let imageClasses = null
-
-  //console.log("link - ", link);
 </script>
 
 <section class="">
@@ -53,7 +50,8 @@
         {/if}
       </div>
       {#if link}
-        <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
+        <div
+          class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center justify-items-center">
           <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
             {linkText}
           </ButtonCustom>
