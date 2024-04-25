@@ -4,31 +4,28 @@ import Hero from '../components/elements/Hero.svelte'
 import Mission from '../components/sections/Mission.svelte'
 import Countdown from '../components/elements/Countdown.svelte'
 import Products from '../components/sections/Products.svelte'
-
 import '../styles/global.css'
 import '../styles/fonts.css'
 import FooterFull from '../components/footer/FooterFull.svelte'
-
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+import { getCollection } from 'astro:content' // Get products collection
+import { displaySiteBanner } from '../components/stores.js'
 
-// Get products
-import { getCollection } from 'astro:content'
+displaySiteBanner.set(true)
+
 const products = await getCollection('products')
 products.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout title="">
   <div
-    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
-  >
+    class="absolute left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
   <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide"
-  >
+    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
     <div
-      class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat"
-    >
+      class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat">
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         content="Train Marines. Build Applications. Deploy to the Edge"

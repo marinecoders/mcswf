@@ -1,5 +1,5 @@
 <script>
-  import Button from '../buttons/ButtonCustom.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
   export let title
   export let content = null
@@ -16,15 +16,13 @@
 
 <section class="">
   <div
-    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 md:py-8 md:px-6"
-  >
+    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 md:py-8 md:px-6">
     {#if flipped}
       <div class="flex justify-center">
         <img
           class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
-          alt={imageAltText}
-        />
+          alt={imageAltText} />
       </div>
     {/if}
     {#if !flipped}
@@ -32,31 +30,33 @@
         <img
           class="w-3/4 rounded-lg object-cover aspect-square {imageClasses}"
           src={image}
-          alt={imageAltText}
-        />
+          alt={imageAltText} />
       </div>
     {/if}
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 pt-6 lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold"
-      >
+        class="mb-4 pt-6 lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold">
         {title}
       </h2>
       <div class="flex justify-center">
-
         {#if content instanceof Array}
-        <ul class="m-4 ml-12 list-disc text-base md:text-[21px]">
-          {#each content as b, index}
-          <li key={index}>{b}</li>
-          {/each}
-        </ul>
+          <ul class="m-4 ml-12 list-disc text-base md:text-[21px]">
+            {#each content as b, index}
+              <li key={index}>{b}</li>
+            {/each}
+          </ul>
         {:else}
-        <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">{content}</p>
+          <p
+            class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">
+            {content}
+          </p>
         {/if}
       </div>
       {#if link}
         <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-          <Button white href={link}>{linkText}</Button>
+          <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
+            {linkText}
+          </ButtonCustom>
         </div>
       {/if}
     </div>
@@ -65,8 +65,7 @@
         <img
           class="w-3/4 rounded-lg aspect-square object-cover {imageClasses}"
           src={image}
-          alt={imageAltText}
-        />
+          alt={imageAltText} />
       </div>
     {/if}
   </div>

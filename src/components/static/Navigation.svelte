@@ -1,6 +1,6 @@
 <script>
   import Icon from '@iconify/svelte'
-  import Button from '../buttons/ButtonCustom.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
   let isMenuHidden = true
 
@@ -42,7 +42,7 @@
     {
       text: 'CONTACT',
       image: '/images/contact_card.png',
-      url: 'https://www.example.com/contact',
+      url: '/contact',
       subLinks: [
         { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
         { url: '/contact/request-a-demo', text: 'SUGGEST AN APP' },
@@ -74,24 +74,22 @@
 <header class="relative antialiased blue-radial-gradient rounded-b-3xl">
   <nav
     class="w-full h-full bg-gray-800 border-gray-200 w blue-radial-gradient justify-center"
-    class:rounded-b-3xl={!isMenuHidden}
-  >
+    class:rounded-b-3xl={!isMenuHidden}>
     <div class="flex w-full justify-center">
       <div
-        class="flex flex-wrap items-center justify-between w-full mx-8 lg:w-3/4 h-20"
-      >
+        class="flex flex-wrap items-center justify-between w-full mx-8 lg:w-3/4 h-20">
         <div class="flex items-center justify-start">
           <a href="/" class="flex mr-4">
             <span
               class="self-center text-lg font-semibold text-white font-colossalis whitespace-nowrap"
-              >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span
-            >
+              >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
           </a>
         </div>
         <div class="flex items-center lg:order-2">
           {#if !isMenuHidden}
             <div class="hidden lg:block mx-4">
-              <Button white>GET IN TOUCH</Button>
+              <ButtonCustom color="white" size="lg" link="#"
+                >GET IN TOUCH</ButtonCustom>
             </div>
           {/if}
           <button
@@ -99,8 +97,7 @@
             id="toggleSidebar"
             aria-expanded="true"
             aria-controls="sidebar"
-            class="p-2 mr-3 hidden text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit"
-          >
+            class="p-2 mr-3 hidden text-white rounded cursor-pointer lg:inline hover:bg-mcswf-dark-blue hover:text-mcswf-gold hover:text-whit">
             {#if isMenuHidden}
               <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
             {:else}
@@ -111,8 +108,7 @@
             on:click={toggleMenu}
             aria-expanded="true"
             aria-controls="sidebar"
-            class="text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold"
-          >
+            class="text-white rounded-lg cursor-pointer lg:hidden hover:bg-mcswf-dark-blue hover:text-mcswf-gold">
             {#if isMenuHidden}
               <Icon class="hover:text-mcswf-gold" icon="mdi:menu" />
             {:else}
@@ -133,29 +129,24 @@
               tabindex="0"
               class="mt-4 transition transform hover:text-mcswf-gold hover:scale-110"
               on:mouseleave={() => closeDropdown(dropdown.text)}
-              on:mouseenter={() => openDropdown(dropdown.text)}
-            >
+              on:mouseenter={() => openDropdown(dropdown.text)}>
               <a href={dropdown.url}>
                 <h2
                   class="{dropdown.titleClasses
                     ? dropdown.titleClasses
-                    : 'text-base lg:text-xl'} pb-1 pl-2 font-bold transition-all"
-                >
+                    : 'text-base lg:text-xl'} pb-1 pl-2 font-bold transition-all">
                   {dropdown.text}
                 </h2>
                 <img
                   class="object-scale-down rounded shadow-lg"
                   src={dropdown.image}
-                  alt={dropdown.text}
-                />
+                  alt={dropdown.text} />
               </a>
               <div
-                class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}
-              >
+                class={`mt-2 ${dropdowns[dropdown.text] ? 'submenu' : 'hidden'}`}>
                 {#each dropdown.subLinks as subLinks}
                   <div
-                    class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline underline-offset-4 decoration-2"
-                  >
+                    class="my-1 font-bold text-white hover:text-mcswf-gold hover:underline underline-offset-4 decoration-2">
                     <a href={subLinks.url}>{subLinks.text}</a>
                   </div>
                 {/each}
@@ -183,20 +174,17 @@
                   if (event.key === 'Enter' || event.key === ' ') {
                     toggleDropdown(dropdown.text)
                   }
-                }}
-              >
+                }}>
                 <span class="menu-item">{dropdown.text}</span>
                 {#if dropdown.subLinks.length > 0}
                   <span class="text-xl text-right"
-                    >{dropdowns[dropdown.text] ? '-' : '+'}</span
-                  >
+                    >{dropdowns[dropdown.text] ? '-' : '+'}</span>
                 {/if}
               </a>
               <div class={dropdowns[dropdown.text] ? 'submenu' : 'hidden'}>
                 {#each dropdown.subLinks as subLinks}
                   <div
-                    class="py-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2"
-                  >
+                    class="py-1 font-bold text-white hover:text-mcswf-gold hover:underline decoration-2">
                     <a class="ms-4" href={subLinks.url}>{subLinks.text}</a>
                   </div>
                 {/each}

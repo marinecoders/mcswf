@@ -1,5 +1,5 @@
 ---
-import Button from '../buttons/ButtonCustom.svelte'
+import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
 interface Props {
   title: string
@@ -30,8 +30,7 @@ console.log('link - ', link)
 
 <section class="">
   <div
-    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto grid lg:grid-cols-2 md:py-16 md:px-6"
-  >
+    class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto grid lg:grid-cols-2 md:py-16 md:px-6">
     {
       flipped && (
         <div class="flex justify-center">
@@ -60,30 +59,34 @@ console.log('link - ', link)
           'mb-4 text-4xl font-extrabold tracking-tight text-center text-mcswf-gold',
           titleClasses,
           'pt-5 lg:pt-0',
-        ]}
-      >
+        ]}>
         {title}
       </h2>
       <div class="flex justify-center">
-
-      {
-        content instanceof Array ? (
-          <ul class="m-4 ml-12 list-disc">
-            {content.map((b) => (
-              <li>{b}</li>
-            ))}
-          </ul>
-        ) : (
-          <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">
-            {content}
-          </p>
-        )
-      }
+        {
+          content instanceof Array ? (
+            <ul class="m-4 ml-12 list-disc">
+              {content.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          ) : (
+            <p class="mb-4 text-left lg:text-center w-3/4 lg:w-full whitespace-pre-line">
+              {content}
+            </p>
+          )
+        }
       </div>
       {
         link && (
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <Button href={link}>{linkText}</Button>
+            <ButtonCustom
+              color="white"
+              size="xl"
+              customClasses="w-64"
+              link={link}>
+              {linkText}
+            </ButtonCustom>
           </div>
         )
       }

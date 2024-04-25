@@ -1,5 +1,5 @@
 <script>
-  import Button from '../buttons/ButtonCustom.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte'
   import Icon from '@iconify/svelte'
 
   export let title
@@ -23,6 +23,8 @@
   </div>
   <p class="text-gray-700 text-base pb-4 text-center">{content}</p>
   <div class="flex justify-center" href={link}>
-    <Button red href={href}>LEARN MORE</Button>
+    <ButtonCustom color="red" size="lg" customClasses="w-52" {link}>
+      LEARN MORE
+    </ButtonCustom>
   </div>
 </div>
