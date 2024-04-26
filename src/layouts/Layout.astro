@@ -18,7 +18,7 @@ const { title = null } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="overflow-hidden h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -32,7 +32,7 @@ const { title = null } = Astro.props
     <title>MCSWF {title && '-'} {title}</title>
   </head>
   <body
-    class="font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
+    class="overflow-auto h-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
     <Banner />
     <header class="w-full sticky top-0 z-30">
       <Navigation client:only="svelte" />
