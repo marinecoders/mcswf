@@ -1,34 +1,29 @@
 <script>
-    import Card from '../cards/MCCard.svelte';
+  import Card from '../cards/MCCard.svelte';
 
-    export let products = [];
+  export let products = [];
 
-    // Since 'products' is a prop, it will be passed from the parent component
-    // where this component is used.
-
-    // Define the function to expand link
-    function expandLink(link) {
-        return "products/" + link;
-    }
+  function expandLink(link) {
+    return "products/" + link;
+  }
 </script>
 
-<div class="flex flex-row justify-center pt-12 pb-4">
-  <h1 class="text-center font-bold text-3xl">
-    BUILDING PRODUCTS THAT MAKE A DIFFERENCE
-  </h1>
-</div>
-<div class="flex flex-row">
-  <div class="flex-initial basis-1/12"></div>
-  <div class="basis-10/12 flex flex-wrap">
+<div class="flex flex-col md:flex-row items-start justify-center">
+  <div class="title w-full md:w-auto p-4 pl-12 md:pl-12 text-center md:text-left"> <!-- Adjusted width and padding -->
+    <h1 class="text-3xl md:text-4xl font-bold text-white"> <!-- Adjusted font size -->
+      BUILDING <br class="hidden md:inline" /> PRODUCTS <br class="hidden md:inline" /> THAT <br class="hidden md:inline" /> MAKE A DIFFERENCE
+    </h1>
+  </div>
+  <div class="cards-container flex overflow-x-auto w-full md:w-auto space-x-0 md:space-x-6 p-4"> <!-- Adjusted width -->
     {#each products as product}
-      <div class="flex pt-3 justify-center w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
+      <div class="card w-60 md:w-96 flex-shrink-0"> <!-- Responsive width -->
         <Card
           title={product.data.product}
+          subtitle={product.data.description}
           link={expandLink(product.id)}
-          imageSrc="https://dummyimage.com/25x25/fff/aaa"
+          imageSrc={product.data.imageSrc}
         />
       </div>
     {/each}
   </div>
-  <div class="basis-1/12"></div>
 </div>
