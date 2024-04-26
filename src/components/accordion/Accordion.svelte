@@ -33,7 +33,7 @@
 
 <div class="grid grid-cols-1 lg:h-5/6" class:lg:grid-cols-6={products.length == 3} class:lg:grid-cols-7={products.length == 4}>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div role="button" tabindex="0" class="flex flex-col col-span-1 justify-end lg:justify-normal h-96 px-16 lg:px-32 {($active==0 && !$mobile) ? 'col-span-3': ''} {($active!=0 && !$mobile) ? 'col-span-2': ''} bg-[url('/images/shaking_hands.png')] bg-auto bg-no-repeat bg-center lg:h-full" on:click={() => setActive(0)}>
+  <div role="button" tabindex="0" class="flex flex-col col-span-1 justify-end lg:justify-normal h-96 px-16 lg:px-32 {($active==0 && !$mobile) ? 'col-span-3': ''} {($active!=0 && !$mobile) ? 'col-span-2': ''} bg-[url('/images/shaking_hands.png')] bg-auto bg-no-repeat bg-cover lg:h-full" on:click={() => setActive(0)}>
     <div class="h-1/4"></div>
       <div class="py-8 text-mcswf-gold font-bold text-center font-expressway text-xl lg:text-4xl">
         OUR PRODUCT PORTFOLIO
