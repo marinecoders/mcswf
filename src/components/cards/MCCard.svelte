@@ -16,7 +16,6 @@
     {/if}
   </div>
 </div>
-g
 <div class="pt-1 pb-4 h-32">
   {#if visible}
   <div class="border-2 border-mcswf-yellow mt-5"></div>
