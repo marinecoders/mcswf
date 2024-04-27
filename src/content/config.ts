@@ -25,6 +25,7 @@ const productCollection = defineCollection({
   schema: z.object({
     product: z.string(),
     description: z.string(),
+    shortDescription: z.string(),
     background: z.object({
       src: z.string(),
       alt: z.string(),

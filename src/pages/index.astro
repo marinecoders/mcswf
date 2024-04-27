@@ -60,7 +60,7 @@ products.sort((a, b) => a.data.order - b.data.order)
         />
       </div>
       <div class="h-fit pt-20">
-        <Products {products} />
+        <Products client:only { products } />
       </div>
       <div class="h-fit md:h-screen md:pt-20">
         <Countdown

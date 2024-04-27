@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+
 export default {
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
@@ -49,5 +51,15 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
+  plugins: [
+    require('@tailwindcss/typography'), 
+    require('flowbite/plugin'),
+    plugin(function({ addUtilities }) {
+      addUtilities({
+        '.no-scroll-bar': {
+          'scrollbar-width': 'none',
+        },
+      })
+    })
+  ],
 }
