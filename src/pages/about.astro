@@ -20,12 +20,15 @@ const metrics = await getCollection('aboutMetrics')
   </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
     <div
-      class="relative z-20 py-20 h-[70vh] bg-[url('/images/marine_pushup.png')] lg:bg-[99%_40%] lg:bg-auto bg-cover bg-center">
-      <Hero
-        padding="pt-24"
-        title="WHO WE ARE"
-        content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
-      />
+      class="relative z-20 py-20 h-[60vh] bg-[url('/images/marine_pushup.png')] lg:bg-[40%_40%] lg:bg-no-repeat lg:bg-cover bg-cover bg-center">
+      <div class="absolute inset-0 bg-gradient-to-t from-black">
+        <Hero
+          padding="pt-24"
+          title="WHO WE ARE"
+          content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
+          contentClasses="pt-5"
+        />
+      </div>
     </div>
     <div class="relative z-20 scrollbar-hide">
       <div class="hidden lg:block">
