@@ -18,8 +18,8 @@
       image: '/images/products_card.png',
       subLinks: [
         { url: '/products/sparta', text: 'SPARTA' },
-        { url: '/products/my-career', text: 'MyCareer' },
-        { url: '/products/SnapDB', text: 'SnapDB' },
+        { url: '/products/my-career', text: 'myCareer' },
+        { url: '/products/SnapDB', text: 'Snap Database' },
       ],
     },
     {
