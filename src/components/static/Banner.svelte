@@ -1,44 +1,17 @@
 <script>
-  import ButtonCustom from '../buttons/ButtonCustom.svelte'
-  // import Icon from '@iconify/svelte'
-  import { displaySiteBanner } from '../stores.js'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte';
+  import { displaySiteBanner } from '../stores.js';
+  import { externalLinks } from '@content/constants';
 </script>
 
 {#if $displaySiteBanner}
-  <div
-    id="banner"
-    class="font-expressway grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-2 w-full bg-custom-gradient-banner md:h-20 place-content-stretch place-items-stretch py-4 px-8 md:py-0 lg:px-14">
-    <div
-      class="hidden md:block 2xl:col-start-2 col-span-1 overflow-hidden justify-self-end place-self-stretch w-full">
-      <img
-        class="object-cover md:scale-200 md:-translate-y-6 xl:scale-150 xl:-translate-y-8"
-        alt="Marines in Dress Blue Uniform"
-        src="/images/marine_blues_banner.png" />
-    </div>
-    <h3
-      class="col-span-2 lg:col-span-3 2xl:col-span-4 place-self-center text-center">
-      <span class="font-bold">MARINE-LED SOFTWARE DEVELOPMENT:</span>
-      <span class="hidden md:inline"
-        >Lorem ipsum dolor sit amet. Et quae quibusdam</span>
+  <div id="banner" class="font-expressway flex flex-col md:h-20 md:flex-row justify-center items-center w-full bg-custom-gradient-banner py-4 px-8 md:py-0 lg:px-14 md:gap-4 lg:gap-12">
+    <h3 class="text-center tracking-wide md:mr-4 bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">
+      <span class="font-bold">MARINE-LED <span class="block sm:inline">SOFTWARE DEVELOPMENT</span><span class="hidden md:inline">:</span></span>
+      <span class="hidden md:inline ml-2">For Marines.<span class="ml-2">By Marines.</span></span>
     </h3>
-    <div class="col-span-1 place-self-center md:w-full">
-      <ButtonCustom
-        color="yellow"
-        size="md"
-        link="/application"
-        customClasses="md:w-full">Apply Now</ButtonCustom>
+    <div class="my-2 md:my-auto">
+      <ButtonCustom color="yellow" size="md" link={externalLinks.recruitingApplication} class="px-2 py-1 text-xs sm:px-4 sm:text-base md:px-8">Apply Now</ButtonCustom>
     </div>
-
-    <!-- If you want to add a close button to the banner, you can add the following code: -->
-    <!-- <div class="flex items-center">
-      <button
-        on:click={() => (isVisible = false)}
-        type="button"
-        class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-white hover:text-mcswf-gold rounded-lg text-sm p-1.5"
-      >
-        <Icon class="text-2xl" icon="mdi:close" />
-        <span class="sr-only">Close banner</span>
-      </button>
-    </div> -->
   </div>
 {/if}

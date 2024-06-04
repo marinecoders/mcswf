@@ -1,38 +1,33 @@
 ---
-// import { Banner } from 'flowbite-svelte'
-import ButtonCustom from '../components/buttons/ButtonCustom.svelte'
-
-import Navigation from '../components/static/Navigation.svelte'
-
-import FooterSmall from '../components/footer/FooterSmall.svelte'
-import Banner from '../components/static/Banner.svelte'
-
-import '../styles/global.css'
-import '../styles/fonts.css'
+import Navigation from '../components/static/Navigation.svelte';
+import Banner from '../components/static/Banner.svelte';
+import '../styles/global.css';
+import '../styles/fonts.css';
 
 interface Props {
-  title?: string
+  title?: string;
 }
 
-const { title = null } = Astro.props
+const { title = null } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="overflow-hidden h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Marine Corps Software Factory" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+    <meta property="og:title" content="Marine Corps Software Factory" />
+    <meta
+      property="og:description"
+      content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
     />
+    <meta property="og:image" content="/mcswf-badge.svg" />
     <title>MCSWF {title && '-'} {title}</title>
   </head>
-  <body
-    class="overflow-auto h-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
+  <body class="overflow-auto h-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
     <Banner />
     <header class="w-full sticky top-0 z-30">
       <Navigation client:only="svelte" />
