@@ -4,14 +4,17 @@ background:
   src: '/images/snapdb_header.jpg'
   alt: 'Marine gesturing at a television that says SnapDB'
 image:
-  src: '/images/Snap DB iPhone X.svg'
-  alt: ''
-secondImage:
-  src: ''
-  alt: ''
+  src: '/images/iPhone_x.svg'
+  alt: 'Snap Database on an iPhone'
 order: 3
 heading: "Snap Database"
 bullets:
   - 'Proprietary QR code generation'
   - 'Computer vision to read multiple QR codes simultaneously'
-metrics: []
+metrics:
+  - icon: '/icons/calendar.svg'
+    value: '??'
+    metric: 'Days to MVP'
+  - icon: '/icons/whiteGraph.svg'
+    value: '151'
+    metric: 'Days to Field Testing'

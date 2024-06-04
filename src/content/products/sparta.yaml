@@ -4,11 +4,8 @@ background:
   src: '/images/marine_night_timelapse.jpg'
   alt: ' '
 image: 
-  src: '/images/sparta-device.png'
-  alt: ' '
-secondImage:
   src: '/images/Sparta.gif'
-  alt: ''
+  alt: ' '
 order: 1
 heading: "Visualize Maritime Vessels \n Process Sensor Data \n Disseminate"
 bullets:

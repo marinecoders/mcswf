@@ -17,12 +17,12 @@ bullets:
   - "Publishing event 5 W's"
   - 'Event metrics gathering'
 metrics:
-  - icon: '/icons/clock.svg'
+  - icon: '/icons/person.svg'
     value: '11K'
     metric: 'Marines Registers via myCareer'
   - metric: "Attendance increase at West Coast Roadshow 2023 v 2024"
     value: '75'
-    icon: '/icons/graph.svg'
+    icon: '/icons/whiteGraph.svg'
   - metric: 'Days to MVP'
     value: '91'
     icon: '/icons/calendar.svg'
