@@ -4,7 +4,7 @@ background:
   src: '/images/snapdb_header.jpg'
   alt: 'Marine gesturing at a television that says SnapDB'
 image:
-  src: '/images/iPhone X.svg'
+  src: '/images/iPhone_x.svg'
   alt: 'Snap Database on an iPhone'
 order: 3
 heading: "Snap Database"

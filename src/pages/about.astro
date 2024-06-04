@@ -1,26 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.svelte'
-import ContentImageFull from '../components/sections/ContentImageFull.svelte'
-import FooterFull from '../components/footer/FooterFull.svelte'
-import ButtonCustom from '../components/buttons/ButtonCustom.svelte'
-import MetricCard from '../components/cards/MetricCard.svelte'
-import { getCollection, type CollectionEntry } from 'astro:content'
-import { displaySiteBanner } from '../components/stores.js'
-import '../styles/global.css'
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/elements/Hero.svelte';
+import ContentImageFull from '../components/sections/ContentImageFull.svelte';
+import FooterFull from '../components/footer/FooterFull.svelte';
+import ButtonCustom from '../components/buttons/ButtonCustom.svelte';
+import MetricCard from '../components/cards/MetricCard.svelte';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { displaySiteBanner } from '../components/stores.js';
+import '../styles/global.css';
 
-displaySiteBanner.set(true)
-const metrics = await getCollection('aboutMetrics')
+displaySiteBanner.set(true);
+const metrics = await getCollection('aboutMetrics');
 ---
 
 <Layout title="About">
-  <div
-    class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
+  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
-    <div
-      class="relative z-20 py-20 h-[70vh] bg-[url('/images/marine.png')] lg:bg-[99%_40%] lg:bg-auto bg-cover bg-center">
+    <div class="relative z-20 py-20 h-[70vh] bg-[url('/images/marine.png')] lg:bg-[99%_40%] lg:bg-auto bg-cover bg-center">
       <Hero
         padding="pt-24"
         title="WHO WE ARE"
@@ -91,7 +89,7 @@ const metrics = await getCollection('aboutMetrics')
           />
         </div>
       </div>
-      <div class="relative grid grid-cols-1 lg:grid-cols-4 w-fit m-auto z-20">
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
         {
           metrics?.map((item) =>
             item.data.metrics?.map((p) => (
@@ -103,34 +101,19 @@ const metrics = await getCollection('aboutMetrics')
         }
       </div>
       <!-- last section of the page, can't use ContentImageFull because of the CTA icon... -->
-      <div
-        class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+      <div class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
         <div class="flex justify-center">
-          <img
-            class="w-3/4 rounded-lg aspect-square object-cover"
-            src="/images/mcswf_marine_sgt.png"
-          />
+          <img class="w-3/4 rounded-lg aspect-square object-cover" src="/images/mcswf_marine_sgt.png" />
         </div>
         <div class="font-light text-white sm:text-lg">
           <div class="flex justify-center">
-            <img
-              src="/icons/cta.svg"
-              class="pt-12 lg:pt-0 lg:h-28 lg:w-28 lg:min-w-28"
-            />
+            <img src="/icons/cta.svg" class="pt-12 lg:pt-0 lg:h-28 lg:w-28 lg:min-w-28" />
           </div>
-          <h2
-            class="mb-4 pt-8 leading-normal lg:pt-8 text-xl lg:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold">
+          <h2 class="mb-4 pt-8 leading-normal lg:pt-8 text-xl lg:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold">
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <ButtonCustom
-              color="white"
-              size="xl"
-              customClasses="w-64"
-              link="#"
-              client:only>
-              LEARN MORE
-            </ButtonCustom>
+            <ButtonCustom color="white" size="xl" customClasses="w-64" link="#" client:only>LEARN MORE</ButtonCustom>
           </div>
         </div>
       </div>
