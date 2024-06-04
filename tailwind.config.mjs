@@ -22,6 +22,7 @@ export default {
         'mcswf-blue': '#07405B', // Not in color palette
         'mcswf-grey': '#F5F5F5',
         'mcswf-off-white': '#FDFDFD', // Not in color palette
+        'linkedin-blue': '#0077B5',
       },
       fontFamily: {
         rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
