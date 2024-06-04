@@ -32,6 +32,7 @@ export default {
       backgroundImage: (theme) => ({
         'custom-gradient-banner': 'background: radial-gradient(78.55% 1170.94% at 12.82% 54.91%, #6F1319 0%, #89181D 53.12%, #9F1C1F 100%)',
         'custom-gradient-red': 'radial-gradient(circle at 0% 56.8%, #6F1319 0%, #89181D 53.13%, #9F1C1F 100%)',
+        'custom-gradient-blue-header': 'radial-gradient(44.23% 1473.33% at 65.8% 50%, #07405B 0%, #132739 63.02%, #101422 100%)',
       }),
       scale: {
         200: '2',
