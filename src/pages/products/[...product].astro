@@ -57,12 +57,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
       <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]" >
         <div class="w-full">
           <img
-          class="absolute w-[16rem] left-[12.5em] top-[24%] rounded-lg object-cover"
-          src={entry.data.secondImage.src}
-          alt={entry.data.secondImage.alt}
-        />
-          <img
-            class="absolute w-[29rem] top-[20%] left-[6%] rounded-lg object-cover"
+            class="object-cover"
             src={entry.data.image.src}
             alt={entry.data.image.alt}
           />
@@ -87,17 +82,12 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')'
             ))
           }
         </div>
-        <div class="grid gap-4 my-4 grid-cols-1 lg:hidden relative  ">
-          <img
-          class="relative w-[54%] left-[27%] top-[11%] rounded-lg object-contain"
-          src={entry.data.secondImage.src}
-          alt={entry.data.secondImage.alt}
-        />
+        <div class="grid gap-4 my-4 grid-cols-1 lg:hidden relative h-max">
         <img
-        class="absolute w-full top-[1rem] left-0 rounded-lg object-contain"
-        src={entry.data.image.src}
-        alt={entry.data.image.alt}
-      />
+          class="w-full"
+          src={entry.data.image.src}
+          alt={entry.data.image.alt}
+        />
         </div>
       </div>
     </div>
