@@ -19,8 +19,8 @@ const metrics = await getCollection('aboutMetrics');
   </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
     <div
-      class="relative z-20 py-20 h-[60vh] bg-[url('/images/marine_pushup.png')] lg:bg-[40%_40%] lg:bg-no-repeat lg:bg-cover bg-cover bg-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black">
+      class="relative z-20  h-fit bg-[url('/images/marine_pushup.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
+      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">  
         <Hero
           padding="pt-24"
           title="WHO WE ARE"
@@ -93,11 +93,11 @@ const metrics = await getCollection('aboutMetrics');
           />
         </div>
       </div>
-      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20 ">
         {
           metrics?.map((item) =>
             item.data.metrics?.map((p) => (
-              <div class="text-center m-12">
+              <div class="text-center m-4 md:m-8 lg:m-12">
                 <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
               </div>
             ))
