@@ -7,7 +7,7 @@ import ButtonCustom from '../components/buttons/ButtonCustom.svelte';
 import MetricCard from '../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../components/stores.js';
-import { externalLinks } from '@content/constants'
+import { externalLinks } from '@content/constants';
 import '../styles/global.css';
 import { externalLinks } from '@content/constants';
 
@@ -20,9 +20,8 @@ const metrics = await getCollection('aboutMetrics');
     <img src="/ega.svg" />
   </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
-    <div
-      class="relative z-20  h-fit bg-[url('/images/marine_pushup.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
-      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">  
+    <div class="relative z-20 h-fit bg-[url('/images/marine_pushup.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
+      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
         <Hero
           padding="pt-24"
           title="WHO WE ARE"
@@ -95,7 +94,7 @@ const metrics = await getCollection('aboutMetrics');
           />
         </div>
       </div>
-      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20 ">
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
         {
           metrics?.map((item) =>
             item.data.metrics?.map((p) => (
@@ -109,10 +108,7 @@ const metrics = await getCollection('aboutMetrics');
       <!-- last section of the page, can't use ContentImageFull because of the CTA icon... -->
       <div class="items-center max-w-screen-xl gap-16 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
         <div class="flex justify-center">
-          <img
-            class="w-3/4 rounded-lg aspect-square object-cover"
-            src="/images/marine_mcswf_coder.jpeg"
-          />
+          <img class="w-3/4 rounded-lg aspect-square object-cover" src="/images/marine_mcswf_coder.jpeg" />
         </div>
         <div class="font-light text-white sm:text-lg">
           <div class="flex justify-center">
@@ -122,7 +118,7 @@ const metrics = await getCollection('aboutMetrics');
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <ButtonCustom color="white" size="xl" customClasses="w-64" link={`${externalLinks.mcswfEmail}?About MCSWF`} client:only>GET IN TOUCH</ButtonCustom>
+            <ButtonCustom color="white" size="xl" customClasses="w-64" link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`} client:only>GET IN TOUCH</ButtonCustom>
           </div>
         </div>
       </div>
