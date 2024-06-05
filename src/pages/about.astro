@@ -8,6 +8,7 @@ import MetricCard from '../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../components/stores.js';
 import '../styles/global.css';
+import { externalLinks } from '@content/constants';
 
 displaySiteBanner.set(true);
 const metrics = await getCollection('aboutMetrics');
@@ -113,7 +114,7 @@ const metrics = await getCollection('aboutMetrics');
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <ButtonCustom color="white" size="xl" customClasses="w-64" link="#" client:only>LEARN MORE</ButtonCustom>
+            <ButtonCustom color="white" size="xl" customClasses="w-64" link={externalLinks.recruitingApplication} client:only>LEARN MORE</ButtonCustom>
           </div>
         </div>
       </div>
