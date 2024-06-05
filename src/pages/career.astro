@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '@components/elements/Hero.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
 
+<<<<<<< HEAD
 import '../styles/global.css';
 import '../styles/fonts.css';
 import FooterFull from '@components/footer/FooterFull.svelte';
@@ -12,6 +13,16 @@ import CareerAccordion from '@components/accordion/CareerAccordion.svelte';
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
 import { displaySiteBanner } from '@components/stores';
 import { externalLinks } from '@content/constants.js';
+=======
+import '../styles/global.css'
+import '../styles/fonts.css'
+import FooterFull from '../components/footer/FooterFull.svelte'
+import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
+import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
+import { displaySiteBanner } from '../components/stores'
+import { externalLinks } from '@content/constants'
+>>>>>>> main
 
 let side = 'left';
 
@@ -56,6 +67,7 @@ displaySiteBanner.set(false);
         <div class="relative z-20">
           <ContentImageFull
             title="BUILD SOFTWARE"
+            titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
             link="/roles/"
             linkText="LEARN MORE"
@@ -68,6 +80,7 @@ displaySiteBanner.set(false);
           <ContentImageFull
             flipped
             title="HOW TO MAKE AN IMPACT?"
+            titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
             link="/roles/"
             linkText="LEARN MORE"
@@ -151,7 +164,11 @@ displaySiteBanner.set(false);
       </div>
       <div class="relative pb-12 z-20 bg-white">
         <div class="w-full flex justify-center">
+<<<<<<< HEAD
           <ButtonCustom class="w-full mx-2 lg:w-44" color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
+=======
+          <ButtonCustom color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
+>>>>>>> main
         </div>
       </div>
       <div>
