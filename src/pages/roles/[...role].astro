@@ -7,6 +7,7 @@ import FooterFull from "../../components/footer/FooterFull.svelte";
 import CohortGroup from "../../components/cards/CohortGroup.svelte";
 import { getCollection } from "astro:content";
 import { displaySiteBanner } from "../../components/stores.js";
+import { externalLinks } from "@content/constants";
 
 displaySiteBanner.set(false);
 
@@ -34,7 +35,7 @@ const entries = await getCollection("cohorts");
       style={{
         backgroundImage: `url('/images/${frontmatter.image_wide}')`,
       }}>
-      <Hero padding="md:pt-24" title={frontmatter.role} link="#" linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
+      <Hero padding="md:pt-24" title={frontmatter.role} link={externalLinks.recruitingApplication} linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
     </div>
     <div class="relative z-20 flex h-fill py-24 place-content-center px-2">
       <article set:html={content} class="prose prose-invert marker:text-white max-w-none w-3/4 prose-hr:opacity-0" />

@@ -32,7 +32,7 @@
     {/if}
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 pt-6 lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold">
+        class="mb-4 tracking-tight text-center text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl">
         {title}
       </h2>
       <div class="flex justify-center">
