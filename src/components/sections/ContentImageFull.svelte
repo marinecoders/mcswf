@@ -1,18 +1,4 @@
 <script>
-<<<<<<< HEAD
-  import { nullable } from 'astro/zod';
-  import ButtonCustom from '../buttons/ButtonCustom.svelte'
-
-  export let title
-  export let content = null
-  export let link = null
-  export let linkText = null
-  export let flipped = false
-  export let image = 'https://dummyimage.com/550/fff/aaa'
-  export let imageAltText = ''
-  export let imageClasses = null
-  export let titleClasses = null
-=======
   import ButtonCustom from '../buttons/ButtonCustom.svelte';
 
   export let title;
@@ -24,7 +10,6 @@
   export let image = 'https://dummyimage.com/550/fff/aaa';
   export let imageAltText = '';
   export let imageClasses = null;
->>>>>>> main
 </script>
 
 <section class="">
