@@ -16,7 +16,6 @@ const cohortCollection = defineCollection({
     title: z.string(),
     content: z.string(),
     startDate: z.string(),
-    endDate: z.string(),
     link: z.string(),
   }),
 });
