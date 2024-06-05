@@ -7,6 +7,7 @@ import ButtonCustom from '../components/buttons/ButtonCustom.svelte';
 import MetricCard from '../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../components/stores.js';
+import { externalLinks } from '@content/constants'
 import '../styles/global.css';
 
 displaySiteBanner.set(true);
@@ -120,7 +121,7 @@ const metrics = await getCollection('aboutMetrics');
             INTERESTED IN BEING A <br />PART OF THE MCSWF?
           </h2>
           <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-            <ButtonCustom color="white" size="xl" customClasses="w-64" link="#" client:only>GET IN TOUCH</ButtonCustom>
+            <ButtonCustom color="white" size="xl" customClasses="w-64" link={`${externalLinks.mcswfEmail}?About MCSWF`} client:only>GET IN TOUCH</ButtonCustom>
           </div>
         </div>
       </div>
