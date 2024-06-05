@@ -1,28 +1,28 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '../layouts/Layout.astro'
-import Hero from '@components/elements/Hero.svelte'
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '@components/elements/Hero.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
 
-import '../styles/global.css'
-import '../styles/fonts.css'
-import FooterFull from '@components/footer/FooterFull.svelte'
-import ContentImageFull from '@components/sections/ContentImageFull.svelte'
-import CareerAccordion from '@components/accordion/CareerAccordion.svelte'
-import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
-import { displaySiteBanner } from '@components/stores'
-import { externalLinks } from '@content/constants.js'
+import '../styles/global.css';
+import '../styles/fonts.css';
+import FooterFull from '@components/footer/FooterFull.svelte';
+import ContentImageFull from '@components/sections/ContentImageFull.svelte';
+import CareerAccordion from '@components/accordion/CareerAccordion.svelte';
+import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
+import { displaySiteBanner } from '@components/stores';
+import { externalLinks } from '@content/constants.js';
 
-let side = 'left'
+let side = 'left';
 
-const roles = await Astro.glob('../content/roles/*.md')
+const roles = await Astro.glob('../content/roles/*.md');
 
-const { frontmatter, compiledContent } = Astro.props
+const { frontmatter, compiledContent } = Astro.props;
 
-const steps = await getCollection('steps')
-const prereqs = await getCollection('prereqs')
+const steps = await getCollection('steps');
+const prereqs = await getCollection('prereqs');
 const metrics = await getCollection('aboutMetrics');
-displaySiteBanner.set(false)
+displaySiteBanner.set(false);
 ---
 
 <Layout title="Training + Career">
