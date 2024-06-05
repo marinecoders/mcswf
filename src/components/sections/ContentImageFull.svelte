@@ -1,4 +1,5 @@
 <script>
+  import { nullable } from 'astro/zod';
   import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
   export let title
@@ -9,6 +10,7 @@
   export let image = 'https://dummyimage.com/550/fff/aaa'
   export let imageAltText = ''
   export let imageClasses = null
+  export let titleClasses = null
 </script>
 
 <section class="">
@@ -32,7 +34,7 @@
     {/if}
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 pt-6 lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold">
+        class="mb-4 pt-6 lg:pt-0 text-xl md:text-[40px] font-extrabold tracking-tight text-center text-mcswf-gold {titleClasses}">
         {title}
       </h2>
       <div class="flex justify-center">

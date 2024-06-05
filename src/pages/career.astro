@@ -1,16 +1,17 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.svelte'
-import MetricCard from '../components/cards/MetricCard.svelte';
+import Hero from '@components/elements/Hero.svelte'
+import MetricCard from '@components/cards/MetricCard.svelte';
 
 import '../styles/global.css'
 import '../styles/fonts.css'
-import FooterFull from '../components/footer/FooterFull.svelte'
-import ContentImageFull from '../components/sections/ContentImageFull.astro'
-import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
-import ButtonCustom from '../components/buttons/ButtonCustom.svelte'
-import { displaySiteBanner } from '../components/stores'
+import FooterFull from '@components/footer/FooterFull.svelte'
+import ContentImageFull from '@components/sections/ContentImageFull.svelte'
+import CareerAccordion from '@components/accordion/CareerAccordion.svelte'
+import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
+import { displaySiteBanner } from '@components/stores'
+import { externalLinks } from '@content/constants.js'
 
 let side = 'left'
 
@@ -36,13 +37,13 @@ displaySiteBanner.set(false)
   <div
   class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
   style={{
-    backgroundImage: `url('/images/soldier_whiteboard.png')`,
+    backgroundImage: `url('/images/MarineBlues.png')`,
   }}
 >
     <Hero
       title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
       content=""
-      link="#"
+      link={externalLinks.recruitingApplication}
       linkText="APPLY NOW"
       padding="pt-24"
       titleClasses="text-white"
@@ -51,16 +52,16 @@ displaySiteBanner.set(false)
     </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
-      <div class="">
+
         <div class="relative z-20">
           <ContentImageFull
             title="BUILD SOFTWARE"
             content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
-            link=""
-            linkText=""
+            link="/roles/"
+            linkText="LEARN MORE"
             titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-            imgSrc="/images/charlie-1.png"
-            imgAltText="as"
+            image="/images/charlie-1.png"
+            imageAltText="A Marine Lieutenant Colonel looking at the camera"
           />
         </div>
         <div class="relative z-20">
@@ -68,14 +69,13 @@ displaySiteBanner.set(false)
             flipped
             title="HOW TO MAKE AN IMPACT?"
             content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
-            link=""
-            linkText=""
+            link="/roles/"
+            linkText="LEARN MORE"
             titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-            imgSrc="/images/6414552 1.png"
-            imgAltText="as"
+            image="/images/impact.png"
+            imageAltText="A Marine presenting software"
           />
         </div>
-      </div>
       <div class="relative z-20">
         <div class="w-full flex justify-center">
           <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
@@ -91,16 +91,13 @@ displaySiteBanner.set(false)
                   <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
                     <img class="w-24 mx-auto" src={`/icons/${role.frontmatter.icon}`}></img>
                     <p style="word-spacing:99999px" class="font-bold text-2xl">{role.frontmatter.role}</p>
-                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
+                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More ></a>
                   </div>
                   </>
                 )
               })
             }
           </div>
-        </div>
-        <div class="w-full flex justify-center pb-8">
-          <ButtonCustom color="white" link="/#" client:only>SEE JOB LISTINGS</ButtonCustom>
         </div>
         <div class="w-full flex pb-12 justify-center">
           <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
@@ -154,7 +151,7 @@ displaySiteBanner.set(false)
       </div>
       <div class="relative pb-12 z-20 bg-white">
         <div class="w-full flex justify-center">
-          <ButtonCustom color="red" link="/#" client:only>APPLY NOW</ButtonCustom>
+          <ButtonCustom class="w-full mx-2 lg:w-44" color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
         </div>
       </div>
       <div>
