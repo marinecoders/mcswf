@@ -1,20 +1,24 @@
 <script>
-  import ButtonCustom from '../buttons/ButtonCustom.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte';
 
-  export let title = ''
-  export let content = ''
-  export let link = ''
-  export let linkText = ''
-  export let padding = ''
-  export let contentClasses = ''
-  export let titleClasses = 'text-mcswf-gold'
+  export let title = null;
+  export let content = '';
+  export let link = '';
+  export let linkText = '';
+  export let padding = '';
+  export let contentClasses = '';
+  export let titleClasses = 'text-mcswf-gold';
 </script>
 
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
   <!-- Title -->
-  <div class="max-w-6xl mx-auto mt-5 text-left lg:text-center">
-    <h1 class="block font-bold text-xl lg:text-[40px] {titleClasses}">
-      {title}
+  <div class="max-w-6xl mx-auto mt-5 text-left sm:text-center">
+    <h1 class="block font-bold text-[32px] md:text-[40px] {titleClasses}">
+      {#if !title}
+        <slot name="title" />
+      {:else}
+        {title}
+      {/if}
     </h1>
   </div>
   <!-- End Title -->
@@ -27,8 +31,8 @@
 
   <!-- Buttons -->
   {#if link}
-    <div class="grid w-full gap-3 mt-8 inline-flex justify-center">
-      <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
+    <div class="grid w-full gap-3 mt-8 inline-flex sm:justify-items-start sm:justify-center">
+      <ButtonCustom color="white" size="xl" {link} class="w-64">
         {linkText}
       </ButtonCustom>
     </div>

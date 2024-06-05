@@ -19,12 +19,12 @@
     <h2 class="text-3xl font-bold text-black">{title}</h2>
   </div>
   <div class="text-center">
-    <h2 class="text-lg font-bold text-black">{startDate}-{endDate}</h2>
+    <h2 class="text-lg font-bold text-black">{startDate} - {endDate}</h2>
   </div>
   <p class="text-gray-700 text-base pb-4 text-center">{content}</p>
   <div class="flex justify-center" href={link}>
     <ButtonCustom color="red" size="lg" customClasses="w-52" {link}>
-      LEARN MORE
+      APPLY NOW
     </ButtonCustom>
   </div>
 </div>

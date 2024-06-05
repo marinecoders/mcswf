@@ -1,17 +1,18 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/elements/Hero.svelte";
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/elements/Hero.svelte';
 
-import "../../styles/global.css";
-import FooterFull from "../../components/footer/FooterFull.svelte";
-import CohortGroup from "../../components/cards/CohortGroup.svelte";
-import { getCollection } from "astro:content";
-import { displaySiteBanner } from "../../components/stores.js";
+import '../../styles/global.css';
+import FooterFull from '../../components/footer/FooterFull.svelte';
+import CohortGroup from '../../components/cards/CohortGroup.svelte';
+import { getCollection } from 'astro:content';
+import { displaySiteBanner } from '../../components/stores.js';
+import { externalLinks } from '@content/constants';
 
 displaySiteBanner.set(false);
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../../content/roles/*.md");
+  const posts = await Astro.glob('../../content/roles/*.md');
   return posts.map(({ frontmatter, compiledContent }) => {
     return {
       params: { role: frontmatter.url, image_url: frontmatter.image },
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 }
 const { frontmatter, compiledContent } = Astro.props;
 const content = compiledContent();
-const entries = await getCollection("cohorts");
+const entries = await getCollection('cohorts');
 ---
 
 <Layout title={frontmatter.role}>
@@ -34,7 +35,7 @@ const entries = await getCollection("cohorts");
       style={{
         backgroundImage: `url('/images/${frontmatter.image_wide}')`,
       }}>
-      <Hero padding="md:pt-24" title={frontmatter.role} link="#" linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
+      <Hero padding="md:pt-24" title={frontmatter.role} link={externalLinks.recruitingApplication} linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
     </div>
     <div class="relative z-20 flex h-fill py-24 place-content-center px-2">
       <article set:html={content} class="prose prose-invert marker:text-white max-w-none w-3/4 prose-hr:opacity-0" />
