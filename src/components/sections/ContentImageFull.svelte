@@ -2,6 +2,7 @@
   import ButtonCustom from '../buttons/ButtonCustom.svelte'
 
   export let title
+  export let titleClasses = "text-mcswf-gold text-2xl font-bold md:text-3xl lg:text-4xl"
   export let content = null
   export let link = null
   export let linkText = null
@@ -32,7 +33,7 @@
     {/if}
     <div class="font-light text-white sm:text-lg">
       <h2
-        class="mb-4 tracking-tight text-center text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl">
+        class="mb-4 tracking-tight text-center {titleClasses}">
         {title}
       </h2>
       <div class="flex justify-center">

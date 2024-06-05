@@ -27,7 +27,7 @@
 
   <!-- Buttons -->
   {#if link}
-    <div class="grid w-full gap-3 mt-8 inline-flex justify-center">
+    <div class="grid w-full gap-3 mt-8 inline-flex sm:justify-items-start md:justify-center">
       <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
         {linkText}
       </ButtonCustom>

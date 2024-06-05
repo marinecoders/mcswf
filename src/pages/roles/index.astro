@@ -24,7 +24,7 @@ const { frontmatter, compiledContent } = Astro.props;
     <div
       class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
       style={{
-        backgroundImage: `url('/images/group_of_marines.png')`,
+        backgroundImage: `url('/images/mcswf_instruction.png')`,
       }}>
       <Hero title="PICK THE PERFECT ROLE FOR YOU" link={externalLinks.recruitingApplication} linkText="APPLY NOW" padding="pt-24" titleClasses="text-white" />
     </div>
@@ -40,6 +40,7 @@ const { frontmatter, compiledContent } = Astro.props;
                   <div class="relative z-20 ">
                     <ContentImageFull
                       title={post.frontmatter.role}
+                      titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       content={post.frontmatter.about}
                       link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
@@ -57,6 +58,7 @@ const { frontmatter, compiledContent } = Astro.props;
                     <ContentImageFull
                       flipped
                       title={post.frontmatter.role}
+                      titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       content={post.frontmatter.about}
                       link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
@@ -79,6 +81,7 @@ const { frontmatter, compiledContent } = Astro.props;
                   <ContentImageFull
                     flipped
                     title={post.frontmatter.role}
+                    titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                     content={post.frontmatter.about}
                     link={'/roles/' + post.frontmatter.url}
                     linkText="LEARN MORE"
