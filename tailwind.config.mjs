@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}',
-  ],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
   darkMode: 'selector',
   theme: {
     extend: {
@@ -22,9 +19,9 @@ export default {
         'mcswf-blue': '#07405B', // Not in color palette
         'mcswf-grey': '#F5F5F5',
         'mcswf-off-white': '#FDFDFD', // Not in color palette
+        'linkedin-blue': '#0077B5',
       },
       fontFamily: {
-        rubik: ['Rubik', 'sans'], // 'Rubik' is the font name
         colossalis: ['Colossalis'],
         expressway: ['Expressway', 'sans-serif'],
         menobanner: ['MenoBanner'],
@@ -33,10 +30,9 @@ export default {
         grid: 'grid-template-columns',
       },
       backgroundImage: (theme) => ({
-        'custom-gradient-banner':
-          'radial-gradient(73.99% 331.82% at 15.43% 50%, #6F1319 0%, #89181D 38.02%, #9F1C1F 65.1%, #711319 100%)', // Dictated by wireframes for banner
-        'custom-gradient-red':
-          'radial-gradient(circle, rgba(137,24,29,1) 0%, rgba(137,24,29,1) 76%, rgba(102,41,31,1) 100%);',
+        'custom-gradient-banner': 'background: radial-gradient(78.55% 1170.94% at 12.82% 54.91%, #6F1319 0%, #89181D 53.12%, #9F1C1F 100%)',
+        'custom-gradient-red': 'radial-gradient(circle at 0% 56.8%, #6F1319 0%, #89181D 53.13%, #9F1C1F 100%)',
+        'custom-gradient-blue-header': 'radial-gradient(44.23% 1473.33% at 65.8% 50%, #07405B 0%, #132739 63.02%, #101422 100%)',
       }),
       scale: {
         200: '2',
@@ -50,4 +46,4 @@ export default {
     },
   },
   plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
-}
+};

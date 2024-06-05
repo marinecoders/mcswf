@@ -1,30 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.svelte'
-import Mission from '../components/sections/Mission.svelte'
-import Countdown from '../components/elements/Countdown.svelte'
-import Products from '../components/sections/Products.svelte'
-import '../styles/global.css'
-import '../styles/fonts.css'
-import FooterFull from '../components/footer/FooterFull.svelte'
-import ContentImageFull from '../components/sections/ContentImageFull.svelte'
-import { getCollection } from 'astro:content' // Get products collection
-import { displaySiteBanner } from '../components/stores.js'
+import Layout from '../layouts/Layout.astro';
+import Hero from '@components/elements/Hero.svelte';
+import Countdown from '../components/elements/Countdown.svelte';
+import Products from '../components/sections/Products.svelte';
+import '../styles/global.css';
+import '../styles/fonts.css';
+import FooterFull from '../components/footer/FooterFull.svelte';
+import ContentImageFull from '../components/sections/ContentImageFull.svelte';
+import { getCollection } from 'astro:content'; // Get products collection
+import { displaySiteBanner } from '../components/stores.js';
+import MetricCard from '@components/cards/MetricCard.svelte';
 
-displaySiteBanner.set(true)
+displaySiteBanner.set(true);
 
-const products = await getCollection('products')
-products.sort((a, b) => a.data.order - b.data.order)
+const products = await getCollection('products');
+const metrics = await getCollection('aboutMetrics');
+
+products.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="">
-  <div
-    class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
+  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
-    <div
-      class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat">
+    <div class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat">
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         content="Train Marines. Build Applications. Deploy to the Edge"
@@ -36,7 +36,26 @@ products.sort((a, b) => a.data.order - b.data.order)
     </div>
     <div class="relative z-20">
       <div class="pt-12 pb-24 h-fit">
-        <Mission />
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+          <!-- Title -->
+          <Hero
+            linkText="LEARN MORE"
+            padding="md:pt-24 pt-16 pb-12"
+            title="OUR MISSION"
+            content="We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations."
+          />
+          <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
+            {
+              metrics?.map((item) =>
+                item.data.metrics?.map((p) => (
+                  <div class="text-center m-12">
+                    <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
+                  </div>
+                ))
+              )
+            }
+          </div>
+        </div>
       </div>
       <div class="h-fit py-20">
         <ContentImageFull

@@ -6,9 +6,6 @@ background:
 image: 
   src: '/images/Sparta.gif'
   alt: ' '
-secondImage:
-  src: '/images/sparta-device.gif'
-  alt: ''
 order: 1
 heading: "Visualize Maritime Vessels \n Process Sensor Data \n Disseminate"
 bullets:

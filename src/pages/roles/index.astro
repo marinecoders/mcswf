@@ -1,28 +1,25 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Hero from '../../components/elements/Hero.svelte'
+import Layout from "../../layouts/Layout.astro";
+import Hero from "@components/elements/Hero.svelte";
 
-import '../../styles/global.css'
-import '../../styles/fonts.css'
-import FooterFull from '../../components/footer/FooterFull.svelte'
-import ContentImageFull from '../../components/sections/ContentImageFull.astro'
-const posts = await Astro.glob('../../content/roles/*.md')
-import { displaySiteBanner } from '../../components/stores.js'
+import "../../styles/global.css";
+import "../../styles/fonts.css";
+import FooterFull from "../../components/footer/FooterFull.svelte";
+import ContentImageFull from "../../components/sections/ContentImageFull.astro";
+const posts = await Astro.glob("../../content/roles/*.md");
+import { displaySiteBanner } from "../../components/stores.js";
 
-let side = 'left'
-displaySiteBanner.set(false)
+let side = "left";
+displaySiteBanner.set(false);
 
-const { frontmatter, compiledContent } = Astro.props
+const { frontmatter, compiledContent } = Astro.props;
 ---
 
 <Layout title="Roles">
-  <div
-    class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6"
-  >
+  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
-  <div
-    class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
+  <div class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
     <div
       class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
       style={{
@@ -43,15 +40,15 @@ const { frontmatter, compiledContent } = Astro.props
       <div class="hidden lg:block">
         {
           posts.map((post) => {
-            if (side == 'left') {
-              side = 'right'
+            if (side == "left") {
+              side = "right";
               return (
                 <>
                   <div class="relative z-20 ">
                     <ContentImageFull
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={'/roles/' + post.frontmatter.url}
+                      link={"/roles/" + post.frontmatter.url}
                       linkText="APPLY NOW"
                       titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       imgSrc={`/images/${post.frontmatter.image}`}
@@ -59,9 +56,9 @@ const { frontmatter, compiledContent } = Astro.props
                     />
                   </div>
                 </>
-              )
+              );
             } else {
-              side = 'left'
+              side = "left";
               return (
                 <>
                   <div class="relative z-20 ">
@@ -69,7 +66,7 @@ const { frontmatter, compiledContent } = Astro.props
                       flipped
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={'/roles/' + post.frontmatter.url}
+                      link={"/roles/" + post.frontmatter.url}
                       linkText="APPLY NOW"
                       titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       imgSrc={`/images/${post.frontmatter.image}`}
@@ -77,7 +74,7 @@ const { frontmatter, compiledContent } = Astro.props
                     />
                   </div>
                 </>
-              )
+              );
             }
           })
         }
@@ -92,7 +89,7 @@ const { frontmatter, compiledContent } = Astro.props
                     flipped
                     title={post.frontmatter.role}
                     content={post.frontmatter.about}
-                    link={'/roles/' + post.frontmatter.url}
+                    link={"/roles/" + post.frontmatter.url}
                     linkText="APPLY NOW"
                     titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
                     imgSrc={`/images/${post.frontmatter.image}`}
@@ -100,7 +97,7 @@ const { frontmatter, compiledContent } = Astro.props
                   />
                 </div>
               </>
-            )
+            );
           })
         }
       </div>
