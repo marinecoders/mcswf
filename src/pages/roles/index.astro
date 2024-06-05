@@ -20,13 +20,17 @@ const { frontmatter, compiledContent } = Astro.props;
   <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
     <img src="/ega.svg" />
   </div>
-  <div class="relative max-h-screen font-expressway red-radial-gradient scrollbar-hide">
+  <div class="relative max-h-screen font-expressway scrollbar-hide">
     <div
-      class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
+      class="relative z-20 h-fit bg-cover bg-no-repeat bg-center rounded-b-2xl lg:rounded-none"
       style={{
-        backgroundImage: `url('/images/mcswf_instruction.png')`,
+        backgroundImage: `url('/images/mcswf_instruction_wide.png')`,
       }}>
-      <Hero title="PICK THE PERFECT ROLE FOR YOU" link={externalLinks.recruitingApplication} linkText="APPLY NOW" padding="pt-24" titleClasses="text-white" />
+      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
+        <Hero title="" link={externalLinks.recruitingApplication} linkText="APPLY NOW" padding="pt-24" titleClasses="text-white">
+          <span slot="title" class="uppercase">Pick the perfect<span class="block">Role for you</span></span>
+        </Hero>
+      </div>
     </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
@@ -40,7 +44,7 @@ const { frontmatter, compiledContent } = Astro.props;
                   <div class="relative z-20 ">
                     <ContentImageFull
                       title={post.frontmatter.role}
-                      titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       content={post.frontmatter.about}
                       link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
@@ -58,7 +62,7 @@ const { frontmatter, compiledContent } = Astro.props;
                     <ContentImageFull
                       flipped
                       title={post.frontmatter.role}
-                      titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                      titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                       content={post.frontmatter.about}
                       link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
@@ -81,7 +85,7 @@ const { frontmatter, compiledContent } = Astro.props;
                   <ContentImageFull
                     flipped
                     title={post.frontmatter.role}
-                    titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                    titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
                     content={post.frontmatter.about}
                     link={'/roles/' + post.frontmatter.url}
                     linkText="LEARN MORE"
