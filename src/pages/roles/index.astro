@@ -1,16 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Hero from "@components/elements/Hero.svelte";
+import Layout from '../../layouts/Layout.astro';
+import Hero from '@components/elements/Hero.svelte';
 
-import "../../styles/global.css";
-import "../../styles/fonts.css";
-import FooterFull from "../../components/footer/FooterFull.svelte";
-import ContentImageFull from "../../components/sections/ContentImageFull.svelte";
-const posts = await Astro.glob("../../content/roles/*.md");
-import { displaySiteBanner } from "../../components/stores.js";
-import { externalLinks } from "@content/constants";
+import '../../styles/global.css';
+import '../../styles/fonts.css';
+import FooterFull from '../../components/footer/FooterFull.svelte';
+import ContentImageFull from '../../components/sections/ContentImageFull.svelte';
+const posts = await Astro.glob('../../content/roles/*.md');
+import { displaySiteBanner } from '../../components/stores.js';
+import { externalLinks } from '@content/constants';
 
-let side = "left";
+let side = 'left';
 displaySiteBanner.set(false);
 
 const { frontmatter, compiledContent } = Astro.props;
@@ -26,30 +26,22 @@ const { frontmatter, compiledContent } = Astro.props;
       style={{
         backgroundImage: `url('/images/group_of_marines.png')`,
       }}>
-      <Hero
-        title="PICK THE PERFECT ROLE FOR YOU"
-        content="Lorem ipsum dolor sit amet. Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores.  Lorem ipsum dolor sit amet. Et quae qui"
-        link={externalLinks.recruitingApplication}
-        linkText="APPLY NOW"
-        padding="pt-24"
-        titleClasses="text-white"
-        contentClasses="hidden font-extrabold font-expressway font-3xl  lg:block"
-      />
+      <Hero title="PICK THE PERFECT ROLE FOR YOU" link={externalLinks.recruitingApplication} linkText="APPLY NOW" padding="pt-24" titleClasses="text-white" />
     </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
       <div class="hidden lg:block">
         {
           posts.map((post) => {
-            if (side == "left") {
-              side = "right";
+            if (side == 'left') {
+              side = 'right';
               return (
                 <>
                   <div class="relative z-20 ">
                     <ContentImageFull
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={"/roles/" + post.frontmatter.url}
+                      link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
                       image={`/images/${post.frontmatter.image}`}
                       imageAltText={post.frontmatter.image_alt_text}
@@ -58,7 +50,7 @@ const { frontmatter, compiledContent } = Astro.props;
                 </>
               );
             } else {
-              side = "left";
+              side = 'left';
               return (
                 <>
                   <div class="relative z-20 ">
@@ -66,7 +58,7 @@ const { frontmatter, compiledContent } = Astro.props;
                       flipped
                       title={post.frontmatter.role}
                       content={post.frontmatter.about}
-                      link={"/roles/" + post.frontmatter.url}
+                      link={'/roles/' + post.frontmatter.url}
                       linkText="LEARN MORE"
                       image={`/images/${post.frontmatter.image}`}
                       imageAltText={post.frontmatter.image_alt_text}
@@ -88,7 +80,7 @@ const { frontmatter, compiledContent } = Astro.props;
                     flipped
                     title={post.frontmatter.role}
                     content={post.frontmatter.about}
-                    link={"/roles/" + post.frontmatter.url}
+                    link={'/roles/' + post.frontmatter.url}
                     linkText="LEARN MORE"
                     image={`/images/${post.frontmatter.image}`}
                     imageAltText={post.frontmatter.image_alt_text}

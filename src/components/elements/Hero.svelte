@@ -1,19 +1,19 @@
 <script>
-  import ButtonCustom from '../buttons/ButtonCustom.svelte'
+  import ButtonCustom from '../buttons/ButtonCustom.svelte';
 
-  export let title = ''
-  export let content = ''
-  export let link = ''
-  export let linkText = ''
-  export let padding = ''
-  export let contentClasses = ''
-  export let titleClasses = 'text-mcswf-gold'
+  export let title = '';
+  export let content = '';
+  export let link = '';
+  export let linkText = '';
+  export let padding = '';
+  export let contentClasses = '';
+  export let titleClasses = 'text-mcswf-gold';
 </script>
 
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
   <!-- Title -->
   <div class="max-w-6xl mx-auto mt-5 text-left lg:text-center">
-    <h1 class="block font-bold text-xl lg:text-[40px] {titleClasses}">
+    <h1 class="block font-bold text-[32px] md:text-[40px] {titleClasses}">
       {title}
     </h1>
   </div>
