@@ -40,11 +40,11 @@
     {
       text: 'CONTACT',
       image: '/images/contact_card.png',
-      url: '/contact',
+      url: '/contactUs',
       subLinks: [
-        { url: '/contact/get-in-touch', text: 'GET IN TOUCH' },
-        { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
-        { url: '/contact/suggest-an-app', text: 'SUGGEST AN APP' },
+        { url: '/contactUs/applyNow', text: 'APPLY NOW' },
+        { url: '/contactUs/proposeApp', text: 'PROPOSE AN APP' },
+        { url: '/contactUs/getInTouch', text: 'GET IN TOUCH' },
       ],
     },
   ];

@@ -1,0 +1,36 @@
+---
+import Layout from '@layouts/Layout.astro';
+import FooterFull from '@components/FooterFull.svelte';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { displaySiteBanner } from '../../components/stores.js';
+import { externalLinks } from '@content/constants';
+import '../../styles/global.css';
+
+displaySiteBanner.set(false);
+
+interface Props {
+  entry: CollectionEntry<'contactUs'>;
+}
+
+export async function getStaticPaths() {
+  const contactUs = await getCollection('contactUs');
+  return contactUs.map((entry) => ({
+    params: { contactUs: entry.id },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+---
+
+<Layout title={entry.data.header}>
+  <div class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide">
+    <div class="relative z-20 flex h-fill py-24 place-content-center px-2">
+      <img src={entry.data.background.src} alt={entry.data.background.alt} />
+      {entry.data.heading}
+    </div>
+    <p>{entry.data.description}</p>
+    <div class="relative z-20">
+      <FooterFull client:only />
+    </div>
+  </div>
+</Layout>
