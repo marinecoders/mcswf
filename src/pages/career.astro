@@ -6,7 +6,7 @@ import MetricCard from '../components/cards/MetricCard.svelte';
 
 import '../styles/global.css'
 import '../styles/fonts.css'
-import FooterFull from '../components/footer/FooterFull.svelte'
+import FooterFull from '@components/FooterFull.svelte'
 import ContentImageFull from '../components/sections/ContentImageFull.svelte'
 import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
@@ -34,21 +34,19 @@ displaySiteBanner.set(false)
   <div
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
-  <div
-  class="relative z-20 h-fit py-20 bg-cover bg-no-repeat bg-center"
-  style={{
-    backgroundImage: `url('/images/soldier_whiteboard.png')`,
-  }}
->
+  <div class="relative z-20 h-fit bg-[url('/images/dress_blues_wide.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
+<div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
     <Hero
-      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
       content=""
       link={externalLinks.recruitingApplication}
       linkText="APPLY NOW"
       padding="pt-24"
       titleClasses="text-white"
       contentClasses="hidden lg:block"
-    />
+    >
+    <span slot="title" class="uppercase">WE ARE THE MARINE CORPS<span class="block">SOFTWARE FACTORY</span></span>
+  </Hero>
+    </div>
     </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
@@ -58,8 +56,8 @@ displaySiteBanner.set(false)
             title="BUILD SOFTWARE"
             titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
-            link=""
-            linkText=""
+            link="/roles"
+            linkText="LEARN MORE"
             image="/images/charlie-1.png"
             imageAltText="as"
           />
@@ -70,9 +68,9 @@ displaySiteBanner.set(false)
             title="HOW TO MAKE AN IMPACT?"
             titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
-            link=""
-            linkText=""
-            image="/images/6414552 1.png"
+            link="/roles"
+            linkText="LEARN MORE"
+            image="/images/happy_sparta.png"
             imageAltText="as"
           />
         </div>

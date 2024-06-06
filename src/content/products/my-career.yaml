@@ -6,9 +6,6 @@ background:
 image: 
   src: '/images/myCareer.png'
   alt: ' '
-secondImage:
-  src: ''
-  alt: ''
 order: 2
 heading: "Manpower Management Enlisted Assignments"
 bullets:
@@ -19,7 +16,7 @@ bullets:
 metrics:
   - icon: '/icons/person.svg'
     value: '11K'
-    metric: 'Marines Registers via myCareer'
+    metric: 'Marines Registered via myCareer'
   - metric: "Attendance increase at West Coast Roadshow 2023 v 2024"
     value: '75'
     icon: '/icons/whiteGraph.svg'

@@ -13,12 +13,13 @@ about: >
 ---
 # ABOUT THE JOB
 A UI/UX Designer is a professional dedicated to designing and enhancing the user interfaces (Ul) and user experiences (UX) of digital products like websites, applications, and software. This role is a unique blend of graphic design, psychology, and technology, focusing on creating digital products that are not just functional, but also intuitive, engaging, and accessible.
+
 In addition to their core skills, UI/UX Designers are equipped with essential team soft skills such as effective communication, empathy, and collaborative problem-solving. They excel in articulating design concepts clearly to cross-functional teams and stakeholders, ensuring a harmonious and productive work environment. Their ability to empathize not only with users but also with team members enhances their capacity to negotiate and align diverse perspectives, playing a pivotal role in bridging the gap between the user, the technology, and the business objectives.
 
 # PRODUCT DESIGNER RESPONSIBILITIES
 - Conduct user research, market analysis, and script writing for stakeholder interviews to understand user needs and business goals.
--  Work closely with developers, product managers, and other team members and communicate design ideas and create detailed design documentation.
--   Collect and analyze user feedback for continuous improvement and evaluate UX performance and make necessary enhancements.
+- Work closely with developers, product managers, and other team members and communicate design ideas and create detailed design documentation.
+- Collect and analyze user feedback for continuous improvement and evaluate UX performance and make necessary enhancements.
 - Understand the use of typography, color palettes, icons, and images to create a visually appealing interface.
 - Ensuring the design aligns with the brand's identity for a consistent user experience across all platforms.
 - Develop information architecture and wireframes and interactive prototypes with visual elements.
