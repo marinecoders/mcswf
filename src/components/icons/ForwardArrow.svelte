@@ -1,6 +1,10 @@
-<svg class="inline-block fill-current h-3.5" xmlns="http://www.w3.org/2000/svg"
-     enable-background="new 0 0 24 24"
-     height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed">
+<script>
+  import { twMerge } from 'tailwind-merge';
+  import { sizes } from '@icons/iconConfig';
+  export let size = 'xs'; // 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+</script>
+
+<svg {...$$restProps} class={twMerge('shrink-0 inline-block fill-current', sizes[size], $$props.class)} xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
   <g>
     <path d="M0,0h24v24H0V0z" fill="none" />
   </g>
