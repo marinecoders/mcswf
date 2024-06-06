@@ -22,21 +22,10 @@
       ]
     },
     {
-      text: "ABOUT",
-      image: "/images/about_card.png",
-      url: "/about",
-      subLinks: [
-        { url: '/products', text: 'OVERVIEW' },
-        { url: '/products/sparta', text: 'SPARTA' },
-        { url: '/products/my-career', text: 'MyCareer' },
-        { url: '/products/SnapDB', text: 'Snap Database' },
-      ],
-    },
-    {
       text: 'ABOUT',
       image: '/images/about_card.png',
       url: '/about',
-      subLinks: [{ url: '/who-we-are', text: 'WHO WE ARE' }],
+      subLinks: [{ url: '/about', text: 'WHO WE ARE' }],
     },
     {
       text: 'CAREER',
