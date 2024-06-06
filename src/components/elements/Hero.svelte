@@ -13,7 +13,7 @@
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
   <!-- Title -->
   <div class="max-w-6xl mx-auto mt-5 text-left sm:text-center">
-    <h1 class="block font-bold {titleClasses}">
+    <h1 class="block font-bold text-[32px] md:text-[40px] {titleClasses}">
       {#if !title}
         <slot name="title" />
       {:else}
