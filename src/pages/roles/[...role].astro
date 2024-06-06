@@ -31,14 +31,16 @@ const entries = await getCollection('cohorts');
   </div>
   <div class="max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide">
     <div
-      class="relative z-20 h-fit pt-20 pb-20 lg:pt-20 bg-cover bg-no-repeat"
+      class="relative z-20 h-fit pt-20 bg-right lg:pt-20 bg-cover bg-no-repeat rounded-b-2xl lg:rounded-none"
       style={{
         backgroundImage: `url('/images/${frontmatter.image_wide}')`,
       }}>
-      <Hero padding="md:pt-24" title={frontmatter.role} link={externalLinks.recruitingApplication} linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
+      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
+        <Hero padding="md:pt-24" title={frontmatter.role} link={externalLinks.recruitingApplication} linkText="APPLY NOW" titleClasses="text-white" contentClasses="" />
+      </div>
     </div>
     <div class="relative z-20 flex h-fill py-24 place-content-center px-2">
-      <article set:html={content} class="prose prose-invert marker:text-white max-w-none w-3/4 prose-hr:opacity-0" />
+      <article set:html={content} class="prose prose-invert lg:prose-2xl text-white marker:text-white max-w-none w-3/4 prose-hr:opacity-0 prose-h1:text-[32px] md:leading-snug" />
     </div>
     <div class="relative z-20 max-h-screen scrollbar-hide">
       <CohortGroup entries={entries} client:only />

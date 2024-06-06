@@ -86,6 +86,14 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'Expressway';
+  src: url('/fonts/Expressway/ExpresswaySb-Regular') format('truetype');
+  font-weight: semibold;
+  font-style: italic;
+}
+
+
 
 /* MenoBanner */
 

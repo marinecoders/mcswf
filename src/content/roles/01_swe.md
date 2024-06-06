@@ -2,7 +2,7 @@
 role: SOFTWARE ENGINEER
 url: swe
 image: mcswf_marine.png
-image_wide: marine_swe_wide.png
+image_wide: seHeader.png
 icon: software_engineer.svg
 image_alt_text: Marine Software Engineer
 about: >
@@ -21,7 +21,7 @@ about: >
   - Planning, executing, and overseeing projects from conception to completion; which includes, managing timelines and resources.
   - Managing versions of software through tools like Git, ensuring smooth transitions between versions and maintaining a history of changes and updates.
   - Integrating security validation features into software to protect against vulnerabilities.
-  Evaluating and analyzing user needs to ensure that the software meets all requirements and user expectations.
+  - Evaluating and analyzing user needs to ensure that the software meets all requirements and user expectations.
   - Refining and optimizing code for efficiency and performance, ensuring that the software runs smoothly and quickly.
   - Providing technical leadership to peers and junior engineers.
 # WHATS IN IT FOR ME?

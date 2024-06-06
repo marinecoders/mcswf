@@ -1,5 +1,5 @@
 ---
-import Banner from '@components/SiteBanner.svelte';
+import SiteBanner from '@components/SiteBanner.svelte';
 import SiteNavHeader from '@components/SiteNavHeader.svelte';
 import '../styles/global.css';
 import '../styles/fonts.css';
@@ -28,7 +28,7 @@ const { title = null } = Astro.props;
     <title>MCSWF {title && '-'} {title}</title>
   </head>
   <body class="overflow-auto h-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
-    <Banner />
+    <SiteBanner />
     <!-- <header class="w-full sticky top-0 z-30">
       <Navigation client:only="svelte" />
     </header> -->

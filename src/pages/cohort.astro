@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import CohortGroup from '../components/cards/CohortGroup.svelte'
-import '../styles/global.css'
+import Layout from '@layouts/Layout.astro';
+import CohortGroup from '@components/cards/CohortGroup.svelte';
+import '../styles/global.css';
 
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-const entries = await getCollection('cohorts')
+const entries = await getCollection('cohorts');
 ---
 
 <Layout title="Cohort">
