@@ -4,14 +4,15 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '@components/elements/Hero.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
 
-import '../styles/global.css';
-import '../styles/fonts.css';
-import FooterFull from '@components/footer/FooterFull.svelte';
-import ContentImageFull from '@components/sections/ContentImageFull.svelte';
-import CareerAccordion from '@components/accordion/CareerAccordion.svelte';
-import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
-import { displaySiteBanner } from '@components/stores';
-import { externalLinks } from '@content/constants.js';
+import '../styles/global.css'
+import '../styles/fonts.css'
+import FooterFull from '@components/FooterFull.svelte'
+import ContentImageFull from '../components/sections/ContentImageFull.svelte'
+import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
+import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
+import ForwardArrow from '@components/icons/ForwardArrow.svelte';
+import { displaySiteBanner } from '../components/stores'
+import { externalLinks } from '@content/constants'
 
 let side = 'left';
 
@@ -72,7 +73,7 @@ displaySiteBanner.set(false);
             link="/roles/"
             linkText="LEARN MORE"
             titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
-            image="/images/impact.png"
+            image="/images/happy_sparta.png"
             imageAltText="A Marine presenting software"
           />
         </div>
@@ -91,7 +92,7 @@ displaySiteBanner.set(false);
                   <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
                     <img class="w-24 mx-auto" src={`/icons/${role.frontmatter.icon}`}></img>
                     <p style="word-spacing:99999px" class="font-bold text-2xl">{role.frontmatter.role}</p>
-                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More ></a>
+                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More <ForwardArrow/></a>
                   </div>
                   </>
                 )

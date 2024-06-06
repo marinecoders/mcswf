@@ -1,11 +1,13 @@
 <script>
   import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
   import { externalLinks } from '@content/constants';
-  import Hamburger from '@icons/Hamburger.svelte';
+  import Hamburger from '@icons/Hamburger.svelte'; // Ensure this path is correct
+  import ForwardArrow from '@icons/ForwardArrow.svelte';
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
 
-  let navOpen = false;
+  let isOpen = false;
 
   const dropdownLinks = [
     {
@@ -15,7 +17,7 @@
       subLinks: [
         { url: '/products', text: 'OVERVIEW' },
         { url: '/products/sparta', text: 'SPARTA' },
-        { url: '/products/my-career', text: 'myCareer' },
+        { url: '/products/my-career', text: 'MyCareer' },
         { url: '/products/SnapDB', text: 'Snap Database' },
       ],
     },
@@ -23,16 +25,15 @@
       text: 'ABOUT',
       image: '/images/about_card.png',
       url: '/about',
-      subLinks: [],
+      subLinks: [{ url: '/who-we-are', text: 'WHO WE ARE' }],
     },
     {
-      text: 'TRAINING & CAREER',
+      text: 'CAREER',
       image: '/images/training_career_card.png',
       url: '/career',
       subLinks: [
+        { url: '/career', text: 'TRAINING' },
         { url: '/roles', text: 'ROLES' },
-        { url: '/roles/job-listings', text: 'JOB LISTINGS' },
-        { url: '/roles/the-progress', text: 'THE PROGRESS' },
       ],
       titleClasses: 'text-sm lg:text-xl',
     },
@@ -41,11 +42,26 @@
       image: '/images/contact_card.png',
       url: '/contact',
       subLinks: [
+        { url: '/contact/get-in-touch', text: 'GET IN TOUCH' },
         { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
-        { url: '/contact/request-a-demo', text: 'SUGGEST AN APP' },
+        { url: '/contact/suggest-an-app', text: 'SUGGEST AN APP' },
       ],
     },
   ];
+
+  const handleClickOutside = (event) => {
+    const nav = document.getElementById('header');
+    if (nav && !nav.contains(event.target)) {
+      isOpen = false;
+    }
+  };
+
+  onMount(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
 </script>
 
 <header id="header" class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
@@ -53,27 +69,31 @@
     <div class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
       <a href="/">
         <span
-          class="tracking-widest leading-relaxed sm:leading-snug text-base sm:text-xl text-white font-colossalis whitespace-nowrap bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text"
-          >U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
+          class="tracking-widest leading-relaxed sm:leading-snug text-base sm:text-xl text-white font-colossalis whitespace-nowrap bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">
+          U.S. MARINE CORPS<br />SOFTWARE FACTORY
+        </span>
       </a>
-      {#if navOpen}
+      {#if isOpen}
         <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
-        <Hamburger on:message={(e) => (navOpen = e.detail.isOpen)} class="bg-zinc-200" />
+        <Hamburger bind:isOpen class="bg-zinc-200" />
       </div>
     </div>
-    {#if navOpen}
+    {#if isOpen}
       <div class="absolute bg-custom-gradient-blue-header px-16 w-full" transition:slide={{ duration: 300, easing: quintOut, axis: 'y' }}>
         <div class="grid grid-cols-4 py-4 gap-1 sm:gap-2 lg:gap-4 md:pr-12 lg:pr-32 xl:pr-64">
           {#each dropdownLinks as link}
             <div class="col-span-1 tracking-wide">
-              <a href={link.url} class="text-lg font-bold bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">{link.text}</a>
+              <div class="text-lg font-bold bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">{link.text}</div>
               {#if link.subLinks}
                 <ul class="text-base">
                   {#each link.subLinks as subLink}
                     <li>
-                      <a href={subLink.url}>{subLink.text}</a>
+                      <a href={subLink.url} class="hover:text-mcswf-gold hover:underline underline-offset-4"
+                        >{subLink.text}
+                        <ForwardArrow />
+                      </a>
                     </li>
                   {/each}
                 </ul>
