@@ -65,7 +65,7 @@ const stepsCollection = defineCollection({
     step: z.number(),
     title: z.string(),
     contentTitle: z.string(),
-    content: z.string(),
+    content: z.array(z.string()),
   }),
 });
 
