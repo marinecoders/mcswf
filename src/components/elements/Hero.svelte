@@ -7,7 +7,7 @@
   export let linkText = '';
   export let padding = '';
   export let contentClasses = '';
-  export let titleClasses = 'text-mcswf-gold';
+  export let titleClasses = 'text-mcswf-gold text-[32px] md:text-[40px]';
 </script>
 
 <div class={'max-w-[85rem] mx-auto px-4 pt-inherit ' + padding}>
@@ -25,7 +25,11 @@
 
   <div class="max-w-3xl mx-auto mt-5 text-left lg:text-center">
     <p id="content" class="text-white lg:text-2xl {contentClasses}">
-      {content}
+      {#if !content}
+        <slot name="content" />
+      {:else}
+        {content}
+      {/if}
     </p>
   </div>
 

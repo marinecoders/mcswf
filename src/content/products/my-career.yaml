@@ -16,7 +16,7 @@ bullets:
 metrics:
   - icon: '/icons/person.svg'
     value: '11K'
-    metric: 'Marines Registers via myCareer'
+    metric: 'Marines Registered via myCareer'
   - metric: "Attendance increase at West Coast Roadshow 2023 v 2024"
     value: '75'
     icon: '/icons/whiteGraph.svg'

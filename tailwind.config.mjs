@@ -6,7 +6,6 @@ export default {
     extend: {
       colors: {
         'usmc-yellow': '#f1b434', // USMC Brand Guide
-        'mcswf-yellow': '#FFC755', // Pulled from wireframes instead of color palette
         'usmc-red': '#a6192e', // USMC Brand Guide
         'mcswf-red': '#991B20', // Pulled from wireframes and color palette
         'mcswf-white-50': '#FDFDFD', // Not in color palette, but showed up in wireframes
