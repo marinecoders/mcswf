@@ -11,21 +11,21 @@
 
   const dropdownLinks = [
     {
-      text: 'PRODUCTS',
-      url: '/products',
-      image: '/images/products_card.png',
+      text: "PRODUCTS",
+      url: "/products",
+      image: "/images/products_card.png",
       subLinks: [
-        { url: '/products', text: 'OVERVIEW' },
-        { url: '/products/sparta', text: 'SPARTA' },
-        { url: '/products/my-career', text: 'MyCareer' },
-        { url: '/products/SnapDB', text: 'Snap Database' },
-      ],
+        { url: "/products", text: "OVERVIEW" },
+        { url: "/products/sparta", text: "SPARTA" },
+        { url: "/products/my-career", text: "MyCareer" },
+        { url: "/products/SnapDB", text: "Snap Database" }
+      ]
     },
     {
       text: 'ABOUT',
       image: '/images/about_card.png',
       url: '/about',
-      subLinks: [{ url: '/who-we-are', text: 'WHO WE ARE' }],
+      subLinks: [{ url: '/about', text: 'WHO WE ARE' }],
     },
     {
       text: 'CAREER',
@@ -35,12 +35,12 @@
         { url: '/career', text: 'TRAINING' },
         { url: '/roles', text: 'ROLES' },
       ],
-      titleClasses: 'text-sm lg:text-xl',
+      titleClasses: "text-sm lg:text-xl"
     },
     {
-      text: 'CONTACT',
-      image: '/images/contact_card.png',
-      url: '/contact',
+      text: "CONTACT",
+      image: "/images/contact_card.png",
+      url: "/contact",
       subLinks: [
         { url: '/contact/get-in-touch', text: 'GET IN TOUCH' },
         { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
@@ -64,9 +64,11 @@
   });
 </script>
 
-<header id="header" class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
+<header id="header"
+        class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
   <nav>
-    <div class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
+    <div
+      class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
       <a href="/">
         <span
           class="tracking-widest leading-relaxed sm:leading-snug text-base sm:text-xl text-white font-colossalis whitespace-nowrap bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">
