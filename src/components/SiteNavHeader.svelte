@@ -25,7 +25,7 @@
       text: 'ABOUT',
       image: '/images/about_card.png',
       url: '/about',
-      subLinks: [{ url: '/who-we-are', text: 'WHO WE ARE' }],
+      subLinks: [{ url: '/about', text: 'WHO WE ARE' }],
     },
     {
       text: 'CAREER',
@@ -74,7 +74,7 @@
         </span>
       </a>
       {#if isOpen}
-        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
+        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link='/contactUs/getInTouch'>GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
         <Hamburger bind:isOpen class="bg-zinc-200" />

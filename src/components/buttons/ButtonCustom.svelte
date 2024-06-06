@@ -4,7 +4,7 @@
 
   export let color = 'white'; // white, yellow, red
   export let size = 'md'; // xs, sm, md, lg, xl
-  export let handleClick;
+  export let handleClick = '';
   export let link = '';
   export let disabled = false;
 

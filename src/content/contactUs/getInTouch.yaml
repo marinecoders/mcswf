@@ -1,7 +1,7 @@
-heading: 'GET IN TOUCH'
-description: "Be a part of MCSWF."
+heading: 'HAVE A QUESTION?'
+description: "Get in touch with MCSWF."
 background: 
-  src: '/images/leaning_over_laptop.png'
+  src: '/images/meeting_note_taking.png'
   alt: ' '
-buttonLink: '/contactUs/applyNow'
-order: 1
+buttonText: 'GET IN TOUCH'
+buttonLink: 'mailto:MCSWF@usmc.mil'
