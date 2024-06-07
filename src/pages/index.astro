@@ -21,26 +21,33 @@ products.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="">
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
-      <Hero
-        title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
-        content="Train Marines. Build Applications. Deploy to the Edge"
-        link="/about"
-        linkText="LEARN MORE"
-        contentClasses={'text-base md:text-2xl'}
-        backgroundImg='/images/headset_marine.png'
-      />
+    <Hero
+      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+      content="Train Marines. Build Applications. Deploy to the Edge"
+      link="/about"
+      linkText="LEARN MORE"
+      contentClasses={'text-base md:text-2xl'}
+      backgroundImg="/images/headset_marine.png"
+    />
     <div class="relative z-20">
       <div class="pt-12 pb-24 h-fit">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-          <h1 class="text-left md:text-center font-bold text-2xl md:text-[40px] text-mcswf-gold pt-8 lg:pt-16 px-8"> OUR MISSION </h1>
-          <p class="text-left md:text-center text-base lg:text-2xl py-6 lg:py-16 px-8">We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.</p>
+          <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] text-mcswf-gold pt-16 px-8">OUR MISSION</h1>
+          <p class="text-left md:text-center text-base lg:text-2xl py-16 px-8">
+            We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs.
+            These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.
+          </p>
 
           <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full z-20 justify-items-center">
             {
               metrics?.map((item) =>
                 item.data.metrics?.map((p) => (
-                  <div class="my-6 md:my-12">
-                    <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
+                  <div class="text-center my-6 md:m-12">
+                    <MetricCard
+                      icon={p.icon}
+                      value={p.value}
+                      metric={p.metric}
+                    />
                   </div>
                 ))
               )
@@ -71,9 +78,9 @@ products.sort((a, b) => a.data.order - b.data.order);
           imageClasses="lg:w-550"
         />
       </div>
-      <div class="h-fit pt-6 lg:pt-20">
+      <!-- <div class="h-fit pt-20">
         <Products {products} />
-      </div>
+      </div> -->
       <div class="h-fit md:h-screen md:pt-20">
         <Countdown
           client:only="svelte"

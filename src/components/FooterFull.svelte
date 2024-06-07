@@ -1,5 +1,4 @@
 <script>
-  import Icon from '@iconify/svelte';
   import { LinkedIn } from '@icons/iconExports';
   import { externalLinks } from '@content/constants';
   export let background = '';
@@ -88,22 +87,20 @@
     </div>
 
     <!-- MOBILE FOOTER -->
-    <div class="block lg:hidden container w-4/5 max-w-screen-xl pb-32 mx-auto lg:py-8">
-      <div class="flex justify-around p-4 border-b">
-        <div class="flex align-middle">
-          <a
-            href="/"
-            class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
-            <img
-              style="fill: white;"
-              src="/mcswf-badge.svg"
-              class="h-16 text-white"
-              alt="MCSWF Logo" />
-            <span class="self-center text-2xl whitespace-nowrap dark:text-white font-colossalis">U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
-          </a>
-        </div>
+    <div class="block lg:hidden container w-4/5 max-w-screen-xl pb-32 mx-auto">
+      <div class="flex justify-start py-4 border-b">
+        <a
+          href="/"
+          class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
+          <img
+            style="fill: white;"
+            src="/mcswf-badge.svg"
+            class="h-16 text-white"
+            alt="MCSWF Logo" />
+          <span class="self-center text-2xl whitespace-nowrap dark:text-white font-colossalis">U.S. MARINE CORPS<br />SOFTWARE FACTORY</span>
+        </a>
       </div>
-      <div class="flex justify-around p-4 align-middle border-b">
+      <div class="flex justify-start py-4 align-middle border-b">
         <a
           href="/"
           class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
@@ -114,7 +111,7 @@
             alt="MCSWF Logo" />
         </a>
       </div>
-      <div class="flex justify-center p-4 border-b">
+      <div class="flex justify-center py-4 border-b">
         <div class="w-full">
           <h1 class="text-lg font-bold">VISION</h1>
           <p class="font-light">
@@ -123,7 +120,7 @@
           </p>
         </div>
       </div>
-      <div class="flex justify-around p-4 border-b">
+      <div class="flex justify-around py-4 border-b">
         <div class="w-full align-middle font-light">
           <p>Interested in partnering with the Marine Corps Software Factory?</p>
           <p>
@@ -133,21 +130,25 @@
           </p>
         </div>
       </div>
-      <div class="flex justify-center p-4">
+      <div class="flex justify-center py-4">
         <div class="w-full">
           <p class="font-light">
             Product of The Marine Corps Software Factory, which proudly sits within the <span class="underline text-mcswf-gold">Deputy Commandant for Information.</span>
           </p>
         </div>
       </div>
-      <div class="flex justify-start px-4 pt-8">
-        <h1>GET IN TOUCH</h1>
-      </div>
-      <div class="flex justify-start p-[.75rem] text-sm font-light gap-4">
-        <a href="https://linkedin.com">
-          <Icon
-            class="text-5xl"
-            icon="mdi:linkedin" />
+      <h1 class="flex justify-start py-4">GET IN TOUCH</h1>
+      <div class="flex justify-start text-sm font-light gap-4">
+        <a
+          href={externalLinks.social.linkedIn}
+          class="mr-4"
+          target="_blank"
+          rel="noopener noreferrer">
+          <LinkedIn
+            size="lg"
+            primary="fill-linkedin-blue"
+            secondary="fill-white"
+            class="rounded-sm" />
         </a>
       </div>
     </div>

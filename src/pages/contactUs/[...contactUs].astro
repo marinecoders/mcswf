@@ -1,4 +1,5 @@
 ---
+import { twMerge } from 'tailwind-merge';
 import Layout from '@layouts/Layout.astro';
 import FooterFull from '@components/FooterFull.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
@@ -25,41 +26,31 @@ const linkText = entry.data.buttonText;
 ---
 
 <Layout title={entry.data.heading}>
-  <div class="max-h-screen overflow-y-scroll font-expressway bg-custom-gradient-blue-header">
-    <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
-      <img src="/ega.svg" />
+  <div
+    style={`background-image: url("${entry.data.background.src}");`}
+    class="relative w-full bg-cover bg-center bg-no-repeat h-[400px] md:h-[500px] lg:h-[700px] bg-custom-gradient-blue-header">
+    <div class="absolute inset-0 bg-stone-900 opacity-25"></div>
+    <div
+      class="relative h-[400px] md:h-[500px] lg:h-[700px] bg-gradient-to-t from-stone-950 flex flex-col gap-6 md:gap-6 items-stretch md:items-center justify-end md:justify-center text-left md:text-center mx-auto tracking-wider px-8 pb-12">
+      <!-- Title -->
+      <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text w-64 md:w-[450px] lg:w-[500px]">
+        {entry.data.heading}
+      </h1>
+      <!-- End Title -->
+      <p class="text-left md:text-center text-base md:text-[26px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text">
+        {entry.data.description}
+      </p>
+      <!-- Buttons -->
+      <ButtonCustom
+        color="white"
+        size="xl"
+        link={entry.data.buttonLink}
+        class="w-44 md:w-72">
+        {linkText}
+      </ButtonCustom>
     </div>
-    <div class="relative overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide">
-      <div class="relative z-20 bg-cover h-full size-auto bg-center bg-no-repeat rounded-b-2xl lg:rounded-none" style={bgString}>
-        <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none min-h-[650px]">
-          <div class={'max-w-[85rem] m-auto px-4 pt-inherit '}>
-            <!-- Title -->
-            <div class="max-w-6xl mx-auto mt-5 text-left sm:text-center">
-              <h1 class="block font-bold text-[32px] md:text-[40px] {titleClasses}">
-                {entry.data.heading}
-              </h1>
-            </div>
-            <!-- End Title -->
-
-            <div class="max-w-3xl mx-auto mt-5 text-left sm:text-center">
-              <p id="content" class="text-white lg:text-2xl {contentClasses}">
-                {entry.data.description}
-              </p>
-            </div>
-
-            <!-- Buttons -->
-              <div class="grid w-full gap-3 mt-8 inline-flex sm:justify-items-start sm:justify-center">
-                <ButtonCustom color="white" size="xl" link={entry.data.buttonLink} class="w-64">
-                  {linkText}
-                </ButtonCustom>
-              </div>
-            <!-- End Buttons -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="relative z-20">
-      <FooterFull client:only />
-    </div>
+  </div>
+  <div class="bg-custom-gradient-blue-header">
+    <FooterFull client:only />
   </div>
 </Layout>
