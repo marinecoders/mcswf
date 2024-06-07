@@ -1,6 +1,5 @@
 <script>
   import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
-  import { externalLinks } from '@content/constants';
   import Hamburger from '@icons/Hamburger.svelte'; // Ensure this path is correct
   import ForwardArrow from '@icons/ForwardArrow.svelte';
   import { slide } from 'svelte/transition';
@@ -11,15 +10,15 @@
 
   const dropdownLinks = [
     {
-      text: "PRODUCTS",
-      url: "/products",
-      image: "/images/products_card.png",
+      text: 'PRODUCTS',
+      url: '/products',
+      image: '/images/products_card.png',
       subLinks: [
-        { url: "/products", text: "OVERVIEW" },
-        { url: "/products/sparta", text: "SPARTA" },
-        { url: "/products/my-career", text: "MyCareer" },
-        { url: "/products/SnapDB", text: "Snap Database" }
-      ]
+        { url: '/products', text: 'OVERVIEW' },
+        { url: '/products/sparta', text: 'SPARTA' },
+        { url: '/products/my-career', text: 'MyCareer' },
+        { url: '/products/SnapDB', text: 'Snap Database' },
+      ],
     },
     {
       text: 'ABOUT',
@@ -35,16 +34,16 @@
         { url: '/career', text: 'TRAINING' },
         { url: '/roles', text: 'ROLES' },
       ],
-      titleClasses: "text-sm lg:text-xl"
+      titleClasses: 'text-sm lg:text-xl',
     },
     {
-      text: "CONTACT",
-      image: "/images/contact_card.png",
-      url: "/contact",
+      text: 'CONTACT',
+      image: '/images/contact_card.png',
+      url: '/contactUs',
       subLinks: [
-        { url: '/contact/get-in-touch', text: 'GET IN TOUCH' },
-        { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
-        { url: '/contact/suggest-an-app', text: 'SUGGEST AN APP' },
+        { url: '/contactUs/applyNow', text: 'APPLY NOW' },
+        { url: '/contactUs/proposeApp', text: 'PROPOSE AN APP' },
+        { url: '/contactUs/getInTouch', text: 'GET IN TOUCH' },
       ],
     },
   ];
@@ -64,11 +63,9 @@
   });
 </script>
 
-<header id="header"
-        class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
+<header id="header" class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
   <nav>
-    <div
-      class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
+    <div class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
       <a href="/">
         <span
           class="tracking-widest leading-relaxed sm:leading-snug text-base sm:text-xl text-white font-colossalis whitespace-nowrap bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">
@@ -76,7 +73,7 @@
         </span>
       </a>
       {#if isOpen}
-        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
+        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link="/contactUs/getInTouch">GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
         <Hamburger bind:isOpen class="bg-zinc-200" />

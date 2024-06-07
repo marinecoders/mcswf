@@ -1,0 +1,7 @@
+heading: 'WANT TO SEE WHAT WE ARE ALL ABOUT?'
+description: "Be a part of MCSWF."
+background: 
+  src: '/images/leaning_over_laptop.png'
+  alt: ' '
+buttonText: 'APPLY NOW'
+buttonLink: '/roles'
