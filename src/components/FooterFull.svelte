@@ -78,14 +78,14 @@
       <div class="flex justify-center p-4 border-b">
         <div class="w-full">
           <h1 class="text-lg font-bold">VISION</h1>
-          <p>
+          <p class="font-light">
             Create a world class Marine-led software development capability enabling Marine Corps modernization efforts by developing applications for commanders at the speed of operations, increasing
             lethality and readiness.
           </p>
         </div>
       </div>
       <div class="flex justify-around p-4 border-b">
-        <div class="w-full align-middle">
+        <div class="w-full align-middle font-light">
           <p>Interested in partnering with the Marine Corps Software Factory?</p>
           <p>
             Email us at <a href="mailto:mcswf@usmc.mil" class="underline text-mcswf-gold">mcswf@usmc.mil</a>
@@ -94,7 +94,7 @@
       </div>
       <div class="flex justify-center p-4">
         <div class="w-full">
-          <p>
+          <p class="font-light">
             Product of The Marine Corps Software Factory, which proudly sits within the <span class="underline text-mcswf-gold">Deputy Commandant for Information.</span>
           </p>
         </div>
