@@ -12,6 +12,7 @@ import { displaySiteBanner } from '../components/stores.js';
 import MetricCard from '@components/cards/MetricCard.svelte';
 import { externalLinks } from '@content/constants';
 
+
 displaySiteBanner.set(true);
 
 const products = await getCollection('products');
@@ -79,9 +80,9 @@ products.sort((a, b) => a.data.order - b.data.order);
           imageClasses="lg:w-550"
         />
       </div>
-      <!-- <div class="h-fit pt-20">
+      <div class="h-fit pt-20">
         <Products {products} />
-      </div> -->
+      </div>
       <div class="h-fit md:pt-20">
         <Countdown
           client:only="svelte"

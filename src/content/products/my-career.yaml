@@ -1,5 +1,6 @@
 product: 'myCareer'
 description: "Sponsored by Manpower Management Enlisted Assignments to optimize the roadshow process. Marines are able to reserve their spot in line and push key information to monitors prior to sitting down for a discussion. This saves Marines time and optimizes the discussion."
+shortDescription: 'Optimize roadshows for Marines and Monitors'
 background: 
   src: '/images/shaking_hands.png'
   alt: ' '

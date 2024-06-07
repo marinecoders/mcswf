@@ -1,5 +1,6 @@
 product: 'SPARTA'
 description: "Sensor Processor & Analysis Radar Translation Application (SPARTA) takes commercial off the shelf radars and provides the ability to visualize maritime vessels, process the sensor data, and disseminate to common operating picture. Feature builds include an Android version, UAS integration, and correlating and fusing multiple sensors."
+shortDescription: 'Visualize maritime vessels, process sensor data, disseminate.'
 background: 
   src: '/images/marine_night_timelapse.jpg'
   alt: ' '
