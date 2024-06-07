@@ -10,6 +10,7 @@ import ContentImageFull from '../components/sections/ContentImageFull.svelte';
 import { getCollection } from 'astro:content'; // Get products collection
 import { displaySiteBanner } from '../components/stores.js';
 import MetricCard from '@components/cards/MetricCard.svelte';
+import { externalLinks } from '@content/constants';
 
 displaySiteBanner.set(true);
 
@@ -84,9 +85,9 @@ products.sort((a, b) => a.data.order - b.data.order);
       <div class="h-fit md:h-screen md:pt-20">
         <Countdown
           client:only="svelte"
-          title="COHORT COUNTDOWN"
-          content="Et quae quibusdam sed consequatur iste nam asperiores facilis qui error iste qui quia tenetur est rerum dolorem. Eum eveniet placeat cum impedit officiis est odit asperiores."
-          link="#"
+          title="COHORT 9 APPLICATION DEADLINE"
+          content="Applications for Cohort 9 are due on August 1st, 2024. Marines who are accepted to the program will PCS to Austin, TX during the summer of 2024 and begin the Technical Accelerator in August 2024."
+          link={externalLinks.recruitingApplication}
         />
       </div>
       <div class="pt-20">
