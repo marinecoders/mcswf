@@ -5,12 +5,11 @@ import FooterFull from '@components/FooterFull.svelte';
 import MetricCard from '../../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../../components/stores.js';
+import '../../styles/global.css';
 
 interface Props {
   entry: CollectionEntry<'products'>;
 }
-
-import '../../styles/global.css';
 
 displaySiteBanner.set(false);
 
