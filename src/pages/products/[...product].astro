@@ -35,7 +35,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
     linkText="REQUEST APP DEMO"
     backgroundImg={entry.data.background.src}
   />
-  <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
+  <div class="relative z-20 items-center max-w-screen-xl lg:gap-20 gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
     <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]">
       <div class="w-full">
         <img
@@ -52,10 +52,10 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
       <ul class="m-4 ml-12 list-disc text-xl md:text-2xl">
         {entry.data.bullets.map((b) => <li>{b}</li>)}
       </ul>
-      <div class="grid grid-cols-1 lg:grid-cols-2 w-fit m-auto z-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 m-auto z-20">
         {
           entry.data.metrics.map((p) => (
-            <div class="text-center m-12">
+            <div class="text-center my-12 mx-4">
               <MetricCard
                 icon={p.icon}
                 value={p.value}

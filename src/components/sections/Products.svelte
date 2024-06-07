@@ -12,7 +12,7 @@
     }
 </script>
 
-<div class="flex flex-row justify-center pt-12 pb-4">
+<div class="flex flex-row justify-center pt-12 pb-4 px-8">
   <h1 class="text-center font-bold text-3xl">
     BUILDING PRODUCTS THAT MAKE A DIFFERENCE
   </h1>

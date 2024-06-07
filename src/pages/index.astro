@@ -31,7 +31,7 @@ products.sort((a, b) => a.data.order - b.data.order);
       backgroundImg="/images/headset_marine.png"
     />
     <div class="relative z-20">
-      <div class="pt-12 pb-24 h-fit">
+      <div class="pt-12 pb-8 lg:pb-24 h-fit">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
           <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] text-mcswf-gold pt-16 px-8">OUR MISSION</h1>
           <p class="text-left md:text-center text-base lg:text-2xl py-16 px-8">
@@ -39,11 +39,11 @@ products.sort((a, b) => a.data.order - b.data.order);
             These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.
           </p>
 
-          <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
+          <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full z-20 justify-items-center">
             {
               metrics?.map((item) =>
                 item.data.metrics?.map((p) => (
-                  <div class="text-center m-12">
+                  <div class="text-center my-6 md:m-12">
                     <MetricCard
                       icon={p.icon}
                       value={p.value}
@@ -67,7 +67,7 @@ products.sort((a, b) => a.data.order - b.data.order);
           imageClasses="lg:w-550"
         />
       </div>
-      <div class="h-fit py-20">
+      <div class="h-fit py-10 lg:py-20">
         <ContentImageFull
           flipped
           image="/images/GenPuma.png"
