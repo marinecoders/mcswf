@@ -22,13 +22,14 @@ products.sort((a, b) => a.data.order - b.data.order);
     description="Real solutions to real problems - Created for Marines, by Marines at the Marine Corps Software Factory."
     descriptionClasses="w-80 md:w-[400px] text-base md:text-2xl"
     backgroundImg="/images/Overview_hero.svg"
+    class="bg-top"
   />
   <div class='relative z-20'>
       {products.map(e => (
 
           <ContentImageFull
             flipped = { e.data.order % 2 === 0 }
-            link=`products/${e.id}`
+            link={`products/${e.id}`}
             linkText='LEARN MORE'
             title=''
             content={e.data['description']}

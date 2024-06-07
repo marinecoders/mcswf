@@ -8,7 +8,7 @@ import { externalLinks } from '@content/constants';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
 
-const posts = await Astro.glob('@content/roles/*.md');
+const posts = await Astro.glob('../../content/roles/*.md');
 let side = 'left';
 displaySiteBanner.set(false);
 
@@ -22,13 +22,8 @@ const { frontmatter, compiledContent } = Astro.props;
     titleClasses="w-72 md:w-96"
     backgroundImg="/images/mcswf_instruction_wide.png"
     link={externalLinks.recruitingApplication}
-    linkText="APPLY NOW">
-    <span
-      slot="title"
-      class="uppercase"
-      >Pick the perfect<span class="block">Role for you</span></span
-    >
-  </Hero>
+    linkText="APPLY NOW"
+    />
 
   <div class="relative z-20 max-h-screen scrollbar-hide">
     <div class="hidden lg:block">
