@@ -1,6 +1,6 @@
-<div class="absolute top-32">
+<div class="absolute top-52">
   <img
     src="/ega.svg"
     alt="Eagle, Globe, and Anchor"
-    class="ml-44 pl-44 w-full scale-125" />
+    class="translate-x-12 scale-125" />
 </div>
