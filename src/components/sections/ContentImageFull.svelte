@@ -24,7 +24,7 @@
         <img class="w-7/8 rounded-lg object-cover aspect-square {imageClasses}" src={image} alt={imageAltText} />
       </div>
     {/if}
-    <div class="font-light text-white sm:text-lg w-3/4 lg:w-full place-self-center">
+    <div class="lg:font-light text-white sm:text-lg w-3/4 lg:w-full place-self-center">
       <h2 class="mb-4 mt-6 lg:mt-0 tracking-tight lg:text-center text-mcswf-gold text-2xl font-bold md:text-3xl lg:text-4xl {titleClasses}">
         {#if !title}
           <slot name="title" />

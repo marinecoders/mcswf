@@ -15,12 +15,4 @@
     Technical Accelerator in August 2024." />
 
   <Timer />
-
-  <!-- Buttons -->
-  <div class="grid w-full gap-3 mt-8 sm:inline-flex sm:justify-center">
-    <ButtonCustom color="white" size="xl" customClasses="w-64" {link}>
-      APPLY NOW
-    </ButtonCustom>
-  </div>
-  <!-- End Buttons -->
 </div>
