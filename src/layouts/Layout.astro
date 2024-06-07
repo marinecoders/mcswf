@@ -1,6 +1,7 @@
 ---
 import SiteBanner from '@components/SiteBanner.svelte';
 import SiteNavHeader from '@components/SiteNavHeader.svelte';
+import SiteBackgroundImg from '@components/SiteBackgroundImg.svelte';
 import '../styles/global.css';
 import '../styles/fonts.css';
 
@@ -51,6 +52,7 @@ const { title = null } = Astro.props;
   <body class="overflow-auto h-full w-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
     <SiteBanner />
     <SiteNavHeader client:only="svelte" />
+    <SiteBackgroundImg />
     <main>
       <slot />
     </main>

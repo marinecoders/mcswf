@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 import { displaySiteBanner } from '@components/stores.js';
 import Hero from '@components/elements/Hero.svelte';
-import SiteBackgroundImg from '@components/SiteBackgroundImg.svelte';
 import FooterFull from '@components/FooterFull.svelte';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
 import { externalLinks } from '@content/constants';
@@ -17,7 +16,6 @@ const { frontmatter, compiledContent } = Astro.props;
 ---
 
 <Layout title="Roles">
-  <SiteBackgroundImg />
   <Hero
     client:only
     title="PICK THE PERFECT ROLE FOR YOU"
