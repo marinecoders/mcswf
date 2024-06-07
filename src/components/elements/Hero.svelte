@@ -10,7 +10,7 @@
   export let link = '';
   export let linkText = '';
   export let titleClasses = '';
-  export let backgroundImg = '/images/marine_silo.png';
+  export let backgroundImg = '';
 
   const colorSpecificClasses = {
     white: 'from-white via-slate-50 to-slate-100',
