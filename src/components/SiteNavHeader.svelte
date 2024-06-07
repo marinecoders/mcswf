@@ -1,6 +1,5 @@
 <script>
   import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
-  import { externalLinks } from '@content/constants';
   import Hamburger from '@icons/Hamburger.svelte'; // Ensure this path is correct
   import ForwardArrow from '@icons/ForwardArrow.svelte';
   import { slide } from 'svelte/transition';
@@ -74,7 +73,7 @@
         </span>
       </a>
       {#if isOpen}
-        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link='/contactUs/getInTouch'>GET IN TOUCH</ButtonCustom>
+        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link="/contactUs/getInTouch">GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
         <Hamburger bind:isOpen class="bg-zinc-200" />

@@ -1,28 +1,29 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '../layouts/Layout.astro'
-import Hero from '../components/elements/Hero.svelte'
-import MetricCard from '../components/cards/MetricCard.svelte';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '@components/elements/Hero.svelte';
+import MetricCard from '@components/cards/MetricCard.svelte';
 
 import '../styles/global.css'
 import '../styles/fonts.css'
 import FooterFull from '@components/FooterFull.svelte'
-import ContentImageFull from '../components/sections/ContentImageFull.svelte'
-import CareerAccordion from '../components/accordion/CareerAccordion.svelte'
+import ContentImageFull from '@components/sections/ContentImageFull.svelte'
+import CareerAccordionSection from '@components/accordion/CareerAccordionSection.svelte';
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
+import ForwardArrow from '@components/icons/ForwardArrow.svelte';
 import { displaySiteBanner } from '../components/stores'
 import { externalLinks } from '@content/constants'
 
-let side = 'left'
+let side = 'left';
 
-const roles = await Astro.glob('../content/roles/*.md')
+const roles = await Astro.glob('../content/roles/*.md');
 
-const { frontmatter, compiledContent } = Astro.props
+const { frontmatter, compiledContent } = Astro.props;
 
-const steps = await getCollection('steps')
-const prereqs = await getCollection('prereqs')
+const steps = await getCollection('steps');
+const prereqs = await getCollection('prereqs');
 const metrics = await getCollection('aboutMetrics');
-displaySiteBanner.set(false)
+displaySiteBanner.set(false);
 ---
 
 <Layout title="Training + Career">
@@ -34,7 +35,7 @@ displaySiteBanner.set(false)
   <div
     class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide"
   >
-  <div class="relative z-20 h-fit bg-[url('/images/dress_blues_wide.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
+  <div class="relative z-20 h-fit bg-[url('/images/dress_blues_wide.png')] bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none bg-top">
 <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
     <Hero
       content=""
@@ -50,16 +51,17 @@ displaySiteBanner.set(false)
     </div>
 
     <div class="relative z-20 max-h-screen scrollbar-hide">
-      <div class="">
+
         <div class="relative z-20">
           <ContentImageFull
             title="BUILD SOFTWARE"
             titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
-            link="/roles"
+            link="/roles/"
             linkText="LEARN MORE"
+            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
             image="/images/charlie-1.png"
-            imageAltText="as"
+            imageAltText="A Marine Lieutenant Colonel looking at the camera"
           />
         </div>
         <div class="relative z-20">
@@ -68,13 +70,13 @@ displaySiteBanner.set(false)
             title="HOW TO MAKE AN IMPACT?"
             titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
             content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
-            link="/roles"
+            link="/roles/"
             linkText="LEARN MORE"
+            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
             image="/images/happy_sparta.png"
-            imageAltText="as"
+            imageAltText="A Marine presenting software"
           />
         </div>
-      </div>
       <div class="relative z-20">
         <div class="w-full flex justify-center">
           <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
@@ -90,7 +92,7 @@ displaySiteBanner.set(false)
                   <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
                     <img class="w-24 mx-auto" src={`/icons/${role.frontmatter.icon}`}></img>
                     <p style="word-spacing:99999px" class="font-bold text-2xl">{role.frontmatter.role}</p>
-                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More</a>
+                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More <ForwardArrow/></a>
                   </div>
                   </>
                 )
@@ -142,16 +144,24 @@ displaySiteBanner.set(false)
         <div class="w-full flex flex-col justify-center text-center align-center text-black">
           <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
           <div class="w-full flex justify-center">
-            <div class="w-full mx-2 lg:w-1/2 shadow-lg">
-              <CareerAccordion client:only steps={steps}/>
+            <div class="w-full mx-2 md:w-1/2 shadow-lg">
+              {steps.map((step) => 
+                <CareerAccordionSection client:only
+                  isMiddle={step.data.step != 1}
+                  isStart={step.data.step == 1}
+                  isEnd={step.data.step == steps.length}
+                  step={step.data.step}
+                  details={step.data.content}
+                  head={step.data.title}
+                  detailsTitle={step.data.contentTitle}>
+                 </CareerAccordionSection>
+              )}
             </div>
           </div>
         </div>
       </div>
-      <div class="relative pb-12 z-20 bg-white">
-        <div class="w-full flex justify-center">
-          <ButtonCustom color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
-        </div>
+      <div class="pb-12 bg-white flex justify-center">
+          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
       </div>
       <div>
         <FooterFull 
