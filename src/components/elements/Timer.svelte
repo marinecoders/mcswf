@@ -33,21 +33,21 @@
     });
   </script>
   
-  <div class="grid w-full grid-cols-1 gap-3 mt-8 lg:grid-cols-4 lg:inline-flex sm:justify-between">
-    <div class="hidden my-auto bg-red-600 w-42 lg:w-60 md:block">
+  <div class="grid w-full grid-cols-1 gap-3 mt-8 lg:grid-cols-4 lg:inline-flex lg:justify-between">
+    <div class="invisible my-auto w-42 lg:w-60 lg:visible">
       <hr class="h-[1px] bg-white border-none" />
     </div>
     {#each [days, hours, minutes, seconds] as time, index}
       <div class="items-center text-center" key={index}>
         <div class="mt-8 sm:mt-4">
-          <h3 class="text-8xl md:text-6xl font-extrabold font-menobanner">{time}</h3>
-          <p class="font-bold text-xl md:text-base text-mcswf-gold">
+          <h3 class="text-8xl lg:text-6xl font-extrabold font-menobanner">{time}</h3>
+          <p class="font-bold text-xl lg:text-base text-mcswf-gold">
             {index === 0 ? 'DAYS' : index === 1 ? 'HOURS' : index === 2 ? 'MINUTES' : 'SECONDS'}
           </p>
         </div>
       </div>
     {/each}
-    <div class="hidden my-auto w-42 lg:w-60 md:block">
-      <hr />
+    <div class="invisible my-auto w-42 lg:w-60 lg:visible">
+      <hr class="h-[1px] bg-white border-none" />
     </div>
   </div>

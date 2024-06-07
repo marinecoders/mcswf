@@ -6,6 +6,7 @@ import MetricCard from '../../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../../components/stores.js';
 import '../../styles/global.css';
+import { externalLinks } from '@content/constants';
 
 interface Props {
   entry: CollectionEntry<'products'>;
@@ -31,7 +32,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
     title={entry.data.product}
     description={entry.data.description}
     descriptionClasses="font-light lg:w-[1000px]"
-    link="#"
+    link={externalLinks.mcswfEmail}
     linkText="REQUEST APP DEMO"
     backgroundImg={entry.data.background.src}
   />
