@@ -20,30 +20,21 @@ products.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="">
-  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
-    <img src="/ega.svg" />
-  </div>
   <div class="relative font-expressway red-radial-gradient scrollbar-hide">
-    <div class="relative z-20 h-screen py-20 bg-[url('/images/marine_silo.png')] bg-cover bg-no-repeat">
       <Hero
         title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
         content="Train Marines. Build Applications. Deploy to the Edge"
-        link="#"
+        link="/about"
         linkText="LEARN MORE"
-        padding="pt-24"
         contentClasses={'text-base md:text-2xl'}
+        backgroundImg='/images/headset_marine.png'
       />
-    </div>
     <div class="relative z-20">
       <div class="pt-12 pb-24 h-fit">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-          <!-- Title -->
-          <Hero
-            linkText="LEARN MORE"
-            padding="md:pt-24 pt-16 pb-12"
-            title="OUR MISSION"
-            content="We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations."
-          />
+          <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] text-mcswf-gold pt-16 px-8"> OUR MISSION </h1>
+          <p class="text-left md:text-center text-base lg:text-2xl py-16 px-8">We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.</p>
+
           <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
             {
               metrics?.map((item) =>
