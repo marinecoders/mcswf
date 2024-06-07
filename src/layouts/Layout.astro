@@ -12,26 +12,44 @@ const { title = null } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="overflow-hidden h-full">
+<html
+  lang="en"
+  class="overflow-hidden h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Marine Corps Software Factory" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content="Marine Corps Software Factory" />
+    <meta
+      name="description"
+      content="Marine Corps Software Factory"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta
+      property="og:title"
+      content="Marine Corps Software Factory"
+    />
     <meta
       property="og:description"
       content="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
     />
-    <meta property="og:image" content="/mcswf-badge.svg" />
+    <meta
+      property="og:image"
+      content="/images/mcswf-badge.svg"
+    />
     <title>MCSWF {title && '-'} {title}</title>
   </head>
   <body class="overflow-auto h-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
     <SiteBanner />
-    <!-- <header class="w-full sticky top-0 z-30">
-      <Navigation client:only="svelte" />
-    </header> -->
     <SiteNavHeader client:only="svelte" />
     <main>
       <slot />

@@ -64,7 +64,9 @@
   });
 </script>
 
-<header id="header" class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header">
+<header
+  id="header"
+  class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header shadow">
   <nav>
     <div class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8 px-16">
       <a href="/">
@@ -74,14 +76,22 @@
         </span>
       </a>
       {#if isOpen}
-        <ButtonCustom color="white" size="md" class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto" link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
+        <ButtonCustom
+          color="white"
+          size="md"
+          class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto"
+          link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
-        <Hamburger bind:isOpen class="bg-zinc-200" />
+        <Hamburger
+          bind:isOpen
+          class="bg-zinc-200" />
       </div>
     </div>
     {#if isOpen}
-      <div class="absolute bg-custom-gradient-blue-header px-16 w-full" transition:slide={{ duration: 300, easing: quintOut, axis: 'y' }}>
+      <div
+        class="absolute bg-custom-gradient-blue-header px-16 w-full"
+        transition:slide={{ duration: 300, easing: quintOut, axis: 'y' }}>
         <div class="grid grid-cols-4 py-4 gap-1 sm:gap-2 lg:gap-4 md:pr-12 lg:pr-32 xl:pr-64">
           {#each dropdownLinks as link}
             <div class="col-span-1 tracking-wide">
@@ -90,7 +100,9 @@
                 <ul class="text-base">
                   {#each link.subLinks as subLink}
                     <li>
-                      <a href={subLink.url} class="hover:text-mcswf-gold hover:underline underline-offset-4"
+                      <a
+                        href={subLink.url}
+                        class="hover:text-mcswf-gold hover:underline underline-offset-4"
                         >{subLink.text}
                         <ForwardArrow />
                       </a>
