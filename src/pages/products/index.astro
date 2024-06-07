@@ -1,44 +1,35 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
+import { displaySiteBanner } from '@components/stores.js';
+import Hero from '@components/elements/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-
+import ContentImageFull from '@components/sections/ContentImageFull.svelte';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
-import Hero from '../../components/elements/Hero.svelte';
-import ContentImageFull from '../../components/sections/ContentImageFull.svelte';
+
 const products = await getCollection('products');
 displaySiteBanner.set(false);
-products.sort((a,b) => a.data.order - b.data.order)
+products.sort((a, b) => a.data.order - b.data.order);
 ---
 
-
-
-<Layout title='Overview'>
-  <div
-    class='fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6'>
-    <img src='/ega.svg' />
-  </div>
-  <div class='relative font-expressway red-radial-gradient scrollbar-hide'>
-    <div
-      class="relative z-20 h-fit bg-[url('/images/Overview_hero.svg')] bg-top bg-cover bg-center bg-no-repeat rounded-b-2xl lg:rounded-none">
-      <div
-        class='bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none'>
-        <Hero
-          padding='pt-24'
-          title='OUR PRODUCT PORTFOLIO'
-          content='Real solutions to real problems - Created for Marines, by Marines at the Marine Corps Software Factory.'
-          contentClasses='pt-5'
-        />
-      </div>
-    </div>
-    <div class='relative z-20'>
+<Layout title="Products Overview">
+  <Hero
+    client:only
+    title="OUR PRODUCT PORTFOLIO"
+    titleColor="yellow"
+    titleClasses="text-[32px] md:text-4xl w-64 md:w-full"
+    description="Real solutions to real problems - Created for Marines, by Marines at the Marine Corps Software Factory."
+    descriptionClasses="w-80 md:w-[400px] text-base md:text-2xl"
+    backgroundImg="/images/Overview_hero.svg"
+    class="bg-top"
+  />
+  <div class='relative z-20'>
       {products.map(e => (
 
           <ContentImageFull
             flipped = { e.data.order % 2 === 0 }
-            link=`products/${e.id}`
+            link={`products/${e.id}`}
             linkText='LEARN MORE'
             title=''
             content={e.data['description']}
@@ -52,5 +43,4 @@ products.sort((a,b) => a.data.order - b.data.order)
     <div class='pt-20 relative z-20'>
       <FooterFull client:only />
     </div>
-  </div>
 </Layout>

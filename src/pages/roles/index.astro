@@ -1,15 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import { displaySiteBanner } from '@components/stores.js';
 import Hero from '@components/elements/Hero.svelte';
-
+import FooterFull from '@components/FooterFull.svelte';
+import ContentImageFull from '@components/sections/ContentImageFull.svelte';
+import { externalLinks } from '@content/constants';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
-import FooterFull from '@components/FooterFull.svelte';
-import ContentImageFull from '../../components/sections/ContentImageFull.svelte';
-const posts = await Astro.glob('../../content/roles/*.md');
-import { displaySiteBanner } from '../../components/stores.js';
-import { externalLinks } from '@content/constants';
 
+const posts = await Astro.glob('../../content/roles/*.md');
 let side = 'left';
 displaySiteBanner.set(false);
 
@@ -17,71 +16,41 @@ const { frontmatter, compiledContent } = Astro.props;
 ---
 
 <Layout title="Roles">
-  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
-    <img src="/ega.svg" />
-  </div>
-  <div class="relative max-h-screen font-expressway scrollbar-hide">
-    <div
-      class="relative z-20 h-fit bg-cover bg-no-repeat bg-center rounded-b-2xl lg:rounded-none"
-      style={{
-        backgroundImage: `url('/images/mcswf_instruction_wide.png')`,
-      }}>
-      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
-        <Hero title="" link={externalLinks.recruitingApplication} linkText="APPLY NOW" padding="pt-24" titleClasses="text-white">
-          <span slot="title" class="uppercase">Pick the perfect<span class="block">Role for you</span></span>
-        </Hero>
-      </div>
-    </div>
+  <Hero
+    client:only
+    title="PICK THE PERFECT ROLE FOR YOU"
+    titleClasses="w-72 md:w-96"
+    backgroundImg="/images/mcswf_instruction_wide.png"
+    link={externalLinks.recruitingApplication}
+    linkText="APPLY NOW"
+    />
 
-    <div class="relative z-20 max-h-screen scrollbar-hide">
-      <div class="hidden lg:block">
-        {
-          posts.map((post) => {
-            if (side == 'left') {
-              side = 'right';
-              return (
-                <>
-                  <div class="relative z-20 ">
-                    <ContentImageFull
-                      title={post.frontmatter.role}
-                      titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
-                      content={post.frontmatter.about}
-                      link={'/roles/' + post.frontmatter.url}
-                      linkText="LEARN MORE"
-                      image={`/images/${post.frontmatter.image}`}
-                      imageAltText={post.frontmatter.image_alt_text}
-                    />
-                  </div>
-                </>
-              );
-            } else {
-              side = 'left';
-              return (
-                <>
-                  <div class="relative z-20 ">
-                    <ContentImageFull
-                      flipped
-                      title={post.frontmatter.role}
-                      titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
-                      content={post.frontmatter.about}
-                      link={'/roles/' + post.frontmatter.url}
-                      linkText="LEARN MORE"
-                      image={`/images/${post.frontmatter.image}`}
-                      imageAltText={post.frontmatter.image_alt_text}
-                    />
-                  </div>
-                </>
-              );
-            }
-          })
-        }
-      </div>
-      <div class="lg:hidden">
-        {
-          posts.map((post) => {
+  <div class="relative z-20 max-h-screen scrollbar-hide">
+    <div class="hidden lg:block">
+      {
+        posts.map((post) => {
+          if (side == 'left') {
+            side = 'right';
             return (
               <>
-                <div class="relative z-20 ">
+                <div class="relative">
+                  <ContentImageFull
+                    title={post.frontmatter.role}
+                    titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                    content={post.frontmatter.about}
+                    link={'/roles/' + post.frontmatter.url}
+                    linkText="LEARN MORE"
+                    image={`/images/${post.frontmatter.image}`}
+                    imageAltText={post.frontmatter.image_alt_text}
+                  />
+                </div>
+              </>
+            );
+          } else {
+            side = 'left';
+            return (
+              <>
+                <div class="relative">
                   <ContentImageFull
                     flipped
                     title={post.frontmatter.role}
@@ -95,12 +64,34 @@ const { frontmatter, compiledContent } = Astro.props;
                 </div>
               </>
             );
-          })
-        }
-      </div>
-      <div class="pt-20">
-        <FooterFull client:only />
-      </div>
+          }
+        })
+      }
+    </div>
+    <div class="lg:hidden">
+      {
+        posts.map((post) => {
+          return (
+            <>
+              <div class="relative">
+                <ContentImageFull
+                  flipped
+                  title={post.frontmatter.role}
+                  titleClasses="text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+                  content={post.frontmatter.about}
+                  link={'/roles/' + post.frontmatter.url}
+                  linkText="LEARN MORE"
+                  image={`/images/${post.frontmatter.image}`}
+                  imageAltText={post.frontmatter.image_alt_text}
+                />
+              </div>
+            </>
+          );
+        })
+      }
+    </div>
+    <div class="pt-20">
+      <FooterFull client:only />
     </div>
   </div>
 </Layout>

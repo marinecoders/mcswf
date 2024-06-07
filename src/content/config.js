@@ -73,17 +73,17 @@ const stepsCollection = defineCollection({
   }),
 });
 
-const aboutUsCollection = defineCollection({
+const contactUsCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    header: z.string(),
+    heading: z.string(),
     description: z.string(),
     background: z.object({
       src: z.string(),
       alt: z.string(),
     }),
     buttonLink: z.string(),
-    order: z.number(),
+    buttonText: z.string(),
   }),
 });
 
@@ -95,5 +95,5 @@ export const collections = {
   products: productCollection,
   aboutMetrics: aboutMetricsCollection,
   steps: stepsCollection,
-  aboutUs: aboutUsCollection,
+  contactUs: contactUsCollection,
 };

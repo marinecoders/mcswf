@@ -27,55 +27,55 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
 ---
 
 <Layout title={entry.data.product}>
-  <div class="fixed left-0 z-10 flex justify-center w-full align-middle top-24 h-5/6">
-    <img src="/ega.svg" />
-  </div>
-
-  <div class="relative max-h-screen overflow-y-scroll font-expressway red-radial-gradient scrollbar-hide">
-    <div class:list={['relative z-20 h-fit  bg-cover bg-no-repeat bg-center rounded-b-2xl lg:rounded-none']} style={bgString}>
-      <div class="bg-gradient-to-t from-black py-20 rounded-b-2xl lg:rounded-none">
-        <Hero
-          padding="pt-8"
-          title={entry.data.product}
-          content={entry.data.description}
-          link="#"
-          linkText="REQUEST APP DEMO"
-          titleClasses="text-white text-2xl lg:text-[40px]"
-          contentClasses="text-base lg:text-[21px]"
+  <Hero
+    title={entry.data.product}
+    description={entry.data.description}
+    descriptionClasses="font-light lg:w-[1000px]"
+    link="#"
+    linkText="REQUEST APP DEMO"
+    backgroundImg={entry.data.background.src}
+  />
+  <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
+    <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]">
+      <div class="w-full">
+        <img
+          class="object-cover m-auto"
+          src={entry.data.image.src}
+          alt={entry.data.image.alt}
         />
       </div>
     </div>
-
-    <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
-      <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]">
-        <div class="w-full">
-          <img class="object-cover m-auto" src={entry.data.image.src} alt={entry.data.image.alt} />
-        </div>
+    <div class="grid gap-4 mt-8 grid-cols-1">
+      <h2 class="mb-4 ml-8 text-2xl md:text-4xl font-extrabold tracking-tight text-left text-white">
+        {entry.data.heading}
+      </h2>
+      <ul class="m-4 ml-12 list-disc text-xl md:text-2xl">
+        {entry.data.bullets.map((b) => <li>{b}</li>)}
+      </ul>
+      <div class="grid grid-cols-1 lg:grid-cols-2 w-fit m-auto z-20">
+        {
+          entry.data.metrics.map((p) => (
+            <div class="text-center m-12">
+              <MetricCard
+                icon={p.icon}
+                value={p.value}
+                metric={p.metric}
+              />
+            </div>
+          ))
+        }
       </div>
-      <div class="grid gap-4 mt-8 grid-cols-1">
-        <h2 class="mb-4 ml-8 text-2xl md:text-4xl font-extrabold tracking-tight text-left text-white">
-          {entry.data.heading}
-        </h2>
-        <ul class="m-4 ml-12 list-disc text-xl md:text-2xl">
-          {entry.data.bullets.map((b) => <li>{b}</li>)}
-        </ul>
-        <div class="grid grid-cols-1 lg:grid-cols-2 w-fit m-auto z-20">
-          {
-            entry.data.metrics.map((p) => (
-              <div class="text-center m-12">
-                <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
-              </div>
-            ))
-          }
-        </div>
-        <div class="grid gap-4 my-4 grid-cols-1 lg:hidden relative h-max">
-          <img class="w-full" src={entry.data.image.src} alt={entry.data.image.alt} />
-        </div>
+      <div class="grid gap-4 my-4 grid-cols-1 lg:hidden relative h-max">
+        <img
+          class="w-full"
+          src={entry.data.image.src}
+          alt={entry.data.image.alt}
+        />
       </div>
     </div>
+  </div>
 
-    <div class="relative z-20">
-      <FooterFull client:only />
-    </div>
+  <div class="relative z-20">
+    <FooterFull client:only />
   </div>
 </Layout>
