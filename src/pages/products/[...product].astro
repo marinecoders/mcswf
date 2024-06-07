@@ -32,7 +32,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
     title={entry.data.product}
     description={entry.data.description}
     descriptionClasses="font-light lg:w-[1000px]"
-    link={externalLinks.mcswfEmail}
+    link=`mailto:${externalLinks.mcswfEmail}?subject=${entry.data.product} product demo`
     linkText="REQUEST APP DEMO"
     backgroundImg={entry.data.background.src}
   />

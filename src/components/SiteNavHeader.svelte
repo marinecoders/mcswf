@@ -80,7 +80,7 @@
           color="white"
           size="md"
           class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto"
-          link={externalLinks.mcswfEmail}>GET IN TOUCH</ButtonCustom>
+          link="mailto:${externalLinks.mcswfEmail}?subject={externalLinks.mcswfEmailSubject}">GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
         <Hamburger

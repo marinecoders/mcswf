@@ -125,8 +125,8 @@
           <p>Interested in partnering with the Marine Corps Software Factory?</p>
           <p>
             Email us at <a
-              href="mailto:mcswf@usmc.mil"
-              class="underline text-mcswf-gold">mcswf@usmc.mil</a>
+              href="mailto:{externalLinks.mcswfEmail}"
+              class="underline text-mcswf-gold">{externalLinks.mcswfEmail}</a>
           </p>
         </div>
       </div>
