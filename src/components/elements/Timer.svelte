@@ -7,7 +7,7 @@
     let seconds = 19;
   
     onMount(() => {
-      const countDownDate = new Date('Mar 4, 2024 00:50:25').getTime();
+      const countDownDate = new Date('August 1, 2024 23:59:59').getTime();
   
       const interval = setInterval(() => {
         const now = new Date().getTime();
