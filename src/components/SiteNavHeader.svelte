@@ -1,11 +1,11 @@
 <script>
   import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
-  import { externalLinks } from '@content/constants';
   import Hamburger from '@icons/Hamburger.svelte'; // Ensure this path is correct
   import ForwardArrow from '@icons/ForwardArrow.svelte';
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import { onMount } from 'svelte';
+  import { externalLinks } from '@content/constants';
 
   let isOpen = false;
 
@@ -40,11 +40,11 @@
     {
       text: 'CONTACT',
       image: '/images/contact_card.png',
-      url: '/contact',
+      url: '/contactUs',
       subLinks: [
-        { url: '/contact/get-in-touch', text: 'GET IN TOUCH' },
-        { url: '/contact/request-a-demo', text: 'REQUEST A DEMO' },
-        { url: '/contact/suggest-an-app', text: 'SUGGEST AN APP' },
+        { url: '/contactUs/applyNow', text: 'APPLY NOW' },
+        { url: '/contactUs/proposeApp', text: 'PROPOSE AN APP' },
+        { url: '/contactUs/getInTouch', text: 'GET IN TOUCH' },
       ],
     },
   ];

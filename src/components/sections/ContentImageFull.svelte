@@ -25,8 +25,12 @@
       </div>
     {/if}
     <div class="font-light text-white sm:text-lg w-3/4 lg:w-full place-self-center">
-      <h2 class="mb-4 mt-6 lg:mt-0 tracking-tight lg:text-center  text-mcswf-gold text-2xl font-bold md:text-3xl lg:text-4xl {titleClasses}">
-        {@html title}
+      <h2 class="mb-4 mt-6 lg:mt-0 tracking-tight lg:text-center text-mcswf-gold text-2xl font-bold md:text-3xl lg:text-4xl {titleClasses}">
+        {#if !title}
+          <slot name="title" />
+        {:else}
+          {title}
+        {/if}
       </h2>
       <div class="flex justify-center">
         {#if content instanceof Array}
@@ -36,7 +40,7 @@
             {/each}
           </ul>
         {:else}
-          <p class="mb-4 text-left lg:text-center  whitespace-pre-line text-base md:text-[21px]">
+          <p class="mb-4 text-left lg:text-center whitespace-pre-line text-base md:text-[21px]">
             {content}
           </p>
         {/if}

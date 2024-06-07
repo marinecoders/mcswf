@@ -8,4 +8,7 @@ export default defineConfig({
   integrations: [tailwind(), svelte(), mdx()],
   site: 'https://dev-mcswf.usmc.dev',
   base: '/',
+  redirects: {
+    '/contactUs': '/contactUs/getInTouch',
+  },
 });

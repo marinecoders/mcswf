@@ -30,12 +30,12 @@ products.sort((a, b) => a.data.order - b.data.order);
             flipped = { e.data.order % 2 === 0 }
             link=`products/${e.id}`
             linkText='LEARN MORE'
-            title=`<span class="flex"><span class='text-mcswf-gold text-[48px] flex-shrink lg:text-[64px] font-menobanner font-light'>0${e.data.order}</span> <span class='ml-2 text-[32px] lg:ml-5'>${e.data['product']}</span></span>`
+            title=''
             content={e.data['description']}
             image={e.data['image2'].src}
             imageClasses=''
             titleClasses='text-white tracking-[4px]'
-          />
+          ><div slot="title" class="flex justify-start lg:justify-center"><span class='text-mcswf-gold text-[48px] flex-shrink lg:text-[64px] font-menobanner font-light'>0{e.data.order}</span> <span class='ml-2 text-[32px] lg:ml-5'>{e.data['product']}</span></div></ContentImageFull>
         ),
       )}
     </div>
