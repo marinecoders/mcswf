@@ -2,5 +2,5 @@
   <img
     src="/ega.svg"
     alt="Eagle, Globe, and Anchor"
-    class="translate-x-12 scale-125" />
+    class="translate-x-12 -z-10 scale-125" />
 </div>

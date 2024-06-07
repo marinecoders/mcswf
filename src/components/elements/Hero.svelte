@@ -34,15 +34,13 @@
     </h1>
     <!-- Description -->
     {#if description}
-      <div class="w-full">
-        <p class={twMerge('text-left md:text-center text-base lg:text-2xl', descriptionClasses, colorSpecificClasses[descriptionColor])}>
-          {#if !description}
-            <slot name="description" />
-          {:else}
-            {description}
-          {/if}
-        </p>
-      </div>
+      <p class={twMerge('text-left md:text-center text-base lg:text-2xl', descriptionClasses, colorSpecificClasses[descriptionColor])}>
+        {#if !description}
+          <slot name="description" />
+        {:else}
+          {description}
+        {/if}
+      </p>
     {/if}
     <!-- Buttons -->
     {#if link}
