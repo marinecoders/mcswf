@@ -54,11 +54,11 @@ const metrics = await getCollection('aboutMetrics');
         titleClasses="mt-6"
       />
     </div>
-    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-around">
       {
         metrics?.map((item) =>
           item.data.metrics?.map((p) => (
-            <div class="text-center m-4 md:m-8 lg:m-12">
+            <div class="text-center justify-self-center my-8">
               <MetricCard
                 icon={p.icon}
                 value={p.value}
