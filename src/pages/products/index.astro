@@ -26,7 +26,6 @@ products.sort((a, b) => a.data.order - b.data.order);
   />
   <div class='relative z-20'>
       {products.map(e => (
-
           <ContentImageFull
             flipped = { e.data.order % 2 === 0 }
             link={`products/${e.id}`}
