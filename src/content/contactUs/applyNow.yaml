@@ -3,5 +3,5 @@ description: "Be a part of MCSWF."
 background: 
   src: '/images/leaning_over_laptop.png'
   alt: ' '
-buttonText: 'APPLY NOW'
+buttonText: 'SEE ROLES'
 buttonLink: '/roles'

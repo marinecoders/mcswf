@@ -89,7 +89,7 @@
           color="white"
           size="md"
           class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto hidden sm:block"
-          link={externalLinks.recruitingApplication}
+          link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
           externalLink={true}>GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">

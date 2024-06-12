@@ -6,4 +6,5 @@ export const externalLinks = {
     linkedIn: 'https://www.linkedin.com/company/marine-corps-software-factory/',
   },
   deputyCommandantForInformation: 'https://www.information.marines.mil/',
+  marinesDotCom: 'https://www.marines.com/',
 };

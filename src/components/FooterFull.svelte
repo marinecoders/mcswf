@@ -35,7 +35,9 @@
       <div class="flex justify-around py-4 align-middle border-b">
         <div class="w-2/5">
           <a
-            href="/"
+            href={externalLinks.marinesDotCom}
+            target="_blank"
+            rel="noopener noreferrer"
             class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
             <img
               style="fill: white;"
@@ -84,7 +86,7 @@
         </div>
       </div>
       <div class="text-transparent">
-        Proudly developed at<a
+        Proudly developed with<a
           class="underline ps-1"
           href="https://www.marforres.marines.mil/MIU/">Marine Innovation Unit</a>
       </div>
@@ -106,7 +108,9 @@
       </div>
       <div class="flex justify-start py-4 align-middle border-b">
         <a
-          href="/"
+          href={externalLinks.marinesDotCom}
+          target="_blank"
+          rel="noopener noreferrer"
           class="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
           <img
             style="fill: white;"
@@ -129,7 +133,9 @@
           <p>Interested in partnering with the Marine Corps Software Factory?</p>
           <p>
             Email us at <a
-              href="mailto:mcswf@usmc.mil"
+              href={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
+              target="_blank"
+              rel="noopener noreferrer"
               class="underline text-mcswf-gold">mcswf@usmc.mil</a>
           </p>
         </div>
