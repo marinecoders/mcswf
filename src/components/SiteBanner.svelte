@@ -1,7 +1,7 @@
 <script>
   import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
   import { displaySiteBanner } from './stores.js';
-  import { externalLinks } from '@content/constants';
+  import { externalLinks } from '@content/externalLinks';
 </script>
 
 {#if $displaySiteBanner}
@@ -15,6 +15,7 @@
         color="yellow"
         size="md"
         link={externalLinks.recruitingApplication}
+        externalLink={true}
         class="px-2 py-1 text-xs sm:px-4 sm:text-base md:px-8">Apply Now</ButtonCustom>
     </div>
   </div>

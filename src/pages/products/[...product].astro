@@ -5,6 +5,7 @@ import FooterFull from '@components/FooterFull.svelte';
 import MetricCard from '../../components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '../../components/stores.js';
+import { externalLinks } from '@content/externalLinks.js';
 import '../../styles/global.css';
 
 interface Props {
@@ -31,8 +32,9 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
     title={entry.data.product}
     description={entry.data.description}
     descriptionClasses="font-light lg:w-[1000px]"
-    link="#"
+    link={externalLinks.recruitingApplication}
     linkText="REQUEST APP DEMO"
+    externalLink={true}
     backgroundImg={entry.data.background.src}
   />
   <div class="relative z-20 items-center max-w-screen-xl lg:gap-20 gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">

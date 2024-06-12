@@ -4,7 +4,7 @@
   import ForwardArrow from '@icons/ForwardArrow.svelte';
   import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
-  import { externalLinks } from '@content/constants';
+  import { externalLinks } from '@content/externalLinks';
   import { AccordionItem, Accordion } from 'flowbite-svelte';
   import Icon from '@iconify/svelte';
 
@@ -89,7 +89,8 @@
           color="white"
           size="md"
           class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto hidden sm:block"
-          link={externalLinks.recruitingApplication}>GET IN TOUCH</ButtonCustom>
+          link={externalLinks.recruitingApplication}
+          externalLink={true}>GET IN TOUCH</ButtonCustom>
       {/if}
       <div class="self-center scale-50">
         <Hamburger
@@ -104,6 +105,8 @@
         <div class="flex justify-center">
           <a
             href={externalLinks.recruitingApplication}
+            target="_blank"
+            rel="noopener noreferrer"
             class="m-auto sm:hidden underline py-4 text-mcswf-gold">APPLY NOW</a>
         </div>
 

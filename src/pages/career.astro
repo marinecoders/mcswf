@@ -12,7 +12,7 @@ import CareerAccordionSection from '@components/accordion/CareerAccordionSection
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
 import ForwardArrow from '@components/icons/ForwardArrow.svelte';
 import { displaySiteBanner } from '../components/stores'
-import { externalLinks } from '@content/constants'
+import { externalLinks } from '@content/externalLinks.js';
 
 let side = 'left';
 
@@ -32,6 +32,7 @@ displaySiteBanner.set(false);
       titleClasses='w-64 md:w-[650px]'
       link={externalLinks.recruitingApplication}
       linkText="APPLY NOW"
+      externalLink={true}
       backgroundImg="/images/dress_blues_wide.png"
       class="bg-top"
     />
@@ -146,7 +147,7 @@ displaySiteBanner.set(false);
         </div>
       </div>
       <div class="pb-12 bg-white flex justify-center">
-          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only>APPLY NOW</ButtonCustom>
+          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only externalLink={true}>APPLY NOW</ButtonCustom>
       </div>
       <div>
         <FooterFull 

@@ -1,6 +1,6 @@
 <script>
   import { LinkedIn } from '@icons/iconExports';
-  import { externalLinks } from '@content/constants';
+  import { externalLinks } from '@content/externalLinks';
   export let background = '';
   export let rounded = true;
 </script>
@@ -48,6 +48,8 @@
           <p class="font-light">
             Product of The Marine Corps Software Factory, which proudly sits within the <a
               href={externalLinks.deputyCommandantForInformation}
+              target="_blank"
+              rel="noopener noreferrer"
               class="underline text-mcswf-gold">Deputy Commandant for Information</a
             >.
           </p>
@@ -75,6 +77,8 @@
           <p>
             Email us at <a
               href={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
+              target="_blank"
+              rel="noopener noreferrer"
               class="underline text-mcswf-gold">{externalLinks.mcswfEmail}</a>
           </p>
         </div>

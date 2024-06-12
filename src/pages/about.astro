@@ -7,7 +7,7 @@ import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '@components/stores.js';
-import { externalLinks } from '@content/constants';
+import { externalLinks } from '@content/externalLinks.js';
 import '../styles/global.css';
 
 displaySiteBanner.set(true);
@@ -94,7 +94,8 @@ const metrics = await getCollection('aboutMetrics');
             size="xl"
             customClasses="w-64"
             link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
-            client:only>
+            client:only
+            externalLink={true}>
             GET IN TOUCH
           </ButtonCustom>
         </div>
