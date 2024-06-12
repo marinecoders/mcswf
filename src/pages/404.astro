@@ -1,45 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { displaySiteBanner } from '../components/stores.js'
+import Layout from '../layouts/Layout.astro';
+import { displaySiteBanner } from '../components/stores.js';
 
-import '../styles/global.css'
-import ForwardArrow from '@components/icons/ForwardArrow.svelte'
+import '../styles/global.css';
+import ForwardArrow from '@components/icons/ForwardArrow.svelte';
 
-displaySiteBanner.set(false)
+displaySiteBanner.set(false);
+
+const pageLinks = [
+  {
+    title: 'Had enough exploring for the day?',
+    link: '/',
+    description: 'Go to homepage',
+  },
+  {
+    title: 'Learn more about our roles?',
+    link: '/roles',
+    description: 'Pick the role for you',
+  },
+  {
+    title: 'Is MCSWF right for you?',
+    link: '/career',
+    description: 'Ready to join',
+  },
+];
 ---
 
 <Layout title="404">
   <div class="max-h-screen scrollbar-hide snap-start snap-y snap-mandatory">
-    <div class="h-screen snap-start py-20 pt-16 px-8 md:px-24">
-      <h1 class="text-left font-semibold text-9xl text-mcswf-gold font-menobanner">404</h1>
-      <span slot="content" class="md:inline">This page is unavailable.<span class="block">Try one of these pages instead.</span></span>
-    <div class="relative grid grid-cols-1 lg:grid-cols-3 m-auto pt-6 lg:pt-20">
-      <div class="text-left ml-0 m-4 md:m-8 lg:m-auto">
-        <h1 class="text-base lg:text-lg pb-4 lg:pb-8">Had enough exploring for the day?</h1>
-        <a
-          href="/"
-          class="text-mcswf-gold hover:underline underline-offset-4 font-bold text-lg"
-          >Go to homepage
-          <ForwardArrow />
-        </a>
-      </div>
-      <div class="text-left ml-0 m-4 md:m-8 lg:m-auto">
-          <h1 class="text-base lg:text-lg pb-4 lg:pb-8">Learn more about our roles?</h1>
-          <a
-            href="/roles"
-            class="text-mcswf-gold hover:underline underline-offset-4 font-bold text-lg"
-            >Pick the role for you
-            <ForwardArrow />
-          </a>
-      </div>
-      <div class="text-left ml-0 m-4 md:m-8 lg:m-auto">
-          <h1 class="text-base lg:text-lg pb-4 lg:pb-8">Is MCSWF right for you?</h1>
-          <a
-            href="/career"
-            class="text-mcswf-gold hover:underline underline-offset-4 font-bold text-lg"
-            >Ready to join
-            <ForwardArrow />
-          </a>
+    <div class="h-screen snap-start py-16 md:py-20 px-8 md:px-16 lg:px-24">
+      <h1 class="font-semibold text-[200px] text-mcswf-gold font-menobanner h-64">404</h1>
+      <span class="bold text-2xl -mt-20">This page is unavailable.<span class="block">Try one of these pages instead.</span></span>
+      <div class="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 m-auto pt-10 lg:pt-24 text-base md:text-xl justify-between">
+        {
+          pageLinks.map((link) => (
+            <div class="text-left">
+              <h2 class="pb-4 md:pb-8 font-light">{link.title}</h2>
+              <a
+                href={link.link}
+                class="text-mcswf-gold hover:underline underline-offset-4 font-bold whitespace-nowrap">
+                {link.description}
+                <ForwardArrow />
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
