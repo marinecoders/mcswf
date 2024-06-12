@@ -8,3 +8,7 @@ export const externalLinks = {
   deputyCommandantForInformation: 'https://www.information.marines.mil/',
   marinesDotCom: 'https://www.marines.com/',
 };
+
+export const timerCountdown = {
+  formatedDate: 'August 1, 2024 23:59:59',
+};
