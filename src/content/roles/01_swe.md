@@ -5,6 +5,7 @@ image: mcswf_marine.png
 image_wide: seHeader.png
 icon: software_engineer.svg
 image_alt_text: Marine Software Engineer
+image_focus: right
 about: >
   Software Development Engineers are responsible for creating, refining, and launching applications. They prioritize high availability, minimal latency, and scalability. Their approach is to first implement user stories from the backlog and adopt a test-first methodology. This strategy helps them to ensure that the software is free of bugs or security vulnerabilities.
 

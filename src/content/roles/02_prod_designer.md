@@ -3,8 +3,9 @@ role: PRODUCT DESIGNER
 url: product_designer
 image: marine_working.png
 icon: product_designer.svg
-image_wide: marine_designer_wide.png
+image_wide: designer.png
 image_alt_text: Marine Product Designer
+image_focus: left
 about: >
   Product Designers, specializing in UI/UX, play a vital role in guiding application teams to develop products that meet user needs. They serve as the primary link between the user and the team, utilizing a wide range of skills, including user research, experience and interaction design, and visual design.
 
