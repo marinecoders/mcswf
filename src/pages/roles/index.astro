@@ -4,7 +4,7 @@ import { displaySiteBanner } from '@components/stores.js';
 import Hero from '@components/elements/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
-import { externalLinks } from '@content/constants';
+import { externalLinks } from '@content/externalLinks.js';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
 
@@ -22,8 +22,9 @@ const { frontmatter, compiledContent } = Astro.props;
     titleClasses="w-72 md:w-96"
     backgroundImg="/images/mcswf_instruction_wide.png"
     link={externalLinks.recruitingApplication}
+    externalLink={true}
     linkText="APPLY NOW"
-    />
+  />
 
   <div class="relative z-20 max-h-screen scrollbar-hide">
     <div class="hidden lg:block">
@@ -83,6 +84,7 @@ const { frontmatter, compiledContent } = Astro.props;
                   linkText="LEARN MORE"
                   image={`/images/${post.frontmatter.image}`}
                   imageAltText={post.frontmatter.image_alt_text}
+                  imageClasses="w-full"
                 />
               </div>
             </>

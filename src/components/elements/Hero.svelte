@@ -4,12 +4,13 @@
 
   export let title = '';
   export let titleColor = 'white';
+  export let titleClasses = '';
   export let description = '';
   export let descriptionColor = 'white';
   export let descriptionClasses = '';
   export let link = '';
   export let linkText = '';
-  export let titleClasses = '';
+  export let externalLink = false;
   export let backgroundImg = '';
 
   const colorSpecificClasses = {
@@ -47,8 +48,9 @@
       <ButtonCustom
         color="white"
         size="xl"
+        class="w-44 md:w-72"
         {link}
-        class="w-44 md:w-72">
+        {externalLink}>
         {linkText}
       </ButtonCustom>
     {/if}

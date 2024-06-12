@@ -24,22 +24,28 @@ products.sort((a, b) => a.data.order - b.data.order);
     backgroundImg="/images/Overview_hero.svg"
     class="bg-top"
   />
-  <div class='relative z-20'>
-      {products.map(e => (
-          <ContentImageFull
-            flipped = { e.data.order % 2 === 0 }
-            link={`products/${e.id}`}
-            linkText='LEARN MORE'
-            title=''
-            content={e.data['description']}
-            image={e.data['image2'].src}
-            imageClasses=''
-            titleClasses='text-white tracking-[4px]'
-          ><div slot="title" class="flex justify-start lg:justify-center"><span class='text-mcswf-gold text-[48px] flex-shrink lg:text-[64px] font-menobanner font-light'>0{e.data.order}</span> <span class='ml-2 text-[32px] lg:ml-5'>{e.data['product']}</span></div></ContentImageFull>
-        ),
-      )}
-    </div>
-    <div class='pt-20 relative z-20'>
-      <FooterFull client:only />
-    </div>
+  <div class="relative z-20">
+    {
+      products.map((e) => (
+        <ContentImageFull
+          flipped={e.data.order % 2 === 0}
+          link={`products/${e.id}`}
+          linkText="LEARN MORE"
+          title=""
+          content={e.data['description']}
+          image={e.data['image2'].src}
+          titleClasses="text-white">
+          <div
+            slot="title"
+            class="flex justify-start lg:justify-center py-8">
+            <span class="text-mcswf-gold text-[48px] flex-shrink md:text-[64px] font-menobanner font-light tracking-wide">0{e.data.order}</span>{' '}
+            <span class="ml-4 text-[32px] md:text-[40px] md:ml-6 tracking-widest">{e.data['product']}</span>
+          </div>
+        </ContentImageFull>
+      ))
+    }
+  </div>
+  <div class="pt-20 relative z-20">
+    <FooterFull client:only />
+  </div>
 </Layout>

@@ -3,7 +3,8 @@ export const externalLinks = {
   mcswfEmail: 'mcswf@usmc.mil',
   mcswfEmailSubject: 'About MCSWF',
   social: {
-    linkedIn: 'https://www.linkedin.com',
+    linkedIn: 'https://www.linkedin.com/company/marine-corps-software-factory/',
   },
   deputyCommandantForInformation: 'https://www.information.marines.mil/',
+  marinesDotCom: 'https://www.marines.com/',
 };
