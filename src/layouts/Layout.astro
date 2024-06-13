@@ -49,7 +49,7 @@ const { title = null } = Astro.props;
     />
     <title>MCSWF {title && '-'} {title}</title>
   </head>
-  <body class="overflow-auto h-full w-full font-expressway bg-opacity-40 text-white bg-custom-gradient-red bg-cover bg-center">
+  <body class="overflow-auto h-full w-full font-expressway text-white bg-custom-gradient-red-banner bg-cover bg-center">
     <SiteBanner />
     <SiteNavHeader client:only="svelte" />
     <SiteBackgroundImg />

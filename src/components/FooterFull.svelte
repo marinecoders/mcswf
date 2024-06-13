@@ -1,8 +1,8 @@
 <script>
-  import { LinkedIn } from '@icons/iconExports';
-  import { externalLinks } from '@content/externalLinks';
   import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
   import McswfLogoAndText from '@components/logos/McswfLogoAndText.svelte';
+  import { LinkedIn } from '@icons/iconExports';
+  import { externalLinks } from '@content/externalLinks';
 
   export let background = '';
   export let rounded = true;
@@ -10,7 +10,7 @@
 
 <div class={background}>
   <footer
-    class="pb-0 pt-6 lg:pb-2 blue-radial-gradient shadow shadow-stone-950"
+    class="pb-0 pt-6 lg:pb-2 blue-radial-gradient shadow-xl shadow-stone-950"
     class:rounded-t-3xl={rounded}>
     <MaxWidthContainer>
       <!-- STANDARD FOOTER -->
