@@ -88,9 +88,9 @@
   <Dropdown
     bind:open={dropdownOpen}
     triggeredBy="#site-header-hamburger"
-    containerClass="bg-custom-gradient-blue-header py-6 w-full rounded-t-none !top-[68px] md:!top-[87px] text-white">
+    containerClass="bg-custom-gradient-blue-header py-6 w-screen rounded-t-none !top-[68px] md:!top-[87px] text-white">
     <div
-      class="w-full"
+      class="w-screen"
       transition:fadeSlide={{ duration: 200 }}>
       <MaxWidthContainer>
         <!-- Desktop Nav Header -->
