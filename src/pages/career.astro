@@ -2,8 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '@components/elements/Hero.svelte';
+import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
-
 import '../styles/global.css'
 import '../styles/fonts.css'
 import FooterFull from '@components/FooterFull.svelte'
@@ -36,34 +36,29 @@ displaySiteBanner.set(false);
       backgroundImg="/images/dress_blues_wide.png"
       class="bg-top"
     />
-    <div class="relative z-20 max-h-screen scrollbar-hide">
+    <MaxWidthContainer>
 
-        <div class="relative z-20">
           <ContentImageFull
             title="BUILD SOFTWARE"
-            titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+            titleClasses="text-white"
             content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
             link="/roles/"
             linkText="LEARN MORE"
-            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
             image="/images/charlie-1.png"
             imageAltText="A Marine Lieutenant Colonel looking at the camera"
+            imagePosition="right"
           />
-        </div>
-        <div class="relative z-20">
           <ContentImageFull
             flipped
             title="HOW TO MAKE AN IMPACT?"
-            titleClasses = "text-mcswf-white text-2xl font-bold md:text-3xl lg:text-4xl"
+            titleClasses="text-white"
             content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
             link="/roles/"
             linkText="LEARN MORE"
-            titleClasses="!text-white text-2xl font-bold md:text-3xl lg:text-4xl"
             image="/images/happy_sparta.png"
             imageAltText="A Marine presenting software"
-            imageClasses="w-full"
+            imagePosition="left"
           />
-        </div>
       <div class="relative z-20">
         <div class="w-full flex justify-center">
           <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
@@ -101,7 +96,9 @@ displaySiteBanner.set(false);
           </div>
         </div>
       </div>
-      <div class="relative pt-10 z-20 bg-white">
+    </MaxWidthContainer>
+
+      <div class="relative pt-10 z-20 bg-[#F0F0F0]">
         <div class="w-full flex flex-col justify-center text-center align-center text-black">
           <h1 class="text-4xl font-bold pb-8">READY TO JOIN?</h1>
           <p class="pb-8">Apply before 1. September 2025. (Placeholder)</p>
@@ -112,7 +109,7 @@ displaySiteBanner.set(false);
           </div>
         </div>
       </div>
-      <div class="relative pb-12 z-20 bg-white">
+      <div class="relative pb-12 z-20 bg-[#F0F0F0]">
         <div class="w-full flex flex-col justify-center text-center align-center text-black">
           <h1 class="text-4xl font-bold pb-8">PREREQUISITES</h1>
           <div class="flex justify-center">
@@ -127,13 +124,13 @@ displaySiteBanner.set(false);
           </div>
         </div>
       </div>
-      <div class="relative pb-12 z-20 bg-white">
+      <div class="relative pb-12 z-20 bg-[#F0F0F0]">
         <div class="w-full flex flex-col justify-center text-center align-center text-black">
           <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
           <div class="w-full flex justify-center">
             <div class="w-full mx-2 md:w-1/2 shadow-lg">
               {steps.map((step) => 
-                <CareerAccordionSection client:only
+                <CareerAccordionSection client:only="svelte"
                   isMiddle={step.data.step != 1}
                   isStart={step.data.step == 1}
                   isEnd={step.data.step == steps.length}
@@ -147,13 +144,11 @@ displaySiteBanner.set(false);
           </div>
         </div>
       </div>
-      <div class="pb-12 bg-white flex justify-center">
-          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only externalLink={true}>APPLY NOW</ButtonCustom>
+      <div class="pb-12 bg-[#F0F0F0] flex justify-center">
+          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only="svelte" externalLink={true}>APPLY NOW</ButtonCustom>
       </div>
-      <div>
         <FooterFull 
-          background='bg-white'
-          client:only />
-      </div>
+          background='bg-[#F0F0F0]'
+          client:only="svelte" />
     </div>
 </Layout>

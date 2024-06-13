@@ -1,9 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/elements/Hero.svelte';
+import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
+import FooterFull from '@components/FooterFull.svelte';
 import { getCollection } from 'astro:content';
 import { displaySiteBanner } from '@components/stores.js';
-import Hero from '@components/elements/Hero.svelte';
-import FooterFull from '@components/FooterFull.svelte';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
@@ -15,7 +16,7 @@ products.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Products Overview">
   <Hero
-    client:only
+    client:only="svelte"
     title="OUR PRODUCT PORTFOLIO"
     titleColor="yellow"
     titleClasses="text-[32px] md:text-4xl w-64 md:w-full"
@@ -24,28 +25,25 @@ products.sort((a, b) => a.data.order - b.data.order);
     backgroundImg="/images/Overview_hero.svg"
     class="bg-top"
   />
-  <div class="relative z-20">
+  <MaxWidthContainer>
     {
-      products.map((e) => (
+      products.map((product, index) => (
         <ContentImageFull
-          flipped={e.data.order % 2 === 0}
-          link={`products/${e.id}`}
+          titleClasses="text-white"
+          link={`products/${product.id}`}
           linkText="LEARN MORE"
-          title=""
-          content={e.data['description']}
-          image={e.data['image2'].src}
-          titleClasses="text-white">
+          content={product.data['description']}
+          image={product.data['image2'].src}
+          imagePosition={index % 2 === 0 ? 'right' : 'left'}>
           <div
             slot="title"
-            class="flex justify-start lg:justify-center py-8">
-            <span class="text-mcswf-gold text-[48px] flex-shrink md:text-[64px] font-menobanner font-light tracking-wide">0{e.data.order}</span>{' '}
-            <span class="ml-4 text-[32px] md:text-[40px] md:ml-6 tracking-widest">{e.data['product']}</span>
+            class="flex justify-start lg:justify-center">
+            <span class="text-mcswf-gold text-[48px] flex-shrink md:text-[64px] font-menobanner font-light tracking-wide">0{product.data.order}</span>{' '}
+            <span class="ml-4 text-[32px] md:text-[40px] md:ml-6 tracking-widest">{product.data['product']}</span>
           </div>
         </ContentImageFull>
       ))
     }
-  </div>
-  <div class="pt-20 relative z-20">
-    <FooterFull client:only />
-  </div>
+  </MaxWidthContainer>
+  <FooterFull client:only="svelte" />
 </Layout>
