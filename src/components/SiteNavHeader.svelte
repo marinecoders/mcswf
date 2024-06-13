@@ -62,7 +62,7 @@
 
 <header
   id="header"
-  class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header shadow shadow-stone-950">
+  class="w-full sticky top-0 z-30 bg-custom-gradient-blue-header shadow-sm shadow-stone-950">
   <MaxWidthContainer>
     <div class="flex flex-row justify-between items-center w-full py-2 sm:py-4 md:gap-4 lg:gap-8">
       <McswfLogoAndText displayImage={false} />

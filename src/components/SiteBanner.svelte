@@ -5,7 +5,7 @@
 </script>
 
 {#if $displaySiteBanner}
-  <div class="flex flex-col md:h-20 md:flex-row justify-center items-center w-full bg-custom-gradient-banner py-4 px-8 md:py-0 lg:px-14 md:gap-4 lg:gap-12">
+  <div class="flex flex-col md:h-20 md:flex-row justify-center items-center w-full bg-custom-gradient-red-banner py-4 px-8 md:py-0 lg:px-14 md:gap-4 lg:gap-12 z-30">
     <h3 class="text-center tracking-wide md:mr-4 bg-gradient-to-r from-white via-slate-50 to-slate-100 inline-block text-transparent bg-clip-text">
       <span class="font-bold">MARINE-LED <span class="block sm:inline">SOFTWARE DEVELOPMENT</span><span class="hidden md:inline">:</span></span>
       <span class="hidden uppercase md:inline ml-2">By Marines.<span class="ml-2">For Marines.</span></span>
