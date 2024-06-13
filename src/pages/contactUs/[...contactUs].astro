@@ -26,28 +26,30 @@ const linkText = entry.data.buttonText;
 ---
 
 <Layout title={entry.data.heading}>
-  <div
-    style={`background-image: url("${entry.data.background.src}");`}
-    class="relative w-full bg-cover bg-center bg-no-repeat h-[400px] md:h-[500px] lg:h-[700px] bg-custom-gradient-blue-header">
-    <div class="absolute inset-0 bg-stone-900 opacity-25"></div>
+  <div class="bg-custom-gradient-blue-header">
     <div
-      class="relative h-[400px] md:h-[500px] lg:h-[700px] bg-gradient-to-t from-stone-950 flex flex-col gap-6 md:gap-6 items-stretch md:items-center justify-end md:justify-center text-left md:text-center mx-auto tracking-wider px-8 pb-12">
-      <!-- Title -->
-      <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text w-64 md:w-[450px] lg:w-[500px]">
-        {entry.data.heading}
-      </h1>
-      <!-- End Title -->
-      <p class="text-left md:text-center text-base md:text-[26px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text">
-        {entry.data.description}
-      </p>
-      <!-- Buttons -->
-      <ButtonCustom
-        color="white"
-        size="xl"
-        link={entry.data.buttonLink}
-        class="w-44 md:w-72">
-        {linkText}
-      </ButtonCustom>
+      style={`background-image: url("${entry.data.background.src}");`}
+      class="relative w-full bg-cover bg-center bg-no-repeat h-[400px] md:h-[500px] lg:h-[700px] bg-custom-gradient-blue-header rounded-b-2xl">
+      <div class="absolute inset-0 bg-stone-900 opacity-25 rounded-b-2xl"></div>
+      <div
+        class="relative h-[400px] md:h-[500px] lg:h-[700px] bg-gradient-to-t from-stone-950 flex flex-col gap-6 md:gap-6 items-stretch md:items-center justify-end md:justify-center text-left md:text-center mx-auto tracking-wider px-8 pb-12 rounded-b-2xl">
+        <!-- Title -->
+        <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text w-64 md:w-[450px] lg:w-[500px]">
+          {entry.data.heading}
+        </h1>
+        <!-- End Title -->
+        <p class="text-left md:text-center text-base md:text-[26px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text">
+          {entry.data.description}
+        </p>
+        <!-- Buttons -->
+        <ButtonCustom
+          color="white"
+          size="xl"
+          link={entry.data.buttonLink}
+          class="w-44 md:w-72">
+          {linkText}
+        </ButtonCustom>
+      </div>
     </div>
   </div>
   <div class="bg-custom-gradient-blue-header">

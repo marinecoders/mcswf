@@ -22,66 +22,64 @@ products.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Home">
-  <div class="max-h-screen overflow-y-scroll font-expressway scrollbar-hide">
-    <Hero
-      client:only="svelte"
-      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
-      content="Train Marines. Build Applications. Deploy to the Edge"
-      link="/about"
-      linkText="LEARN MORE"
-      contentClasses={'text-base md:text-2xl'}
-      backgroundImg="/images/headset_marine.png"
-    />
-    <MaxWidthContainer>
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-        <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] text-mcswf-gold pt-16 px-8">OUR MISSION</h1>
-        <p class="text-left md:text-center text-base lg:text-2xl py-16 px-8">
-          We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These
-          capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.
-        </p>
+  <Hero
+    client:only="svelte"
+    title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+    content="Train Marines. Build Applications. Deploy to the Edge"
+    link="/about"
+    linkText="LEARN MORE"
+    contentClasses={'text-base md:text-2xl'}
+    backgroundImg="/images/headset_marine.png"
+  />
+  <MaxWidthContainer>
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] text-mcswf-gold pt-16 px-8">OUR MISSION</h1>
+      <p class="text-left md:text-center text-base lg:text-2xl py-16 px-8">
+        We provide mission-specific software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to close joint, coalition, and naval kill webs. These
+        capabilities enhance Marine commanders decision advantage across the full spectrum of military operations.
+      </p>
 
-        <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-items-center">
-          {
-            metrics?.map((item) =>
-              item.data.metrics?.map((p) => (
-                <div class="text-center my-6">
-                  <MetricCard
-                    icon={p.icon}
-                    value={p.value}
-                    metric={p.metric}
-                  />
-                </div>
-              ))
-            )
-          }
-        </div>
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-items-center">
+        {
+          metrics?.map((item) =>
+            item.data.metrics?.map((p) => (
+              <div class="text-center my-6">
+                <MetricCard
+                  icon={p.icon}
+                  value={p.value}
+                  metric={p.metric}
+                />
+              </div>
+            ))
+          )
+        }
       </div>
-      <ContentImageFull
-        image="/images/matt-11.png"
-        link="#"
-        linkText="LEARN MORE"
-        title="WHAT WE DO"
-        content="Marines are taught to develop mission-specific software for operational units to use in weeks or months, not years. Marines at the Marine Corps Software Factory (MCSWF) are trained by working with industry experts to build the software Marines need."
-        imagePosition="right"
-      />
-      <ContentImageFull
-        flipped
-        image="/images/GenPuma.png"
-        link="#"
-        linkText="LEARN MORE"
-        title="THE IMPACT"
-        content="By combining traditional military training and modern technology skills, it enables tactical advantage for Marines across the service. The MCSWF pilot will evaluate the demand signal from Fleet Marine Forces, develop a way forward on career paths for technical experts, and evaluate the proper blend of civilian-Marine teaming."
-        imagePosition="left"
-      />
-      <!-- <div class="h-fit pt-20">
+    </div>
+    <ContentImageFull
+      image="/images/matt-11.png"
+      link="#"
+      linkText="LEARN MORE"
+      title="WHAT WE DO"
+      content="Marines are taught to develop mission-specific software for operational units to use in weeks or months, not years. Marines at the Marine Corps Software Factory (MCSWF) are trained by working with industry experts to build the software Marines need."
+      imagePosition="right"
+    />
+    <ContentImageFull
+      flipped
+      image="/images/GenPuma.png"
+      link="#"
+      linkText="LEARN MORE"
+      title="THE IMPACT"
+      content="By combining traditional military training and modern technology skills, it enables tactical advantage for Marines across the service. The MCSWF pilot will evaluate the demand signal from Fleet Marine Forces, develop a way forward on career paths for technical experts, and evaluate the proper blend of civilian-Marine teaming."
+      imagePosition="left"
+    />
+    <!-- <div class="h-fit pt-20">
         <Products {products} />
       </div> -->
-      <Countdown
-        client:only="svelte"
-        title="COHORT 9 APPLICATION DEADLINE"
-        content="Applications for Cohort 9 are due on August 1st, 2024. Marines who are accepted to the program will PCS to Austin, TX during the summer of 2024 and begin the Technical Accelerator in August 2024."
-      />
-    </MaxWidthContainer>
-    <FooterFull client:only="svelte" />
-  </div>
+    <Countdown
+      client:only="svelte"
+      title="COHORT 9 APPLICATION DEADLINE"
+      content="Applications for Cohort 9 are due on August 1st, 2024. Marines who are accepted to the program will PCS to Austin, TX during the summer of 2024 and begin the Technical Accelerator in August 2024."
+    />
+  </MaxWidthContainer>
+  <FooterFull client:only="svelte" />
 </Layout>
