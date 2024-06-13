@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { readable } from 'svelte/store';
   import { timerCountdown } from '@content/externalLinks.js';
 
   let days = 41;
@@ -7,31 +7,32 @@
   let minutes = 54;
   let seconds = 19;
 
-  onMount(() => {
-    const countDownDate = new Date(timerCountdown.formatedDate).getTime();
+  const countDownDate = new Date(timerCountdown.formatedDate).getTime();
 
+  const timer = readable(0, (set) => {
     const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      if (distance < 0) {
-        clearInterval(interval);
-        days = 0;
-        hours = 0;
-        minutes = 0;
-        seconds = 0;
-      }
+      set(new Date().getTime());
     }, 1000);
 
-    onDestroy(() => {
-      clearInterval(interval);
-    });
+    return () => clearInterval(interval);
   });
+
+  $: {
+    const now = $timer;
+    const distance = countDownDate - now;
+
+    days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (distance < 0) {
+      days = 0;
+      hours = 0;
+      minutes = 0;
+      seconds = 0;
+    }
+  }
 </script>
 
 <div class="grid w-full grid-cols-1 gap-3 mt-8 lg:grid-cols-4 lg:inline-flex sm:justify-between">
