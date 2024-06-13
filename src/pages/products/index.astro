@@ -30,7 +30,7 @@ products.sort((a, b) => a.data.order - b.data.order);
       products.map((product, index) => (
         <ContentImageFull
           titleClasses="text-white"
-          link={`products/${product.id}`}
+          link={`/products/${product.id}`}
           linkText="LEARN MORE"
           content={product.data['description']}
           image={product.data['image2'].src}
