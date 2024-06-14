@@ -32,9 +32,9 @@
     {
       text: 'CAREER',
       image: '/images/training_career_card.png',
-      url: '/career',
+      url: '/training',
       subLinks: [
-        { url: '/career', text: 'TRAINING' },
+        { url: '/training', text: 'TRAINING' },
         { url: '/roles', text: 'ROLES' },
       ],
       titleClasses: 'text-sm lg:text-xl',
