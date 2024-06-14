@@ -1,20 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import Hero from '@components/elements/Hero.svelte';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
-import '../styles/global.css'
-import '../styles/fonts.css'
 import FooterFull from '@components/FooterFull.svelte'
 import ContentImageFull from '@components/sections/ContentImageFull.svelte'
 import CareerAccordionSection from '@components/accordion/CareerAccordionSection.svelte';
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
 import ForwardArrow from '@components/icons/ForwardArrow.svelte';
-import { displaySiteBanner } from '../components/stores'
+import { displaySiteBanner } from '@components/stores'
 import { externalLinks } from '@content/externalLinks.js';
-
-let side = 'left';
+import '../styles/global.css'
+import '../styles/fonts.css'
 
 const roles = await Astro.glob('../content/roles/*.md');
 

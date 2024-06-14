@@ -13,6 +13,7 @@
   export let linkText = '';
   export let externalLink = false;
   export let backgroundImg = '';
+  export let heightClasses = '';
 
   const colorSpecificClasses = {
     white: 'from-white via-slate-50 to-slate-200',
@@ -22,10 +23,11 @@
 
 <div
   style={`background-image: url("${backgroundImg}");`}
-  class={twMerge('relative z-20 w-full bg-cover bg-center bg-no-repeat rounded-b-2xl h-[400px] md:h-[550px]', $$props.class)}>
+  class={twMerge('relative z-20 w-full bg-cover bg-center bg-no-repeat rounded-b-2xl h-[400px] md:h-[550px]', heightClasses, $$props.class)}>
   <div class="absolute inset-0 bg-stone-900 opacity-25 rounded-b-2xl"></div>
-  <div class="relative h-[400px] md:h-[550px] bg-gradient-to-t from-stone-950 mx-auto rounded-b-2xl tracking-wider pb-12">
-    <MaxWidthContainer class="relative h-[400px] md:h-[550px] flex flex-col gap-6 md:gap-14 items-stretch md:items-center justify-center md:justify-center text-left md:text-center">
+  <div class={twMerge('relative h-[400px] md:h-[550px] bg-gradient-to-t from-stone-950 mx-auto rounded-b-2xl tracking-wider pb-12', heightClasses)}>
+    <MaxWidthContainer
+      class={twMerge('relative h-[400px] md:h-[550px] flex flex-col gap-6 md:gap-12 items-stretch md:items-center justify-center md:justify-center text-left md:text-center', heightClasses)}>
       <!-- Title -->
       <h1 class={twMerge('text-left md:text-center font-bold text-[32px] md:text-[40px] bg-gradient-to-r text-transparent bg-clip-text', titleClasses, colorSpecificClasses[titleColor])}>
         {#if !title}
@@ -35,11 +37,11 @@
         {/if}
       </h1>
       <!-- Description -->
-      {#if description}
+      {#if $$slots.description || description}
         <p class={twMerge('text-left md:text-center text-base lg:text-2xl', descriptionClasses, colorSpecificClasses[descriptionColor])}>
-          {#if !description}
+          {#if $$slots.description}
             <slot name="description" />
-          {:else}
+          {:else if description}
             {description}
           {/if}
         </p>
@@ -49,7 +51,7 @@
         <ButtonCustom
           color="white"
           size="xl"
-          class="w-44 md:w-72"
+          class="w-52 md:w-72"
           {link}
           {externalLink}>
           {linkText}

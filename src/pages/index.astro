@@ -1,17 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '@components/elements/Hero.svelte';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import Countdown from '../components/elements/Countdown.svelte';
-import Products from '../components/sections/Products.svelte';
-import '../styles/global.css';
-import '../styles/fonts.css';
+import Countdown from '@components/elements/Countdown.svelte';
+import Products from '@components/sections/Products.svelte';
 import ContentImageFull from '../components/sections/ContentImageFull.svelte';
 import { getCollection } from 'astro:content'; // Get products collection
 import { displaySiteBanner } from '../components/stores.js';
 import MetricCard from '@components/cards/MetricCard.svelte';
 import { externalLinks } from '@content/externalLinks.js';
+import '../styles/global.css';
+import '../styles/fonts.css';
 
 displaySiteBanner.set(true);
 
@@ -23,7 +23,6 @@ products.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Home">
   <Hero
-    client:only="svelte"
     title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
     content="Train Marines. Build Applications. Deploy to the Edge"
     link="/about"
