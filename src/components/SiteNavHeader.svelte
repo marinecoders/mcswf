@@ -74,7 +74,7 @@
             color="white"
             size="md"
             class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto hidden md:block"
-            link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
+            link="/contactUs/getInTouch"
             externalLink={true}>GET IN TOUCH</ButtonCustom>
         </div>
       {/if}
