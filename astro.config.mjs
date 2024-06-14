@@ -10,5 +10,6 @@ export default defineConfig({
   base: '/',
   redirects: {
     '/contactUs': '/contactUs/getInTouch',
+    '/career': '/training',
   },
 });

@@ -4,7 +4,7 @@ metrics:
     value: '4'
   - metric: "Applications Deployed"
     icon: '/icons/applicationsDeployed.svg'
-    value: '4'
+    value: '5'
   - metric: 'Units Using MCSWF Applications'
     icon: '/icons/unitsUsing.svg'
     value: '16'

@@ -1,14 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Hero from '@components/elements/Hero.svelte';
+import Hero from '@components/sections/Hero.svelte';
 import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
 import FooterFull from '@components/FooterFull.svelte';
 import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
-import { getCollection, type CollectionEntry } from 'astro:content';
 import { displaySiteBanner } from '@components/stores.js';
 import { externalLinks } from '@content/externalLinks.js';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import '../styles/global.css';
 
 displaySiteBanner.set(true);
@@ -17,7 +17,6 @@ const metrics = await getCollection('aboutMetrics');
 
 <Layout title="About">
   <Hero
-    client:only="svelte"
     title="WHO WE ARE"
     titleColor="yellow"
     description="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
@@ -34,7 +33,7 @@ const metrics = await getCollection('aboutMetrics');
       imagePosition="right"
     />
     <ContentImageFull
-      link="/career"
+      link="/training"
       linkText="LEARN MORE"
       title="OUR MISSION"
       content="We provide software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to help them close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders' decision advantage across the full spectrum of military operations."

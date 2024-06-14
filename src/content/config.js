@@ -78,12 +78,14 @@ const contactUsCollection = defineCollection({
   schema: z.object({
     heading: z.string(),
     description: z.string(),
+    shortDescription: z.string(),
     background: z.object({
       src: z.string(),
       alt: z.string(),
     }),
     buttonLink: z.string(),
     buttonText: z.string(),
+    externalLink: z.boolean(),
   }),
 });
 

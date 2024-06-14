@@ -1,13 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/elements/Hero.svelte';
-
-import '../../styles/global.css';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import CohortGroup from '../../components/sections/CohortGroup.svelte';
-import { getCollection } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
+import CohortGroup from '@components/sections/CohortGroup.svelte';
+import { displaySiteBanner } from '@components/stores.js';
 import { externalLinks } from '@content/externalLinks.js';
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
 
 displaySiteBanner.set(false);
 

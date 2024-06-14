@@ -1,11 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Hero from '@components/elements/Hero.svelte';
+import Hero from '@components/sections/Hero.svelte';
 import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import { getCollection } from 'astro:content';
 import { displaySiteBanner } from '@components/stores.js';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
+import { getCollection } from 'astro:content';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
 
@@ -16,12 +16,11 @@ products.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Products Overview">
   <Hero
-    client:only="svelte"
     title="OUR PRODUCT PORTFOLIO"
     titleColor="yellow"
-    titleClasses="text-[32px] md:text-4xl w-64 md:w-full"
+    titleClasses="w-64 md:w-full"
     description="Real solutions to real problems - Created for Marines, by Marines at the Marine Corps Software Factory."
-    descriptionClasses="w-80 md:w-[400px] text-base md:text-2xl"
+    descriptionClasses="w-full sm:w-80 md:w-[500px] font-light"
     backgroundImg="/images/Overview_hero.svg"
     class="bg-top"
   />

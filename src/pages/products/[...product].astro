@@ -1,10 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/elements/Hero.svelte';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import MetricCard from '../../components/cards/MetricCard.svelte';
+import MetricCard from '@components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
+import { displaySiteBanner } from '@components/stores.js';
 import { externalLinks } from '@content/externalLinks.js';
 import '../../styles/global.css';
 

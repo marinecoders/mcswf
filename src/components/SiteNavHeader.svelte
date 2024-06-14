@@ -32,9 +32,9 @@
     {
       text: 'CAREER',
       image: '/images/training_career_card.png',
-      url: '/career',
+      url: '/training',
       subLinks: [
-        { url: '/career', text: 'TRAINING' },
+        { url: '/training', text: 'TRAINING' },
         { url: '/roles', text: 'ROLES' },
       ],
       titleClasses: 'text-sm lg:text-xl',
@@ -74,7 +74,7 @@
             color="white"
             size="md"
             class="px-2 py-1 text-xs sm:px-4 sm:text-base ml-auto hidden md:block"
-            link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
+            link="/contactUs/getInTouch"
             externalLink={true}>GET IN TOUCH</ButtonCustom>
         </div>
       {/if}
