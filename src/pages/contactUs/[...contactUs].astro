@@ -31,7 +31,7 @@ const { entry } = Astro.props;
       link={entry.data.buttonLink}
       linkText={entry.data.buttonText}
       externalLink={entry.data.externalLink}
-      heightClasses="lg:h-[700px]">
+      componentHeightClasses="lg:h-[700px]">
       <span slot="description">
         <span class="md:hidden">
           {entry.data.shortDescription ? entry.data.shortDescription : entry.data.description}
