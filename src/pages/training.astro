@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
+import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
+import MetricCard from '@components/cards/MetricCard.svelte';
+import FooterFull from '@components/FooterFull.svelte'
+import ContentImageFull from '@components/sections/ContentImageFull.svelte'
+import CareerAccordionSection from '@components/accordion/CareerAccordionSection.svelte';
+import ButtonCustom from '@components/buttons/ButtonCustom.svelte'
+import ForwardArrow from '@components/icons/ForwardArrow.svelte';
+import { displaySiteBanner } from '@components/stores'
+import { externalLinks } from '@content/externalLinks.js';
+import '../styles/global.css'
+import '../styles/fonts.css'
+
+const roles = await Astro.glob('../content/roles/*.md');
+
+const { frontmatter, compiledContent } = Astro.props;
+
+const steps = await getCollection('steps');
+const prereqs = await getCollection('prereqs');
+const metrics = await getCollection('aboutMetrics');
+displaySiteBanner.set(false);
+---
+
+<Layout title="Training + Career">
+    <Hero
+      title="WE ARE THE MARINE CORPS SOFTWARE FACTORY"
+      titleClasses='w-64 md:w-[650px]'
+      link={externalLinks.recruitingApplication}
+      linkText="APPLY NOW"
+      externalLink={true}
+      backgroundImg="/images/dress_blues_wide.png"
+      class="bg-top"
+    />
+    <MaxWidthContainer>
+
+          <ContentImageFull
+            title="BUILD SOFTWARE"
+            titleClasses="text-white"
+            content="Software is developed using Agile methodology in teams. Teams consist of a Product Manager (PM), a user interface/user experience (UI/UX) designer, and software developers."
+            link="/roles/"
+            linkText="LEARN MORE"
+            image="/images/charlie-1.png"
+            imageAltText="A Marine Lieutenant Colonel looking at the camera"
+            imagePosition="right"
+          />
+          <ContentImageFull
+            flipped
+            title="HOW TO MAKE AN IMPACT?"
+            titleClasses="text-white"
+            content="Every member of the team is essential to the rapid development of an application that satisfies the critical requirements of the Fleet Marine Forces. Teams remain together throughout the software development lifecycle. For approximately nine months, they are paired with an industry expert for daily tasks, ensuring that they are using the technology industry's best practices."
+            link="/roles/"
+            linkText="LEARN MORE"
+            image="/images/happy_sparta.png"
+            imageAltText="A Marine presenting software"
+            imagePosition="left"
+          />
+      <div class="relative z-20">
+        <div class="w-full flex justify-center">
+          <h2 class="text-2xl flex text-center font-bold md:text-3xl lg:text-4xl">
+            FIND THE ROLE THAT'S RIGHT FOR YOU
+          </h2>
+        </div>
+        <div class="w-full flex justify-center pt-10">
+          <div class="w-3/4 grid grid-cols-1 lg:grid-cols-3 align-middle text-center justify-center">
+            {
+              roles.map((role) => {
+                return (
+                  <>
+                  <div class="flex flex-col gap-3 text-center pb-12 lg:pt-0">
+                    <img class="w-24 mx-auto" src={`/icons/${role.frontmatter.icon}`}></img>
+                    <p style="word-spacing:99999px" class="font-bold text-2xl">{role.frontmatter.role}</p>
+                    <a href={`/roles/${role.frontmatter.url}`} class=" text-mcswf-gold font-bold">Learn More <ForwardArrow/></a>
+                  </div>
+                  </>
+                )
+              })
+            }
+          </div>
+        </div>
+        <div class="w-full flex pb-12 justify-center">
+          <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-fit m-auto z-20">
+            {
+              metrics?.map((item) =>
+                item.data.metrics?.map((p) => (
+                  <div class="text-center m-12">
+                    <MetricCard icon={p.icon} value={p.value} metric={p.metric} />
+                  </div>
+                ))
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </MaxWidthContainer>
+
+      <div class="relative pt-10 z-20 bg-[#F0F0F0]">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">READY TO JOIN?</h1>
+          <p class="pb-8">Apply before next cohort deadline.</p>
+        </div>
+        <div class="w-full pb-8">
+          <div class="w-10/12 lg:w-8/12 mx-auto">
+            <hr class="h-[1px] bg-mcswf-pinstripe border-none" />
+          </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-[#F0F0F0]">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">PREREQUISITES</h1>
+          <div class="flex justify-center">
+            <div class="w-3/4 grid lg:grid-cols-2 gap-12">
+              {prereqs.map((prereq) =>
+                <div>
+                  <h2 class="text-center lg:text-left text-mcswf-pinstripe font-bold">{prereq.data.title}</h2>
+                <p class="text-left"><Fragment set:html={prereq.data.content}></Fragment> </p>
+              </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative pb-12 z-20 bg-[#F0F0F0]">
+        <div class="w-full flex flex-col justify-center text-center align-center text-black">
+          <h1 class="text-4xl font-bold pb-8">NEXT STEPS</h1>
+          <div class="w-full flex justify-center">
+            <div class="w-full mx-2 md:w-1/2 shadow-lg">
+              {steps.map((step) => 
+                <CareerAccordionSection client:only="svelte"
+                  isMiddle={step.data.step != 1}
+                  isStart={step.data.step == 1}
+                  isEnd={step.data.step == steps.length}
+                  step={step.data.step}
+                  details={step.data.content}
+                  head={step.data.title}
+                  detailsTitle={step.data.contentTitle}>
+                 </CareerAccordionSection>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pb-12 bg-[#F0F0F0] flex justify-center">
+          <ButtonCustom size="xl" class="w-64" color="red" link={externalLinks.recruitingApplication} client:only="svelte" externalLink={true}>APPLY NOW</ButtonCustom>
+      </div>
+        <FooterFull 
+          background='bg-[#F0F0F0]'
+          client:only="svelte" />
+    </div>
+</Layout>

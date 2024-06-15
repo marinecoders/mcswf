@@ -1,10 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/elements/Hero.svelte';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import MetricCard from '../../components/cards/MetricCard.svelte';
+import MetricCard from '@components/cards/MetricCard.svelte';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
+import { displaySiteBanner } from '@components/stores.js';
+import { externalLinks } from '@content/externalLinks.js';
 import '../../styles/global.css';
 
 interface Props {
@@ -31,11 +32,12 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
     title={entry.data.product}
     description={entry.data.description}
     descriptionClasses="font-light lg:w-[1000px]"
-    link="#"
+    link={`mailto:${externalLinks.mcswfEmail}?subject=${externalLinks.mcswfEmailSubject}`}
     linkText="REQUEST APP DEMO"
+    externalLink={true}
     backgroundImg={entry.data.background.src}
   />
-  <div class="relative z-20 items-center max-w-screen-xl gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
+  <div class="relative z-20 items-center max-w-screen-xl lg:gap-20 gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
     <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]">
       <div class="w-full">
         <img
@@ -52,10 +54,10 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
       <ul class="m-4 ml-12 list-disc text-xl md:text-2xl">
         {entry.data.bullets.map((b) => <li>{b}</li>)}
       </ul>
-      <div class="grid grid-cols-1 lg:grid-cols-2 w-fit m-auto z-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 m-auto z-20">
         {
           entry.data.metrics.map((p) => (
-            <div class="text-center m-12">
+            <div class="text-center my-12 mx-4">
               <MetricCard
                 icon={p.icon}
                 value={p.value}
@@ -67,7 +69,7 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
       </div>
       <div class="grid gap-4 my-4 grid-cols-1 lg:hidden relative h-max">
         <img
-          class="w-full"
+          class="px-7 w-full"
           src={entry.data.image.src}
           alt={entry.data.image.alt}
         />
@@ -76,6 +78,6 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
   </div>
 
   <div class="relative z-20">
-    <FooterFull client:only />
+    <FooterFull client:only="svelte" />
   </div>
 </Layout>

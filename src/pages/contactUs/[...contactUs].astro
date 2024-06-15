@@ -1,11 +1,10 @@
 ---
-import { twMerge } from 'tailwind-merge';
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
+import { displaySiteBanner } from '@components/stores.js';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
 import '../../styles/global.css';
-import ButtonCustom from '@components/buttons/ButtonCustom.svelte';
 
 displaySiteBanner.set(false);
 
@@ -21,36 +20,27 @@ export async function getStaticPaths() {
   }));
 }
 const { entry } = Astro.props;
-const bgString = 'background-image:url(' + entry.data.background.src + ')';
-const linkText = entry.data.buttonText;
 ---
 
 <Layout title={entry.data.heading}>
-  <div
-    style={`background-image: url("${entry.data.background.src}");`}
-    class="relative w-full bg-cover bg-center bg-no-repeat h-[400px] md:h-[500px] lg:h-[700px] bg-custom-gradient-blue-header">
-    <div class="absolute inset-0 bg-stone-900 opacity-25"></div>
-    <div
-      class="relative h-[400px] md:h-[500px] lg:h-[700px] bg-gradient-to-t from-stone-950 flex flex-col gap-6 md:gap-6 items-stretch md:items-center justify-end md:justify-center text-left md:text-center mx-auto tracking-wider px-8 pb-12">
-      <!-- Title -->
-      <h1 class="text-left md:text-center font-bold text-[32px] md:text-[40px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text w-64 md:w-[450px] lg:w-[500px]">
-        {entry.data.heading}
-      </h1>
-      <!-- End Title -->
-      <p class="text-left md:text-center text-base md:text-[26px] bg-gradient-to-r from-white via-slate-50 to-slate-100 text-transparent bg-clip-text">
-        {entry.data.description}
-      </p>
-      <!-- Buttons -->
-      <ButtonCustom
-        color="white"
-        size="xl"
-        link={entry.data.buttonLink}
-        class="w-44 md:w-72">
-        {linkText}
-      </ButtonCustom>
-    </div>
-  </div>
   <div class="bg-custom-gradient-blue-header">
-    <FooterFull client:only />
+    <Hero
+      title={entry.data.heading}
+      titleClasses="w-64 sm:w-72 md:w-[500px]"
+      backgroundImg={entry.data.background.src}
+      link={entry.data.buttonLink}
+      linkText={entry.data.buttonText}
+      externalLink={entry.data.externalLink}
+      componentHeightClasses="lg:h-[700px]">
+      <span slot="description">
+        <span class="md:hidden">
+          {entry.data.shortDescription ? entry.data.shortDescription : entry.data.description}
+        </span>
+        <span class="hidden md:inline">
+          {entry.data.description}
+        </span>
+      </span>
+    </Hero>
+    <FooterFull client:only="svelte" />
   </div>
 </Layout>

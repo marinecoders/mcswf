@@ -1,13 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/elements/Hero.svelte';
-
-import '../../styles/global.css';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
-import CohortGroup from '../../components/sections/CohortGroup.svelte';
+import CohortGroup from '@components/sections/CohortGroup.svelte';
+import { displaySiteBanner } from '@components/stores.js';
+import { externalLinks } from '@content/externalLinks.js';
 import { getCollection } from 'astro:content';
-import { displaySiteBanner } from '../../components/stores.js';
-import { externalLinks } from '@content/constants';
+import '../../styles/global.css';
 
 displaySiteBanner.set(false);
 
@@ -26,20 +25,30 @@ const entries = await getCollection('cohorts');
 ---
 
 <Layout title={frontmatter.role}>
-    <Hero 
-    title={frontmatter.role} 
-    link={externalLinks.recruitingApplication} 
-    linkText="APPLY NOW" 
+  <Hero
+    title={frontmatter.role}
+    link={externalLinks.recruitingApplication}
+    externalLink={true}
+    linkText="APPLY NOW"
     backgroundImg=`/images/${frontmatter.image_wide}`
-    class="bg-right"
+    class=`bg-${frontmatter.image_focus}`
+  />
+  <div class="relative z-20 flex h-fill py-12 place-content-center px-2">
+    <article
+      set:html={content}
+      class="prose prose-invert lg:prose-2xl font-light text-white marker:text-white max-w-none w-3/4 prose-hr:opacity-0 prose-h1:text-[32px] md:leading-snug"
+    />
+  </div>
+  <div class="relative z-20 max-h-screen scrollbar-hide">
+    <CohortGroup
+      entries={entries}
+      client:only="svelte"
+    />
+    <div class="relative z-20">
+      <FooterFull
+        background="bg-[#f0f0f0]"
+        client:only="svelte"
       />
-    <div class="relative z-20 flex h-fill py-24 place-content-center px-2">
-      <article set:html={content} class="prose prose-invert lg:prose-2xl text-white marker:text-white max-w-none w-3/4 prose-hr:opacity-0 prose-h1:text-[32px] md:leading-snug" />
     </div>
-    <div class="relative z-20 max-h-screen scrollbar-hide">
-      <CohortGroup entries={entries} client:only />
-      <div class="relative z-20">
-        <FooterFull background='bg-[#f0f0f0]' client:only/>
-      </div>
-    </div>
+  </div>
 </Layout>

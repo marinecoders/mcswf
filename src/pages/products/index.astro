@@ -1,10 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import { displaySiteBanner } from '@components/stores.js';
-import Hero from '@components/elements/Hero.svelte';
+import Hero from '@components/sections/Hero.svelte';
+import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import FooterFull from '@components/FooterFull.svelte';
+import { displaySiteBanner } from '@components/stores.js';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
+import { getCollection } from 'astro:content';
 import '../../styles/global.css';
 import '../../styles/fonts.css';
 
@@ -15,32 +16,33 @@ products.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Products Overview">
   <Hero
-    client:only
     title="OUR PRODUCT PORTFOLIO"
     titleColor="yellow"
-    titleClasses="text-[32px] md:text-4xl w-64 md:w-full"
+    titleClasses="w-64 md:w-full"
     description="Real solutions to real problems - Created for Marines, by Marines at the Marine Corps Software Factory."
-    descriptionClasses="w-80 md:w-[400px] text-base md:text-2xl"
+    descriptionClasses="w-full sm:w-80 md:w-[500px] font-light"
     backgroundImg="/images/Overview_hero.svg"
     class="bg-top"
   />
-  <div class='relative z-20'>
-      {products.map(e => (
-
-          <ContentImageFull
-            flipped = { e.data.order % 2 === 0 }
-            link={`products/${e.id}`}
-            linkText='LEARN MORE'
-            title=''
-            content={e.data['description']}
-            image={e.data['image2'].src}
-            imageClasses=''
-            titleClasses='text-white tracking-[4px]'
-          ><div slot="title" class="flex justify-start lg:justify-center"><span class='text-mcswf-gold text-[48px] flex-shrink lg:text-[64px] font-menobanner font-light'>0{e.data.order}</span> <span class='ml-2 text-[32px] lg:ml-5'>{e.data['product']}</span></div></ContentImageFull>
-        ),
-      )}
-    </div>
-    <div class='pt-20 relative z-20'>
-      <FooterFull client:only />
-    </div>
+  <MaxWidthContainer>
+    {
+      products.map((product, index) => (
+        <ContentImageFull
+          titleClasses="text-white"
+          link={`/products/${product.id}`}
+          linkText="LEARN MORE"
+          content={product.data['description']}
+          image={product.data['image2'].src}
+          imagePosition={index % 2 === 0 ? 'right' : 'left'}>
+          <div
+            slot="title"
+            class="flex justify-start lg:justify-center">
+            <span class="text-mcswf-gold text-[48px] flex-shrink md:text-[64px] font-menobanner font-light tracking-wide">0{product.data.order}</span>{' '}
+            <span class="ml-4 text-[32px] md:text-[40px] md:ml-6 tracking-widest">{product.data['product']}</span>
+          </div>
+        </ContentImageFull>
+      ))
+    }
+  </MaxWidthContainer>
+  <FooterFull client:only="svelte" />
 </Layout>

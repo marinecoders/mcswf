@@ -1,7 +1,9 @@
-heading: 'HAVE A PROBELM THAT WE CAN HELP WITH?'
-description: "Propose an App for the future or request an app Demo."
+heading: 'HAVE A PROBLEM THAT WE CAN HELP WITH?'
+description: 'Propose an App for the future or request an app Demo.'
+shortDescription: 'Propose an App for the future.'
 background: 
-  src: '/images/proposal_meeting.png'
+  src: '/images/mcswf_out_brief.jpeg'
   alt: ' '
 buttonText: 'PROPOSE AN APP'
 buttonLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeBdmywSNZEq2wo5QxGwFsnhu72OT_baajgJ8O3_1scMdosEA/viewform'
+externalLink: true

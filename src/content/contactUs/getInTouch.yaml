@@ -1,7 +1,9 @@
 heading: 'HAVE A QUESTION?'
-description: "Get in touch with MCSWF."
+description: 'Get in touch with MCSWF.'
+shortDescription: ''
 background: 
-  src: '/images/meeting_note_taking.png'
+  src: '/images/get_in_touch.png'
   alt: ' '
 buttonText: 'GET IN TOUCH'
-buttonLink: 'mailto:MCSWF@usmc.mil'
+buttonLink: 'mailto:MCSWF@usmc.mil?subject=About MCSWF'
+externalLink: true

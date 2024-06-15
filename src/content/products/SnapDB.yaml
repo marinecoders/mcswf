@@ -17,7 +17,7 @@ bullets:
   - 'Computer vision to read multiple QR codes simultaneously'
 metrics:
   - icon: '/icons/calendar.svg'
-    value: '??'
+    value: '53'
     metric: 'Days to MVP'
   - icon: '/icons/whiteGraph.svg'
     value: '151'
