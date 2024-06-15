@@ -17,13 +17,14 @@
     BUILDING PRODUCTS THAT MAKE A DIFFERENCE
   </h1>
 </div>
-<div class="grid grid-flow-col justify-around gap-2 overflow-x-auto snap-x h-fit">
+<div class="grid grid-flow-col justify-start md:justify-between gap-2 overflow-x-scroll snap-always snap-x snap-mandatory h-96 content-center gap-x-10 w-full pl-12">
   {#each products as product}
       <Card
         title={product.data.product}
         link={expandLink(product.id)}
         shortDescription={product.data.shortDescription}
         position={product.data.order}
+        id={product.id}
       />
   {/each}
 </div>
