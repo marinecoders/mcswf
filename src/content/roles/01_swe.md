@@ -1,8 +1,9 @@
 ---
 role: SOFTWARE ENGINEER
+slug: swe
 url: swe
-image: mcswf_marine.png
-image_wide: seHeader.png
+image: src/images/mcswf_marine.png
+image_wide: src/images/seHeader.png
 icon: software_engineer.svg
 image_alt_text: Marine Software Engineer
 image_focus: right

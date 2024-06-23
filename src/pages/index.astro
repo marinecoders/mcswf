@@ -9,7 +9,6 @@ import ContentImageFull from '../components/sections/ContentImageFull.svelte';
 import { getCollection } from 'astro:content'; // Get products collection
 import { displaySiteBanner } from '../components/stores.js';
 import MetricCard from '@components/cards/MetricCard.svelte';
-import { externalLinks } from '@content/externalLinks.js';
 import '../styles/global.css';
 import '../styles/fonts.css';
 
@@ -28,7 +27,7 @@ products.sort((a, b) => a.data.order - b.data.order);
     link="/about"
     linkText="LEARN MORE"
     contentClasses={'text-base md:text-2xl'}
-    backgroundImg="/images/headset_marine.png"
+    backgroundImg="src/images/headset_marine.png"
   />
   <MaxWidthContainer>
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
@@ -55,7 +54,7 @@ products.sort((a, b) => a.data.order - b.data.order);
       </div>
     </div>
     <ContentImageFull
-      image="/images/matt-11.png"
+      image="src/images/matt-11.png"
       link="#"
       linkText="LEARN MORE"
       title="WHAT WE DO"
@@ -64,7 +63,7 @@ products.sort((a, b) => a.data.order - b.data.order);
     />
     <ContentImageFull
       flipped
-      image="/images/GenPuma.png"
+      image="src/images/GenPuma.png"
       link="#"
       linkText="LEARN MORE"
       title="THE IMPACT"

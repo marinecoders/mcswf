@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+// import { getImage } from 'astro:assets';
 import Hero from '@components/sections/Hero.svelte';
 import MaxWidthContainer from '@components/sections/MaxWidthContainer.svelte';
 import ContentImageFull from '@components/sections/ContentImageFull.svelte';
@@ -11,6 +12,9 @@ import { externalLinks } from '@content/externalLinks.js';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import '../styles/global.css';
 
+// import aboutBackground from "@images/mcswf_and_miu.jpeg"
+// const optimizedBackground = await getImage({src: aboutBackground, format: 'webp'});
+
 displaySiteBanner.set(true);
 const metrics = await getCollection('aboutMetrics');
 ---
@@ -21,7 +25,7 @@ const metrics = await getCollection('aboutMetrics');
     titleColor="yellow"
     description="The Marine Corps Software Factory welcomes Marines from any MOS who have the aptitude, competence, and discipline to serve in key roles on software development teams."
     descriptionClasses="w-full md:w-[500px] lg:w-[750px] font-light"
-    backgroundImg="/images/mcswf_and_miu.jpeg"
+    backgroundImg="src/images/mcswf_and_miu.jpeg"
   />
   <MaxWidthContainer>
     <ContentImageFull
@@ -29,7 +33,7 @@ const metrics = await getCollection('aboutMetrics');
       linkText="LEARN MORE"
       title="OUR VISION"
       content="Upon arrival at the Marine Corps Software Factory, Marines are trained to fill the roles of a product team: product manager, software developer, and UI/UX designer. Over the course of their three-year assignment at MCSWF in Austin, Texas, they develop applications to support warfighters at the tactical edge. After their three-year tour in Austin, the teams are reassigned together to continue supporting MIG commanders throughout the fleet."
-      image="/images/marine_start_with_why.jpeg"
+      image="src/images/marine_start_with_why.jpeg"
       imagePosition="right"
     />
     <ContentImageFull
@@ -37,7 +41,7 @@ const metrics = await getCollection('aboutMetrics');
       linkText="LEARN MORE"
       title="OUR MISSION"
       content="We provide software development, data analytics, and artificial intelligence operations capabilities to MIG commanders to help them close joint, coalition, and naval kill webs. These capabilities enhance Marine commanders' decision advantage across the full spectrum of military operations."
-      image="/images/ega_network.jpg"
+      image="src/images/ega_network.jpg"
       imagePosition="left"
     />
     <ContentImageFull
@@ -45,7 +49,7 @@ const metrics = await getCollection('aboutMetrics');
       linkText="LEARN MORE"
       title="OUR IMPACT"
       content="By providing Marines with the skills to develop software and implement artificial intelligence, we are giving commanders the ability to quickly produce software and AI solutions at the tactical edge."
-      image="/images/marine_flight_sim.jpeg"
+      image="src/images/marine_flight_sim.jpeg"
       imagePosition="right"
     />
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-around">
@@ -68,7 +72,7 @@ const metrics = await getCollection('aboutMetrics');
       <div class="flex justify-center">
         <img
           class="w-3/4 rounded-lg aspect-square object-cover"
-          src="/images/marine_mcswf_coder.jpeg"
+          src="src/images/marine_mcswf_coder.jpeg"
         />
       </div>
       <div class="font-light text-white sm:text-lg">

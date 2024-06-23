@@ -22,21 +22,13 @@ const cohortCollection = defineCollection({
 
 const productCollection = defineCollection({
   type: 'data',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     product: z.string(),
     description: z.string(),
-    background: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    image2: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
+    background: image(),
+    image: image(),
+    imageAlt: z.string(),
+    image2: image(),
     order: z.number(),
     heading: z.string(),
     bullets: z.array(z.string()),
@@ -75,19 +67,31 @@ const stepsCollection = defineCollection({
 
 const contactUsCollection = defineCollection({
   type: 'data',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     heading: z.string(),
     description: z.string(),
     shortDescription: z.string(),
-    background: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
+    background: image(),
+    backgroundAlt: z.string(),
     buttonLink: z.string(),
     buttonText: z.string(),
     externalLink: z.boolean(),
   }),
 });
+
+const rolesCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    role: z.string(),
+    // url: z.string(),
+    image: image(),
+    image_wide: image(),
+    icon: z.string(),
+    image_alt_text: z.string(),
+    image_focus: z.string(),
+    about: z.string(),
+  })
+})
 
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
@@ -98,4 +102,5 @@ export const collections = {
   aboutMetrics: aboutMetricsCollection,
   steps: stepsCollection,
   contactUs: contactUsCollection,
+  roles: rolesCollection,
 };

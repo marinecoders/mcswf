@@ -1,9 +1,8 @@
 heading: 'WANT TO SEE WHAT WE ARE ALL ABOUT?'
 description: 'Be a part of MCSWF.'
 shortDescription: ''
-background: 
-  src: '/images/marines_at_long_table.jpg'
-  alt: ' '
+background: 'src/images/marines_at_long_table.jpg'
+backgroundAlt: ' '
 buttonText: 'SEE ROLES'
 buttonLink: '/roles'
 externalLink: false
