@@ -1,9 +1,9 @@
 ---
 role: PRODUCT DESIGNER
-url: product_designer
-image: marine_product_designer.png
+slug: product_designer
+image: src/images/marine_product_designer.png
 icon: product_designer.svg
-image_wide: designer.png
+image_wide: src/images/designer.png
 image_alt_text: Marine Product Designer
 image_focus: left
 about: >

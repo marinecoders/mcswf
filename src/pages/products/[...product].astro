@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { Image } from "astro:assets";
 import Hero from '@components/sections/Hero.svelte';
 import FooterFull from '@components/FooterFull.svelte';
 import MetricCard from '@components/cards/MetricCard.svelte';
@@ -40,10 +41,10 @@ const bgString = 'background-image:url(' + entry.data.background.src + ')';
   <div class="relative z-20 items-center max-w-screen-xl lg:gap-20 gap-36 px-4 py-8 mx-auto lg:grid lg:grid-cols-2 lg:py-2 lg:px-6">
     <div class="grid gap-4 mt-8 grid-cols-1 hidden lg:block min-h-[650px]">
       <div class="w-full">
-        <img
+        <Image
           class="object-cover m-auto"
-          src={entry.data.image.src}
-          alt={entry.data.image.alt}
+          src={entry.data.image}
+          alt={entry.data.imageAlt}
         />
       </div>
     </div>

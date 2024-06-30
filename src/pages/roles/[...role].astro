@@ -5,40 +5,51 @@ import FooterFull from '@components/FooterFull.svelte';
 import CohortGroup from '@components/sections/CohortGroup.svelte';
 import { displaySiteBanner } from '@components/stores.js';
 import { externalLinks } from '@content/externalLinks.js';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import '../../styles/global.css';
 
 displaySiteBanner.set(false);
 
+// export async function getStaticPaths() {
+//   const posts = await Astro.glob('../../content/roles/*.md');
+//   return posts.map(({ frontmatter, compiledContent }) => {
+//     return {
+//       params: { role: frontmatter.url, image_url: frontmatter.image },
+//       props: { frontmatter, compiledContent },
+//     };
+//   });
+// }
+
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../content/roles/*.md');
-  return posts.map(({ frontmatter, compiledContent }) => {
-    return {
-      params: { role: frontmatter.url, image_url: frontmatter.image },
-      props: { frontmatter, compiledContent },
-    };
-  });
+  const roles= await getCollection('roles');
+  return roles.map( (entry) => ({
+      params: { role: entry.slug },
+      props: { entry },   
+  }));
 }
-const { frontmatter, compiledContent } = Astro.props;
-const content = compiledContent();
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
 const entries = await getCollection('cohorts');
 ---
 
-<Layout title={frontmatter.role}>
+<Layout title={entry.data.role}>
   <Hero
-    title={frontmatter.role}
+    title={entry.data.role}
     link={externalLinks.recruitingApplication}
     externalLink={true}
     linkText="APPLY NOW"
-    backgroundImg=`/images/${frontmatter.image_wide}`
-    class=`bg-${frontmatter.image_focus}`
-  />
-  <div class="relative z-20 flex h-fill py-12 place-content-center px-2">
-    <article
-      set:html={content}
-      class="prose prose-invert lg:prose-2xl font-light text-white marker:text-white max-w-none w-3/4 prose-hr:opacity-0 prose-h1:text-[32px] md:leading-snug"
+    backgroundImg=`${entry.data.image_wide.src}`
+    bgClasses=`bg-${entry.data.image_focus}`
+    bgPos = `${entry.data.image_focus}`
     />
-  </div>
+    <div class="relative z-20 flex h-fill py-12 place-content-center px-2">
+      <article class="prose prose-invert lg:prose-2xl font-light text-white marker:text-white max-w-none w-3/4 prose-hr:opacity-0 prose-h1:text-[32px] md:leading-snug">
+        <Content article class:list={['prose', 'prose-invert', 'lg:prose-2xl', 'font-light', 'text-white', 'marker:text-white', 'max-w-none', 'w-3/4', 'prose-hr:opacity-0', 'prose-h1:text-[32px]','md:leading-snug']}></Content>
+      </article>
+    </div>
+
   <div class="relative z-20 max-h-screen scrollbar-hide">
     <CohortGroup
       entries={entries}

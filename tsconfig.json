@@ -10,6 +10,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@content/*": ["src/content/*"],
+      "@images/*": ["src/images/*"],
     },
   },
   "exclude": [

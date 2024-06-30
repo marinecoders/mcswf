@@ -13,6 +13,7 @@
   export let linkText = '';
   export let externalLink = false;
   export let backgroundImg = '';
+  export let bgPos = 'center';
   export let componentHeightClasses = '';
 
   const colorSpecificClasses = {
@@ -22,7 +23,7 @@
 </script>
 
 <div
-  style={`background-image: url("${backgroundImg}");`}
+  style={`background-image: url("${backgroundImg}"); background-position:${bgPos}`}
   class={twMerge('relative z-20 w-full bg-cover bg-center bg-no-repeat rounded-b-2xl h-[400px] md:h-[550px]', componentHeightClasses, $$props.class)}>
   <div class="absolute inset-0 bg-stone-900 opacity-25 rounded-b-2xl"></div>
   <div class={twMerge('relative h-[400px] md:h-[550px] bg-gradient-to-t from-stone-950 mx-auto rounded-b-2xl tracking-wider pb-12', componentHeightClasses)}>
